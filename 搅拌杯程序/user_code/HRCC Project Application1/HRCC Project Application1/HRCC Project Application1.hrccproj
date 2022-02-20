@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20c48386-27e3-48c2-a041-b541bd31af74}</ProjectGuid>
+    <ProjectType>HRCC</ProjectType>
+    <ChipType>ES7P0693FHTF</ChipType>
+    <ChipConfig>AA5571678E98FFFF609FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</ChipConfig>
+    <TargetPath>debug\</TargetPath>
+    <HiccInclude>
+    </HiccInclude>
+    <HiccError>False</HiccError>
+    <PredefinitionMacro>
+    </PredefinitionMacro>
+    <FDD>True</FDD>
+    <LFUNC>True</LFUNC>
+    <USPTR>True</USPTR>
+    <LPTR>True</LPTR>
+    <FA>True</FA>
+    <HS>True</HS>
+    <HrccError>False</HrccError>
+    <HrccOptimizationSelect>O0</HrccOptimizationSelect>
+    <HrccExtraOption>
+    </HrccExtraOption>
+    <BAS>True</BAS>
+    <ARGU>True</ARGU>
+    <SD>True</SD>
+    <HrcoError>False</HrcoError>
+    <HrcoExtraOption>
+    </HrcoExtraOption>
+    <HasmInclude>
+    </HasmInclude>
+    <HasmError>False</HasmError>
+    <HasmList>False</HasmList>
+    <OBJ>True</OBJ>
+    <HasmMap>False</HasmMap>
+    <CS>True</CS>
+    <MP>False</MP>
+    <OutputMessageType>Errors only</OutputMessageType>
+    <RadixFormat>hex</RadixFormat>
+    <NT>True</NT>
+    <OL>True</OL>
+    <HlinkError>False</HlinkError>
+    <HlinkMap>False</HlinkMap>
+    <HlinkList>False</HlinkList>
+    <HlinkExtraOption>
+    </HlinkExtraOption>
+    <AssemblyName>HRCC Project Application1</AssemblyName>
+    <Name>HRCC Project Application1</Name>
+    <RootNamespace>HRCC Project Application1</RootNamespace>
+    <ToolChain>HRCC v1.2.0.122</ToolChain>
+    <PreprocessSwitch>False</PreprocessSwitch>
+    <INTVECT>False</INTVECT>
+    <PACKED>False</PACKED>
+    <OLDCM>False</OLDCM>
+    <IICInt>False</IICInt>
+    <STDLIB>False</STDLIB>
+    <MATHLIB>True</MATHLIB>
+    <REMVAR>False</REMVAR>
+    <MSEC>True</MSEC>
+    <HasmExtraOption />
+    <OUTCG>False</OUTCG>
+    <TMPM>False</TMPM>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Inc_user" />
+    <Folder Include="Src_user" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Inc_user\key.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Inc_user\scan_LED.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Inc_user\software_Time.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Inc_user\user_function.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="main.h">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="main.c">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Src_user\key.c">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Src_user\scan_LED.c">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Src_user\software_Time.c">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Src_user\user_function.c">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(registry:HKEY_CURRENT_USER\Software\ICHAIER\HRIDE4.0\1.0_Config\MSBuild\SafeImports@HRCC)" />
+</Project>
