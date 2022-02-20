@@ -212,12 +212,12 @@ FFF0-FFFF:	----------------
 
 	Rom
 
-SEGMENT0 used   2043 words of total   2048 ( 99.755859  %) 
-SEGMENT1 used   2046 words of total   2048 ( 99.902344  %) 
+SEGMENT0 used   2045 words of total   2048 ( 99.853516  %) 
+SEGMENT1 used   2042 words of total   2048 ( 99.707031  %) 
 SEGMENT2 used    926 words of total   2048 ( 45.214844  %) 
 SEGMENT3 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT4 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT5 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT6 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT7 used    969 words of total   2048 ( 47.314453  %) 
-Rom      used   5984 words of total  16384 ( 36.523438  %) 
+Rom      used   5982 words of total  16384 ( 36.511230  %) 

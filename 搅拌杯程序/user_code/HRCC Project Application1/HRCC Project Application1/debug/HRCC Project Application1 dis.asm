@@ -1,4 +1,4 @@
-;The Num of Instruction(Size):5984. The Max Address(Begin with 0):15304 
+;The Num of Instruction(Size):5982. The Max Address(Begin with 0):15304 
 
                 MCU  ES7P0693
 
@@ -395,7 +395,7 @@ HADR_0X67:
 :0X68  2117                     MOVAR           HRAM_0X117
 ;		scan_touch_key();
 :0X69  ec00                     PAGE            0X0
-:0X6a  6501                     CALL            HADR_0X501
+:0X6a  64ff                     CALL            HADR_0X4FF
 :0X6b  ec00                     PAGE            0X0
 HADR_0X6C:
 ;    }
@@ -628,7 +628,7 @@ HADR_0X103:
 HADR_0X10E:
 ;	LED_Clear();
 :0X10e  ec00                    PAGE            0X0
-:0X10f  6711                    CALL            HADR_0X711
+:0X10f  670d                    CALL            HADR_0X70D
 :0X110  ec00                    PAGE            0X0
 ;	int ii=2;
 :0X111  e500                    MOVI            0X0
@@ -656,7 +656,7 @@ HADR_0X11E:
 :0X122  6938                    GOTO            HADR_0X138
 ;		Buzzer_Start();
 :0X123  ec00                    PAGE            0X0
-:0X124  6336                    CALL            HADR_0X336
+:0X124  6334                    CALL            HADR_0X334
 :0X125  ec00                    PAGE            0X0
 HADR_0X126:
 ;		Delay_ms(100);
@@ -671,7 +671,7 @@ HADR_0X129:
 :0X12c  ec00                    PAGE            0X0
 ;		Buzzer_Stop();
 :0X12d  ec00                    PAGE            0X0
-:0X12e  6333                    CALL            HADR_0X333
+:0X12e  6331                    CALL            HADR_0X331
 HADR_0X12F:
 :0X12f  ec00                    PAGE            0X0
 ;		Delay_ms(100);
@@ -696,7 +696,7 @@ HADR_0X13B:
 :0X13b  e501                    MOVI            0X1
 :0X13c  e638                    MOVA            HRAM_0X38
 :0X13d  ec01                    PAGE            0X1
-:0X13e  6645                    CALL            HADR_0X645
+:0X13e  6625                    CALL            HADR_0X625
 :0X13f  ec00                    PAGE            0X0
 HADR_0X140:
 :0X140  20b3                    MOVAR           HRAM_0XB3
@@ -710,8 +710,8 @@ HADR_0X146:
 :0X146  e637                    MOVA            HRAM_0X37
 :0X147  e501                    MOVI            0X1
 :0X148  e638                    MOVA            HRAM_0X38
-:0X149  ec01                    PAGE            0X1
-:0X14a  6625                    CALL            HADR_0X625
+:0X149  ec00                    PAGE            0X0
+:0X14a  67dd                    CALL            HADR_0X7DD
 HADR_0X14B:
 :0X14b  ec00                    PAGE            0X0
 HADR_0X14C:
@@ -724,7 +724,7 @@ HADR_0X14E:
 :0X14f  e501                    MOVI            0X1
 :0X150  e638                    MOVA            HRAM_0X38
 :0X151  ec01                    PAGE            0X1
-:0X152  6645                    CALL            HADR_0X645
+:0X152  6625                    CALL            HADR_0X625
 :0X153  ec00                    PAGE            0X0
 :0X154  20b3                    MOVAR           HRAM_0XB3
 :0X155  ea01                    SECTION         0X1
@@ -737,8 +737,8 @@ HADR_0X159:
 :0X15a  e637                    MOVA            HRAM_0X37
 :0X15b  e501                    MOVI            0X1
 :0X15c  e638                    MOVA            HRAM_0X38
-:0X15d  ec01                    PAGE            0X1
-:0X15e  6625                    CALL            HADR_0X625
+:0X15d  ec00                    PAGE            0X0
+:0X15e  67dd                    CALL            HADR_0X7DD
 :0X15f  ec00                    PAGE            0X0
 ;			if(touch_key_busy){
 :0X160  ea01                    SECTION         0X1
@@ -760,7 +760,7 @@ HADR_0X164:
 :0X16b  697a                    GOTO            HADR_0X17A
 ;						if(Get_State()==2) State_Trans(0);
 :0X16c  ec00                    PAGE            0X0
-:0X16d  633f                    CALL            HADR_0X33F
+:0X16d  633d                    CALL            HADR_0X33D
 :0X16e  ec00                    PAGE            0X0
 :0X16f  20b3                    MOVAR           HRAM_0XB3
 HADR_0X170:
@@ -773,7 +773,7 @@ HADR_0X172:
 :0X175  ea01                    SECTION         0X1
 :0X176  e63c                    MOVA            HRAM_0X3C
 :0X177  ec00                    PAGE            0X0
-:0X178  6339                    CALL            HADR_0X339
+:0X178  6337                    CALL            HADR_0X337
 :0X179  ec00                    PAGE            0X0
 HADR_0X17A:
 ;				}
@@ -784,7 +784,7 @@ HADR_0X17A:
 :0X17e  6994                    GOTO            HADR_0X194
 ;						if(Get_State()==1 && USB_Check()==0) State_Trans(2);
 :0X17f  ec00                    PAGE            0X0
-:0X180  633f                    CALL            HADR_0X33F
+:0X180  633d                    CALL            HADR_0X33D
 :0X181  ec00                    PAGE            0X0
 :0X182  20b3                    MOVAR           HRAM_0XB3
 :0X183  78b3                    MOVRA           HRAM_0XB3
@@ -792,7 +792,7 @@ HADR_0X17A:
 :0X185  9284                    JBS             HRAM_0X84,      2
 :0X186  6994                    GOTO            HADR_0X194
 :0X187  ec00                    PAGE            0X0
-:0X188  635e                    CALL            HADR_0X35E
+:0X188  635c                    CALL            HADR_0X35C
 :0X189  ec00                    PAGE            0X0
 :0X18a  20b3                    MOVAR           HRAM_0XB3
 :0X18b  ea01                    SECTION         0X1
@@ -802,7 +802,7 @@ HADR_0X17A:
 :0X18f  e502                    MOVI            0X2
 :0X190  e63c                    MOVA            HRAM_0X3C
 :0X191  ec00                    PAGE            0X0
-:0X192  6339                    CALL            HADR_0X339
+:0X192  6337                    CALL            HADR_0X337
 :0X193  ec00                    PAGE            0X0
 HADR_0X194:
 ;				}
@@ -815,7 +815,7 @@ HADR_0X197:
 :0X198  69a7                    GOTO            HADR_0X1A7
 ;						if(Get_State()==3) State_Trans(1);
 :0X199  ec00                    PAGE            0X0
-:0X19a  633f                    CALL            HADR_0X33F
+:0X19a  633d                    CALL            HADR_0X33D
 :0X19b  ec00                    PAGE            0X0
 :0X19c  20b3                    MOVAR           HRAM_0XB3
 :0X19d  78b3                    MOVRA           HRAM_0XB3
@@ -827,7 +827,7 @@ HADR_0X1A1:
 :0X1a2  ea01                    SECTION         0X1
 :0X1a3  e63c                    MOVA            HRAM_0X3C
 :0X1a4  ec00                    PAGE            0X0
-:0X1a5  6339                    CALL            HADR_0X339
+:0X1a5  6337                    CALL            HADR_0X337
 :0X1a6  ec00                    PAGE            0X0
 HADR_0X1A7:
 ;				}
@@ -840,7 +840,7 @@ HADR_0X1A7:
 HADR_0X1AB:
 :0X1ab  e638                    MOVA            HRAM_0X38
 :0X1ac  ec01                    PAGE            0X1
-:0X1ad  6645                    CALL            HADR_0X645
+:0X1ad  6625                    CALL            HADR_0X625
 HADR_0X1AE:
 :0X1ae  ec00                    PAGE            0X0
 :0X1af  20b3                    MOVAR           HRAM_0XB3
@@ -853,24 +853,24 @@ HADR_0X1AE:
 :0X1b5  e637                    MOVA            HRAM_0X37
 :0X1b6  e501                    MOVI            0X1
 :0X1b7  e638                    MOVA            HRAM_0X38
-:0X1b8  ec01                    PAGE            0X1
-:0X1b9  6625                    CALL            HADR_0X625
+:0X1b8  ec00                    PAGE            0X0
+:0X1b9  67dd                    CALL            HADR_0X7DD
 HADR_0X1BA:
 :0X1ba  ec00                    PAGE            0X0
 ;		  State_Ruun();
 :0X1bb  ec00                    PAGE            0X0
 HADR_0X1BC:
-:0X1bc  64df                    CALL            HADR_0X4DF
+:0X1bc  64dd                    CALL            HADR_0X4DD
 :0X1bd  ec00                    PAGE            0X0
 ;		  Buzzer_Task();
 :0X1be  ec00                    PAGE            0X0
 HADR_0X1BF:
-:0X1bf  6345                    CALL            HADR_0X345
+:0X1bf  6343                    CALL            HADR_0X343
 HADR_0X1C0:
 :0X1c0  ec00                    PAGE            0X0
 ;		  if(USB_Check()==1){
 :0X1c1  ec00                    PAGE            0X0
-:0X1c2  635e                    CALL            HADR_0X35E
+:0X1c2  635c                    CALL            HADR_0X35C
 :0X1c3  ec00                    PAGE            0X0
 :0X1c4  20b3                    MOVAR           HRAM_0XB3
 :0X1c5  78b3                    MOVRA           HRAM_0XB3
@@ -883,7 +883,7 @@ HADR_0X1C0:
 HADR_0X1CB:
 :0X1cb  e63c                    MOVA            HRAM_0X3C
 :0X1cc  ec00                    PAGE            0X0
-:0X1cd  6339                    CALL            HADR_0X339
+:0X1cd  6337                    CALL            HADR_0X337
 :0X1ce  ec00                    PAGE            0X0
 ;			 sleep_count=0;
 :0X1cf  ea02                    SECTION         0X2
@@ -899,7 +899,7 @@ HADR_0X1D2:
 :0X1d5  e501                    MOVI            0X1
 :0X1d6  e638                    MOVA            HRAM_0X38
 :0X1d7  ec01                    PAGE            0X1
-:0X1d8  6645                    CALL            HADR_0X645
+:0X1d8  6625                    CALL            HADR_0X625
 HADR_0X1D9:
 :0X1d9  ec00                    PAGE            0X0
 HADR_0X1DA:
@@ -915,8 +915,8 @@ HADR_0X1E1:
 :0X1e1  e501                    MOVI            0X1
 :0X1e2  e638                    MOVA            HRAM_0X38
 HADR_0X1E3:
-:0X1e3  ec01                    PAGE            0X1
-:0X1e4  6625                    CALL            HADR_0X625
+:0X1e3  ec00                    PAGE            0X0
+:0X1e4  67dd                    CALL            HADR_0X7DD
 :0X1e5  ec00                    PAGE            0X0
 HADR_0X1E6:
 ;	  }
@@ -926,7 +926,7 @@ HADR_0X1E6:
 :0X1e9  e501                    MOVI            0X1
 :0X1ea  e638                    MOVA            HRAM_0X38
 :0X1eb  ec01                    PAGE            0X1
-:0X1ec  6645                    CALL            HADR_0X645
+:0X1ec  6625                    CALL            HADR_0X625
 :0X1ed  ec00                    PAGE            0X0
 :0X1ee  20b3                    MOVAR           HRAM_0XB3
 :0X1ef  ea01                    SECTION         0X1
@@ -940,12 +940,12 @@ HADR_0X1F4:
 :0X1f4  e637                    MOVA            HRAM_0X37
 :0X1f5  e501                    MOVI            0X1
 :0X1f6  e638                    MOVA            HRAM_0X38
-:0X1f7  ec01                    PAGE            0X1
-:0X1f8  6625                    CALL            HADR_0X625
+:0X1f7  ec00                    PAGE            0X0
+:0X1f8  67dd                    CALL            HADR_0X7DD
 :0X1f9  ec00                    PAGE            0X0
 ;			Sleep_Tsak();
 :0X1fa  ec00                    PAGE            0X0
-:0X1fb  6368                    CALL            HADR_0X368
+:0X1fb  6366                    CALL            HADR_0X366
 :0X1fc  ec00                    PAGE            0X0
 ;			Get_ADC_Val();
 :0X1fd  ec02                    PAGE            0X2
@@ -953,7 +953,7 @@ HADR_0X1F4:
 :0X1ff  ec00                    PAGE            0X0
 ;			if(Get_State()!=3){
 :0X200  ec00                    PAGE            0X0
-:0X201  633f                    CALL            HADR_0X33F
+:0X201  633d                    CALL            HADR_0X33D
 :0X202  ec00                    PAGE            0X0
 HADR_0X203:
 :0X203  20b3                    MOVAR           HRAM_0XB3
@@ -965,7 +965,7 @@ HADR_0X206:
 :0X207  6a0b                    GOTO            HADR_0X20B
 ;				LED_Task();
 :0X208  ec00                    PAGE            0X0
-:0X209  63c7                    CALL            HADR_0X3C7
+:0X209  63c5                    CALL            HADR_0X3C5
 HADR_0X20A:
 :0X20a  ec00                    PAGE            0X0
 HADR_0X20B:
@@ -1116,16 +1116,14 @@ HADR_0X278:
 ;#include <hic.h>
 ;#include "main.h"
 ;
-;unsigned long global_count;
-;unsigned char State_flag=1;
-;
-;unsigned int sleep_count;
-;
+;unsigned long global_count;//»´æ÷ ±º‰º∆ ˝1ms ++
+;unsigned char State_flag=1;//‘À––◊¥Ã¨
+;unsigned int  sleep_count;//–›√ﬂ ±º‰º∆ ˝
+;unsigned char buzzer_flag;//∑‰√˘∆˜∆Ù∂Ø±Íº«
 ;unsigned char temperature;//Œ¬∂»÷µ 0~99
 ;unsigned char Vbat_val;   //µÁ¡ø%  0~99
 ;
-;
-;unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+;unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//œ‘ æª∫¥Ê display_buf[1-1]=1£ª 1∫≈LED¡¡
 ;unsigned long Get_Sys_time(){
 ;	return global_count;
 :0X278  e783                    CLR             HRAM_0X83
@@ -1146,7 +1144,6 @@ HADR_0X284:
 :0X284  c183                    RET
 HADR_0X285:
 ;}
-;
 ;/******************************************************
 ;∫Ø ˝√˚£∫void RAMclear(void)
 ;√Ë   ˆ£∫RAM«¯ ˝æ›«Â¡„£¨RAM«¯µÿ÷∑0x0000~0x03FF
@@ -1265,7 +1262,6 @@ HADR_0X29F:
 HADR_0X2A8:
 ;	ANSH1=0;  //PB4/AIN9
 :0X2a8  a98d                    BCC             HRAM_0X8D,      1
-;
 ;}
 :0X2a9  c183                    RET
 HADR_0X2AA:
@@ -1280,7 +1276,6 @@ HADR_0X2AA:
 ;    //T8NC = 0x0C;         //∂® ±∆˜ƒ£ Ω£¨‘§∑÷∆µ1:(Fosc/2)/32
 ;    //T8NC = 0x0F;         //∂® ±∆˜ƒ£ Ω£¨‘§∑÷∆µ1:(Fosc/2)/256
 ;	//T8NC = 0x08;         //∂® ±∆˜ƒ£ Ω£¨‘§∑÷∆µ1:(Foc/2)/2
-;
 ;    T8N = 131;           //∏≥º∆ ˝∆˜≥ı÷µ
 :0X2ad  e583                    MOVI            0X83
 HADR_0X2AE:
@@ -1377,7 +1372,6 @@ HADR_0X2EE:
 ;void TEST_Delay_ms(unsigned int delay){
 ;	   int i;
 ;	   for(i = 0;i<500*delay;i++);        //—” ±
-;//       for(i = 0;i<50000;i++);
 ;}
 ;
 ;/******************************************************
@@ -1501,7 +1495,7 @@ HADR_0X32F:
 ;//#define BUZER_N  //Œﬁ‘¥
 ;#define BUZER_A	 //”–‘¥
 ;#ifdef BUZER_N
-;int Buzzer_Init(void){
+;unsigned char Buzzer_Init(void){
 ;	BEEPC=0xD8;
 ;	return 0xff;
 ;}
@@ -1514,259 +1508,253 @@ HADR_0X32F:
 ;#endif
 ;
 ;#ifdef BUZER_A
-;int  Buzzer_Init(void){
+;unsigned char  Buzzer_Init(void){
 ;	return 0x88;
 :0X32f  e783                    CLR             HRAM_0X83
-:0X330  e500                    MOVI            0X0
-:0X331  e61d                    MOVA            HRAM_0X1D
-:0X332  e488                    RETIA           0X88
-HADR_0X333:
+:0X330  e488                    RETIA           0X88
+HADR_0X331:
 ;}
 ;void Buzzer_Stop(){
 ;	PB7=0;
-:0X333  e783                    CLR             HRAM_0X83
-HADR_0X334:
-:0X334  afa9                    BCC             HRAM_0XA9,      7
+:0X331  e783                    CLR             HRAM_0X83
+:0X332  afa9                    BCC             HRAM_0XA9,      7
 ;}
-:0X335  c183                    RET
-HADR_0X336:
+:0X333  c183                    RET
+HADR_0X334:
 ;void Buzzer_Start(){
 ;	PB7=1;
-:0X336  e783                    CLR             HRAM_0X83
-:0X337  a7a9                    BSS             HRAM_0XA9,      7
+:0X334  e783                    CLR             HRAM_0X83
+:0X335  a7a9                    BSS             HRAM_0XA9,      7
 ;}
-:0X338  c183                    RET
-HADR_0X339:
+:0X336  c183                    RET
+HADR_0X337:
 ;#endif
 ;
-;unsigned char buzzer_flag;
 ;void State_Trans(unsigned char new_state){
 ;	State_flag=new_state;
-:0X339  e783                    CLR             HRAM_0X83
-:0X33a  ea01                    SECTION         0X1
+:0X337  e783                    CLR             HRAM_0X83
+:0X338  ea01                    SECTION         0X1
+:0X339  503c                    MOV             HRAM_0X3C,      A
+:0X33a  e600                    MOVA            HRAM_0X0
 HADR_0X33B:
-:0X33b  503c                    MOV             HRAM_0X3C,      A
-:0X33c  e600                    MOVA            HRAM_0X0
 ;}
-:0X33d  ea00                    SECTION         0X0
-HADR_0X33E:
-:0X33e  c183                    RET
-HADR_0X33F:
+:0X33b  ea00                    SECTION         0X0
+:0X33c  c183                    RET
+HADR_0X33D:
 ;unsigned char Get_State(){
 ;	return State_flag;
-:0X33f  e783                    CLR             HRAM_0X83
-:0X340  ea01                    SECTION         0X1
-:0X341  5000                    MOV             HRAM_0X0,       A
-:0X342  201c                    MOVAR           HRAM_0X1C
+:0X33d  e783                    CLR             HRAM_0X83
+HADR_0X33E:
+:0X33e  ea01                    SECTION         0X1
+:0X33f  5000                    MOV             HRAM_0X0,       A
+:0X340  201c                    MOVAR           HRAM_0X1C
+:0X341  ea00                    SECTION         0X0
+:0X342  c183                    RET
 HADR_0X343:
-:0X343  ea00                    SECTION         0X0
-HADR_0X344:
-:0X344  c183                    RET
-HADR_0X345:
 ;}
 ;void Buzzer_Task(){
 ;	if(Get_State()!=3){
-:0X345  e783                    CLR             HRAM_0X83
+:0X343  e783                    CLR             HRAM_0X83
+HADR_0X344:
+:0X344  ec00                    PAGE            0X0
+:0X345  633d                    CALL            HADR_0X33D
 HADR_0X346:
 :0X346  ec00                    PAGE            0X0
-:0X347  633f                    CALL            HADR_0X33F
-:0X348  ec00                    PAGE            0X0
-:0X349  20b7                    MOVAR           HRAM_0XB7
-:0X34a  78b7                    MOVRA           HRAM_0XB7
-:0X34b  e303                    XORI            0X3
-:0X34c  9a84                    JBC             HRAM_0X84,      2
-:0X34d  6b5c                    GOTO            HADR_0X35C
+:0X347  20b7                    MOVAR           HRAM_0XB7
+:0X348  78b7                    MOVRA           HRAM_0XB7
+:0X349  e303                    XORI            0X3
+:0X34a  9a84                    JBC             HRAM_0X84,      2
+:0X34b  6b5a                    GOTO            HADR_0X35A
 ;		if(buzzer_flag){
-:0X34e  ea01                    SECTION         0X1
-:0X34f  5074                    MOV             HRAM_0X74,      A
+:0X34c  ea01                    SECTION         0X1
+:0X34d  5074                    MOV             HRAM_0X74,      A
+:0X34e  ea00                    SECTION         0X0
+:0X34f  9a84                    JBC             HRAM_0X84,      2
 HADR_0X350:
-:0X350  ea00                    SECTION         0X0
+:0X350  6b57                    GOTO            HADR_0X357
 HADR_0X351:
-:0X351  9a84                    JBC             HRAM_0X84,      2
-:0X352  6b59                    GOTO            HADR_0X359
-HADR_0X353:
 ;			Buzzer_Start();
+:0X351  ec00                    PAGE            0X0
+:0X352  6334                    CALL            HADR_0X334
+HADR_0X353:
 :0X353  ec00                    PAGE            0X0
-:0X354  6336                    CALL            HADR_0X336
-HADR_0X355:
-:0X355  ec00                    PAGE            0X0
 ;			buzzer_flag=0;
-:0X356  ea01                    SECTION         0X1
-:0X357  e774                    CLR             HRAM_0X74
+:0X354  ea01                    SECTION         0X1
+HADR_0X355:
+:0X355  e774                    CLR             HRAM_0X74
 ;		}
-:0X358  6b5c                    GOTO            HADR_0X35C
-HADR_0X359:
+:0X356  6b5a                    GOTO            HADR_0X35A
+HADR_0X357:
 ;	else{
+:0X357  ec00                    PAGE            0X0
+:0X358  6331                    CALL            HADR_0X331
 :0X359  ec00                    PAGE            0X0
-:0X35a  6333                    CALL            HADR_0X333
-:0X35b  ec00                    PAGE            0X0
-HADR_0X35C:
+HADR_0X35A:
 ;	}
 ;	}
 ;}
-:0X35c  ea00                    SECTION         0X0
-HADR_0X35D:
-:0X35d  c183                    RET
-HADR_0X35E:
+:0X35a  ea00                    SECTION         0X0
+:0X35b  c183                    RET
+HADR_0X35C:
 ;unsigned char USB_Check(){
 ;	return PB5;
-:0X35e  e783                    CLR             HRAM_0X83
-:0X35f  e500                    MOVI            0X0
-:0X360  9da9                    JBC             HRAM_0XA9,      5
-:0X361  e501                    MOVI            0X1
-:0X362  ea01                    SECTION         0X1
-:0X363  e638                    MOVA            HRAM_0X38
-:0X364  5038                    MOV             HRAM_0X38,      A
+:0X35c  e783                    CLR             HRAM_0X83
+HADR_0X35D:
+:0X35d  e500                    MOVI            0X0
+:0X35e  9da9                    JBC             HRAM_0XA9,      5
+:0X35f  e501                    MOVI            0X1
+:0X360  ea01                    SECTION         0X1
+:0X361  e638                    MOVA            HRAM_0X38
+:0X362  5038                    MOV             HRAM_0X38,      A
+:0X363  201c                    MOVAR           HRAM_0X1C
+:0X364  ea00                    SECTION         0X0
 HADR_0X365:
-:0X365  201c                    MOVAR           HRAM_0X1C
+:0X365  c183                    RET
 HADR_0X366:
-:0X366  ea00                    SECTION         0X0
-:0X367  c183                    RET
-HADR_0X368:
 ;}
 ;void Sleep_Tsak(){
 ;static unsigned char last_state;
 ;	if(last_state!=Get_State()){
-:0X368  e783                    CLR             HRAM_0X83
+:0X366  e783                    CLR             HRAM_0X83
+:0X367  ec00                    PAGE            0X0
+HADR_0X368:
+:0X368  633d                    CALL            HADR_0X33D
 :0X369  ec00                    PAGE            0X0
-:0X36a  633f                    CALL            HADR_0X33F
-:0X36b  ec00                    PAGE            0X0
-:0X36c  20b7                    MOVAR           HRAM_0XB7
-:0X36d  78b7                    MOVRA           HRAM_0XB7
-:0X36e  ea01                    SECTION         0X1
-:0X36f  5c72                    XOR             HRAM_0X72,      A
-:0X370  9a84                    JBC             HRAM_0X84,      2
-:0X371  6b79                    GOTO            HADR_0X379
+:0X36a  20b7                    MOVAR           HRAM_0XB7
+:0X36b  78b7                    MOVRA           HRAM_0XB7
+:0X36c  ea01                    SECTION         0X1
+:0X36d  5c72                    XOR             HRAM_0X72,      A
+:0X36e  9a84                    JBC             HRAM_0X84,      2
+:0X36f  6b77                    GOTO            HADR_0X377
 ;		last_state=Get_State();
+:0X370  ec00                    PAGE            0X0
+:0X371  633d                    CALL            HADR_0X33D
 :0X372  ec00                    PAGE            0X0
 HADR_0X373:
-:0X373  633f                    CALL            HADR_0X33F
-:0X374  ec00                    PAGE            0X0
-:0X375  20f2                    MOVAR           HRAM_0XF2
-HADR_0X376:
+:0X373  20f2                    MOVAR           HRAM_0XF2
 ;		sleep_count=0;
-:0X376  ea02                    SECTION         0X2
+:0X374  ea02                    SECTION         0X2
+:0X375  e702                    CLR             HRAM_0X2
+HADR_0X376:
+:0X376  e703                    CLR             HRAM_0X3
 HADR_0X377:
-:0X377  e702                    CLR             HRAM_0X2
-HADR_0X378:
-:0X378  e703                    CLR             HRAM_0X3
-HADR_0X379:
 ;	}
-:0X379  ea02                    SECTION         0X2
-:0X37a  5502                    INC             HRAM_0X2,       R
-:0X37b  9284                    JBS             HRAM_0X84,      2
-:0X37c  6b7e                    GOTO            HADR_0X37E
-:0X37d  5503                    INC             HRAM_0X3,       R
-HADR_0X37E:
+:0X377  ea02                    SECTION         0X2
+HADR_0X378:
+:0X378  5502                    INC             HRAM_0X2,       R
+:0X379  9284                    JBS             HRAM_0X84,      2
+:0X37a  6b7c                    GOTO            HADR_0X37C
+:0X37b  5503                    INC             HRAM_0X3,       R
+HADR_0X37C:
 ;	if(Get_State()==1){
+:0X37c  ec00                    PAGE            0X0
+:0X37d  633d                    CALL            HADR_0X33D
+HADR_0X37E:
 :0X37e  ec00                    PAGE            0X0
-:0X37f  633f                    CALL            HADR_0X33F
-:0X380  ec00                    PAGE            0X0
-:0X381  20b7                    MOVAR           HRAM_0XB7
-:0X382  78b7                    MOVRA           HRAM_0XB7
-:0X383  e301                    XORI            0X1
-:0X384  9284                    JBS             HRAM_0X84,      2
-:0X385  6b96                    GOTO            HADR_0X396
-HADR_0X386:
+:0X37f  20b7                    MOVAR           HRAM_0XB7
+:0X380  78b7                    MOVRA           HRAM_0XB7
+:0X381  e301                    XORI            0X1
+:0X382  9284                    JBS             HRAM_0X84,      2
+:0X383  6b94                    GOTO            HADR_0X394
 ;		if(sleep_count>180){
-:0X386  ea02                    SECTION         0X2
-:0X387  5003                    MOV             HRAM_0X3,       A
-:0X388  ce00                    SUBI            0X0
-:0X389  9284                    JBS             HRAM_0X84,      2
-:0X38a  6b8d                    GOTO            HADR_0X38D
-:0X38b  5002                    MOV             HRAM_0X2,       A
-:0X38c  ceb4                    SUBI            0XB4
+:0X384  ea02                    SECTION         0X2
+:0X385  5003                    MOV             HRAM_0X3,       A
+HADR_0X386:
+:0X386  ce00                    SUBI            0X0
+:0X387  9284                    JBS             HRAM_0X84,      2
+:0X388  6b8b                    GOTO            HADR_0X38B
+:0X389  5002                    MOV             HRAM_0X2,       A
+:0X38a  ceb4                    SUBI            0XB4
+HADR_0X38B:
+:0X38b  9884                    JBC             HRAM_0X84,      0
+:0X38c  6bc3                    GOTO            HADR_0X3C3
 HADR_0X38D:
-:0X38d  9884                    JBC             HRAM_0X84,      0
-:0X38e  6bc5                    GOTO            HADR_0X3C5
 ;			State_Trans(0);
-:0X38f  e500                    MOVI            0X0
-:0X390  ea01                    SECTION         0X1
-:0X391  e63c                    MOVA            HRAM_0X3C
+:0X38d  e500                    MOVI            0X0
+:0X38e  ea01                    SECTION         0X1
+:0X38f  e63c                    MOVA            HRAM_0X3C
+:0X390  ec00                    PAGE            0X0
+:0X391  6337                    CALL            HADR_0X337
 :0X392  ec00                    PAGE            0X0
-:0X393  6339                    CALL            HADR_0X339
-HADR_0X394:
-:0X394  ec00                    PAGE            0X0
 ;		}
 ;	}
-:0X395  6bc5                    GOTO            HADR_0X3C5
-HADR_0X396:
+:0X393  6bc3                    GOTO            HADR_0X3C3
+HADR_0X394:
 ;	else if(Get_State()==2){
+:0X394  ec00                    PAGE            0X0
+:0X395  633d                    CALL            HADR_0X33D
 :0X396  ec00                    PAGE            0X0
 HADR_0X397:
-:0X397  633f                    CALL            HADR_0X33F
-:0X398  ec00                    PAGE            0X0
-:0X399  20b7                    MOVAR           HRAM_0XB7
-:0X39a  78b7                    MOVRA           HRAM_0XB7
+:0X397  20b7                    MOVAR           HRAM_0XB7
+:0X398  78b7                    MOVRA           HRAM_0XB7
+:0X399  e302                    XORI            0X2
+:0X39a  9284                    JBS             HRAM_0X84,      2
 HADR_0X39B:
-:0X39b  e302                    XORI            0X2
-:0X39c  9284                    JBS             HRAM_0X84,      2
-:0X39d  6bae                    GOTO            HADR_0X3AE
+:0X39b  6bac                    GOTO            HADR_0X3AC
 ;		if(sleep_count>120){
-:0X39e  ea02                    SECTION         0X2
-:0X39f  5003                    MOV             HRAM_0X3,       A
-:0X3a0  ce00                    SUBI            0X0
-:0X3a1  9284                    JBS             HRAM_0X84,      2
-:0X3a2  6ba5                    GOTO            HADR_0X3A5
+:0X39c  ea02                    SECTION         0X2
+:0X39d  5003                    MOV             HRAM_0X3,       A
+:0X39e  ce00                    SUBI            0X0
+:0X39f  9284                    JBS             HRAM_0X84,      2
+:0X3a0  6ba3                    GOTO            HADR_0X3A3
+:0X3a1  5002                    MOV             HRAM_0X2,       A
+:0X3a2  ce78                    SUBI            0X78
 HADR_0X3A3:
-:0X3a3  5002                    MOV             HRAM_0X2,       A
+:0X3a3  9884                    JBC             HRAM_0X84,      0
 HADR_0X3A4:
-:0X3a4  ce78                    SUBI            0X78
-HADR_0X3A5:
-:0X3a5  9884                    JBC             HRAM_0X84,      0
-:0X3a6  6bc5                    GOTO            HADR_0X3C5
+:0X3a4  6bc3                    GOTO            HADR_0X3C3
 ;			State_Trans(0);
-:0X3a7  e500                    MOVI            0X0
-:0X3a8  ea01                    SECTION         0X1
-:0X3a9  e63c                    MOVA            HRAM_0X3C
+:0X3a5  e500                    MOVI            0X0
+:0X3a6  ea01                    SECTION         0X1
+:0X3a7  e63c                    MOVA            HRAM_0X3C
+:0X3a8  ec00                    PAGE            0X0
+:0X3a9  6337                    CALL            HADR_0X337
 :0X3aa  ec00                    PAGE            0X0
-:0X3ab  6339                    CALL            HADR_0X339
-:0X3ac  ec00                    PAGE            0X0
 ;		}
 ;	}
-:0X3ad  6bc5                    GOTO            HADR_0X3C5
-HADR_0X3AE:
+:0X3ab  6bc3                    GOTO            HADR_0X3C3
+HADR_0X3AC:
 ;	else if(Get_State()==3){
+:0X3ac  ec00                    PAGE            0X0
+:0X3ad  633d                    CALL            HADR_0X33D
+HADR_0X3AE:
 :0X3ae  ec00                    PAGE            0X0
-:0X3af  633f                    CALL            HADR_0X33F
+:0X3af  20b7                    MOVAR           HRAM_0XB7
 HADR_0X3B0:
-:0X3b0  ec00                    PAGE            0X0
-:0X3b1  20b7                    MOVAR           HRAM_0XB7
-:0X3b2  78b7                    MOVRA           HRAM_0XB7
+:0X3b0  78b7                    MOVRA           HRAM_0XB7
+:0X3b1  e303                    XORI            0X3
+:0X3b2  9284                    JBS             HRAM_0X84,      2
 HADR_0X3B3:
-:0X3b3  e303                    XORI            0X3
+:0X3b3  6bc3                    GOTO            HADR_0X3C3
 HADR_0X3B4:
-:0X3b4  9284                    JBS             HRAM_0X84,      2
-:0X3b5  6bc5                    GOTO            HADR_0X3C5
 ;		if(sleep_count>3){
-:0X3b6  ea02                    SECTION         0X2
-:0X3b7  5003                    MOV             HRAM_0X3,       A
-:0X3b8  ce00                    SUBI            0X0
-:0X3b9  9284                    JBS             HRAM_0X84,      2
+:0X3b4  ea02                    SECTION         0X2
+:0X3b5  5003                    MOV             HRAM_0X3,       A
+:0X3b6  ce00                    SUBI            0X0
+:0X3b7  9284                    JBS             HRAM_0X84,      2
+:0X3b8  6bbb                    GOTO            HADR_0X3BB
+:0X3b9  5002                    MOV             HRAM_0X2,       A
 HADR_0X3BA:
-:0X3ba  6bbd                    GOTO            HADR_0X3BD
-:0X3bb  5002                    MOV             HRAM_0X2,       A
-:0X3bc  ce03                    SUBI            0X3
-HADR_0X3BD:
-:0X3bd  9884                    JBC             HRAM_0X84,      0
-:0X3be  6bc5                    GOTO            HADR_0X3C5
-HADR_0X3BF:
+:0X3ba  ce03                    SUBI            0X3
+HADR_0X3BB:
+:0X3bb  9884                    JBC             HRAM_0X84,      0
+:0X3bc  6bc3                    GOTO            HADR_0X3C3
 ;			State_Trans(0);
-:0X3bf  e500                    MOVI            0X0
-:0X3c0  ea01                    SECTION         0X1
-:0X3c1  e63c                    MOVA            HRAM_0X3C
+:0X3bd  e500                    MOVI            0X0
+:0X3be  ea01                    SECTION         0X1
+HADR_0X3BF:
+:0X3bf  e63c                    MOVA            HRAM_0X3C
+:0X3c0  ec00                    PAGE            0X0
+:0X3c1  6337                    CALL            HADR_0X337
 HADR_0X3C2:
 :0X3c2  ec00                    PAGE            0X0
-:0X3c3  6339                    CALL            HADR_0X339
-:0X3c4  ec00                    PAGE            0X0
-HADR_0X3C5:
+HADR_0X3C3:
 ;		}
 ;	}
 ;}
-:0X3c5  ea00                    SECTION         0X0
-HADR_0X3C6:
-:0X3c6  c183                    RET
-HADR_0X3C7:
+:0X3c3  ea00                    SECTION         0X0
+:0X3c4  c183                    RET
+HADR_0X3C5:
 ;
 ;void LED_Task(){
 ;//œ‘ æŒ¬∂»
@@ -1776,45 +1764,46 @@ HADR_0X3C7:
 ;	//D1_NUM(temp /10);
 ;	//D2_NUM(temp %10);
 ;	display_buf[13-1]=1;
-:0X3c7  e783                    CLR             HRAM_0X83
-:0X3c8  e501                    MOVI            0X1
-:0X3c9  ea01                    SECTION         0X1
-:0X3ca  e616                    MOVA            HRAM_0X16
-HADR_0X3CB:
+:0X3c5  e783                    CLR             HRAM_0X83
+HADR_0X3C6:
+:0X3c6  e501                    MOVI            0X1
+:0X3c7  ea01                    SECTION         0X1
+:0X3c8  e616                    MOVA            HRAM_0X16
 ;	D1_NUM(temperature/10);
-:0X3cb  e50a                    MOVI            0XA
+:0X3c9  e50a                    MOVI            0XA
+:0X3ca  201d                    MOVAR           HRAM_0X1D
+HADR_0X3CB:
+:0X3cb  5077                    MOV             HRAM_0X77,      A
 HADR_0X3CC:
-:0X3cc  201d                    MOVAR           HRAM_0X1D
-:0X3cd  5077                    MOV             HRAM_0X77,      A
-:0X3ce  201c                    MOVAR           HRAM_0X1C
-:0X3cf  ec07                    PAGE            0X7
-:0X3d0  ea00                    SECTION         0X0
-:0X3d1  638d                    CALL            HADR_0X38D
-:0X3d2  ec00                    PAGE            0X0
+:0X3cc  201c                    MOVAR           HRAM_0X1C
+:0X3cd  ec07                    PAGE            0X7
+:0X3ce  ea00                    SECTION         0X0
+:0X3cf  638d                    CALL            HADR_0X38D
+:0X3d0  ec00                    PAGE            0X0
+:0X3d1  501e                    MOV             HRAM_0X1E,      A
+:0X3d2  20b7                    MOVAR           HRAM_0XB7
 HADR_0X3D3:
-:0X3d3  501e                    MOV             HRAM_0X1E,      A
-:0X3d4  20b7                    MOVAR           HRAM_0XB7
+:0X3d3  78b7                    MOVRA           HRAM_0XB7
+:0X3d4  20b8                    MOVAR           HRAM_0XB8
 HADR_0X3D5:
-:0X3d5  78b7                    MOVRA           HRAM_0XB7
-:0X3d6  20b8                    MOVAR           HRAM_0XB8
-:0X3d7  ec01                    PAGE            0X1
-:0X3d8  6000                    CALL            HADR_0X0
-:0X3d9  ec00                    PAGE            0X0
+:0X3d5  ec01                    PAGE            0X1
+:0X3d6  6000                    CALL            HADR_0X0
+:0X3d7  ec00                    PAGE            0X0
 ;	D2_NUM(temperature%10);
-:0X3da  e50a                    MOVI            0XA
-:0X3db  e61d                    MOVA            HRAM_0X1D
-:0X3dc  78f7                    MOVRA           HRAM_0XF7
-:0X3dd  e61c                    MOVA            HRAM_0X1C
-:0X3de  ec07                    PAGE            0X7
-:0X3df  638d                    CALL            HADR_0X38D
-:0X3e0  ec00                    PAGE            0X0
-:0X3e1  501c                    MOV             HRAM_0X1C,      A
-:0X3e2  20b7                    MOVAR           HRAM_0XB7
-:0X3e3  78b7                    MOVRA           HRAM_0XB7
-:0X3e4  20b8                    MOVAR           HRAM_0XB8
-:0X3e5  ec01                    PAGE            0X1
-:0X3e6  61bc                    CALL            HADR_0X1BC
-:0X3e7  ec00                    PAGE            0X0
+:0X3d8  e50a                    MOVI            0XA
+:0X3d9  e61d                    MOVA            HRAM_0X1D
+:0X3da  78f7                    MOVRA           HRAM_0XF7
+:0X3db  e61c                    MOVA            HRAM_0X1C
+:0X3dc  ec07                    PAGE            0X7
+:0X3dd  638d                    CALL            HADR_0X38D
+:0X3de  ec00                    PAGE            0X0
+:0X3df  501c                    MOV             HRAM_0X1C,      A
+:0X3e0  20b7                    MOVAR           HRAM_0XB7
+:0X3e1  78b7                    MOVRA           HRAM_0XB7
+:0X3e2  20b8                    MOVAR           HRAM_0XB8
+:0X3e3  ec01                    PAGE            0X1
+:0X3e4  61bc                    CALL            HADR_0X1BC
+:0X3e5  ec00                    PAGE            0X0
 ;
 ;
 ;	//D1_NUM(Vbat_val/10);
@@ -1824,357 +1813,356 @@ HADR_0X3D5:
 ;	//vcc_val
 ;//µÁ¡ø÷∏ æ
 ;	if(USB_Check()){
+:0X3e6  ec00                    PAGE            0X0
+:0X3e7  635c                    CALL            HADR_0X35C
 :0X3e8  ec00                    PAGE            0X0
 HADR_0X3E9:
-:0X3e9  635e                    CALL            HADR_0X35E
-:0X3ea  ec00                    PAGE            0X0
-:0X3eb  20b7                    MOVAR           HRAM_0XB7
-:0X3ec  ea01                    SECTION         0X1
-:0X3ed  5037                    MOV             HRAM_0X37,      A
+:0X3e9  20b7                    MOVAR           HRAM_0XB7
+:0X3ea  ea01                    SECTION         0X1
+:0X3eb  5037                    MOV             HRAM_0X37,      A
+:0X3ec  9a84                    JBC             HRAM_0X84,      2
+:0X3ed  6c3b                    GOTO            HADR_0X43B
 HADR_0X3EE:
-:0X3ee  9a84                    JBC             HRAM_0X84,      2
-HADR_0X3EF:
-:0X3ef  6c3d                    GOTO            HADR_0X43D
 ;		if(0<=Vbat_val && Vbat_val<30){
-:0X3f0  e500                    MOVI            0X0
-:0X3f1  ee73                    SUB             HRAM_0X73,      A
-:0X3f2  9084                    JBS             HRAM_0X84,      0
-:0X3f3  6c06                    GOTO            HADR_0X406
-:0X3f4  e51e                    MOVI            0X1E
-:0X3f5  ee73                    SUB             HRAM_0X73,      A
+:0X3ee  e500                    MOVI            0X0
+HADR_0X3EF:
+:0X3ef  ee73                    SUB             HRAM_0X73,      A
+:0X3f0  9084                    JBS             HRAM_0X84,      0
+:0X3f1  6c04                    GOTO            HADR_0X404
+:0X3f2  e51e                    MOVI            0X1E
+:0X3f3  ee73                    SUB             HRAM_0X73,      A
+:0X3f4  9884                    JBC             HRAM_0X84,      0
+:0X3f5  6c04                    GOTO            HADR_0X404
 HADR_0X3F6:
-:0X3f6  9884                    JBC             HRAM_0X84,      0
-:0X3f7  6c06                    GOTO            HADR_0X406
-HADR_0X3F8:
 ;			display_buf[14-1]=!display_buf[14-1]; //◊Û“ª…¡
-:0X3f8  5017                    MOV             HRAM_0X17,      A
-:0X3f9  9284                    JBS             HRAM_0X84,      2
-:0X3fa  6bfe                    GOTO            HADR_0X3FE
-:0X3fb  e501                    MOVI            0X1
-:0X3fc  e637                    MOVA            HRAM_0X37
-:0X3fd  6bff                    GOTO            HADR_0X3FF
-HADR_0X3FE:
-:0X3fe  e737                    CLR             HRAM_0X37
-HADR_0X3FF:
-:0X3ff  5037                    MOV             HRAM_0X37,      A
-:0X400  e617                    MOVA            HRAM_0X17
+:0X3f6  5017                    MOV             HRAM_0X17,      A
+:0X3f7  9284                    JBS             HRAM_0X84,      2
+HADR_0X3F8:
+:0X3f8  6bfc                    GOTO            HADR_0X3FC
+:0X3f9  e501                    MOVI            0X1
+:0X3fa  e637                    MOVA            HRAM_0X37
+:0X3fb  6bfd                    GOTO            HADR_0X3FD
+HADR_0X3FC:
+:0X3fc  e737                    CLR             HRAM_0X37
+HADR_0X3FD:
+:0X3fd  5037                    MOV             HRAM_0X37,      A
+:0X3fe  e617                    MOVA            HRAM_0X17
 ;			display_buf[12-1]=0; 
+:0X3ff  e500                    MOVI            0X0
+:0X400  e615                    MOVA            HRAM_0X15
+;			display_buf[15-1]=0;
 :0X401  e500                    MOVI            0X0
-:0X402  e615                    MOVA            HRAM_0X15
-;			display_buf[15-1]=0;
-:0X403  e500                    MOVI            0X0
-:0X404  e618                    MOVA            HRAM_0X18
+:0X402  e618                    MOVA            HRAM_0X18
 ;		}
-:0X405  6c69                    GOTO            HADR_0X469
-HADR_0X406:
+:0X403  6c67                    GOTO            HADR_0X467
+HADR_0X404:
 ;		else if(30<=Vbat_val && Vbat_val<60){
-:0X406  e51e                    MOVI            0X1E
-:0X407  ee73                    SUB             HRAM_0X73,      A
-:0X408  9084                    JBS             HRAM_0X84,      0
-:0X409  6c1c                    GOTO            HADR_0X41C
-:0X40a  e53c                    MOVI            0X3C
-:0X40b  ee73                    SUB             HRAM_0X73,      A
+:0X404  e51e                    MOVI            0X1E
+:0X405  ee73                    SUB             HRAM_0X73,      A
+:0X406  9084                    JBS             HRAM_0X84,      0
+:0X407  6c1a                    GOTO            HADR_0X41A
+:0X408  e53c                    MOVI            0X3C
+:0X409  ee73                    SUB             HRAM_0X73,      A
+:0X40a  9884                    JBC             HRAM_0X84,      0
+:0X40b  6c1a                    GOTO            HADR_0X41A
 HADR_0X40C:
-:0X40c  9884                    JBC             HRAM_0X84,      0
-:0X40d  6c1c                    GOTO            HADR_0X41C
 ;			display_buf[14-1]=1;
-:0X40e  e501                    MOVI            0X1
-:0X40f  e617                    MOVA            HRAM_0X17
+:0X40c  e501                    MOVI            0X1
+:0X40d  e617                    MOVA            HRAM_0X17
 ;			display_buf[12-1]=!display_buf[12-1]; //◊Û“ª¡¡ ◊Û∂˛…¡
-:0X410  5015                    MOV             HRAM_0X15,      A
+:0X40e  5015                    MOV             HRAM_0X15,      A
+:0X40f  9284                    JBS             HRAM_0X84,      2
+:0X410  6c14                    GOTO            HADR_0X414
 HADR_0X411:
-:0X411  9284                    JBS             HRAM_0X84,      2
+:0X411  e501                    MOVI            0X1
 HADR_0X412:
-:0X412  6c16                    GOTO            HADR_0X416
-:0X413  e501                    MOVI            0X1
-:0X414  e637                    MOVA            HRAM_0X37
-:0X415  6c17                    GOTO            HADR_0X417
-HADR_0X416:
-:0X416  e737                    CLR             HRAM_0X37
-HADR_0X417:
-:0X417  5037                    MOV             HRAM_0X37,      A
-HADR_0X418:
-:0X418  e615                    MOVA            HRAM_0X15
+:0X412  e637                    MOVA            HRAM_0X37
+:0X413  6c15                    GOTO            HADR_0X415
+HADR_0X414:
+:0X414  e737                    CLR             HRAM_0X37
+HADR_0X415:
+:0X415  5037                    MOV             HRAM_0X37,      A
+:0X416  e615                    MOVA            HRAM_0X15
 ;			display_buf[15-1]=0;
-:0X419  e500                    MOVI            0X0
-:0X41a  e618                    MOVA            HRAM_0X18
+:0X417  e500                    MOVI            0X0
+HADR_0X418:
+:0X418  e618                    MOVA            HRAM_0X18
 ;		}
-:0X41b  6c69                    GOTO            HADR_0X469
-HADR_0X41C:
+:0X419  6c67                    GOTO            HADR_0X467
+HADR_0X41A:
 ;		else if(60<=Vbat_val && Vbat_val<90){
-:0X41c  e53c                    MOVI            0X3C
-:0X41d  ee73                    SUB             HRAM_0X73,      A
-:0X41e  9084                    JBS             HRAM_0X84,      0
-:0X41f  6c32                    GOTO            HADR_0X432
-:0X420  e55a                    MOVI            0X5A
-:0X421  ee73                    SUB             HRAM_0X73,      A
+:0X41a  e53c                    MOVI            0X3C
+:0X41b  ee73                    SUB             HRAM_0X73,      A
+:0X41c  9084                    JBS             HRAM_0X84,      0
+:0X41d  6c30                    GOTO            HADR_0X430
+:0X41e  e55a                    MOVI            0X5A
+:0X41f  ee73                    SUB             HRAM_0X73,      A
+:0X420  9884                    JBC             HRAM_0X84,      0
+:0X421  6c30                    GOTO            HADR_0X430
 HADR_0X422:
-:0X422  9884                    JBC             HRAM_0X84,      0
-:0X423  6c32                    GOTO            HADR_0X432
 ;			display_buf[14-1]=1;
+:0X422  e501                    MOVI            0X1
+:0X423  e617                    MOVA            HRAM_0X17
+;			display_buf[12-1]=1; 
 :0X424  e501                    MOVI            0X1
-:0X425  e617                    MOVA            HRAM_0X17
-;			display_buf[12-1]=1; 
-:0X426  e501                    MOVI            0X1
-HADR_0X427:
-:0X427  e615                    MOVA            HRAM_0X15
-HADR_0X428:
+:0X425  e615                    MOVA            HRAM_0X15
 ;			display_buf[15-1]=!display_buf[15-1]; //◊Û“ª¡¡ ◊Û∂˛¡¡ ◊Û»˝…¡
-:0X428  5018                    MOV             HRAM_0X18,      A
-:0X429  9284                    JBS             HRAM_0X84,      2
-:0X42a  6c2e                    GOTO            HADR_0X42E
-:0X42b  e501                    MOVI            0X1
-:0X42c  e637                    MOVA            HRAM_0X37
-:0X42d  6c2f                    GOTO            HADR_0X42F
-HADR_0X42E:
-:0X42e  e737                    CLR             HRAM_0X37
-HADR_0X42F:
-:0X42f  5037                    MOV             HRAM_0X37,      A
-:0X430  e618                    MOVA            HRAM_0X18
+:0X426  5018                    MOV             HRAM_0X18,      A
+HADR_0X427:
+:0X427  9284                    JBS             HRAM_0X84,      2
+HADR_0X428:
+:0X428  6c2c                    GOTO            HADR_0X42C
+:0X429  e501                    MOVI            0X1
+:0X42a  e637                    MOVA            HRAM_0X37
+:0X42b  6c2d                    GOTO            HADR_0X42D
+HADR_0X42C:
+:0X42c  e737                    CLR             HRAM_0X37
+HADR_0X42D:
+:0X42d  5037                    MOV             HRAM_0X37,      A
+:0X42e  e618                    MOVA            HRAM_0X18
 ;		}
-:0X431  6c69                    GOTO            HADR_0X469
-HADR_0X432:
+:0X42f  6c67                    GOTO            HADR_0X467
+HADR_0X430:
 ;		else if(90<=Vbat_val){
-:0X432  e55a                    MOVI            0X5A
-:0X433  ee73                    SUB             HRAM_0X73,      A
-:0X434  9084                    JBS             HRAM_0X84,      0
-:0X435  6c69                    GOTO            HADR_0X469
+:0X430  e55a                    MOVI            0X5A
+:0X431  ee73                    SUB             HRAM_0X73,      A
+:0X432  9084                    JBS             HRAM_0X84,      0
+:0X433  6c67                    GOTO            HADR_0X467
 ;			display_buf[14-1]=1;
-:0X436  e501                    MOVI            0X1
-:0X437  e617                    MOVA            HRAM_0X17
+:0X434  e501                    MOVI            0X1
+:0X435  e617                    MOVA            HRAM_0X17
 ;			display_buf[12-1]=1; 
-:0X438  e501                    MOVI            0X1
-:0X439  e615                    MOVA            HRAM_0X15
-HADR_0X43A:
+:0X436  e501                    MOVI            0X1
+:0X437  e615                    MOVA            HRAM_0X15
 ;			display_buf[15-1]=1; //◊Û“ª¡¡ ◊Û∂˛¡¡ ◊Û»˝¡¡		
-:0X43a  e501                    MOVI            0X1
-:0X43b  e618                    MOVA            HRAM_0X18
+:0X438  e501                    MOVI            0X1
+:0X439  e618                    MOVA            HRAM_0X18
+HADR_0X43A:
 ;		}
 ;	}
-:0X43c  6c69                    GOTO            HADR_0X469
-HADR_0X43D:
+:0X43a  6c67                    GOTO            HADR_0X467
+HADR_0X43B:
 ;	else{
-:0X43d  e500                    MOVI            0X0
-:0X43e  ee73                    SUB             HRAM_0X73,      A
+:0X43b  e500                    MOVI            0X0
+:0X43c  ee73                    SUB             HRAM_0X73,      A
+:0X43d  9084                    JBS             HRAM_0X84,      0
+:0X43e  6c4a                    GOTO            HADR_0X44A
 HADR_0X43F:
-:0X43f  9084                    JBS             HRAM_0X84,      0
+:0X43f  e521                    MOVI            0X21
 HADR_0X440:
-:0X440  6c4c                    GOTO            HADR_0X44C
-:0X441  e521                    MOVI            0X21
-:0X442  ee73                    SUB             HRAM_0X73,      A
-:0X443  9884                    JBC             HRAM_0X84,      0
-:0X444  6c4c                    GOTO            HADR_0X44C
+:0X440  ee73                    SUB             HRAM_0X73,      A
+:0X441  9884                    JBC             HRAM_0X84,      0
+:0X442  6c4a                    GOTO            HADR_0X44A
 ;			display_buf[14-1]=1;
-:0X445  e501                    MOVI            0X1
-:0X446  e617                    MOVA            HRAM_0X17
-HADR_0X447:
+:0X443  e501                    MOVI            0X1
+:0X444  e617                    MOVA            HRAM_0X17
 ;			display_buf[12-1]=0; 
-:0X447  e500                    MOVI            0X0
-:0X448  e615                    MOVA            HRAM_0X15
-HADR_0X449:
+:0X445  e500                    MOVI            0X0
+:0X446  e615                    MOVA            HRAM_0X15
+HADR_0X447:
 ;			display_buf[15-1]=0; //◊Û“ª¡¡ ◊Û∂˛¡¡ ◊Û»˝¡¡				
-:0X449  e500                    MOVI            0X0
-:0X44a  e618                    MOVA            HRAM_0X18
+:0X447  e500                    MOVI            0X0
+:0X448  e618                    MOVA            HRAM_0X18
+HADR_0X449:
 ;		}
-:0X44b  6c69                    GOTO            HADR_0X469
-HADR_0X44C:
+:0X449  6c67                    GOTO            HADR_0X467
+HADR_0X44A:
 ;		else if(33<=Vbat_val && Vbat_val<66){
-:0X44c  e521                    MOVI            0X21
-:0X44d  ee73                    SUB             HRAM_0X73,      A
-:0X44e  9084                    JBS             HRAM_0X84,      0
-:0X44f  6c5b                    GOTO            HADR_0X45B
-:0X450  e542                    MOVI            0X42
-:0X451  ee73                    SUB             HRAM_0X73,      A
-:0X452  9884                    JBC             HRAM_0X84,      0
-:0X453  6c5b                    GOTO            HADR_0X45B
+:0X44a  e521                    MOVI            0X21
+:0X44b  ee73                    SUB             HRAM_0X73,      A
+:0X44c  9084                    JBS             HRAM_0X84,      0
+:0X44d  6c59                    GOTO            HADR_0X459
+:0X44e  e542                    MOVI            0X42
+:0X44f  ee73                    SUB             HRAM_0X73,      A
+:0X450  9884                    JBC             HRAM_0X84,      0
+:0X451  6c59                    GOTO            HADR_0X459
 ;			display_buf[14-1]=1;
+:0X452  e501                    MOVI            0X1
+:0X453  e617                    MOVA            HRAM_0X17
+;			display_buf[12-1]=1; 
 :0X454  e501                    MOVI            0X1
-:0X455  e617                    MOVA            HRAM_0X17
-;			display_buf[12-1]=1; 
-:0X456  e501                    MOVI            0X1
-:0X457  e615                    MOVA            HRAM_0X15
+:0X455  e615                    MOVA            HRAM_0X15
 ;			display_buf[15-1]=0; //◊Û“ª¡¡ ◊Û∂˛¡¡ ◊Û»˝¡¡		
-:0X458  e500                    MOVI            0X0
-:0X459  e618                    MOVA            HRAM_0X18
+:0X456  e500                    MOVI            0X0
+:0X457  e618                    MOVA            HRAM_0X18
 ;		}
-:0X45a  6c69                    GOTO            HADR_0X469
-HADR_0X45B:
+:0X458  6c67                    GOTO            HADR_0X467
+HADR_0X459:
 ;		else if(66<=Vbat_val && Vbat_val<99){
-:0X45b  e542                    MOVI            0X42
-:0X45c  ee73                    SUB             HRAM_0X73,      A
+:0X459  e542                    MOVI            0X42
+:0X45a  ee73                    SUB             HRAM_0X73,      A
+:0X45b  9084                    JBS             HRAM_0X84,      0
+:0X45c  6c67                    GOTO            HADR_0X467
 HADR_0X45D:
-:0X45d  9084                    JBS             HRAM_0X84,      0
-:0X45e  6c69                    GOTO            HADR_0X469
-:0X45f  e563                    MOVI            0X63
-:0X460  ee73                    SUB             HRAM_0X73,      A
-:0X461  9884                    JBC             HRAM_0X84,      0
-HADR_0X462:
-:0X462  6c69                    GOTO            HADR_0X469
-HADR_0X463:
+:0X45d  e563                    MOVI            0X63
+:0X45e  ee73                    SUB             HRAM_0X73,      A
+:0X45f  9884                    JBC             HRAM_0X84,      0
+:0X460  6c67                    GOTO            HADR_0X467
 ;			display_buf[14-1]=1;
-:0X463  e501                    MOVI            0X1
-:0X464  e617                    MOVA            HRAM_0X17
+:0X461  e501                    MOVI            0X1
+HADR_0X462:
+:0X462  e617                    MOVA            HRAM_0X17
+HADR_0X463:
 ;			display_buf[12-1]=1; 
-:0X465  e501                    MOVI            0X1
-:0X466  e615                    MOVA            HRAM_0X15
+:0X463  e501                    MOVI            0X1
+:0X464  e615                    MOVA            HRAM_0X15
 ;			display_buf[15-1]=1; //◊Û“ª¡¡ ◊Û∂˛¡¡ ◊Û»˝¡¡		
-:0X467  e501                    MOVI            0X1
-:0X468  e618                    MOVA            HRAM_0X18
-HADR_0X469:
+:0X465  e501                    MOVI            0X1
+:0X466  e618                    MOVA            HRAM_0X18
+HADR_0X467:
 ;		}
 ;	}	
+:0X467  ec00                    PAGE            0X0
+:0X468  672d                    CALL            HADR_0X72D
 :0X469  ec00                    PAGE            0X0
 HADR_0X46A:
-:0X46a  6731                    CALL            HADR_0X731
-:0X46b  ec00                    PAGE            0X0
-HADR_0X46C:
 ;}
-:0X46c  c183                    RET
-HADR_0X46D:
+:0X46a  c183                    RET
+HADR_0X46B:
 ;//Ω¯»Î–›√ﬂ◊¥Ã¨
 ;void state_0(){
 ;	//PA1=0;
 ;	char i;
 ;	i=18;
-:0X46d  e783                    CLR             HRAM_0X83
-:0X46e  e512                    MOVI            0X12
-:0X46f  ea01                    SECTION         0X1
-:0X470  e637                    MOVA            HRAM_0X37
-HADR_0X471:
+:0X46b  e783                    CLR             HRAM_0X83
+HADR_0X46C:
+:0X46c  e512                    MOVI            0X12
+:0X46d  ea01                    SECTION         0X1
+:0X46e  e637                    MOVA            HRAM_0X37
+HADR_0X46F:
 ;	while(i--)
-:0X471  5037                    MOV             HRAM_0X37,      A
-:0X472  e638                    MOVA            HRAM_0X38
-:0X473  1137                    DEC             HRAM_0X37,      R
-:0X474  5038                    MOV             HRAM_0X38,      A
-:0X475  9a84                    JBC             HRAM_0X84,      2
-:0X476  6c88                    GOTO            HADR_0X488
+:0X46f  5037                    MOV             HRAM_0X37,      A
+:0X470  e638                    MOVA            HRAM_0X38
+:0X471  1137                    DEC             HRAM_0X37,      R
+:0X472  5038                    MOV             HRAM_0X38,      A
+:0X473  9a84                    JBC             HRAM_0X84,      2
+:0X474  6c86                    GOTO            HADR_0X486
 ;	display_buf[i]=0;
-:0X477  e739                    CLR             HRAM_0X39
-:0X478  5037                    MOV             HRAM_0X37,      A
-:0X479  e638                    MOVA            HRAM_0X38
-:0X47a  5038                    MOV             HRAM_0X38,      A
-:0X47b  e08a                    ADDI            0X8A
-:0X47c  e63a                    MOVA            HRAM_0X3A
-:0X47d  5039                    MOV             HRAM_0X39,      A
-:0X47e  c300                    ADDCI           0X0
-:0X47f  e63b                    MOVA            HRAM_0X3B
+:0X475  e739                    CLR             HRAM_0X39
+:0X476  5037                    MOV             HRAM_0X37,      A
+:0X477  e638                    MOVA            HRAM_0X38
+:0X478  5038                    MOV             HRAM_0X38,      A
+:0X479  e08a                    ADDI            0X8A
+:0X47a  e63a                    MOVA            HRAM_0X3A
+:0X47b  5039                    MOV             HRAM_0X39,      A
+:0X47c  c300                    ADDCI           0X0
+:0X47d  e63b                    MOVA            HRAM_0X3B
+:0X47e  503b                    MOV             HRAM_0X3B,      A
+:0X47f  e682                    MOVA            HRAM_0X82
 HADR_0X480:
-:0X480  503b                    MOV             HRAM_0X3B,      A
-:0X481  e682                    MOVA            HRAM_0X82
-:0X482  503a                    MOV             HRAM_0X3A,      A
-:0X483  e681                    MOVA            HRAM_0X81
-:0X484  e500                    MOVI            0X0
+:0X480  503a                    MOV             HRAM_0X3A,      A
+:0X481  e681                    MOVA            HRAM_0X81
+:0X482  e500                    MOVI            0X0
+:0X483  e680                    MOVA            HRAM_0X80
+:0X484  c201                    ISTEP           0X1
 HADR_0X485:
-:0X485  e680                    MOVA            HRAM_0X80
+:0X485  6c6f                    GOTO            HADR_0X46F
 HADR_0X486:
-:0X486  c201                    ISTEP           0X1
-:0X487  6c71                    GOTO            HADR_0X471
-HADR_0X488:
 ;	Updata_SCAN_LED_BUF_R();
+:0X486  ec00                    PAGE            0X0
+:0X487  672d                    CALL            HADR_0X72D
 :0X488  ec00                    PAGE            0X0
-:0X489  6731                    CALL            HADR_0X731
-:0X48a  ec00                    PAGE            0X0
 ;	
 ;	Set_PWM_CH0_Duty(999);
-:0X48b  e5e7                    MOVI            0XE7
+:0X489  e5e7                    MOVI            0XE7
+:0X48a  20bc                    MOVAR           HRAM_0XBC
+:0X48b  e503                    MOVI            0X3
 HADR_0X48C:
-:0X48c  20bc                    MOVAR           HRAM_0XBC
-:0X48d  e503                    MOVI            0X3
-:0X48e  20bd                    MOVAR           HRAM_0XBD
+:0X48c  20bd                    MOVAR           HRAM_0XBD
+:0X48d  ec00                    PAGE            0X0
+:0X48e  6305                    CALL            HADR_0X305
 :0X48f  ec00                    PAGE            0X0
-:0X490  6305                    CALL            HADR_0X305
-:0X491  ec00                    PAGE            0X0
 ;	LED_Clear();
+:0X490  ec00                    PAGE            0X0
+:0X491  670d                    CALL            HADR_0X70D
 :0X492  ec00                    PAGE            0X0
-:0X493  6711                    CALL            HADR_0X711
-:0X494  ec00                    PAGE            0X0
 ;
 ;	 State_Trans(3);
-:0X495  e503                    MOVI            0X3
+:0X493  e503                    MOVI            0X3
+:0X494  20bc                    MOVAR           HRAM_0XBC
+:0X495  ec00                    PAGE            0X0
 HADR_0X496:
-:0X496  20bc                    MOVAR           HRAM_0XBC
+:0X496  6337                    CALL            HADR_0X337
 :0X497  ec00                    PAGE            0X0
-:0X498  6339                    CALL            HADR_0X339
-:0X499  ec00                    PAGE            0X0
 ;	//≈‰÷√PA2÷–∂œƒ£ ΩªΩ–—
 ;	PAT2=0x01;	//PA2  ˝◊÷ ‰»Î
-:0X49a  a2ad                    BSS             HRAM_0XAD,      2
-HADR_0X49B:
+:0X498  a2ad                    BSS             HRAM_0XAD,      2
 ;	KIE=1;
-:0X49b  a499                    BSS             HRAM_0X99,      4
-HADR_0X49C:
+:0X499  a499                    BSS             HRAM_0X99,      4
 ;	KMSK1=1;
-:0X49c  a1a3                    BSS             HRAM_0XA3,      1
+:0X49a  a1a3                    BSS             HRAM_0XA3,      1
+HADR_0X49B:
 ;	PAPU=PAPU|0X04;
-:0X49d  a2b2                    BSS             HRAM_0XB2,      2
+:0X49b  a2b2                    BSS             HRAM_0XB2,      2
+HADR_0X49C:
 ;	sleep();
+:0X49c  ec00                    PAGE            0X0
+:0X49d  6285                    CALL            HADR_0X285
 :0X49e  ec00                    PAGE            0X0
-:0X49f  6285                    CALL            HADR_0X285
-:0X4a0  ec00                    PAGE            0X0
 ;}
-:0X4a1  c183                    RET
-HADR_0X4A2:
+:0X49f  c183                    RET
+HADR_0X4A0:
 ;//»´πÿºÏ≤‚∞¥º¸≥§∞¥ø™ª˙
 ;void state_3(){
 ;	//D1_NUM(0);
 ;	//D2_NUM(3);
 ;	//Updata_SCAN_LED_BUF_R();
 ;	unsigned char i=18;
-:0X4a2  e783                    CLR             HRAM_0X83
-:0X4a3  e512                    MOVI            0X12
-:0X4a4  ea01                    SECTION         0X1
-:0X4a5  e637                    MOVA            HRAM_0X37
-HADR_0X4A6:
+:0X4a0  e783                    CLR             HRAM_0X83
+:0X4a1  e512                    MOVI            0X12
+:0X4a2  ea01                    SECTION         0X1
+:0X4a3  e637                    MOVA            HRAM_0X37
+HADR_0X4A4:
 ;	while(i--)
-:0X4a6  5037                    MOV             HRAM_0X37,      A
-:0X4a7  e638                    MOVA            HRAM_0X38
-:0X4a8  1137                    DEC             HRAM_0X37,      R
-:0X4a9  5038                    MOV             HRAM_0X38,      A
-:0X4aa  9a84                    JBC             HRAM_0X84,      2
-:0X4ab  6cbd                    GOTO            HADR_0X4BD
+:0X4a4  5037                    MOV             HRAM_0X37,      A
+:0X4a5  e638                    MOVA            HRAM_0X38
+:0X4a6  1137                    DEC             HRAM_0X37,      R
+:0X4a7  5038                    MOV             HRAM_0X38,      A
+:0X4a8  9a84                    JBC             HRAM_0X84,      2
+:0X4a9  6cbb                    GOTO            HADR_0X4BB
 ;	display_buf[i]=0;
-:0X4ac  e739                    CLR             HRAM_0X39
-:0X4ad  5037                    MOV             HRAM_0X37,      A
+:0X4aa  e739                    CLR             HRAM_0X39
+:0X4ab  5037                    MOV             HRAM_0X37,      A
+:0X4ac  e638                    MOVA            HRAM_0X38
+:0X4ad  5038                    MOV             HRAM_0X38,      A
 HADR_0X4AE:
-:0X4ae  e638                    MOVA            HRAM_0X38
-:0X4af  5038                    MOV             HRAM_0X38,      A
-:0X4b0  e08a                    ADDI            0X8A
-:0X4b1  e63a                    MOVA            HRAM_0X3A
-:0X4b2  5039                    MOV             HRAM_0X39,      A
+:0X4ae  e08a                    ADDI            0X8A
+:0X4af  e63a                    MOVA            HRAM_0X3A
+:0X4b0  5039                    MOV             HRAM_0X39,      A
+:0X4b1  c300                    ADDCI           0X0
+:0X4b2  e63b                    MOVA            HRAM_0X3B
 HADR_0X4B3:
-:0X4b3  c300                    ADDCI           0X0
+:0X4b3  503b                    MOV             HRAM_0X3B,      A
 HADR_0X4B4:
-:0X4b4  e63b                    MOVA            HRAM_0X3B
-:0X4b5  503b                    MOV             HRAM_0X3B,      A
-:0X4b6  e682                    MOVA            HRAM_0X82
-:0X4b7  503a                    MOV             HRAM_0X3A,      A
-:0X4b8  e681                    MOVA            HRAM_0X81
-:0X4b9  e500                    MOVI            0X0
-:0X4ba  e680                    MOVA            HRAM_0X80
+:0X4b4  e682                    MOVA            HRAM_0X82
+:0X4b5  503a                    MOV             HRAM_0X3A,      A
+:0X4b6  e681                    MOVA            HRAM_0X81
+:0X4b7  e500                    MOVI            0X0
+:0X4b8  e680                    MOVA            HRAM_0X80
+:0X4b9  c201                    ISTEP           0X1
+:0X4ba  6ca4                    GOTO            HADR_0X4A4
 HADR_0X4BB:
-:0X4bb  c201                    ISTEP           0X1
-:0X4bc  6ca6                    GOTO            HADR_0X4A6
-HADR_0X4BD:
 ;	Updata_SCAN_LED_BUF_R();
+:0X4bb  ec00                    PAGE            0X0
+:0X4bc  672d                    CALL            HADR_0X72D
+HADR_0X4BD:
 :0X4bd  ec00                    PAGE            0X0
-:0X4be  6731                    CALL            HADR_0X731
-:0X4bf  ec00                    PAGE            0X0
 ;	LED_Clear();
+:0X4be  ec00                    PAGE            0X0
+:0X4bf  670d                    CALL            HADR_0X70D
 :0X4c0  ec00                    PAGE            0X0
-:0X4c1  6711                    CALL            HADR_0X711
-:0X4c2  ec00                    PAGE            0X0
 ;
 ;	Set_PWM_CH0_Duty(999);
-:0X4c3  e5e7                    MOVI            0XE7
-:0X4c4  20bc                    MOVAR           HRAM_0XBC
-:0X4c5  e503                    MOVI            0X3
-:0X4c6  20bd                    MOVAR           HRAM_0XBD
+:0X4c1  e5e7                    MOVI            0XE7
+:0X4c2  20bc                    MOVAR           HRAM_0XBC
+:0X4c3  e503                    MOVI            0X3
+:0X4c4  20bd                    MOVAR           HRAM_0XBD
+:0X4c5  ec00                    PAGE            0X0
+:0X4c6  6305                    CALL            HADR_0X305
 :0X4c7  ec00                    PAGE            0X0
-:0X4c8  6305                    CALL            HADR_0X305
-:0X4c9  ec00                    PAGE            0X0
 ;}
-:0X4ca  c183                    RET
-HADR_0X4CB:
+:0X4c8  c183                    RET
+HADR_0X4C9:
 ;
 ;//µÁª˙πÿ ø™µ∆
 ;void state_1(){
@@ -2182,19 +2170,19 @@ HADR_0X4CB:
 ;	//D2_NUM(1);
 ;	//Updata_SCAN_LED_BUF_R();
 ;	Set_PWM_CH0_Duty(999);
-:0X4cb  e783                    CLR             HRAM_0X83
-:0X4cc  e5e7                    MOVI            0XE7
-:0X4cd  ea01                    SECTION         0X1
-:0X4ce  e63c                    MOVA            HRAM_0X3C
-:0X4cf  e503                    MOVI            0X3
-:0X4d0  e63d                    MOVA            HRAM_0X3D
+:0X4c9  e783                    CLR             HRAM_0X83
+:0X4ca  e5e7                    MOVI            0XE7
+:0X4cb  ea01                    SECTION         0X1
+:0X4cc  e63c                    MOVA            HRAM_0X3C
+:0X4cd  e503                    MOVI            0X3
+:0X4ce  e63d                    MOVA            HRAM_0X3D
+:0X4cf  ec00                    PAGE            0X0
+:0X4d0  6305                    CALL            HADR_0X305
 HADR_0X4D1:
 :0X4d1  ec00                    PAGE            0X0
-:0X4d2  6305                    CALL            HADR_0X305
-:0X4d3  ec00                    PAGE            0X0
 ;}
-:0X4d4  c183                    RET
-HADR_0X4D5:
+:0X4d2  c183                    RET
+HADR_0X4D3:
 ;
 ;//µÁª˙ø™
 ;void state_2(){
@@ -2202,78 +2190,77 @@ HADR_0X4D5:
 ;	//D2_NUM(2);
 ;	//Updata_SCAN_LED_BUF_R();
 ;	Set_PWM_CH0_Duty(100);
-:0X4d5  e783                    CLR             HRAM_0X83
+:0X4d3  e783                    CLR             HRAM_0X83
+:0X4d4  e564                    MOVI            0X64
+:0X4d5  ea01                    SECTION         0X1
 HADR_0X4D6:
-:0X4d6  e564                    MOVI            0X64
+:0X4d6  e63c                    MOVA            HRAM_0X3C
 HADR_0X4D7:
-:0X4d7  ea01                    SECTION         0X1
-:0X4d8  e63c                    MOVA            HRAM_0X3C
-:0X4d9  e500                    MOVI            0X0
-:0X4da  e63d                    MOVA            HRAM_0X3D
+:0X4d7  e500                    MOVI            0X0
+:0X4d8  e63d                    MOVA            HRAM_0X3D
+:0X4d9  ec00                    PAGE            0X0
+:0X4da  6305                    CALL            HADR_0X305
 :0X4db  ec00                    PAGE            0X0
-:0X4dc  6305                    CALL            HADR_0X305
-:0X4dd  ec00                    PAGE            0X0
-HADR_0X4DE:
 ;}
-:0X4de  c183                    RET
-HADR_0X4DF:
+:0X4dc  c183                    RET
+HADR_0X4DD:
 ;void State_Ruun(){
 ;			switch (State_flag){
-:0X4df  e783                    CLR             HRAM_0X83
+:0X4dd  e783                    CLR             HRAM_0X83
+HADR_0X4DE:
+:0X4de  ea01                    SECTION         0X1
+:0X4df  5000                    MOV             HRAM_0X0,       A
 HADR_0X4E0:
-:0X4e0  ea01                    SECTION         0X1
-:0X4e1  5000                    MOV             HRAM_0X0,       A
-:0X4e2  e303                    XORI            0X3
-:0X4e3  9a84                    JBC             HRAM_0X84,      2
-:0X4e4  6cf0                    GOTO            HADR_0X4F0
-:0X4e5  e302                    XORI            0X2
-:0X4e6  9a84                    JBC             HRAM_0X84,      2
-:0X4e7  6cf4                    GOTO            HADR_0X4F4
-:0X4e8  e303                    XORI            0X3
-:0X4e9  9a84                    JBC             HRAM_0X84,      2
-:0X4ea  6cf8                    GOTO            HADR_0X4F8
-:0X4eb  e302                    XORI            0X2
-:0X4ec  9a84                    JBC             HRAM_0X84,      2
-:0X4ed  6cfc                    GOTO            HADR_0X4FC
-:0X4ee  6cef                    GOTO            HADR_0X4EF
-HADR_0X4EF:
-:0X4ef  6cff                    GOTO            HADR_0X4FF
-HADR_0X4F0:
+:0X4e0  e303                    XORI            0X3
+:0X4e1  9a84                    JBC             HRAM_0X84,      2
+:0X4e2  6cee                    GOTO            HADR_0X4EE
+:0X4e3  e302                    XORI            0X2
+:0X4e4  9a84                    JBC             HRAM_0X84,      2
+:0X4e5  6cf2                    GOTO            HADR_0X4F2
+:0X4e6  e303                    XORI            0X3
+:0X4e7  9a84                    JBC             HRAM_0X84,      2
+:0X4e8  6cf6                    GOTO            HADR_0X4F6
+:0X4e9  e302                    XORI            0X2
+:0X4ea  9a84                    JBC             HRAM_0X84,      2
+:0X4eb  6cfa                    GOTO            HADR_0X4FA
+:0X4ec  6ced                    GOTO            HADR_0X4ED
+HADR_0X4ED:
+:0X4ed  6cfd                    GOTO            HADR_0X4FD
+HADR_0X4EE:
 ;				case 3:
+:0X4ee  ec00                    PAGE            0X0
+:0X4ef  64a0                    CALL            HADR_0X4A0
 :0X4f0  ec00                    PAGE            0X0
-:0X4f1  64a2                    CALL            HADR_0X4A2
-:0X4f2  ec00                    PAGE            0X0
 ;				break;
-:0X4f3  6cff                    GOTO            HADR_0X4FF
-HADR_0X4F4:
+:0X4f1  6cfd                    GOTO            HADR_0X4FD
+HADR_0X4F2:
 ;				case 1:
+:0X4f2  ec00                    PAGE            0X0
+:0X4f3  64c9                    CALL            HADR_0X4C9
+HADR_0X4F4:
 :0X4f4  ec00                    PAGE            0X0
-:0X4f5  64cb                    CALL            HADR_0X4CB
-:0X4f6  ec00                    PAGE            0X0
 ;				break;
-:0X4f7  6cff                    GOTO            HADR_0X4FF
-HADR_0X4F8:
+:0X4f5  6cfd                    GOTO            HADR_0X4FD
+HADR_0X4F6:
 ;				case 2:
+:0X4f6  ec00                    PAGE            0X0
+:0X4f7  64d3                    CALL            HADR_0X4D3
 :0X4f8  ec00                    PAGE            0X0
 HADR_0X4F9:
-:0X4f9  64d5                    CALL            HADR_0X4D5
-HADR_0X4FA:
-:0X4fa  ec00                    PAGE            0X0
 ;				break;
-:0X4fb  6cff                    GOTO            HADR_0X4FF
-HADR_0X4FC:
+:0X4f9  6cfd                    GOTO            HADR_0X4FD
+HADR_0X4FA:
 ;				case 0:
+:0X4fa  ec00                    PAGE            0X0
+:0X4fb  646b                    CALL            HADR_0X46B
 :0X4fc  ec00                    PAGE            0X0
-:0X4fd  646d                    CALL            HADR_0X46D
-:0X4fe  ec00                    PAGE            0X0
-HADR_0X4FF:
+HADR_0X4FD:
 ;				break;
 ;			}
 ;}
-:0X4ff  ea00                    SECTION         0X0
-HADR_0X500:
-:0X500  c183                    RET
-HADR_0X501:
+:0X4fd  ea00                    SECTION         0X0
+:0X4fe  c183                    RET
+HADR_0X4FF:
 ;#include "..\main.h"
 ;#include "..\inc_user\key.h"
 ;
@@ -2297,356 +2284,361 @@ HADR_0X501:
 ;	static unsigned char edge_flag;
 ;	static unsigned char edge_status;
 ;		edge_flag=edge_flag<<1;
-:0X501  e783                    CLR             HRAM_0X83
-:0X502  ea01                    SECTION         0X1
-:0X503  5075                    MOV             HRAM_0X75,      A
-:0X504  e66c                    MOVA            HRAM_0X6C
-:0X505  a884                    BCC             HRAM_0X84,      0
-:0X506  b06c                    RLB             HRAM_0X6C,      A,              0X1
-:0X507  e675                    MOVA            HRAM_0X75
+:0X4ff  e783                    CLR             HRAM_0X83
+HADR_0X500:
+:0X500  ea01                    SECTION         0X1
+:0X501  5075                    MOV             HRAM_0X75,      A
+:0X502  e66c                    MOVA            HRAM_0X6C
+:0X503  a884                    BCC             HRAM_0X84,      0
+:0X504  b06c                    RLB             HRAM_0X6C,      A,              0X1
+:0X505  e675                    MOVA            HRAM_0X75
 ;		edge_flag+=Get_KEY_IO_Status();
-:0X508  e500                    MOVI            0X0
-:0X509  9aa8                    JBC             HRAM_0XA8,      2
+:0X506  e500                    MOVI            0X0
+:0X507  9aa8                    JBC             HRAM_0XA8,      2
+:0X508  e501                    MOVI            0X1
+:0X509  e66c                    MOVA            HRAM_0X6C
 HADR_0X50A:
-:0X50a  e501                    MOVI            0X1
-:0X50b  e66c                    MOVA            HRAM_0X6C
-:0X50c  506c                    MOV             HRAM_0X6C,      A
-:0X50d  5e75                    ADD             HRAM_0X75,      A
-:0X50e  e675                    MOVA            HRAM_0X75
-HADR_0X50F:
+:0X50a  506c                    MOV             HRAM_0X6C,      A
+:0X50b  5e75                    ADD             HRAM_0X75,      A
+:0X50c  e675                    MOVA            HRAM_0X75
 ;			
 ;			//edge_flag=(edge_flag|0x03);
 ;			if(edge_flag == 0x0F){
-:0X50f  5075                    MOV             HRAM_0X75,      A
+:0X50d  5075                    MOV             HRAM_0X75,      A
+:0X50e  e30f                    XORI            0XF
+HADR_0X50F:
+:0X50f  9284                    JBS             HRAM_0X84,      2
 HADR_0X510:
-:0X510  e30f                    XORI            0XF
-:0X511  9284                    JBS             HRAM_0X84,      2
-:0X512  6d1c                    GOTO            HADR_0X51C
+:0X510  6d1a                    GOTO            HADR_0X51A
 ;				edge_status=1;				//‰∏äÂçáÂª∂
-:0X513  e501                    MOVI            0X1
-:0X514  e676                    MOVA            HRAM_0X76
+:0X511  e501                    MOVI            0X1
+:0X512  e676                    MOVA            HRAM_0X76
 ;				release_count_double=release_count;
-:0X515  507f                    MOV             HRAM_0X7F,      A
-:0X516  2101                    MOVAR           HRAM_0X101
-:0X517  507e                    MOV             HRAM_0X7E,      A
-:0X518  2100                    MOVAR           HRAM_0X100
+:0X513  507f                    MOV             HRAM_0X7F,      A
+:0X514  2101                    MOVAR           HRAM_0X101
+:0X515  507e                    MOV             HRAM_0X7E,      A
+:0X516  2100                    MOVAR           HRAM_0X100
 ;				release_count=0;
-:0X519  e77e                    CLR             HRAM_0X7E
-:0X51a  e77f                    CLR             HRAM_0X7F
+:0X517  e77e                    CLR             HRAM_0X7E
+:0X518  e77f                    CLR             HRAM_0X7F
 ;			}
-:0X51b  6d23                    GOTO            HADR_0X523
-HADR_0X51C:
+:0X519  6d21                    GOTO            HADR_0X521
+HADR_0X51A:
 ;			else if(edge_flag == 0xF0){
-:0X51c  5075                    MOV             HRAM_0X75,      A
-:0X51d  e3f0                    XORI            0XF0
-:0X51e  9284                    JBS             HRAM_0X84,      2
-:0X51f  6d23                    GOTO            HADR_0X523
+:0X51a  5075                    MOV             HRAM_0X75,      A
+:0X51b  e3f0                    XORI            0XF0
+:0X51c  9284                    JBS             HRAM_0X84,      2
+:0X51d  6d21                    GOTO            HADR_0X521
 ;				buzzer_flag=1;
-:0X520  e501                    MOVI            0X1
-:0X521  e674                    MOVA            HRAM_0X74
-HADR_0X522:
+:0X51e  e501                    MOVI            0X1
+:0X51f  e674                    MOVA            HRAM_0X74
 ;				edge_status=0;				//‰∏ãÈôçÂª∂
-:0X522  e776                    CLR             HRAM_0X76
-HADR_0X523:
+:0X520  e776                    CLR             HRAM_0X76
+HADR_0X521:
 ;			}
-:0X523  5076                    MOV             HRAM_0X76,      A
-:0X524  9a84                    JBC             HRAM_0X84,      2
-:0X525  6d51                    GOTO            HADR_0X551
+:0X521  5076                    MOV             HRAM_0X76,      A
+HADR_0X522:
+:0X522  9a84                    JBC             HRAM_0X84,      2
+:0X523  6d4f                    GOTO            HADR_0X54F
 ;					release_count++;
-:0X526  557e                    INC             HRAM_0X7E,      R
+:0X524  557e                    INC             HRAM_0X7E,      R
+:0X525  9284                    JBS             HRAM_0X84,      2
+:0X526  6d28                    GOTO            HADR_0X528
 HADR_0X527:
-:0X527  9284                    JBS             HRAM_0X84,      2
+:0X527  557f                    INC             HRAM_0X7F,      R
 HADR_0X528:
-:0X528  6d2a                    GOTO            HADR_0X52A
-:0X529  557f                    INC             HRAM_0X7F,      R
-HADR_0X52A:
 ;					if(release_count>65530)release_count=65530;
-:0X52a  507e                    MOV             HRAM_0X7E,      A
-:0X52b  e66c                    MOVA            HRAM_0X6C
-:0X52c  507f                    MOV             HRAM_0X7F,      A
-:0X52d  e66d                    MOVA            HRAM_0X6D
-:0X52e  e500                    MOVI            0X0
+:0X528  507e                    MOV             HRAM_0X7E,      A
+:0X529  e66c                    MOVA            HRAM_0X6C
+:0X52a  507f                    MOV             HRAM_0X7F,      A
+:0X52b  e66d                    MOVA            HRAM_0X6D
+:0X52c  e500                    MOVI            0X0
+:0X52d  9f6d                    JBC             HRAM_0X6D,      7
+:0X52e  e5ff                    MOVI            0XFF
 HADR_0X52F:
-:0X52f  9f6d                    JBC             HRAM_0X6D,      7
-:0X530  e5ff                    MOVI            0XFF
+:0X52f  e66e                    MOVA            HRAM_0X6E
+:0X530  e66f                    MOVA            HRAM_0X6F
 HADR_0X531:
-:0X531  e66e                    MOVA            HRAM_0X6E
-:0X532  e66f                    MOVA            HRAM_0X6F
-:0X533  e500                    MOVI            0X0
-:0X534  e380                    XORI            0X80
-:0X535  201c                    MOVAR           HRAM_0X1C
-:0X536  506f                    MOV             HRAM_0X6F,      A
-:0X537  e380                    XORI            0X80
-:0X538  ea00                    SECTION         0X0
-:0X539  ee1c                    SUB             HRAM_0X1C,      A
-:0X53a  9284                    JBS             HRAM_0X84,      2
-:0X53b  6d49                    GOTO            HADR_0X549
-:0X53c  ea01                    SECTION         0X1
-:0X53d  506e                    MOV             HRAM_0X6E,      A
-:0X53e  ce00                    SUBI            0X0
-:0X53f  9284                    JBS             HRAM_0X84,      2
-:0X540  6d49                    GOTO            HADR_0X549
-:0X541  506d                    MOV             HRAM_0X6D,      A
-:0X542  ceff                    SUBI            0XFF
-:0X543  9284                    JBS             HRAM_0X84,      2
-:0X544  6d49                    GOTO            HADR_0X549
+:0X531  e500                    MOVI            0X0
+:0X532  e380                    XORI            0X80
+:0X533  201c                    MOVAR           HRAM_0X1C
+:0X534  506f                    MOV             HRAM_0X6F,      A
+:0X535  e380                    XORI            0X80
+:0X536  ea00                    SECTION         0X0
+:0X537  ee1c                    SUB             HRAM_0X1C,      A
+:0X538  9284                    JBS             HRAM_0X84,      2
+:0X539  6d47                    GOTO            HADR_0X547
+:0X53a  ea01                    SECTION         0X1
+:0X53b  506e                    MOV             HRAM_0X6E,      A
+:0X53c  ce00                    SUBI            0X0
+:0X53d  9284                    JBS             HRAM_0X84,      2
+:0X53e  6d47                    GOTO            HADR_0X547
+:0X53f  506d                    MOV             HRAM_0X6D,      A
+:0X540  ceff                    SUBI            0XFF
+:0X541  9284                    JBS             HRAM_0X84,      2
+:0X542  6d47                    GOTO            HADR_0X547
+:0X543  506c                    MOV             HRAM_0X6C,      A
+:0X544  cefa                    SUBI            0XFA
 HADR_0X545:
-:0X545  506c                    MOV             HRAM_0X6C,      A
-:0X546  cefa                    SUBI            0XFA
-:0X547  9284                    JBS             HRAM_0X84,      2
-:0X548  6d49                    GOTO            HADR_0X549
-HADR_0X549:
-:0X549  9884                    JBC             HRAM_0X84,      0
+:0X545  9284                    JBS             HRAM_0X84,      2
+:0X546  6d47                    GOTO            HADR_0X547
+HADR_0X547:
+:0X547  9884                    JBC             HRAM_0X84,      0
+:0X548  6d57                    GOTO            HADR_0X557
+:0X549  e5ff                    MOVI            0XFF
 HADR_0X54A:
-:0X54a  6d59                    GOTO            HADR_0X559
+:0X54a  ea01                    SECTION         0X1
 HADR_0X54B:
-:0X54b  e5ff                    MOVI            0XFF
-:0X54c  ea01                    SECTION         0X1
-:0X54d  e67f                    MOVA            HRAM_0X7F
-:0X54e  e5fa                    MOVI            0XFA
-:0X54f  e67e                    MOVA            HRAM_0X7E
+:0X54b  e67f                    MOVA            HRAM_0X7F
+:0X54c  e5fa                    MOVI            0XFA
+:0X54d  e67e                    MOVA            HRAM_0X7E
 ;			}
-:0X550  6d59                    GOTO            HADR_0X559
-HADR_0X551:
+:0X54e  6d57                    GOTO            HADR_0X557
+HADR_0X54F:
 ;			else{
-:0X551  557a                    INC             HRAM_0X7A,      R
+:0X54f  557a                    INC             HRAM_0X7A,      R
+:0X550  9284                    JBS             HRAM_0X84,      2
+:0X551  6d53                    GOTO            HADR_0X553
 HADR_0X552:
-:0X552  9284                    JBS             HRAM_0X84,      2
-:0X553  6d55                    GOTO            HADR_0X555
-HADR_0X554:
-:0X554  557b                    INC             HRAM_0X7B,      R
-HADR_0X555:
+:0X552  557b                    INC             HRAM_0X7B,      R
+HADR_0X553:
 ;					perss_count_long++;
-:0X555  557c                    INC             HRAM_0X7C,      R
-:0X556  9284                    JBS             HRAM_0X84,      2
-:0X557  6d59                    GOTO            HADR_0X559
-:0X558  557d                    INC             HRAM_0X7D,      R
-HADR_0X559:
+:0X553  557c                    INC             HRAM_0X7C,      R
+HADR_0X554:
+:0X554  9284                    JBS             HRAM_0X84,      2
+:0X555  6d57                    GOTO            HADR_0X557
+:0X556  557d                    INC             HRAM_0X7D,      R
+HADR_0X557:
 ;			}
-:0X559  ea01                    SECTION         0X1
-:0X55a  5001                    MOV             HRAM_0X1,       A
-:0X55b  e301                    XORI            0X1
-:0X55c  9a84                    JBC             HRAM_0X84,      2
-:0X55d  6df8                    GOTO            HADR_0X5F8
+:0X557  ea01                    SECTION         0X1
+:0X558  5001                    MOV             HRAM_0X1,       A
+:0X559  e301                    XORI            0X1
+:0X55a  9a84                    JBC             HRAM_0X84,      2
+:0X55b  6df6                    GOTO            HADR_0X5F6
 ;			}
 ;			else{
 ;			
 ;			//ÊåâÈîÆÈáäÊîæ Â§ß‰∫éÂèåÂáªÊúÄÂ§ßÊó∂Èó¥ÂêéËøõË°åÂ§ÑÁêÜ
 ;			if(release_count==(DOUBLE_RELEASE_TIME_MAX)){
-:0X55e  507e                    MOV             HRAM_0X7E,      A
-:0X55f  e396                    XORI            0X96
-:0X560  9284                    JBS             HRAM_0X84,      2
-:0X561  6d65                    GOTO            HADR_0X565
-:0X562  507f                    MOV             HRAM_0X7F,      A
-:0X563  e300                    XORI            0X0
-:0X564  9284                    JBS             HRAM_0X84,      2
-HADR_0X565:
-:0X565  6dd2                    GOTO            HADR_0X5D2
+:0X55c  507e                    MOV             HRAM_0X7E,      A
+:0X55d  e396                    XORI            0X96
+:0X55e  9284                    JBS             HRAM_0X84,      2
+:0X55f  6d63                    GOTO            HADR_0X563
+:0X560  507f                    MOV             HRAM_0X7F,      A
+:0X561  e300                    XORI            0X0
+:0X562  9284                    JBS             HRAM_0X84,      2
+HADR_0X563:
+:0X563  6dd0                    GOTO            HADR_0X5D0
 ;				if( release_count_double>DOUBLE_RELEASE_TIME_MIN  &&  release_count_double<DOUBLE_RELEASE_TIME_MAX ){
-:0X566  e500                    MOVI            0X0
-:0X567  e380                    XORI            0X80
+:0X564  e500                    MOVI            0X0
+:0X565  e380                    XORI            0X80
+:0X566  ea00                    SECTION         0X0
+:0X567  e61c                    MOVA            HRAM_0X1C
 HADR_0X568:
-:0X568  ea00                    SECTION         0X0
-:0X569  e61c                    MOVA            HRAM_0X1C
-:0X56a  7901                    MOVRA           HRAM_0X101
-:0X56b  e380                    XORI            0X80
-:0X56c  ee1c                    SUB             HRAM_0X1C,      A
+:0X568  7901                    MOVRA           HRAM_0X101
+:0X569  e380                    XORI            0X80
+:0X56a  ee1c                    SUB             HRAM_0X1C,      A
+:0X56b  9284                    JBS             HRAM_0X84,      2
+:0X56c  6d72                    GOTO            HADR_0X572
 HADR_0X56D:
-:0X56d  9284                    JBS             HRAM_0X84,      2
+:0X56d  ea02                    SECTION         0X2
 HADR_0X56E:
-:0X56e  6d74                    GOTO            HADR_0X574
-:0X56f  ea02                    SECTION         0X2
-:0X570  5000                    MOV             HRAM_0X0,       A
-:0X571  ce14                    SUBI            0X14
-:0X572  9284                    JBS             HRAM_0X84,      2
-:0X573  6d74                    GOTO            HADR_0X574
+:0X56e  5000                    MOV             HRAM_0X0,       A
+:0X56f  ce14                    SUBI            0X14
+:0X570  9284                    JBS             HRAM_0X84,      2
+:0X571  6d72                    GOTO            HADR_0X572
+HADR_0X572:
+:0X572  9884                    JBC             HRAM_0X84,      0
+:0X573  6d8b                    GOTO            HADR_0X58B
 HADR_0X574:
-:0X574  9884                    JBC             HRAM_0X84,      0
-:0X575  6d8d                    GOTO            HADR_0X58D
-:0X576  ea02                    SECTION         0X2
-:0X577  5001                    MOV             HRAM_0X1,       A
-:0X578  e380                    XORI            0X80
-:0X579  201c                    MOVAR           HRAM_0X1C
-:0X57a  e500                    MOVI            0X0
-:0X57b  e380                    XORI            0X80
-:0X57c  ea00                    SECTION         0X0
-:0X57d  ee1c                    SUB             HRAM_0X1C,      A
+:0X574  ea02                    SECTION         0X2
+:0X575  5001                    MOV             HRAM_0X1,       A
+:0X576  e380                    XORI            0X80
+:0X577  201c                    MOVAR           HRAM_0X1C
+:0X578  e500                    MOVI            0X0
+:0X579  e380                    XORI            0X80
+:0X57a  ea00                    SECTION         0X0
+:0X57b  ee1c                    SUB             HRAM_0X1C,      A
+:0X57c  9284                    JBS             HRAM_0X84,      2
+:0X57d  6d83                    GOTO            HADR_0X583
 HADR_0X57E:
-:0X57e  9284                    JBS             HRAM_0X84,      2
-:0X57f  6d85                    GOTO            HADR_0X585
-:0X580  e596                    MOVI            0X96
-:0X581  ea02                    SECTION         0X2
-:0X582  ee00                    SUB             HRAM_0X0,       A
+:0X57e  e596                    MOVI            0X96
+:0X57f  ea02                    SECTION         0X2
+:0X580  ee00                    SUB             HRAM_0X0,       A
+:0X581  9284                    JBS             HRAM_0X84,      2
+:0X582  6d83                    GOTO            HADR_0X583
 HADR_0X583:
-:0X583  9284                    JBS             HRAM_0X84,      2
+:0X583  9884                    JBC             HRAM_0X84,      0
 HADR_0X584:
-:0X584  6d85                    GOTO            HADR_0X585
-HADR_0X585:
-:0X585  9884                    JBC             HRAM_0X84,      0
-:0X586  6d8d                    GOTO            HADR_0X58D
+:0X584  6d8b                    GOTO            HADR_0X58B
 ;					touch_key_staus=DOUBLE;
-:0X587  e503                    MOVI            0X3
-:0X588  ea01                    SECTION         0X1
-:0X589  e602                    MOVA            HRAM_0X2
+:0X585  e503                    MOVI            0X3
+:0X586  ea01                    SECTION         0X1
+:0X587  e602                    MOVA            HRAM_0X2
 ;					touch_key_busy=1;
-:0X58a  e501                    MOVI            0X1
-:0X58b  e601                    MOVA            HRAM_0X1
+:0X588  e501                    MOVI            0X1
+:0X589  e601                    MOVA            HRAM_0X1
 ;				}
-:0X58c  6dc9                    GOTO            HADR_0X5C9
-HADR_0X58D:
+:0X58a  6dc7                    GOTO            HADR_0X5C7
+HADR_0X58B:
 ;			  else if(SHORT_TIME < perss_count &&  perss_count<LONG_TIME ){
-:0X58d  e500                    MOVI            0X0
-:0X58e  e380                    XORI            0X80
-:0X58f  ea00                    SECTION         0X0
-:0X590  e61c                    MOVA            HRAM_0X1C
-:0X591  78fb                    MOVRA           HRAM_0XFB
-:0X592  e380                    XORI            0X80
-:0X593  ee1c                    SUB             HRAM_0X1C,      A
-:0X594  9284                    JBS             HRAM_0X84,      2
-:0X595  6d9b                    GOTO            HADR_0X59B
+:0X58b  e500                    MOVI            0X0
+:0X58c  e380                    XORI            0X80
+:0X58d  ea00                    SECTION         0X0
+:0X58e  e61c                    MOVA            HRAM_0X1C
+:0X58f  78fb                    MOVRA           HRAM_0XFB
+:0X590  e380                    XORI            0X80
+:0X591  ee1c                    SUB             HRAM_0X1C,      A
+:0X592  9284                    JBS             HRAM_0X84,      2
+:0X593  6d99                    GOTO            HADR_0X599
+:0X594  ea01                    SECTION         0X1
+:0X595  507a                    MOV             HRAM_0X7A,      A
 HADR_0X596:
-:0X596  ea01                    SECTION         0X1
-:0X597  507a                    MOV             HRAM_0X7A,      A
-:0X598  ce14                    SUBI            0X14
-:0X599  9284                    JBS             HRAM_0X84,      2
-:0X59a  6d9b                    GOTO            HADR_0X59B
+:0X596  ce14                    SUBI            0X14
+:0X597  9284                    JBS             HRAM_0X84,      2
+:0X598  6d99                    GOTO            HADR_0X599
+HADR_0X599:
+:0X599  9884                    JBC             HRAM_0X84,      0
+:0X59a  6db2                    GOTO            HADR_0X5B2
 HADR_0X59B:
-:0X59b  9884                    JBC             HRAM_0X84,      0
+:0X59b  ea01                    SECTION         0X1
 HADR_0X59C:
-:0X59c  6db4                    GOTO            HADR_0X5B4
-:0X59d  ea01                    SECTION         0X1
-:0X59e  507b                    MOV             HRAM_0X7B,      A
-:0X59f  e380                    XORI            0X80
-:0X5a0  201c                    MOVAR           HRAM_0X1C
-:0X5a1  e501                    MOVI            0X1
-:0X5a2  e380                    XORI            0X80
+:0X59c  507b                    MOV             HRAM_0X7B,      A
+:0X59d  e380                    XORI            0X80
+:0X59e  201c                    MOVAR           HRAM_0X1C
+:0X59f  e501                    MOVI            0X1
+:0X5a0  e380                    XORI            0X80
+:0X5a1  ea00                    SECTION         0X0
+:0X5a2  ee1c                    SUB             HRAM_0X1C,      A
 HADR_0X5A3:
-:0X5a3  ea00                    SECTION         0X0
-:0X5a4  ee1c                    SUB             HRAM_0X1C,      A
+:0X5a3  9284                    JBS             HRAM_0X84,      2
+:0X5a4  6daa                    GOTO            HADR_0X5AA
 HADR_0X5A5:
-:0X5a5  9284                    JBS             HRAM_0X84,      2
-:0X5a6  6dac                    GOTO            HADR_0X5AC
-:0X5a7  e590                    MOVI            0X90
-:0X5a8  ea01                    SECTION         0X1
-:0X5a9  ee7a                    SUB             HRAM_0X7A,      A
-:0X5aa  9284                    JBS             HRAM_0X84,      2
-:0X5ab  6dac                    GOTO            HADR_0X5AC
-HADR_0X5AC:
-:0X5ac  9884                    JBC             HRAM_0X84,      0
-:0X5ad  6db4                    GOTO            HADR_0X5B4
+:0X5a5  e590                    MOVI            0X90
+:0X5a6  ea01                    SECTION         0X1
+:0X5a7  ee7a                    SUB             HRAM_0X7A,      A
+:0X5a8  9284                    JBS             HRAM_0X84,      2
+:0X5a9  6daa                    GOTO            HADR_0X5AA
+HADR_0X5AA:
+:0X5aa  9884                    JBC             HRAM_0X84,      0
+:0X5ab  6db2                    GOTO            HADR_0X5B2
 ;					touch_key_staus=SHORT;
-:0X5ae  e501                    MOVI            0X1
-:0X5af  ea01                    SECTION         0X1
-:0X5b0  e602                    MOVA            HRAM_0X2
+:0X5ac  e501                    MOVI            0X1
+:0X5ad  ea01                    SECTION         0X1
+:0X5ae  e602                    MOVA            HRAM_0X2
 ;					touch_key_busy=1;
-:0X5b1  e501                    MOVI            0X1
-:0X5b2  e601                    MOVA            HRAM_0X1
+:0X5af  e501                    MOVI            0X1
+:0X5b0  e601                    MOVA            HRAM_0X1
 ;				}
-:0X5b3  6dc9                    GOTO            HADR_0X5C9
-HADR_0X5B4:
+:0X5b1  6dc7                    GOTO            HADR_0X5C7
+HADR_0X5B2:
 ;				else if( perss_count>LONG_TIME ){
-:0X5b4  e501                    MOVI            0X1
-:0X5b5  e380                    XORI            0X80
-:0X5b6  ea00                    SECTION         0X0
-:0X5b7  e61c                    MOVA            HRAM_0X1C
-:0X5b8  78fb                    MOVRA           HRAM_0XFB
+:0X5b2  e501                    MOVI            0X1
+:0X5b3  e380                    XORI            0X80
+:0X5b4  ea00                    SECTION         0X0
+:0X5b5  e61c                    MOVA            HRAM_0X1C
+:0X5b6  78fb                    MOVRA           HRAM_0XFB
+:0X5b7  e380                    XORI            0X80
+:0X5b8  ee1c                    SUB             HRAM_0X1C,      A
 HADR_0X5B9:
-:0X5b9  e380                    XORI            0X80
-:0X5ba  ee1c                    SUB             HRAM_0X1C,      A
-:0X5bb  9284                    JBS             HRAM_0X84,      2
-:0X5bc  6dc2                    GOTO            HADR_0X5C2
-:0X5bd  ea01                    SECTION         0X1
+:0X5b9  9284                    JBS             HRAM_0X84,      2
+:0X5ba  6dc0                    GOTO            HADR_0X5C0
+:0X5bb  ea01                    SECTION         0X1
+:0X5bc  507a                    MOV             HRAM_0X7A,      A
+:0X5bd  ce90                    SUBI            0X90
 HADR_0X5BE:
-:0X5be  507a                    MOV             HRAM_0X7A,      A
+:0X5be  9284                    JBS             HRAM_0X84,      2
 HADR_0X5BF:
-:0X5bf  ce90                    SUBI            0X90
-:0X5c0  9284                    JBS             HRAM_0X84,      2
-:0X5c1  6dc2                    GOTO            HADR_0X5C2
-HADR_0X5C2:
-:0X5c2  9884                    JBC             HRAM_0X84,      0
-:0X5c3  6dc9                    GOTO            HADR_0X5C9
+:0X5bf  6dc0                    GOTO            HADR_0X5C0
+HADR_0X5C0:
+:0X5c0  9884                    JBC             HRAM_0X84,      0
+:0X5c1  6dc7                    GOTO            HADR_0X5C7
 ;					touch_key_staus=LONG;
-:0X5c4  e502                    MOVI            0X2
-:0X5c5  ea01                    SECTION         0X1
+:0X5c2  e502                    MOVI            0X2
+:0X5c3  ea01                    SECTION         0X1
+:0X5c4  e602                    MOVA            HRAM_0X2
+;					touch_key_busy=1;
+:0X5c5  e501                    MOVI            0X1
 HADR_0X5C6:
-:0X5c6  e602                    MOVA            HRAM_0X2
-;					touch_key_busy=1;
-:0X5c7  e501                    MOVI            0X1
-HADR_0X5C8:
-:0X5c8  e601                    MOVA            HRAM_0X1
-HADR_0X5C9:
+:0X5c6  e601                    MOVA            HRAM_0X1
+HADR_0X5C7:
 ;				}
-:0X5c9  ea02                    SECTION         0X2
-:0X5ca  e700                    CLR             HRAM_0X0
-:0X5cb  e701                    CLR             HRAM_0X1
+:0X5c7  ea02                    SECTION         0X2
+HADR_0X5C8:
+:0X5c8  e700                    CLR             HRAM_0X0
+:0X5c9  e701                    CLR             HRAM_0X1
 ;				 perss_count=0;
-:0X5cc  ea01                    SECTION         0X1
-:0X5cd  e77a                    CLR             HRAM_0X7A
-:0X5ce  e77b                    CLR             HRAM_0X7B
+:0X5ca  ea01                    SECTION         0X1
+:0X5cb  e77a                    CLR             HRAM_0X7A
+:0X5cc  e77b                    CLR             HRAM_0X7B
 ;				  perss_count_long=0;
-:0X5cf  e77c                    CLR             HRAM_0X7C
-:0X5d0  e77d                    CLR             HRAM_0X7D
+:0X5cd  e77c                    CLR             HRAM_0X7C
+:0X5ce  e77d                    CLR             HRAM_0X7D
 ;			}
-:0X5d1  6df8                    GOTO            HADR_0X5F8
-HADR_0X5D2:
+:0X5cf  6df6                    GOTO            HADR_0X5F6
+HADR_0X5D0:
 ;			else if(perss_count_long>LONG_TIME*1.5){
-:0X5d2  507c                    MOV             HRAM_0X7C,      A
-:0X5d3  201c                    MOVAR           HRAM_0X1C
-:0X5d4  507d                    MOV             HRAM_0X7D,      A
-:0X5d5  201d                    MOVAR           HRAM_0X1D
-:0X5d6  ec07                    PAGE            0X7
-:0X5d7  ea00                    SECTION         0X0
-:0X5d8  63c2                    CALL            HADR_0X3C2
-:0X5d9  ec00                    PAGE            0X0
-:0X5da  501c                    MOV             HRAM_0X1C,      A
-:0X5db  20ec                    MOVAR           HRAM_0XEC
+:0X5d0  507c                    MOV             HRAM_0X7C,      A
+:0X5d1  201c                    MOVAR           HRAM_0X1C
+:0X5d2  507d                    MOV             HRAM_0X7D,      A
+:0X5d3  201d                    MOVAR           HRAM_0X1D
+:0X5d4  ec07                    PAGE            0X7
+:0X5d5  ea00                    SECTION         0X0
+:0X5d6  63c2                    CALL            HADR_0X3C2
+:0X5d7  ec00                    PAGE            0X0
+:0X5d8  501c                    MOV             HRAM_0X1C,      A
+:0X5d9  20ec                    MOVAR           HRAM_0XEC
+:0X5da  501d                    MOV             HRAM_0X1D,      A
+:0X5db  20ed                    MOVAR           HRAM_0XED
 HADR_0X5DC:
-:0X5dc  501d                    MOV             HRAM_0X1D,      A
-:0X5dd  20ed                    MOVAR           HRAM_0XED
-:0X5de  501e                    MOV             HRAM_0X1E,      A
-:0X5df  20ee                    MOVAR           HRAM_0XEE
-:0X5e0  78ec                    MOVRA           HRAM_0XEC
+:0X5dc  501e                    MOV             HRAM_0X1E,      A
+:0X5dd  20ee                    MOVAR           HRAM_0XEE
+:0X5de  78ec                    MOVRA           HRAM_0XEC
+:0X5df  e61f                    MOVA            HRAM_0X1F
+:0X5e0  78ed                    MOVRA           HRAM_0XED
 HADR_0X5E1:
-:0X5e1  e61f                    MOVA            HRAM_0X1F
+:0X5e1  e620                    MOVA            HRAM_0X20
 HADR_0X5E2:
-:0X5e2  78ed                    MOVRA           HRAM_0XED
-:0X5e3  e620                    MOVA            HRAM_0X20
-:0X5e4  78ee                    MOVRA           HRAM_0XEE
-:0X5e5  e621                    MOVA            HRAM_0X21
-:0X5e6  e500                    MOVI            0X0
+:0X5e2  78ee                    MOVRA           HRAM_0XEE
+:0X5e3  e621                    MOVA            HRAM_0X21
+:0X5e4  e500                    MOVI            0X0
+:0X5e5  e61c                    MOVA            HRAM_0X1C
+:0X5e6  e516                    MOVI            0X16
 HADR_0X5E7:
-:0X5e7  e61c                    MOVA            HRAM_0X1C
-:0X5e8  e516                    MOVI            0X16
+:0X5e7  e61d                    MOVA            HRAM_0X1D
+:0X5e8  e544                    MOVI            0X44
 HADR_0X5E9:
-:0X5e9  e61d                    MOVA            HRAM_0X1D
-:0X5ea  e544                    MOVI            0X44
-:0X5eb  e61e                    MOVA            HRAM_0X1E
-:0X5ec  ec07                    PAGE            0X7
-:0X5ed  6328                    CALL            HADR_0X328
-:0X5ee  ec00                    PAGE            0X0
-:0X5ef  9884                    JBC             HRAM_0X84,      0
-:0X5f0  6df8                    GOTO            HADR_0X5F8
+:0X5e9  e61e                    MOVA            HRAM_0X1E
+:0X5ea  ec07                    PAGE            0X7
+:0X5eb  6328                    CALL            HADR_0X328
+:0X5ec  ec00                    PAGE            0X0
+:0X5ed  9884                    JBC             HRAM_0X84,      0
+:0X5ee  6df6                    GOTO            HADR_0X5F6
 ;					touch_key_staus=LONG_NO_RELEASE;
-:0X5f1  e504                    MOVI            0X4
-:0X5f2  ea01                    SECTION         0X1
-:0X5f3  e602                    MOVA            HRAM_0X2
+:0X5ef  e504                    MOVI            0X4
+:0X5f0  ea01                    SECTION         0X1
+:0X5f1  e602                    MOVA            HRAM_0X2
 ;					touch_key_busy=1;
-:0X5f4  e501                    MOVI            0X1
-:0X5f5  e601                    MOVA            HRAM_0X1
+:0X5f2  e501                    MOVI            0X1
+:0X5f3  e601                    MOVA            HRAM_0X1
 ;					perss_count_long=0;
-:0X5f6  e77c                    CLR             HRAM_0X7C
-:0X5f7  e77d                    CLR             HRAM_0X7D
-HADR_0X5F8:
+:0X5f4  e77c                    CLR             HRAM_0X7C
+:0X5f5  e77d                    CLR             HRAM_0X7D
+HADR_0X5F6:
 ;			}
 ;	}
 ;}
-:0X5f8  ea00                    SECTION         0X0
-:0X5f9  c183                    RET
-HADR_0X5FA:
-:0X5fa  5f86                    ADD             HRAM_0X86,      R
-:0X5fb  e402                    RETIA           0X2
-:0X5fc  e407                    RETIA           0X7
-                                ORG             0X5ff
+:0X5f6  ea00                    SECTION         0X0
+:0X5f7  c183                    RET
+HADR_0X5F8:
+:0X5f8  5f86                    ADD             HRAM_0X86,      R
+:0X5f9  e402                    RETIA           0X2
+:0X5fa  e407                    RETIA           0X7
+HADR_0X5FB:
+:0X5fb  5f86                    ADD             HRAM_0X86,      R
+:0X5fc  e40b                    RETIA           0XB
+:0X5fd  e402                    RETIA           0X2
+:0X5fe  e407                    RETIA           0X7
 HADR_0X5FF:
 :0X5ff  5f86                    ADD             HRAM_0X86,      R
 :0X600  e40b                    RETIA           0XB
@@ -2685,105 +2677,98 @@ HADR_0X616:
 HADR_0X61D:
 :0X61d  5f86                    ADD             HRAM_0X86,      R
 :0X61e  e40b                    RETIA           0XB
-:0X61f  e402                    RETIA           0X2
-:0X620  e407                    RETIA           0X7
-HADR_0X621:
-:0X621  5f86                    ADD             HRAM_0X86,      R
-:0X622  e40b                    RETIA           0XB
-:0X623  e404                    RETIA           0X4
-:0X624  e402                    RETIA           0X2
+:0X61f  e404                    RETIA           0X4
+:0X620  e402                    RETIA           0X2
+:0X621  e410                    RETIA           0X10
+:0X622  e409                    RETIA           0X9
+:0X623  e407                    RETIA           0X7
+:0X624  e411                    RETIA           0X11
 HADR_0X625:
-:0X625  e410                    RETIA           0X10
-:0X626  e409                    RETIA           0X9
-:0X627  e407                    RETIA           0X7
-:0X628  e411                    RETIA           0X11
-HADR_0X629:
-:0X629  5f86                    ADD             HRAM_0X86,      R
-:0X62a  e40b                    RETIA           0XB
-:0X62b  e404                    RETIA           0X4
-:0X62c  e402                    RETIA           0X2
-:0X62d  e410                    RETIA           0X10
-:0X62e  e407                    RETIA           0X7
-:0X62f  e411                    RETIA           0X11
-HADR_0X630:
-:0X630  5f86                    ADD             HRAM_0X86,      R
-:0X631  e40b                    RETIA           0XB
-:0X632  e404                    RETIA           0X4
-:0X633  e402                    RETIA           0X2
-:0X634  e409                    RETIA           0X9
-:0X635  e407                    RETIA           0X7
-:0X636  e411                    RETIA           0X11
-HADR_0X637:
-:0X637  5f86                    ADD             HRAM_0X86,      R
+:0X625  5f86                    ADD             HRAM_0X86,      R
+:0X626  e40b                    RETIA           0XB
+:0X627  e404                    RETIA           0X4
+:0X628  e402                    RETIA           0X2
+:0X629  e410                    RETIA           0X10
+:0X62a  e407                    RETIA           0X7
+:0X62b  e411                    RETIA           0X11
+HADR_0X62C:
+:0X62c  5f86                    ADD             HRAM_0X86,      R
+:0X62d  e40b                    RETIA           0XB
+:0X62e  e404                    RETIA           0X4
+:0X62f  e402                    RETIA           0X2
+:0X630  e409                    RETIA           0X9
+:0X631  e407                    RETIA           0X7
+:0X632  e411                    RETIA           0X11
+HADR_0X633:
+:0X633  5f86                    ADD             HRAM_0X86,      R
+:0X634  e403                    RETIA           0X3
+:0X635  e408                    RETIA           0X8
+HADR_0X636:
+:0X636  5f86                    ADD             HRAM_0X86,      R
+:0X637  e401                    RETIA           0X1
 :0X638  e403                    RETIA           0X3
-:0X639  e408                    RETIA           0X8
-HADR_0X63A:
-:0X63a  5f86                    ADD             HRAM_0X86,      R
-:0X63b  e401                    RETIA           0X1
-:0X63c  e403                    RETIA           0X3
-:0X63d  e406                    RETIA           0X6
-:0X63e  e40a                    RETIA           0XA
-:0X63f  e412                    RETIA           0X12
-HADR_0X640:
-:0X640  5f86                    ADD             HRAM_0X86,      R
-:0X641  e401                    RETIA           0X1
-:0X642  e403                    RETIA           0X3
-:0X643  e406                    RETIA           0X6
-:0X644  e408                    RETIA           0X8
-HADR_0X645:
-:0X645  e412                    RETIA           0X12
-HADR_0X646:
-:0X646  5f86                    ADD             HRAM_0X86,      R
-:0X647  e405                    RETIA           0X5
-:0X648  e406                    RETIA           0X6
-:0X649  e403                    RETIA           0X3
-:0X64a  e408                    RETIA           0X8
-HADR_0X64B:
-:0X64b  5f86                    ADD             HRAM_0X86,      R
-:0X64c  e401                    RETIA           0X1
-:0X64d  e405                    RETIA           0X5
-:0X64e  e406                    RETIA           0X6
-:0X64f  e408                    RETIA           0X8
-:0X650  e412                    RETIA           0X12
-HADR_0X651:
-:0X651  5f86                    ADD             HRAM_0X86,      R
-:0X652  e401                    RETIA           0X1
-:0X653  e405                    RETIA           0X5
-:0X654  e406                    RETIA           0X6
-:0X655  e40a                    RETIA           0XA
-:0X656  e412                    RETIA           0X12
+:0X639  e406                    RETIA           0X6
+:0X63a  e40a                    RETIA           0XA
+:0X63b  e412                    RETIA           0X12
+HADR_0X63C:
+:0X63c  5f86                    ADD             HRAM_0X86,      R
+:0X63d  e401                    RETIA           0X1
+:0X63e  e403                    RETIA           0X3
+:0X63f  e406                    RETIA           0X6
+:0X640  e408                    RETIA           0X8
+:0X641  e412                    RETIA           0X12
+HADR_0X642:
+:0X642  5f86                    ADD             HRAM_0X86,      R
+:0X643  e405                    RETIA           0X5
+:0X644  e406                    RETIA           0X6
+:0X645  e403                    RETIA           0X3
+:0X646  e408                    RETIA           0X8
+HADR_0X647:
+:0X647  5f86                    ADD             HRAM_0X86,      R
+:0X648  e401                    RETIA           0X1
+:0X649  e405                    RETIA           0X5
+:0X64a  e406                    RETIA           0X6
+:0X64b  e408                    RETIA           0X8
+:0X64c  e412                    RETIA           0X12
+HADR_0X64D:
+:0X64d  5f86                    ADD             HRAM_0X86,      R
+:0X64e  e401                    RETIA           0X1
+:0X64f  e405                    RETIA           0X5
+:0X650  e406                    RETIA           0X6
+:0X651  e40a                    RETIA           0XA
+:0X652  e412                    RETIA           0X12
+:0X653  e408                    RETIA           0X8
+HADR_0X654:
+:0X654  5f86                    ADD             HRAM_0X86,      R
+:0X655  e401                    RETIA           0X1
+:0X656  e403                    RETIA           0X3
 :0X657  e408                    RETIA           0X8
 HADR_0X658:
 :0X658  5f86                    ADD             HRAM_0X86,      R
 :0X659  e401                    RETIA           0X1
-:0X65a  e403                    RETIA           0X3
-:0X65b  e408                    RETIA           0X8
-HADR_0X65C:
-:0X65c  5f86                    ADD             HRAM_0X86,      R
-:0X65d  e401                    RETIA           0X1
-:0X65e  e405                    RETIA           0X5
-:0X65f  e403                    RETIA           0X3
-:0X660  e406                    RETIA           0X6
-:0X661  e40a                    RETIA           0XA
-:0X662  e408                    RETIA           0X8
-:0X663  e412                    RETIA           0X12
-HADR_0X664:
-:0X664  5f86                    ADD             HRAM_0X86,      R
-:0X665  e401                    RETIA           0X1
-:0X666  e405                    RETIA           0X5
-:0X667  e403                    RETIA           0X3
-:0X668  e406                    RETIA           0X6
-:0X669  e408                    RETIA           0X8
-:0X66a  e412                    RETIA           0X12
-HADR_0X66B:
-:0X66b  5f86                    ADD             HRAM_0X86,      R
-:0X66c  e401                    RETIA           0X1
-:0X66d  e403                    RETIA           0X3
-:0X66e  e405                    RETIA           0X5
-:0X66f  e408                    RETIA           0X8
-:0X670  e40a                    RETIA           0XA
-:0X671  e412                    RETIA           0X12
-HADR_0X672:
+:0X65a  e405                    RETIA           0X5
+:0X65b  e403                    RETIA           0X3
+:0X65c  e406                    RETIA           0X6
+:0X65d  e40a                    RETIA           0XA
+:0X65e  e408                    RETIA           0X8
+:0X65f  e412                    RETIA           0X12
+HADR_0X660:
+:0X660  5f86                    ADD             HRAM_0X86,      R
+:0X661  e401                    RETIA           0X1
+:0X662  e405                    RETIA           0X5
+:0X663  e403                    RETIA           0X3
+:0X664  e406                    RETIA           0X6
+:0X665  e408                    RETIA           0X8
+:0X666  e412                    RETIA           0X12
+HADR_0X667:
+:0X667  5f86                    ADD             HRAM_0X86,      R
+:0X668  e401                    RETIA           0X1
+:0X669  e403                    RETIA           0X3
+:0X66a  e405                    RETIA           0X5
+:0X66b  e408                    RETIA           0X8
+:0X66c  e40a                    RETIA           0XA
+:0X66d  e412                    RETIA           0X12
+HADR_0X66E:
 ;#include "..\main.h"
 ;#include "..\inc_user\scan_LED.h"
 ;
@@ -2851,585 +2836,553 @@ HADR_0X672:
 ;
 ;void Set_LED(unsigned char IO,unsigned char state){
 ;	switch(IO){
-:0X672  e783                    CLR             HRAM_0X83
-:0X673  ea01                    SECTION         0X1
-:0X674  5040                    MOV             HRAM_0X40,      A
-:0X675  e300                    XORI            0X0
-:0X676  9a84                    JBC             HRAM_0X84,      2
-:0X677  6e92                    GOTO            HADR_0X692
-:0X678  e301                    XORI            0X1
-:0X679  9a84                    JBC             HRAM_0X84,      2
-:0X67a  6ea0                    GOTO            HADR_0X6A0
-:0X67b  e303                    XORI            0X3
-:0X67c  9a84                    JBC             HRAM_0X84,      2
-:0X67d  6eae                    GOTO            HADR_0X6AE
-:0X67e  e301                    XORI            0X1
-:0X67f  9a84                    JBC             HRAM_0X84,      2
-:0X680  6ebc                    GOTO            HADR_0X6BC
-:0X681  e307                    XORI            0X7
-:0X682  9a84                    JBC             HRAM_0X84,      2
-:0X683  6eca                    GOTO            HADR_0X6CA
-:0X684  e301                    XORI            0X1
-:0X685  9a84                    JBC             HRAM_0X84,      2
-:0X686  6ed8                    GOTO            HADR_0X6D8
-:0X687  e303                    XORI            0X3
-:0X688  9a84                    JBC             HRAM_0X84,      2
-:0X689  6ee6                    GOTO            HADR_0X6E6
-:0X68a  e301                    XORI            0X1
-:0X68b  9a84                    JBC             HRAM_0X84,      2
-:0X68c  6ef4                    GOTO            HADR_0X6F4
-:0X68d  e30f                    XORI            0XF
-:0X68e  9a84                    JBC             HRAM_0X84,      2
-:0X68f  6f02                    GOTO            HADR_0X702
-:0X690  6e91                    GOTO            HADR_0X691
-HADR_0X691:
-:0X691  6f0f                    GOTO            HADR_0X70F
-HADR_0X692:
+:0X66e  e783                    CLR             HRAM_0X83
+:0X66f  ea01                    SECTION         0X1
+:0X670  5040                    MOV             HRAM_0X40,      A
+:0X671  e300                    XORI            0X0
+:0X672  9a84                    JBC             HRAM_0X84,      2
+:0X673  6e8e                    GOTO            HADR_0X68E
+:0X674  e301                    XORI            0X1
+:0X675  9a84                    JBC             HRAM_0X84,      2
+:0X676  6e9c                    GOTO            HADR_0X69C
+:0X677  e303                    XORI            0X3
+:0X678  9a84                    JBC             HRAM_0X84,      2
+HADR_0X679:
+:0X679  6eaa                    GOTO            HADR_0X6AA
+:0X67a  e301                    XORI            0X1
+:0X67b  9a84                    JBC             HRAM_0X84,      2
+:0X67c  6eb8                    GOTO            HADR_0X6B8
+:0X67d  e307                    XORI            0X7
+HADR_0X67E:
+:0X67e  9a84                    JBC             HRAM_0X84,      2
+HADR_0X67F:
+:0X67f  6ec6                    GOTO            HADR_0X6C6
+:0X680  e301                    XORI            0X1
+:0X681  9a84                    JBC             HRAM_0X84,      2
+:0X682  6ed4                    GOTO            HADR_0X6D4
+HADR_0X683:
+:0X683  e303                    XORI            0X3
+:0X684  9a84                    JBC             HRAM_0X84,      2
+:0X685  6ee2                    GOTO            HADR_0X6E2
+:0X686  e301                    XORI            0X1
+:0X687  9a84                    JBC             HRAM_0X84,      2
+:0X688  6ef0                    GOTO            HADR_0X6F0
+:0X689  e30f                    XORI            0XF
+:0X68a  9a84                    JBC             HRAM_0X84,      2
+:0X68b  6efe                    GOTO            HADR_0X6FE
+:0X68c  6e8d                    GOTO            HADR_0X68D
+HADR_0X68D:
+:0X68d  6f0b                    GOTO            HADR_0X70B
+HADR_0X68E:
 ;		case 0:
-:0X692  ea00                    SECTION         0X0
-:0X693  a83d                    BCC             HRAM_0X3D,      0
-:0X694  ea01                    SECTION         0X1
-:0X695  9041                    JBS             HRAM_0X41,      0
-:0X696  6e99                    GOTO            HADR_0X699
-:0X697  ea00                    SECTION         0X0
-:0X698  a03d                    BSS             HRAM_0X3D,      0
-HADR_0X699:
-:0X699  ea00                    SECTION         0X0
-:0X69a  983d                    JBC             HRAM_0X3D,      0
-:0X69b  6e9e                    GOTO            HADR_0X69E
-:0X69c  a9aa                    BCC             HRAM_0XAA,      1
-:0X69d  6e9f                    GOTO            HADR_0X69F
-HADR_0X69E:
-:0X69e  a1aa                    BSS             HRAM_0XAA,      1
-HADR_0X69F:
+:0X68e  ea00                    SECTION         0X0
+:0X68f  a83d                    BCC             HRAM_0X3D,      0
+:0X690  ea01                    SECTION         0X1
+:0X691  9041                    JBS             HRAM_0X41,      0
+:0X692  6e95                    GOTO            HADR_0X695
+:0X693  ea00                    SECTION         0X0
+:0X694  a03d                    BSS             HRAM_0X3D,      0
+HADR_0X695:
+:0X695  ea00                    SECTION         0X0
+:0X696  983d                    JBC             HRAM_0X3D,      0
+:0X697  6e9a                    GOTO            HADR_0X69A
+:0X698  a9aa                    BCC             HRAM_0XAA,      1
+:0X699  6e9b                    GOTO            HADR_0X69B
+HADR_0X69A:
+:0X69a  a1aa                    BSS             HRAM_0XAA,      1
+HADR_0X69B:
 ;		break;
-:0X69f  6f0f                    GOTO            HADR_0X70F
-HADR_0X6A0:
+:0X69b  6f0b                    GOTO            HADR_0X70B
+HADR_0X69C:
 ;		case 1:
-:0X6a0  ea00                    SECTION         0X0
-:0X6a1  a93d                    BCC             HRAM_0X3D,      1
-:0X6a2  ea01                    SECTION         0X1
+:0X69c  ea00                    SECTION         0X0
+:0X69d  a93d                    BCC             HRAM_0X3D,      1
+:0X69e  ea01                    SECTION         0X1
+:0X69f  9041                    JBS             HRAM_0X41,      0
+:0X6a0  6ea3                    GOTO            HADR_0X6A3
+:0X6a1  ea00                    SECTION         0X0
+:0X6a2  a13d                    BSS             HRAM_0X3D,      1
 HADR_0X6A3:
-:0X6a3  9041                    JBS             HRAM_0X41,      0
-:0X6a4  6ea7                    GOTO            HADR_0X6A7
-:0X6a5  ea00                    SECTION         0X0
-:0X6a6  a13d                    BSS             HRAM_0X3D,      1
-HADR_0X6A7:
-:0X6a7  ea00                    SECTION         0X0
-:0X6a8  993d                    JBC             HRAM_0X3D,      1
-:0X6a9  6eac                    GOTO            HADR_0X6AC
-:0X6aa  ada8                    BCC             HRAM_0XA8,      5
-:0X6ab  6ead                    GOTO            HADR_0X6AD
-HADR_0X6AC:
-:0X6ac  a5a8                    BSS             HRAM_0XA8,      5
-HADR_0X6AD:
+:0X6a3  ea00                    SECTION         0X0
+:0X6a4  993d                    JBC             HRAM_0X3D,      1
+:0X6a5  6ea8                    GOTO            HADR_0X6A8
+:0X6a6  ada8                    BCC             HRAM_0XA8,      5
+:0X6a7  6ea9                    GOTO            HADR_0X6A9
+HADR_0X6A8:
+:0X6a8  a5a8                    BSS             HRAM_0XA8,      5
+HADR_0X6A9:
 ;		break;
-:0X6ad  6f0f                    GOTO            HADR_0X70F
-HADR_0X6AE:
+:0X6a9  6f0b                    GOTO            HADR_0X70B
+HADR_0X6AA:
 ;		case 2:
-:0X6ae  ea00                    SECTION         0X0
-:0X6af  aa3d                    BCC             HRAM_0X3D,      2
-:0X6b0  ea01                    SECTION         0X1
-:0X6b1  9041                    JBS             HRAM_0X41,      0
-:0X6b2  6eb5                    GOTO            HADR_0X6B5
-:0X6b3  ea00                    SECTION         0X0
-:0X6b4  a23d                    BSS             HRAM_0X3D,      2
-HADR_0X6B5:
-:0X6b5  ea00                    SECTION         0X0
-:0X6b6  9a3d                    JBC             HRAM_0X3D,      2
-:0X6b7  6eba                    GOTO            HADR_0X6BA
-:0X6b8  aca8                    BCC             HRAM_0XA8,      4
-:0X6b9  6ebb                    GOTO            HADR_0X6BB
-HADR_0X6BA:
-:0X6ba  a4a8                    BSS             HRAM_0XA8,      4
-HADR_0X6BB:
+:0X6aa  ea00                    SECTION         0X0
+:0X6ab  aa3d                    BCC             HRAM_0X3D,      2
+:0X6ac  ea01                    SECTION         0X1
+:0X6ad  9041                    JBS             HRAM_0X41,      0
+:0X6ae  6eb1                    GOTO            HADR_0X6B1
+:0X6af  ea00                    SECTION         0X0
+:0X6b0  a23d                    BSS             HRAM_0X3D,      2
+HADR_0X6B1:
+:0X6b1  ea00                    SECTION         0X0
+:0X6b2  9a3d                    JBC             HRAM_0X3D,      2
+:0X6b3  6eb6                    GOTO            HADR_0X6B6
+:0X6b4  aca8                    BCC             HRAM_0XA8,      4
+:0X6b5  6eb7                    GOTO            HADR_0X6B7
+HADR_0X6B6:
+:0X6b6  a4a8                    BSS             HRAM_0XA8,      4
+HADR_0X6B7:
 ;		break;
-:0X6bb  6f0f                    GOTO            HADR_0X70F
-HADR_0X6BC:
+:0X6b7  6f0b                    GOTO            HADR_0X70B
+HADR_0X6B8:
 ;		case 3:
-:0X6bc  ea00                    SECTION         0X0
-:0X6bd  ab3d                    BCC             HRAM_0X3D,      3
-:0X6be  ea01                    SECTION         0X1
-:0X6bf  9041                    JBS             HRAM_0X41,      0
-:0X6c0  6ec3                    GOTO            HADR_0X6C3
-:0X6c1  ea00                    SECTION         0X0
-:0X6c2  a33d                    BSS             HRAM_0X3D,      3
-HADR_0X6C3:
-:0X6c3  ea00                    SECTION         0X0
-:0X6c4  9b3d                    JBC             HRAM_0X3D,      3
-:0X6c5  6ec8                    GOTO            HADR_0X6C8
-:0X6c6  aea9                    BCC             HRAM_0XA9,      6
-:0X6c7  6ec9                    GOTO            HADR_0X6C9
-HADR_0X6C8:
-:0X6c8  a6a9                    BSS             HRAM_0XA9,      6
-HADR_0X6C9:
+:0X6b8  ea00                    SECTION         0X0
+:0X6b9  ab3d                    BCC             HRAM_0X3D,      3
+:0X6ba  ea01                    SECTION         0X1
+:0X6bb  9041                    JBS             HRAM_0X41,      0
+:0X6bc  6ebf                    GOTO            HADR_0X6BF
+:0X6bd  ea00                    SECTION         0X0
+:0X6be  a33d                    BSS             HRAM_0X3D,      3
+HADR_0X6BF:
+:0X6bf  ea00                    SECTION         0X0
+:0X6c0  9b3d                    JBC             HRAM_0X3D,      3
+:0X6c1  6ec4                    GOTO            HADR_0X6C4
+:0X6c2  aea9                    BCC             HRAM_0XA9,      6
+:0X6c3  6ec5                    GOTO            HADR_0X6C5
+HADR_0X6C4:
+:0X6c4  a6a9                    BSS             HRAM_0XA9,      6
+HADR_0X6C5:
 ;		break;
-:0X6c9  6f0f                    GOTO            HADR_0X70F
-HADR_0X6CA:
+:0X6c5  6f0b                    GOTO            HADR_0X70B
+HADR_0X6C6:
 ;		case 4:
-:0X6ca  ea00                    SECTION         0X0
-:0X6cb  ac3d                    BCC             HRAM_0X3D,      4
-:0X6cc  ea01                    SECTION         0X1
-:0X6cd  9041                    JBS             HRAM_0X41,      0
-:0X6ce  6ed1                    GOTO            HADR_0X6D1
-:0X6cf  ea00                    SECTION         0X0
-:0X6d0  a43d                    BSS             HRAM_0X3D,      4
-HADR_0X6D1:
-:0X6d1  ea00                    SECTION         0X0
-:0X6d2  9c3d                    JBC             HRAM_0X3D,      4
-:0X6d3  6ed6                    GOTO            HADR_0X6D6
-:0X6d4  a9a8                    BCC             HRAM_0XA8,      1
-:0X6d5  6ed7                    GOTO            HADR_0X6D7
-HADR_0X6D6:
-:0X6d6  a1a8                    BSS             HRAM_0XA8,      1
-HADR_0X6D7:
+:0X6c6  ea00                    SECTION         0X0
+:0X6c7  ac3d                    BCC             HRAM_0X3D,      4
+:0X6c8  ea01                    SECTION         0X1
+:0X6c9  9041                    JBS             HRAM_0X41,      0
+:0X6ca  6ecd                    GOTO            HADR_0X6CD
+:0X6cb  ea00                    SECTION         0X0
+:0X6cc  a43d                    BSS             HRAM_0X3D,      4
+HADR_0X6CD:
+:0X6cd  ea00                    SECTION         0X0
+:0X6ce  9c3d                    JBC             HRAM_0X3D,      4
+:0X6cf  6ed2                    GOTO            HADR_0X6D2
+:0X6d0  a9a8                    BCC             HRAM_0XA8,      1
+:0X6d1  6ed3                    GOTO            HADR_0X6D3
+HADR_0X6D2:
+:0X6d2  a1a8                    BSS             HRAM_0XA8,      1
+HADR_0X6D3:
 ;		break;
-:0X6d7  6f0f                    GOTO            HADR_0X70F
-HADR_0X6D8:
+:0X6d3  6f0b                    GOTO            HADR_0X70B
+HADR_0X6D4:
 ;		case 5:
-:0X6d8  ea00                    SECTION         0X0
-:0X6d9  ad3d                    BCC             HRAM_0X3D,      5
-:0X6da  ea01                    SECTION         0X1
-:0X6db  9041                    JBS             HRAM_0X41,      0
-:0X6dc  6edf                    GOTO            HADR_0X6DF
-:0X6dd  ea00                    SECTION         0X0
-:0X6de  a53d                    BSS             HRAM_0X3D,      5
-HADR_0X6DF:
-:0X6df  ea00                    SECTION         0X0
-:0X6e0  9d3d                    JBC             HRAM_0X3D,      5
-:0X6e1  6ee4                    GOTO            HADR_0X6E4
-:0X6e2  a8aa                    BCC             HRAM_0XAA,      0
-:0X6e3  6ee5                    GOTO            HADR_0X6E5
-HADR_0X6E4:
-:0X6e4  a0aa                    BSS             HRAM_0XAA,      0
-HADR_0X6E5:
+:0X6d4  ea00                    SECTION         0X0
+:0X6d5  ad3d                    BCC             HRAM_0X3D,      5
+:0X6d6  ea01                    SECTION         0X1
+:0X6d7  9041                    JBS             HRAM_0X41,      0
+:0X6d8  6edb                    GOTO            HADR_0X6DB
+:0X6d9  ea00                    SECTION         0X0
+:0X6da  a53d                    BSS             HRAM_0X3D,      5
+HADR_0X6DB:
+:0X6db  ea00                    SECTION         0X0
+:0X6dc  9d3d                    JBC             HRAM_0X3D,      5
+:0X6dd  6ee0                    GOTO            HADR_0X6E0
+:0X6de  a8aa                    BCC             HRAM_0XAA,      0
+:0X6df  6ee1                    GOTO            HADR_0X6E1
+HADR_0X6E0:
+:0X6e0  a0aa                    BSS             HRAM_0XAA,      0
+HADR_0X6E1:
 ;		break;
-:0X6e5  6f0f                    GOTO            HADR_0X70F
-HADR_0X6E6:
+:0X6e1  6f0b                    GOTO            HADR_0X70B
+HADR_0X6E2:
 ;		case 6:
-:0X6e6  ea00                    SECTION         0X0
-:0X6e7  ae3d                    BCC             HRAM_0X3D,      6
-:0X6e8  ea01                    SECTION         0X1
-:0X6e9  9041                    JBS             HRAM_0X41,      0
-:0X6ea  6eed                    GOTO            HADR_0X6ED
-:0X6eb  ea00                    SECTION         0X0
-:0X6ec  a63d                    BSS             HRAM_0X3D,      6
-HADR_0X6ED:
-:0X6ed  ea00                    SECTION         0X0
-:0X6ee  9e3d                    JBC             HRAM_0X3D,      6
-:0X6ef  6ef2                    GOTO            HADR_0X6F2
-:0X6f0  aea8                    BCC             HRAM_0XA8,      6
-:0X6f1  6ef3                    GOTO            HADR_0X6F3
-HADR_0X6F2:
-:0X6f2  a6a8                    BSS             HRAM_0XA8,      6
-HADR_0X6F3:
+:0X6e2  ea00                    SECTION         0X0
+:0X6e3  ae3d                    BCC             HRAM_0X3D,      6
+:0X6e4  ea01                    SECTION         0X1
+:0X6e5  9041                    JBS             HRAM_0X41,      0
+:0X6e6  6ee9                    GOTO            HADR_0X6E9
+:0X6e7  ea00                    SECTION         0X0
+:0X6e8  a63d                    BSS             HRAM_0X3D,      6
+HADR_0X6E9:
+:0X6e9  ea00                    SECTION         0X0
+:0X6ea  9e3d                    JBC             HRAM_0X3D,      6
+:0X6eb  6eee                    GOTO            HADR_0X6EE
+:0X6ec  aea8                    BCC             HRAM_0XA8,      6
+:0X6ed  6eef                    GOTO            HADR_0X6EF
+HADR_0X6EE:
+:0X6ee  a6a8                    BSS             HRAM_0XA8,      6
+HADR_0X6EF:
 ;		break;
-:0X6f3  6f0f                    GOTO            HADR_0X70F
-HADR_0X6F4:
+:0X6ef  6f0b                    GOTO            HADR_0X70B
+HADR_0X6F0:
 ;		case 7:
-:0X6f4  ea00                    SECTION         0X0
-:0X6f5  af3d                    BCC             HRAM_0X3D,      7
-:0X6f6  ea01                    SECTION         0X1
-:0X6f7  9041                    JBS             HRAM_0X41,      0
-:0X6f8  6efb                    GOTO            HADR_0X6FB
-:0X6f9  ea00                    SECTION         0X0
-:0X6fa  a73d                    BSS             HRAM_0X3D,      7
-HADR_0X6FB:
-:0X6fb  ea00                    SECTION         0X0
-:0X6fc  9f3d                    JBC             HRAM_0X3D,      7
-:0X6fd  6f00                    GOTO            HADR_0X700
-:0X6fe  a8a9                    BCC             HRAM_0XA9,      0
-:0X6ff  6f01                    GOTO            HADR_0X701
-HADR_0X700:
-:0X700  a0a9                    BSS             HRAM_0XA9,      0
-HADR_0X701:
+:0X6f0  ea00                    SECTION         0X0
+:0X6f1  af3d                    BCC             HRAM_0X3D,      7
+:0X6f2  ea01                    SECTION         0X1
+:0X6f3  9041                    JBS             HRAM_0X41,      0
+:0X6f4  6ef7                    GOTO            HADR_0X6F7
+:0X6f5  ea00                    SECTION         0X0
+:0X6f6  a73d                    BSS             HRAM_0X3D,      7
+HADR_0X6F7:
+:0X6f7  ea00                    SECTION         0X0
+:0X6f8  9f3d                    JBC             HRAM_0X3D,      7
+:0X6f9  6efc                    GOTO            HADR_0X6FC
+:0X6fa  a8a9                    BCC             HRAM_0XA9,      0
+:0X6fb  6efd                    GOTO            HADR_0X6FD
+HADR_0X6FC:
+:0X6fc  a0a9                    BSS             HRAM_0XA9,      0
+HADR_0X6FD:
 ;		break;
-:0X701  6f0f                    GOTO            HADR_0X70F
-HADR_0X702:
+:0X6fd  6f0b                    GOTO            HADR_0X70B
+HADR_0X6FE:
 ;		case 8:
-:0X702  ea00                    SECTION         0X0
-:0X703  a83e                    BCC             HRAM_0X3E,      0
-:0X704  ea01                    SECTION         0X1
-:0X705  9041                    JBS             HRAM_0X41,      0
-:0X706  6f09                    GOTO            HADR_0X709
-:0X707  ea00                    SECTION         0X0
-:0X708  a03e                    BSS             HRAM_0X3E,      0
-HADR_0X709:
-:0X709  ea00                    SECTION         0X0
-:0X70a  983e                    JBC             HRAM_0X3E,      0
-:0X70b  6f0e                    GOTO            HADR_0X70E
-:0X70c  aba8                    BCC             HRAM_0XA8,      3
-:0X70d  6f0f                    GOTO            HADR_0X70F
-HADR_0X70E:
-:0X70e  a3a8                    BSS             HRAM_0XA8,      3
-HADR_0X70F:
+:0X6fe  ea00                    SECTION         0X0
+:0X6ff  a83e                    BCC             HRAM_0X3E,      0
+:0X700  ea01                    SECTION         0X1
+:0X701  9041                    JBS             HRAM_0X41,      0
+:0X702  6f05                    GOTO            HADR_0X705
+:0X703  ea00                    SECTION         0X0
+:0X704  a03e                    BSS             HRAM_0X3E,      0
+HADR_0X705:
+:0X705  ea00                    SECTION         0X0
+:0X706  983e                    JBC             HRAM_0X3E,      0
+:0X707  6f0a                    GOTO            HADR_0X70A
+:0X708  aba8                    BCC             HRAM_0XA8,      3
+:0X709  6f0b                    GOTO            HADR_0X70B
+HADR_0X70A:
+:0X70a  a3a8                    BSS             HRAM_0XA8,      3
+HADR_0X70B:
 ;		break;
 ;	}
 ;}
-:0X70f  ea00                    SECTION         0X0
-:0X710  c183                    RET
-HADR_0X711:
+:0X70b  ea00                    SECTION         0X0
+:0X70c  c183                    RET
+HADR_0X70D:
 ;void LED_Clear(){
 ;	int i=9;
-:0X711  e783                    CLR             HRAM_0X83
-:0X712  e500                    MOVI            0X0
-:0X713  ea01                    SECTION         0X1
-:0X714  e63d                    MOVA            HRAM_0X3D
-:0X715  e509                    MOVI            0X9
-:0X716  e63c                    MOVA            HRAM_0X3C
-HADR_0X717:
+:0X70d  e783                    CLR             HRAM_0X83
+:0X70e  e500                    MOVI            0X0
+:0X70f  ea01                    SECTION         0X1
+:0X710  e63d                    MOVA            HRAM_0X3D
+:0X711  e509                    MOVI            0X9
+:0X712  e63c                    MOVA            HRAM_0X3C
+HADR_0X713:
 ;	while(i--){
-:0X717  ea01                    SECTION         0X1
-:0X718  503d                    MOV             HRAM_0X3D,      A
-:0X719  e63f                    MOVA            HRAM_0X3F
-:0X71a  503c                    MOV             HRAM_0X3C,      A
-:0X71b  e63e                    MOVA            HRAM_0X3E
-:0X71c  503c                    MOV             HRAM_0X3C,      A
-:0X71d  9284                    JBS             HRAM_0X84,      2
-:0X71e  6f20                    GOTO            HADR_0X720
-:0X71f  113d                    DEC             HRAM_0X3D,      R
-HADR_0X720:
-:0X720  113c                    DEC             HRAM_0X3C,      R
-:0X721  503e                    MOV             HRAM_0X3E,      A
-:0X722  583f                    IOR             HRAM_0X3F,      A
-:0X723  9a84                    JBC             HRAM_0X84,      2
-:0X724  6f2f                    GOTO            HADR_0X72F
+:0X713  ea01                    SECTION         0X1
+:0X714  503d                    MOV             HRAM_0X3D,      A
+:0X715  e63f                    MOVA            HRAM_0X3F
+:0X716  503c                    MOV             HRAM_0X3C,      A
+:0X717  e63e                    MOVA            HRAM_0X3E
+:0X718  503c                    MOV             HRAM_0X3C,      A
+:0X719  9284                    JBS             HRAM_0X84,      2
+:0X71a  6f1c                    GOTO            HADR_0X71C
+:0X71b  113d                    DEC             HRAM_0X3D,      R
+HADR_0X71C:
+:0X71c  113c                    DEC             HRAM_0X3C,      R
+:0X71d  503e                    MOV             HRAM_0X3E,      A
+:0X71e  583f                    IOR             HRAM_0X3F,      A
+:0X71f  9a84                    JBC             HRAM_0X84,      2
+:0X720  6f2b                    GOTO            HADR_0X72B
 ;		Set_LED(i,0);	
-:0X725  503c                    MOV             HRAM_0X3C,      A
-:0X726  e63e                    MOVA            HRAM_0X3E
-:0X727  503e                    MOV             HRAM_0X3E,      A
-:0X728  e640                    MOVA            HRAM_0X40
-:0X729  e500                    MOVI            0X0
-:0X72a  e641                    MOVA            HRAM_0X41
-:0X72b  ec00                    PAGE            0X0
-:0X72c  6672                    CALL            HADR_0X672
-:0X72d  ec00                    PAGE            0X0
+:0X721  503c                    MOV             HRAM_0X3C,      A
+:0X722  e63e                    MOVA            HRAM_0X3E
+:0X723  503e                    MOV             HRAM_0X3E,      A
+:0X724  e640                    MOVA            HRAM_0X40
+:0X725  e500                    MOVI            0X0
+:0X726  e641                    MOVA            HRAM_0X41
+:0X727  ec00                    PAGE            0X0
+:0X728  666e                    CALL            HADR_0X66E
+:0X729  ec00                    PAGE            0X0
 ;	}
-:0X72e  6f17                    GOTO            HADR_0X717
-HADR_0X72F:
+:0X72a  6f13                    GOTO            HADR_0X713
+HADR_0X72B:
 ;}
-:0X72f  ea00                    SECTION         0X0
-:0X730  c183                    RET
-HADR_0X731:
+:0X72b  ea00                    SECTION         0X0
+:0X72c  c183                    RET
+HADR_0X72D:
 ;void Updata_SCAN_LED_BUF_R(){
 ;  char x=1;
 ;
 ;  SCAN_LED_BUF_R[0]=0x0f;
-:0X731  e783                    CLR             HRAM_0X83
-:0X732  e50f                    MOVI            0XF
-:0X733  ea01                    SECTION         0X1
-:0X734  e605                    MOVA            HRAM_0X5
+:0X72d  e783                    CLR             HRAM_0X83
+:0X72e  e50f                    MOVI            0XF
+:0X72f  ea01                    SECTION         0X1
+:0X730  e605                    MOVA            HRAM_0X5
 ;  SCAN_LED_BUF_R[1]=0x0f;
-:0X735  e50f                    MOVI            0XF
-:0X736  e606                    MOVA            HRAM_0X6
+:0X731  e50f                    MOVI            0XF
+:0X732  e606                    MOVA            HRAM_0X6
 ;  SCAN_LED_BUF_R[2]=0x0f;
-:0X737  e50f                    MOVI            0XF
-:0X738  e607                    MOVA            HRAM_0X7
+:0X733  e50f                    MOVI            0XF
+:0X734  e607                    MOVA            HRAM_0X7
 ;  SCAN_LED_BUF_R[3]=0x0f;
-:0X739  e50f                    MOVI            0XF
-:0X73a  e608                    MOVA            HRAM_0X8
+:0X735  e50f                    MOVI            0XF
+:0X736  e608                    MOVA            HRAM_0X8
 ;  SCAN_LED_BUF_R[4]=0x0f;
-:0X73b  e50f                    MOVI            0XF
-:0X73c  e609                    MOVA            HRAM_0X9
+:0X737  e50f                    MOVI            0XF
+:0X738  e609                    MOVA            HRAM_0X9
 ;
 ;  if(display_buf[1-x]==1){
-:0X73d  500a                    MOV             HRAM_0XA,       A
-:0X73e  e301                    XORI            0X1
-:0X73f  9284                    JBS             HRAM_0X84,      2
-:0X740  6f46                    GOTO            HADR_0X746
+:0X739  500a                    MOV             HRAM_0XA,       A
+:0X73a  e301                    XORI            0X1
+:0X73b  9284                    JBS             HRAM_0X84,      2
+:0X73c  6f42                    GOTO            HADR_0X742
 ;		 SCAN_LED_BUF_R[0]=SCAN_LED_BUF_R[0] & 0x0E;
-:0X741  5005                    MOV             HRAM_0X5,       A
-:0X742  e20e                    ANDI            0XE
-:0X743  e63c                    MOVA            HRAM_0X3C
-:0X744  503c                    MOV             HRAM_0X3C,      A
-:0X745  e605                    MOVA            HRAM_0X5
-HADR_0X746:
+:0X73d  5005                    MOV             HRAM_0X5,       A
+:0X73e  e20e                    ANDI            0XE
+:0X73f  e63c                    MOVA            HRAM_0X3C
+:0X740  503c                    MOV             HRAM_0X3C,      A
+:0X741  e605                    MOVA            HRAM_0X5
+HADR_0X742:
 ;  }
-:0X746  500f                    MOV             HRAM_0XF,       A
-:0X747  e301                    XORI            0X1
-:0X748  9284                    JBS             HRAM_0X84,      2
-:0X749  6f4f                    GOTO            HADR_0X74F
+:0X742  500f                    MOV             HRAM_0XF,       A
+:0X743  e301                    XORI            0X1
+:0X744  9284                    JBS             HRAM_0X84,      2
+:0X745  6f4b                    GOTO            HADR_0X74B
 ;		 SCAN_LED_BUF_R[0]=SCAN_LED_BUF_R[0] & 0x0D;
-:0X74a  5005                    MOV             HRAM_0X5,       A
-:0X74b  e20d                    ANDI            0XD
-:0X74c  e63c                    MOVA            HRAM_0X3C
-:0X74d  503c                    MOV             HRAM_0X3C,      A
-:0X74e  e605                    MOVA            HRAM_0X5
-HADR_0X74F:
+:0X746  5005                    MOV             HRAM_0X5,       A
+:0X747  e20d                    ANDI            0XD
+:0X748  e63c                    MOVA            HRAM_0X3C
+:0X749  503c                    MOV             HRAM_0X3C,      A
+:0X74a  e605                    MOVA            HRAM_0X5
+HADR_0X74B:
 ;  }
-:0X74f  5014                    MOV             HRAM_0X14,      A
-:0X750  e301                    XORI            0X1
-:0X751  9284                    JBS             HRAM_0X84,      2
-:0X752  6f58                    GOTO            HADR_0X758
+:0X74b  5014                    MOV             HRAM_0X14,      A
+:0X74c  e301                    XORI            0X1
+:0X74d  9284                    JBS             HRAM_0X84,      2
+:0X74e  6f54                    GOTO            HADR_0X754
 ;		 SCAN_LED_BUF_R[0]=SCAN_LED_BUF_R[0] & 0x0B;   
-:0X753  5005                    MOV             HRAM_0X5,       A
-:0X754  e20b                    ANDI            0XB
-:0X755  e63c                    MOVA            HRAM_0X3C
-:0X756  503c                    MOV             HRAM_0X3C,      A
-:0X757  e605                    MOVA            HRAM_0X5
-HADR_0X758:
+:0X74f  5005                    MOV             HRAM_0X5,       A
+:0X750  e20b                    ANDI            0XB
+:0X751  e63c                    MOVA            HRAM_0X3C
+:0X752  503c                    MOV             HRAM_0X3C,      A
+:0X753  e605                    MOVA            HRAM_0X5
+HADR_0X754:
 ;  }
-:0X758  5019                    MOV             HRAM_0X19,      A
-:0X759  e301                    XORI            0X1
-:0X75a  9284                    JBS             HRAM_0X84,      2
-:0X75b  6f61                    GOTO            HADR_0X761
+:0X754  5019                    MOV             HRAM_0X19,      A
+:0X755  e301                    XORI            0X1
+:0X756  9284                    JBS             HRAM_0X84,      2
+:0X757  6f5d                    GOTO            HADR_0X75D
 ; 		 SCAN_LED_BUF_R[0]=SCAN_LED_BUF_R[0] & 0x07;   
-:0X75c  5005                    MOV             HRAM_0X5,       A
-:0X75d  e207                    ANDI            0X7
-:0X75e  e63c                    MOVA            HRAM_0X3C
-:0X75f  503c                    MOV             HRAM_0X3C,      A
-:0X760  e605                    MOVA            HRAM_0X5
-HADR_0X761:
+:0X758  5005                    MOV             HRAM_0X5,       A
+:0X759  e207                    ANDI            0X7
+:0X75a  e63c                    MOVA            HRAM_0X3C
+:0X75b  503c                    MOV             HRAM_0X3C,      A
+:0X75c  e605                    MOVA            HRAM_0X5
+HADR_0X75D:
 ;  }
-:0X761  500b                    MOV             HRAM_0XB,       A
-:0X762  e301                    XORI            0X1
-:0X763  9284                    JBS             HRAM_0X84,      2
-:0X764  6f6a                    GOTO            HADR_0X76A
+:0X75d  500b                    MOV             HRAM_0XB,       A
+:0X75e  e301                    XORI            0X1
+:0X75f  9284                    JBS             HRAM_0X84,      2
+:0X760  6f66                    GOTO            HADR_0X766
 ;		SCAN_LED_BUF_R[1]=SCAN_LED_BUF_R[1] & 0x0E; 
-:0X765  5006                    MOV             HRAM_0X6,       A
-:0X766  e20e                    ANDI            0XE
-:0X767  e63c                    MOVA            HRAM_0X3C
-:0X768  503c                    MOV             HRAM_0X3C,      A
-:0X769  e606                    MOVA            HRAM_0X6
-HADR_0X76A:
+:0X761  5006                    MOV             HRAM_0X6,       A
+:0X762  e20e                    ANDI            0XE
+:0X763  e63c                    MOVA            HRAM_0X3C
+:0X764  503c                    MOV             HRAM_0X3C,      A
+:0X765  e606                    MOVA            HRAM_0X6
+HADR_0X766:
 ;  }
-:0X76a  5010                    MOV             HRAM_0X10,      A
-:0X76b  e301                    XORI            0X1
-:0X76c  9284                    JBS             HRAM_0X84,      2
-:0X76d  6f73                    GOTO            HADR_0X773
+:0X766  5010                    MOV             HRAM_0X10,      A
+:0X767  e301                    XORI            0X1
+:0X768  9284                    JBS             HRAM_0X84,      2
+:0X769  6f6f                    GOTO            HADR_0X76F
 ;		SCAN_LED_BUF_R[1]=SCAN_LED_BUF_R[1] & 0x0D;    
-:0X76e  5006                    MOV             HRAM_0X6,       A
-:0X76f  e20d                    ANDI            0XD
-:0X770  e63c                    MOVA            HRAM_0X3C
-:0X771  503c                    MOV             HRAM_0X3C,      A
-:0X772  e606                    MOVA            HRAM_0X6
-HADR_0X773:
+:0X76a  5006                    MOV             HRAM_0X6,       A
+:0X76b  e20d                    ANDI            0XD
+:0X76c  e63c                    MOVA            HRAM_0X3C
+:0X76d  503c                    MOV             HRAM_0X3C,      A
+:0X76e  e606                    MOVA            HRAM_0X6
+HADR_0X76F:
 ;  }
-:0X773  5015                    MOV             HRAM_0X15,      A
-:0X774  e301                    XORI            0X1
-:0X775  9284                    JBS             HRAM_0X84,      2
-:0X776  6f7c                    GOTO            HADR_0X77C
+:0X76f  5015                    MOV             HRAM_0X15,      A
+:0X770  e301                    XORI            0X1
+:0X771  9284                    JBS             HRAM_0X84,      2
+:0X772  6f78                    GOTO            HADR_0X778
 ;		SCAN_LED_BUF_R[1]=SCAN_LED_BUF_R[1] & 0x0B;    
-:0X777  5006                    MOV             HRAM_0X6,       A
-:0X778  e20b                    ANDI            0XB
-:0X779  e63c                    MOVA            HRAM_0X3C
-:0X77a  503c                    MOV             HRAM_0X3C,      A
-:0X77b  e606                    MOVA            HRAM_0X6
-HADR_0X77C:
+:0X773  5006                    MOV             HRAM_0X6,       A
+:0X774  e20b                    ANDI            0XB
+:0X775  e63c                    MOVA            HRAM_0X3C
+:0X776  503c                    MOV             HRAM_0X3C,      A
+:0X777  e606                    MOVA            HRAM_0X6
+HADR_0X778:
 ;  }
-:0X77c  501a                    MOV             HRAM_0X1A,      A
-:0X77d  e301                    XORI            0X1
-:0X77e  9284                    JBS             HRAM_0X84,      2
-:0X77f  6f85                    GOTO            HADR_0X785
+:0X778  501a                    MOV             HRAM_0X1A,      A
+:0X779  e301                    XORI            0X1
+:0X77a  9284                    JBS             HRAM_0X84,      2
+:0X77b  6f81                    GOTO            HADR_0X781
 ;		SCAN_LED_BUF_R[1]=SCAN_LED_BUF_R[1] & 0x07;    
-:0X780  5006                    MOV             HRAM_0X6,       A
-:0X781  e207                    ANDI            0X7
-:0X782  e63c                    MOVA            HRAM_0X3C
-:0X783  503c                    MOV             HRAM_0X3C,      A
-:0X784  e606                    MOVA            HRAM_0X6
-HADR_0X785:
+:0X77c  5006                    MOV             HRAM_0X6,       A
+:0X77d  e207                    ANDI            0X7
+:0X77e  e63c                    MOVA            HRAM_0X3C
+:0X77f  503c                    MOV             HRAM_0X3C,      A
+:0X780  e606                    MOVA            HRAM_0X6
+HADR_0X781:
 ;  }
-:0X785  500c                    MOV             HRAM_0XC,       A
-:0X786  e301                    XORI            0X1
-:0X787  9284                    JBS             HRAM_0X84,      2
-:0X788  6f8e                    GOTO            HADR_0X78E
+:0X781  500c                    MOV             HRAM_0XC,       A
+:0X782  e301                    XORI            0X1
+:0X783  9284                    JBS             HRAM_0X84,      2
+:0X784  6f8a                    GOTO            HADR_0X78A
 ;		SCAN_LED_BUF_R[2]=SCAN_LED_BUF_R[2] & 0x0E;    
-:0X789  5007                    MOV             HRAM_0X7,       A
-:0X78a  e20e                    ANDI            0XE
-:0X78b  e63c                    MOVA            HRAM_0X3C
-:0X78c  503c                    MOV             HRAM_0X3C,      A
-:0X78d  e607                    MOVA            HRAM_0X7
-HADR_0X78E:
+:0X785  5007                    MOV             HRAM_0X7,       A
+:0X786  e20e                    ANDI            0XE
+:0X787  e63c                    MOVA            HRAM_0X3C
+:0X788  503c                    MOV             HRAM_0X3C,      A
+:0X789  e607                    MOVA            HRAM_0X7
+HADR_0X78A:
 ;  }
-:0X78e  5011                    MOV             HRAM_0X11,      A
-:0X78f  e301                    XORI            0X1
-:0X790  9284                    JBS             HRAM_0X84,      2
-:0X791  6f97                    GOTO            HADR_0X797
+:0X78a  5011                    MOV             HRAM_0X11,      A
+:0X78b  e301                    XORI            0X1
+:0X78c  9284                    JBS             HRAM_0X84,      2
+:0X78d  6f93                    GOTO            HADR_0X793
 ;		SCAN_LED_BUF_R[2]=SCAN_LED_BUF_R[2] & 0x0D;   
-:0X792  5007                    MOV             HRAM_0X7,       A
-:0X793  e20d                    ANDI            0XD
-:0X794  e63c                    MOVA            HRAM_0X3C
-:0X795  503c                    MOV             HRAM_0X3C,      A
-:0X796  e607                    MOVA            HRAM_0X7
-HADR_0X797:
+:0X78e  5007                    MOV             HRAM_0X7,       A
+:0X78f  e20d                    ANDI            0XD
+:0X790  e63c                    MOVA            HRAM_0X3C
+:0X791  503c                    MOV             HRAM_0X3C,      A
+:0X792  e607                    MOVA            HRAM_0X7
+HADR_0X793:
 ;  }
-:0X797  5016                    MOV             HRAM_0X16,      A
-:0X798  e301                    XORI            0X1
-:0X799  9284                    JBS             HRAM_0X84,      2
-:0X79a  6fa0                    GOTO            HADR_0X7A0
+:0X793  5016                    MOV             HRAM_0X16,      A
+:0X794  e301                    XORI            0X1
+:0X795  9284                    JBS             HRAM_0X84,      2
+:0X796  6f9c                    GOTO            HADR_0X79C
 ;		SCAN_LED_BUF_R[2]=SCAN_LED_BUF_R[2] & 0x0B;   
-:0X79b  5007                    MOV             HRAM_0X7,       A
-:0X79c  e20b                    ANDI            0XB
-:0X79d  e63c                    MOVA            HRAM_0X3C
-:0X79e  503c                    MOV             HRAM_0X3C,      A
-:0X79f  e607                    MOVA            HRAM_0X7
-HADR_0X7A0:
+:0X797  5007                    MOV             HRAM_0X7,       A
+:0X798  e20b                    ANDI            0XB
+:0X799  e63c                    MOVA            HRAM_0X3C
+:0X79a  503c                    MOV             HRAM_0X3C,      A
+:0X79b  e607                    MOVA            HRAM_0X7
+HADR_0X79C:
 ;  }
-:0X7a0  501b                    MOV             HRAM_0X1B,      A
-:0X7a1  e301                    XORI            0X1
-:0X7a2  9284                    JBS             HRAM_0X84,      2
-:0X7a3  6fa9                    GOTO            HADR_0X7A9
+:0X79c  501b                    MOV             HRAM_0X1B,      A
+:0X79d  e301                    XORI            0X1
+:0X79e  9284                    JBS             HRAM_0X84,      2
+:0X79f  6fa5                    GOTO            HADR_0X7A5
 ;		SCAN_LED_BUF_R[2]=SCAN_LED_BUF_R[2] & 0x07;    
-:0X7a4  5007                    MOV             HRAM_0X7,       A
-:0X7a5  e207                    ANDI            0X7
-:0X7a6  e63c                    MOVA            HRAM_0X3C
-:0X7a7  503c                    MOV             HRAM_0X3C,      A
-:0X7a8  e607                    MOVA            HRAM_0X7
-HADR_0X7A9:
+:0X7a0  5007                    MOV             HRAM_0X7,       A
+:0X7a1  e207                    ANDI            0X7
+:0X7a2  e63c                    MOVA            HRAM_0X3C
+HADR_0X7A3:
+:0X7a3  503c                    MOV             HRAM_0X3C,      A
+:0X7a4  e607                    MOVA            HRAM_0X7
+HADR_0X7A5:
 ;  }
-:0X7a9  500d                    MOV             HRAM_0XD,       A
-:0X7aa  e301                    XORI            0X1
-:0X7ab  9284                    JBS             HRAM_0X84,      2
-:0X7ac  6fb2                    GOTO            HADR_0X7B2
+:0X7a5  500d                    MOV             HRAM_0XD,       A
+:0X7a6  e301                    XORI            0X1
+:0X7a7  9284                    JBS             HRAM_0X84,      2
+:0X7a8  6fae                    GOTO            HADR_0X7AE
 ;		SCAN_LED_BUF_R[3]=SCAN_LED_BUF_R[3] & 0x0E;    
-:0X7ad  5008                    MOV             HRAM_0X8,       A
-:0X7ae  e20e                    ANDI            0XE
-:0X7af  e63c                    MOVA            HRAM_0X3C
-:0X7b0  503c                    MOV             HRAM_0X3C,      A
-:0X7b1  e608                    MOVA            HRAM_0X8
-HADR_0X7B2:
+:0X7a9  5008                    MOV             HRAM_0X8,       A
+:0X7aa  e20e                    ANDI            0XE
+:0X7ab  e63c                    MOVA            HRAM_0X3C
+:0X7ac  503c                    MOV             HRAM_0X3C,      A
+:0X7ad  e608                    MOVA            HRAM_0X8
+HADR_0X7AE:
 ;  }
-:0X7b2  5012                    MOV             HRAM_0X12,      A
-:0X7b3  e301                    XORI            0X1
-:0X7b4  9284                    JBS             HRAM_0X84,      2
-:0X7b5  6fbb                    GOTO            HADR_0X7BB
+:0X7ae  5012                    MOV             HRAM_0X12,      A
+:0X7af  e301                    XORI            0X1
+:0X7b0  9284                    JBS             HRAM_0X84,      2
+:0X7b1  6fb7                    GOTO            HADR_0X7B7
 ;		SCAN_LED_BUF_R[3]=SCAN_LED_BUF_R[3] & 0x0D;    
-:0X7b6  5008                    MOV             HRAM_0X8,       A
-:0X7b7  e20d                    ANDI            0XD
-:0X7b8  e63c                    MOVA            HRAM_0X3C
-:0X7b9  503c                    MOV             HRAM_0X3C,      A
-:0X7ba  e608                    MOVA            HRAM_0X8
-HADR_0X7BB:
+:0X7b2  5008                    MOV             HRAM_0X8,       A
+:0X7b3  e20d                    ANDI            0XD
+:0X7b4  e63c                    MOVA            HRAM_0X3C
+:0X7b5  503c                    MOV             HRAM_0X3C,      A
+:0X7b6  e608                    MOVA            HRAM_0X8
+HADR_0X7B7:
 ;  }
-:0X7bb  5017                    MOV             HRAM_0X17,      A
-:0X7bc  e301                    XORI            0X1
-:0X7bd  9284                    JBS             HRAM_0X84,      2
-:0X7be  6fc4                    GOTO            HADR_0X7C4
+:0X7b7  5017                    MOV             HRAM_0X17,      A
+:0X7b8  e301                    XORI            0X1
+:0X7b9  9284                    JBS             HRAM_0X84,      2
+:0X7ba  6fc0                    GOTO            HADR_0X7C0
 ;		SCAN_LED_BUF_R[3]=SCAN_LED_BUF_R[3] & 0x0B;    
-:0X7bf  5008                    MOV             HRAM_0X8,       A
-:0X7c0  e20b                    ANDI            0XB
-:0X7c1  e63c                    MOVA            HRAM_0X3C
-:0X7c2  503c                    MOV             HRAM_0X3C,      A
-HADR_0X7C3:
-:0X7c3  e608                    MOVA            HRAM_0X8
-HADR_0X7C4:
+:0X7bb  5008                    MOV             HRAM_0X8,       A
+:0X7bc  e20b                    ANDI            0XB
+:0X7bd  e63c                    MOVA            HRAM_0X3C
+:0X7be  503c                    MOV             HRAM_0X3C,      A
+HADR_0X7BF:
+:0X7bf  e608                    MOVA            HRAM_0X8
+HADR_0X7C0:
 ;  }
-:0X7c4  500e                    MOV             HRAM_0XE,       A
-:0X7c5  e301                    XORI            0X1
-:0X7c6  9284                    JBS             HRAM_0X84,      2
-:0X7c7  6fcd                    GOTO            HADR_0X7CD
+:0X7c0  500e                    MOV             HRAM_0XE,       A
+:0X7c1  e301                    XORI            0X1
+:0X7c2  9284                    JBS             HRAM_0X84,      2
+:0X7c3  6fc9                    GOTO            HADR_0X7C9
 ;		SCAN_LED_BUF_R[4]=SCAN_LED_BUF_R[4] & 0x0E;   
-:0X7c8  5009                    MOV             HRAM_0X9,       A
-:0X7c9  e20e                    ANDI            0XE
-:0X7ca  e63c                    MOVA            HRAM_0X3C
-:0X7cb  503c                    MOV             HRAM_0X3C,      A
+:0X7c4  5009                    MOV             HRAM_0X9,       A
+:0X7c5  e20e                    ANDI            0XE
+:0X7c6  e63c                    MOVA            HRAM_0X3C
+:0X7c7  503c                    MOV             HRAM_0X3C,      A
+HADR_0X7C8:
+:0X7c8  e609                    MOVA            HRAM_0X9
+HADR_0X7C9:
+;  }
+:0X7c9  5013                    MOV             HRAM_0X13,      A
+:0X7ca  e301                    XORI            0X1
+:0X7cb  9284                    JBS             HRAM_0X84,      2
 HADR_0X7CC:
-:0X7cc  e609                    MOVA            HRAM_0X9
-HADR_0X7CD:
-;  }
-:0X7cd  5013                    MOV             HRAM_0X13,      A
-:0X7ce  e301                    XORI            0X1
-:0X7cf  9284                    JBS             HRAM_0X84,      2
-HADR_0X7D0:
-:0X7d0  6fd6                    GOTO            HADR_0X7D6
+:0X7cc  6fd2                    GOTO            HADR_0X7D2
 ;		SCAN_LED_BUF_R[4]=SCAN_LED_BUF_R[4] & 0x0D;   
-:0X7d1  5009                    MOV             HRAM_0X9,       A
-:0X7d2  e20d                    ANDI            0XD
-:0X7d3  e63c                    MOVA            HRAM_0X3C
-:0X7d4  503c                    MOV             HRAM_0X3C,      A
-:0X7d5  e609                    MOVA            HRAM_0X9
-HADR_0X7D6:
+:0X7cd  5009                    MOV             HRAM_0X9,       A
+:0X7ce  e20d                    ANDI            0XD
+:0X7cf  e63c                    MOVA            HRAM_0X3C
+:0X7d0  503c                    MOV             HRAM_0X3C,      A
+:0X7d1  e609                    MOVA            HRAM_0X9
+HADR_0X7D2:
 ;  }
-:0X7d6  5018                    MOV             HRAM_0X18,      A
-:0X7d7  e301                    XORI            0X1
-:0X7d8  9284                    JBS             HRAM_0X84,      2
-:0X7d9  6fdf                    GOTO            HADR_0X7DF
+:0X7d2  5018                    MOV             HRAM_0X18,      A
+:0X7d3  e301                    XORI            0X1
+:0X7d4  9284                    JBS             HRAM_0X84,      2
+:0X7d5  6fdb                    GOTO            HADR_0X7DB
 ;		SCAN_LED_BUF_R[4]=SCAN_LED_BUF_R[4] & 0x0B;   
-:0X7da  5009                    MOV             HRAM_0X9,       A
-:0X7db  e20b                    ANDI            0XB
-:0X7dc  e63c                    MOVA            HRAM_0X3C
-:0X7dd  503c                    MOV             HRAM_0X3C,      A
-:0X7de  e609                    MOVA            HRAM_0X9
-HADR_0X7DF:
+:0X7d6  5009                    MOV             HRAM_0X9,       A
+:0X7d7  e20b                    ANDI            0XB
+:0X7d8  e63c                    MOVA            HRAM_0X3C
+:0X7d9  503c                    MOV             HRAM_0X3C,      A
+:0X7da  e609                    MOVA            HRAM_0X9
+HADR_0X7DB:
 ;  }
 ;}
-:0X7df  ea00                    SECTION         0X0
-:0X7e0  c183                    RET
-HADR_0X7E1:
-;}
-;//°™°™°™°™°™°™°™°™°™°™°™°™°™°™°™°™
-;//∞Ê»®…˘√˜£∫±æŒƒŒ™CSDN≤©÷˜°∏LVGRAPE°πµƒ‘≠¥¥Œƒ’¬£¨◊Ò—≠CC 4.0 BY-SA∞Ê»®–≠“È£¨◊™‘ÿ«Î∏Ω…œ‘≠Œƒ≥ˆ¥¶¡¥Ω”º∞±æ…˘√˜°£
-;//‘≠Œƒ¡¥Ω”£∫https://blog.csdn.net/u013866683/article/details/79391849
-;
-;
-;
-;/**********************************************
-;∫Ø ˝√˚£∫UART_send(uchar *str,uchar ch,uint value)
-;√Ë   ˆ£∫UART∑¢ÀÕ∫Ø ˝
-; ‰»Î÷µ£∫◊÷∑˚¥Æ÷∏’Î£¨Õ®µ¿ ˝£¨ADC◊™ªª÷µ
-; ‰≥ˆ÷µ£∫Œﬁ
-;∑µªÿ÷µ£∫Œﬁ
-;**********************************************/
-;void UART_send(uchar *str,uchar ch,uint value)
+:0X7db  ea00                    SECTION         0X0
+:0X7dc  c183                    RET
+HADR_0X7DD:
+;void GetTime(TIME_TYPE_ST *TimeType)
 ;{
-;    *(str+4) = ch+'0';
-;    *(str+16) = value/1000+'0';
-;    *(str+17) = value%1000/100+'0';
-;    *(str+18) = value%100/10+'0';
-;    *(str+19) = value%10+'0';
-;
-;    while(*str)
-;    {
-;        while(!TRMT1);
-;        TX1B = *str++;
-;    }
+;    TimeType->TimeStart = Get_Sys_time();//Ëé∑ÂèñËµ∑ÂßãÊó∂Èó¥
+:0X7dd  e783                    CLR             HRAM_0X83
+:0X7de  ea01                    SECTION         0X1
+:0X7df  5038                    MOV             HRAM_0X38,      A
+:0X7e0  e63a                    MOVA            HRAM_0X3A
+:0X7e1  5037                    MOV             HRAM_0X37,      A
+:0X7e2  e639                    MOVA            HRAM_0X39
+:0X7e3  ec00                    PAGE            0X0
+:0X7e4  6278                    CALL            HADR_0X278
+:0X7e5  ec00                    PAGE            0X0
+:0X7e6  e61c                    MOVA            HRAM_0X1C
+:0X7e7  501d                    MOV             HRAM_0X1D,      A
+:0X7e8  e61d                    MOVA            HRAM_0X1D
+:0X7e9  501e                    MOV             HRAM_0X1E,      A
+:0X7ea  e61e                    MOVA            HRAM_0X1E
+:0X7eb  501f                    MOV             HRAM_0X1F,      A
+HADR_0X7EC:
+:0X7ec  e61f                    MOVA            HRAM_0X1F
+:0X7ed  78ba                    MOVRA           HRAM_0XBA
+:0X7ee  e682                    MOVA            HRAM_0X82
+:0X7ef  78b9                    MOVRA           HRAM_0XB9
+:0X7f0  e681                    MOVA            HRAM_0X81
+HADR_0X7F1:
+:0X7f1  501c                    MOV             HRAM_0X1C,      A
+HADR_0X7F2:
+:0X7f2  e680                    MOVA            HRAM_0X80
+:0X7f3  c201                    ISTEP           0X1
+:0X7f4  501d                    MOV             HRAM_0X1D,      A
+:0X7f5  e680                    MOVA            HRAM_0X80
+:0X7f6  c201                    ISTEP           0X1
+:0X7f7  501e                    MOV             HRAM_0X1E,      A
+:0X7f8  e680                    MOVA            HRAM_0X80
+:0X7f9  c201                    ISTEP           0X1
+:0X7fa  501f                    MOV             HRAM_0X1F,      A
+:0X7fb  e680                    MOVA            HRAM_0X80
 ;}
-;
-;/**********************************************
-;∫Ø ˝√˚£∫ADC_convert(uchar ch)
-;√Ë   ˆ£∫ADC◊™ªª∫Ø ˝
-; ‰»Î÷µ£∫◊™ªªÕ®µ¿ch
-; ‰≥ˆ÷µ£∫Œﬁ
-;∑µªÿ÷µ£∫◊™ªªµƒ12ŒªΩ·π˚
-;**********************************************/
-;uint ADC_convert(void)
-;{
-;    ADTRG = 1;      //∆Ù∂ØAD◊™ªª
-:0X7e1  e783                    CLR             HRAM_0X83
-:0X7e2  a1fa                    BSS             HRAM_0XFA,      1
-HADR_0X7E3:
-;    while(ADTRG);
-:0X7e3  99fa                    JBC             HRAM_0XFA,      1
-:0X7e4  6fe3                    GOTO            HADR_0X7E3
-;    ADIF = 0;
-:0X7e5  a89a                    BCC             HRAM_0X9A,      0
-;
-;    return (uint)ADCRH<<8 | ADCRL;
-:0X7e6  ea01                    SECTION         0X1
-:0X7e7  e740                    CLR             HRAM_0X40
-:0X7e8  50f9                    MOV             HRAM_0XF9,      A
-:0X7e9  e63f                    MOVA            HRAM_0X3F
-:0X7ea  503f                    MOV             HRAM_0X3F,      A
-:0X7eb  e642                    MOVA            HRAM_0X42
-:0X7ec  e741                    CLR             HRAM_0X41
-:0X7ed  e740                    CLR             HRAM_0X40
-:0X7ee  50f8                    MOV             HRAM_0XF8,      A
-:0X7ef  e63f                    MOVA            HRAM_0X3F
-HADR_0X7F0:
-:0X7f0  503f                    MOV             HRAM_0X3F,      A
-:0X7f1  5841                    IOR             HRAM_0X41,      A
-:0X7f2  e643                    MOVA            HRAM_0X43
-:0X7f3  5040                    MOV             HRAM_0X40,      A
-:0X7f4  5842                    IOR             HRAM_0X42,      A
-HADR_0X7F5:
-:0X7f5  e644                    MOVA            HRAM_0X44
-HADR_0X7F6:
-:0X7f6  5043                    MOV             HRAM_0X43,      A
-:0X7f7  201c                    MOVAR           HRAM_0X1C
-:0X7f8  5044                    MOV             HRAM_0X44,      A
-:0X7f9  201d                    MOVAR           HRAM_0X1D
-:0X7fa  781c                    MOVRA           HRAM_0X1C
-:0X7fb  ea00                    SECTION         0X0
 :0X7fc  c183                    RET
                                 ORG             0X800
 ;void D1_NUM(unsigned char num){
@@ -3452,7 +3405,7 @@ HADR_0X7F6:
 :0X80c  5039                    MOV             HRAM_0X39,      A
 :0X80d  ec00                    PAGE            0X0
 :0X80e  ea00                    SECTION         0X0
-:0X80f  6621                    CALL            HADR_0X621
+:0X80f  661d                    CALL            HADR_0X61D
 :0X810  ec01                    PAGE            0X1
 :0X811  20ba                    MOVAR           HRAM_0XBA
 :0X812  e501                    MOVI            0X1
@@ -3527,7 +3480,7 @@ HADR_0X7F6:
 :0X852  5039                    MOV             HRAM_0X39,      A
 :0X853  ec00                    PAGE            0X0
 :0X854  ea00                    SECTION         0X0
-:0X855  6630                    CALL            HADR_0X630
+:0X855  662c                    CALL            HADR_0X62C
 :0X856  ec01                    PAGE            0X1
 :0X857  20b8                    MOVAR           HRAM_0XB8
 :0X858  e501                    MOVI            0X1
@@ -3569,7 +3522,7 @@ HADR_0X7F6:
 :0X877  5039                    MOV             HRAM_0X39,      A
 :0X878  ec00                    PAGE            0X0
 :0X879  ea00                    SECTION         0X0
-:0X87a  65fa                    CALL            HADR_0X5FA
+:0X87a  65f8                    CALL            HADR_0X5F8
 :0X87b  ec01                    PAGE            0X1
 :0X87c  20b8                    MOVAR           HRAM_0XB8
 :0X87d  e501                    MOVI            0X1
@@ -3816,12 +3769,12 @@ HADR_0X7F6:
 :0X951  9a84                    JBC             HRAM_0X84,      2
 :0X952  69ba                    GOTO            HADR_0X1BA
 ;		display_buf[D1_NUM7[i]-1]=1;
-:0X953  e506                    MOVI            0X6
+:0X953  e505                    MOVI            0X5
 :0X954  e687                    MOVA            HRAM_0X87
 :0X955  5039                    MOV             HRAM_0X39,      A
 :0X956  ec00                    PAGE            0X0
 :0X957  ea00                    SECTION         0X0
-:0X958  661d                    CALL            HADR_0X61D
+:0X958  65fb                    CALL            HADR_0X5FB
 :0X959  ec01                    PAGE            0X1
 :0X95a  20b8                    MOVAR           HRAM_0XB8
 :0X95b  e501                    MOVI            0X1
@@ -3863,7 +3816,7 @@ HADR_0X7F6:
 :0X97a  5039                    MOV             HRAM_0X39,      A
 :0X97b  ec00                    PAGE            0X0
 :0X97c  ea00                    SECTION         0X0
-:0X97d  6621                    CALL            HADR_0X621
+:0X97d  661d                    CALL            HADR_0X61D
 :0X97e  ec01                    PAGE            0X1
 :0X97f  20b8                    MOVAR           HRAM_0XB8
 :0X980  e501                    MOVI            0X1
@@ -3905,7 +3858,7 @@ HADR_0X7F6:
 :0X99f  5039                    MOV             HRAM_0X39,      A
 :0X9a0  ec00                    PAGE            0X0
 :0X9a1  ea00                    SECTION         0X0
-:0X9a2  6629                    CALL            HADR_0X629
+:0X9a2  6625                    CALL            HADR_0X625
 :0X9a3  ec01                    PAGE            0X1
 :0X9a4  20b8                    MOVAR           HRAM_0XB8
 :0X9a5  e501                    MOVI            0X1
@@ -3954,7 +3907,7 @@ HADR_0X7F6:
 :0X9c8  5039                    MOV             HRAM_0X39,      A
 :0X9c9  ec00                    PAGE            0X0
 :0X9ca  ea00                    SECTION         0X0
-:0X9cb  665c                    CALL            HADR_0X65C
+:0X9cb  6658                    CALL            HADR_0X658
 :0X9cc  ec01                    PAGE            0X1
 :0X9cd  20ba                    MOVAR           HRAM_0XBA
 :0X9ce  e501                    MOVI            0X1
@@ -4029,7 +3982,7 @@ HADR_0X7F6:
 :0Xa0e  5039                    MOV             HRAM_0X39,      A
 :0Xa0f  ec00                    PAGE            0X0
 :0Xa10  ea00                    SECTION         0X0
-:0Xa11  666b                    CALL            HADR_0X66B
+:0Xa11  6667                    CALL            HADR_0X667
 :0Xa12  ec01                    PAGE            0X1
 :0Xa13  20b8                    MOVAR           HRAM_0XB8
 :0Xa14  e501                    MOVI            0X1
@@ -4071,7 +4024,7 @@ HADR_0X7F6:
 :0Xa33  5039                    MOV             HRAM_0X39,      A
 :0Xa34  ec00                    PAGE            0X0
 :0Xa35  ea00                    SECTION         0X0
-:0Xa36  6637                    CALL            HADR_0X637
+:0Xa36  6633                    CALL            HADR_0X633
 :0Xa37  ec01                    PAGE            0X1
 :0Xa38  20b8                    MOVAR           HRAM_0XB8
 :0Xa39  e501                    MOVI            0X1
@@ -4113,7 +4066,7 @@ HADR_0X7F6:
 :0Xa58  5039                    MOV             HRAM_0X39,      A
 :0Xa59  ec00                    PAGE            0X0
 :0Xa5a  ea00                    SECTION         0X0
-:0Xa5b  663a                    CALL            HADR_0X63A
+:0Xa5b  6636                    CALL            HADR_0X636
 :0Xa5c  ec01                    PAGE            0X1
 :0Xa5d  20b8                    MOVAR           HRAM_0XB8
 :0Xa5e  e501                    MOVI            0X1
@@ -4155,7 +4108,7 @@ HADR_0X7F6:
 :0Xa7d  5039                    MOV             HRAM_0X39,      A
 :0Xa7e  ec00                    PAGE            0X0
 :0Xa7f  ea00                    SECTION         0X0
-:0Xa80  6640                    CALL            HADR_0X640
+:0Xa80  663c                    CALL            HADR_0X63C
 :0Xa81  ec01                    PAGE            0X1
 :0Xa82  20b8                    MOVAR           HRAM_0XB8
 :0Xa83  e501                    MOVI            0X1
@@ -4197,7 +4150,7 @@ HADR_0X7F6:
 :0Xaa2  5039                    MOV             HRAM_0X39,      A
 :0Xaa3  ec00                    PAGE            0X0
 :0Xaa4  ea00                    SECTION         0X0
-:0Xaa5  6646                    CALL            HADR_0X646
+:0Xaa5  6642                    CALL            HADR_0X642
 :0Xaa6  ec01                    PAGE            0X1
 :0Xaa7  20b8                    MOVAR           HRAM_0XB8
 :0Xaa8  e501                    MOVI            0X1
@@ -4239,7 +4192,7 @@ HADR_0X7F6:
 :0Xac7  5039                    MOV             HRAM_0X39,      A
 :0Xac8  ec00                    PAGE            0X0
 :0Xac9  ea00                    SECTION         0X0
-:0Xaca  664b                    CALL            HADR_0X64B
+:0Xaca  6647                    CALL            HADR_0X647
 :0Xacb  ec01                    PAGE            0X1
 :0Xacc  20b8                    MOVAR           HRAM_0XB8
 :0Xacd  e501                    MOVI            0X1
@@ -4281,7 +4234,7 @@ HADR_0X7F6:
 :0Xaec  5039                    MOV             HRAM_0X39,      A
 :0Xaed  ec00                    PAGE            0X0
 :0Xaee  ea00                    SECTION         0X0
-:0Xaef  6651                    CALL            HADR_0X651
+:0Xaef  664d                    CALL            HADR_0X64D
 :0Xaf0  ec01                    PAGE            0X1
 :0Xaf1  20b8                    MOVAR           HRAM_0XB8
 :0Xaf2  e501                    MOVI            0X1
@@ -4323,7 +4276,7 @@ HADR_0X7F6:
 :0Xb11  5039                    MOV             HRAM_0X39,      A
 :0Xb12  ec00                    PAGE            0X0
 :0Xb13  ea00                    SECTION         0X0
-:0Xb14  6658                    CALL            HADR_0X658
+:0Xb14  6654                    CALL            HADR_0X654
 :0Xb15  ec01                    PAGE            0X1
 :0Xb16  20b8                    MOVAR           HRAM_0XB8
 :0Xb17  e501                    MOVI            0X1
@@ -4365,7 +4318,7 @@ HADR_0X7F6:
 :0Xb36  5039                    MOV             HRAM_0X39,      A
 :0Xb37  ec00                    PAGE            0X0
 :0Xb38  ea00                    SECTION         0X0
-:0Xb39  665c                    CALL            HADR_0X65C
+:0Xb39  6658                    CALL            HADR_0X658
 :0Xb3a  ec01                    PAGE            0X1
 :0Xb3b  20b8                    MOVAR           HRAM_0XB8
 :0Xb3c  e501                    MOVI            0X1
@@ -4407,7 +4360,7 @@ HADR_0X7F6:
 :0Xb5b  5039                    MOV             HRAM_0X39,      A
 :0Xb5c  ec00                    PAGE            0X0
 :0Xb5d  ea00                    SECTION         0X0
-:0Xb5e  6664                    CALL            HADR_0X664
+:0Xb5e  6660                    CALL            HADR_0X660
 :0Xb5f  ec01                    PAGE            0X1
 :0Xb60  20b8                    MOVAR           HRAM_0XB8
 :0Xb61  e501                    MOVI            0X1
@@ -5246,140 +5199,104 @@ HADR_0X7F6:
 ;}
 :0Xe23  ea00                    SECTION         0X0
 :0Xe24  c183                    RET
-;void GetTime(TIME_TYPE_ST *TimeType)
-;{
-;    TimeType->TimeStart = Get_Sys_time();//Ëé∑ÂèñËµ∑ÂßãÊó∂Èó¥
-:0Xe25  e783                    CLR             HRAM_0X83
-:0Xe26  ea01                    SECTION         0X1
-:0Xe27  5038                    MOV             HRAM_0X38,      A
-:0Xe28  e63a                    MOVA            HRAM_0X3A
-:0Xe29  5037                    MOV             HRAM_0X37,      A
-:0Xe2a  e639                    MOVA            HRAM_0X39
-:0Xe2b  ec00                    PAGE            0X0
-:0Xe2c  6278                    CALL            HADR_0X278
-:0Xe2d  ec01                    PAGE            0X1
-:0Xe2e  e61c                    MOVA            HRAM_0X1C
-:0Xe2f  501d                    MOV             HRAM_0X1D,      A
-:0Xe30  e61d                    MOVA            HRAM_0X1D
-:0Xe31  501e                    MOV             HRAM_0X1E,      A
-:0Xe32  e61e                    MOVA            HRAM_0X1E
-:0Xe33  501f                    MOV             HRAM_0X1F,      A
-:0Xe34  e61f                    MOVA            HRAM_0X1F
-:0Xe35  78ba                    MOVRA           HRAM_0XBA
-:0Xe36  e682                    MOVA            HRAM_0X82
-:0Xe37  78b9                    MOVRA           HRAM_0XB9
-:0Xe38  e681                    MOVA            HRAM_0X81
-:0Xe39  501c                    MOV             HRAM_0X1C,      A
-:0Xe3a  e680                    MOVA            HRAM_0X80
-:0Xe3b  c201                    ISTEP           0X1
-:0Xe3c  501d                    MOV             HRAM_0X1D,      A
-:0Xe3d  e680                    MOVA            HRAM_0X80
-:0Xe3e  c201                    ISTEP           0X1
-:0Xe3f  501e                    MOV             HRAM_0X1E,      A
-:0Xe40  e680                    MOVA            HRAM_0X80
-:0Xe41  c201                    ISTEP           0X1
-:0Xe42  501f                    MOV             HRAM_0X1F,      A
-:0Xe43  e680                    MOVA            HRAM_0X80
-;}
-:0Xe44  c183                    RET
 ; 
 ;uint8_t CompareTime(TIME_TYPE_ST *TimeType)//ÊØèÈöî1ÊØ´ÁßíÔºåËÆ°Êï∞Âô®Â∞±‰ºöÂ¢ûÂä†1
 ;{
 ;    return ((Get_Sys_time()-TimeType->TimeStart) >= TimeType->TimeInter);
-:0Xe45  e783                    CLR             HRAM_0X83
-:0Xe46  ec00                    PAGE            0X0
-:0Xe47  6278                    CALL            HADR_0X278
-:0Xe48  ec01                    PAGE            0X1
-:0Xe49  20b9                    MOVAR           HRAM_0XB9
-:0Xe4a  501d                    MOV             HRAM_0X1D,      A
-:0Xe4b  20ba                    MOVAR           HRAM_0XBA
-:0Xe4c  501e                    MOV             HRAM_0X1E,      A
-:0Xe4d  20bb                    MOVAR           HRAM_0XBB
-:0Xe4e  501f                    MOV             HRAM_0X1F,      A
-:0Xe4f  20bc                    MOVAR           HRAM_0XBC
-:0Xe50  78b8                    MOVRA           HRAM_0XB8
-:0Xe51  20be                    MOVAR           HRAM_0XBE
-:0Xe52  78b7                    MOVRA           HRAM_0XB7
-:0Xe53  20bd                    MOVAR           HRAM_0XBD
-:0Xe54  78b7                    MOVRA           HRAM_0XB7
-:0Xe55  e004                    ADDI            0X4
-:0Xe56  20bf                    MOVAR           HRAM_0XBF
-:0Xe57  78b8                    MOVRA           HRAM_0XB8
-:0Xe58  c300                    ADDCI           0X0
-:0Xe59  20c0                    MOVAR           HRAM_0XC0
-:0Xe5a  78be                    MOVRA           HRAM_0XBE
-:0Xe5b  e682                    MOVA            HRAM_0X82
-:0Xe5c  78bd                    MOVRA           HRAM_0XBD
-:0Xe5d  e681                    MOVA            HRAM_0X81
-:0Xe5e  5080                    MOV             HRAM_0X80,      A
-:0Xe5f  e61c                    MOVA            HRAM_0X1C
-:0Xe60  c201                    ISTEP           0X1
-:0Xe61  5080                    MOV             HRAM_0X80,      A
-:0Xe62  e61d                    MOVA            HRAM_0X1D
-:0Xe63  c201                    ISTEP           0X1
-:0Xe64  5080                    MOV             HRAM_0X80,      A
-:0Xe65  e61e                    MOVA            HRAM_0X1E
-:0Xe66  c201                    ISTEP           0X1
-:0Xe67  5080                    MOV             HRAM_0X80,      A
-:0Xe68  e61f                    MOVA            HRAM_0X1F
-:0Xe69  501c                    MOV             HRAM_0X1C,      A
-:0Xe6a  ea01                    SECTION         0X1
-:0Xe6b  ee39                    SUB             HRAM_0X39,      A
-:0Xe6c  e641                    MOVA            HRAM_0X41
-:0Xe6d  781d                    MOVRA           HRAM_0X1D
-:0Xe6e  163a                    SUBC            HRAM_0X3A,      A
-:0Xe6f  e642                    MOVA            HRAM_0X42
-:0Xe70  781e                    MOVRA           HRAM_0X1E
-:0Xe71  163b                    SUBC            HRAM_0X3B,      A
-:0Xe72  e643                    MOVA            HRAM_0X43
-:0Xe73  781f                    MOVRA           HRAM_0X1F
-:0Xe74  163c                    SUBC            HRAM_0X3C,      A
-:0Xe75  e644                    MOVA            HRAM_0X44
-:0Xe76  5040                    MOV             HRAM_0X40,      A
-:0Xe77  e682                    MOVA            HRAM_0X82
-:0Xe78  503f                    MOV             HRAM_0X3F,      A
-:0Xe79  e681                    MOVA            HRAM_0X81
-:0Xe7a  5080                    MOV             HRAM_0X80,      A
-:0Xe7b  201c                    MOVAR           HRAM_0X1C
-:0Xe7c  c201                    ISTEP           0X1
-:0Xe7d  5080                    MOV             HRAM_0X80,      A
-:0Xe7e  201d                    MOVAR           HRAM_0X1D
-:0Xe7f  c201                    ISTEP           0X1
-:0Xe80  5080                    MOV             HRAM_0X80,      A
-:0Xe81  201e                    MOVAR           HRAM_0X1E
-:0Xe82  c201                    ISTEP           0X1
-:0Xe83  5080                    MOV             HRAM_0X80,      A
-:0Xe84  201f                    MOVAR           HRAM_0X1F
-:0Xe85  781f                    MOVRA           HRAM_0X1F
-:0Xe86  ee44                    SUB             HRAM_0X44,      A
-:0Xe87  9284                    JBS             HRAM_0X84,      2
-:0Xe88  6e99                    GOTO            HADR_0X699
-:0Xe89  ea00                    SECTION         0X0
-:0Xe8a  501e                    MOV             HRAM_0X1E,      A
-:0Xe8b  ea01                    SECTION         0X1
-:0Xe8c  ee43                    SUB             HRAM_0X43,      A
-:0Xe8d  9284                    JBS             HRAM_0X84,      2
-:0Xe8e  6e99                    GOTO            HADR_0X699
-:0Xe8f  ea00                    SECTION         0X0
-:0Xe90  501d                    MOV             HRAM_0X1D,      A
-:0Xe91  ea01                    SECTION         0X1
-:0Xe92  ee42                    SUB             HRAM_0X42,      A
-:0Xe93  9284                    JBS             HRAM_0X84,      2
-:0Xe94  6e99                    GOTO            HADR_0X699
-:0Xe95  ea00                    SECTION         0X0
-:0Xe96  501c                    MOV             HRAM_0X1C,      A
-:0Xe97  ea01                    SECTION         0X1
-:0Xe98  ee41                    SUB             HRAM_0X41,      A
-:0Xe99  9084                    JBS             HRAM_0X84,      0
-:0Xe9a  6e9e                    GOTO            HADR_0X69E
-:0Xe9b  e501                    MOVI            0X1
-:0Xe9c  e637                    MOVA            HRAM_0X37
-:0Xe9d  6e9f                    GOTO            HADR_0X69F
-:0Xe9e  e737                    CLR             HRAM_0X37
-:0Xe9f  5037                    MOV             HRAM_0X37,      A
-:0Xea0  201c                    MOVAR           HRAM_0X1C
-:0Xea1  ea00                    SECTION         0X0
-:0Xea2  c183                    RET
+:0Xe25  e783                    CLR             HRAM_0X83
+:0Xe26  ec00                    PAGE            0X0
+:0Xe27  6278                    CALL            HADR_0X278
+:0Xe28  ec01                    PAGE            0X1
+:0Xe29  20b9                    MOVAR           HRAM_0XB9
+:0Xe2a  501d                    MOV             HRAM_0X1D,      A
+:0Xe2b  20ba                    MOVAR           HRAM_0XBA
+:0Xe2c  501e                    MOV             HRAM_0X1E,      A
+:0Xe2d  20bb                    MOVAR           HRAM_0XBB
+:0Xe2e  501f                    MOV             HRAM_0X1F,      A
+:0Xe2f  20bc                    MOVAR           HRAM_0XBC
+:0Xe30  78b8                    MOVRA           HRAM_0XB8
+:0Xe31  20be                    MOVAR           HRAM_0XBE
+:0Xe32  78b7                    MOVRA           HRAM_0XB7
+:0Xe33  20bd                    MOVAR           HRAM_0XBD
+:0Xe34  78b7                    MOVRA           HRAM_0XB7
+:0Xe35  e004                    ADDI            0X4
+:0Xe36  20bf                    MOVAR           HRAM_0XBF
+:0Xe37  78b8                    MOVRA           HRAM_0XB8
+:0Xe38  c300                    ADDCI           0X0
+:0Xe39  20c0                    MOVAR           HRAM_0XC0
+:0Xe3a  78be                    MOVRA           HRAM_0XBE
+:0Xe3b  e682                    MOVA            HRAM_0X82
+:0Xe3c  78bd                    MOVRA           HRAM_0XBD
+:0Xe3d  e681                    MOVA            HRAM_0X81
+:0Xe3e  5080                    MOV             HRAM_0X80,      A
+:0Xe3f  e61c                    MOVA            HRAM_0X1C
+:0Xe40  c201                    ISTEP           0X1
+:0Xe41  5080                    MOV             HRAM_0X80,      A
+:0Xe42  e61d                    MOVA            HRAM_0X1D
+:0Xe43  c201                    ISTEP           0X1
+:0Xe44  5080                    MOV             HRAM_0X80,      A
+:0Xe45  e61e                    MOVA            HRAM_0X1E
+:0Xe46  c201                    ISTEP           0X1
+:0Xe47  5080                    MOV             HRAM_0X80,      A
+:0Xe48  e61f                    MOVA            HRAM_0X1F
+:0Xe49  501c                    MOV             HRAM_0X1C,      A
+:0Xe4a  ea01                    SECTION         0X1
+:0Xe4b  ee39                    SUB             HRAM_0X39,      A
+:0Xe4c  e641                    MOVA            HRAM_0X41
+:0Xe4d  781d                    MOVRA           HRAM_0X1D
+:0Xe4e  163a                    SUBC            HRAM_0X3A,      A
+:0Xe4f  e642                    MOVA            HRAM_0X42
+:0Xe50  781e                    MOVRA           HRAM_0X1E
+:0Xe51  163b                    SUBC            HRAM_0X3B,      A
+:0Xe52  e643                    MOVA            HRAM_0X43
+:0Xe53  781f                    MOVRA           HRAM_0X1F
+:0Xe54  163c                    SUBC            HRAM_0X3C,      A
+:0Xe55  e644                    MOVA            HRAM_0X44
+:0Xe56  5040                    MOV             HRAM_0X40,      A
+:0Xe57  e682                    MOVA            HRAM_0X82
+:0Xe58  503f                    MOV             HRAM_0X3F,      A
+:0Xe59  e681                    MOVA            HRAM_0X81
+:0Xe5a  5080                    MOV             HRAM_0X80,      A
+:0Xe5b  201c                    MOVAR           HRAM_0X1C
+:0Xe5c  c201                    ISTEP           0X1
+:0Xe5d  5080                    MOV             HRAM_0X80,      A
+:0Xe5e  201d                    MOVAR           HRAM_0X1D
+:0Xe5f  c201                    ISTEP           0X1
+:0Xe60  5080                    MOV             HRAM_0X80,      A
+:0Xe61  201e                    MOVAR           HRAM_0X1E
+:0Xe62  c201                    ISTEP           0X1
+:0Xe63  5080                    MOV             HRAM_0X80,      A
+:0Xe64  201f                    MOVAR           HRAM_0X1F
+:0Xe65  781f                    MOVRA           HRAM_0X1F
+:0Xe66  ee44                    SUB             HRAM_0X44,      A
+:0Xe67  9284                    JBS             HRAM_0X84,      2
+:0Xe68  6e79                    GOTO            HADR_0X679
+:0Xe69  ea00                    SECTION         0X0
+:0Xe6a  501e                    MOV             HRAM_0X1E,      A
+:0Xe6b  ea01                    SECTION         0X1
+:0Xe6c  ee43                    SUB             HRAM_0X43,      A
+:0Xe6d  9284                    JBS             HRAM_0X84,      2
+:0Xe6e  6e79                    GOTO            HADR_0X679
+:0Xe6f  ea00                    SECTION         0X0
+:0Xe70  501d                    MOV             HRAM_0X1D,      A
+:0Xe71  ea01                    SECTION         0X1
+:0Xe72  ee42                    SUB             HRAM_0X42,      A
+:0Xe73  9284                    JBS             HRAM_0X84,      2
+:0Xe74  6e79                    GOTO            HADR_0X679
+:0Xe75  ea00                    SECTION         0X0
+:0Xe76  501c                    MOV             HRAM_0X1C,      A
+:0Xe77  ea01                    SECTION         0X1
+:0Xe78  ee41                    SUB             HRAM_0X41,      A
+:0Xe79  9084                    JBS             HRAM_0X84,      0
+:0Xe7a  6e7e                    GOTO            HADR_0X67E
+:0Xe7b  e501                    MOVI            0X1
+:0Xe7c  e637                    MOVA            HRAM_0X37
+:0Xe7d  6e7f                    GOTO            HADR_0X67F
+:0Xe7e  e737                    CLR             HRAM_0X37
+:0Xe7f  5037                    MOV             HRAM_0X37,      A
+:0Xe80  201c                    MOVAR           HRAM_0X1C
+:0Xe81  ea00                    SECTION         0X0
+:0Xe82  c183                    RET
 ;#include "../main.h"
 ;#include "../inc_user/user_function.h"
 ;#include <math.h>
@@ -5421,298 +5338,369 @@ HADR_0X7F6:
 ;float Get_Tempture(unsigned int adc)
 ;{        //float RV,RT,Tmp;
 ;        RV=BaseVol*(float)adc/4096.0;		//ADCŒ™10ŒªADC,«Û≥ˆNTCµÁ—π:RV=ADCValu/1024*BaseVoltag
-:0Xea3  e783                    CLR             HRAM_0X83
-:0Xea4  ea01                    SECTION         0X1
-:0Xea5  503f                    MOV             HRAM_0X3F,      A
-:0Xea6  201c                    MOVAR           HRAM_0X1C
-:0Xea7  5040                    MOV             HRAM_0X40,      A
-:0Xea8  201d                    MOVAR           HRAM_0X1D
-:0Xea9  ec07                    PAGE            0X7
-:0Xeaa  ea00                    SECTION         0X0
-:0Xeab  63b0                    CALL            HADR_0X3B0
-:0Xeac  ec01                    PAGE            0X1
-:0Xead  501c                    MOV             HRAM_0X1C,      A
-:0Xeae  20c1                    MOVAR           HRAM_0XC1
-:0Xeaf  501d                    MOV             HRAM_0X1D,      A
-:0Xeb0  20c2                    MOVAR           HRAM_0XC2
-:0Xeb1  501e                    MOV             HRAM_0X1E,      A
-:0Xeb2  20c3                    MOVAR           HRAM_0XC3
-:0Xeb3  501f                    MOV             HRAM_0X1F,      A
-:0Xeb4  20c4                    MOVAR           HRAM_0XC4
-:0Xeb5  e540                    MOVI            0X40
-:0Xeb6  e623                    MOVA            HRAM_0X23
-:0Xeb7  e503                    MOVI            0X3
-:0Xeb8  e622                    MOVA            HRAM_0X22
-:0Xeb9  e512                    MOVI            0X12
-:0Xeba  e621                    MOVA            HRAM_0X21
-:0Xebb  e56f                    MOVI            0X6F
-:0Xebc  e620                    MOVA            HRAM_0X20
-:0Xebd  78c4                    MOVRA           HRAM_0XC4
-:0Xebe  e61f                    MOVA            HRAM_0X1F
-:0Xebf  78c3                    MOVRA           HRAM_0XC3
-:0Xec0  e61e                    MOVA            HRAM_0X1E
-:0Xec1  78c2                    MOVRA           HRAM_0XC2
-:0Xec2  e61d                    MOVA            HRAM_0X1D
-:0Xec3  78c1                    MOVRA           HRAM_0XC1
-:0Xec4  e61c                    MOVA            HRAM_0X1C
-:0Xec5  ec07                    PAGE            0X7
-:0Xec6  6140                    CALL            HADR_0X140
-:0Xec7  ec01                    PAGE            0X1
-:0Xec8  501c                    MOV             HRAM_0X1C,      A
-:0Xec9  20c5                    MOVAR           HRAM_0XC5
-:0Xeca  501d                    MOV             HRAM_0X1D,      A
-:0Xecb  20c6                    MOVAR           HRAM_0XC6
-:0Xecc  501e                    MOV             HRAM_0X1E,      A
-:0Xecd  20c7                    MOVAR           HRAM_0XC7
-:0Xece  501f                    MOV             HRAM_0X1F,      A
-:0Xecf  20c8                    MOVAR           HRAM_0XC8
-:0Xed0  e545                    MOVI            0X45
-:0Xed1  e623                    MOVA            HRAM_0X23
-:0Xed2  e580                    MOVI            0X80
-:0Xed3  e622                    MOVA            HRAM_0X22
-:0Xed4  e500                    MOVI            0X0
-:0Xed5  e621                    MOVA            HRAM_0X21
-:0Xed6  e500                    MOVI            0X0
-:0Xed7  e620                    MOVA            HRAM_0X20
-:0Xed8  78c8                    MOVRA           HRAM_0XC8
-:0Xed9  e61f                    MOVA            HRAM_0X1F
-:0Xeda  78c7                    MOVRA           HRAM_0XC7
-:0Xedb  e61e                    MOVA            HRAM_0X1E
-:0Xedc  78c6                    MOVRA           HRAM_0XC6
-:0Xedd  e61d                    MOVA            HRAM_0X1D
-:0Xede  78c5                    MOVRA           HRAM_0XC5
-:0Xedf  e61c                    MOVA            HRAM_0X1C
-:0Xee0  ec07                    PAGE            0X7
-:0Xee1  6097                    CALL            HADR_0X97
-:0Xee2  ec01                    PAGE            0X1
-:0Xee3  501d                    MOV             HRAM_0X1D,      A
-:0Xee4  2107                    MOVAR           HRAM_0X107
-:0Xee5  501e                    MOV             HRAM_0X1E,      A
-:0Xee6  2108                    MOVAR           HRAM_0X108
-:0Xee7  501f                    MOV             HRAM_0X1F,      A
-:0Xee8  2109                    MOVAR           HRAM_0X109
+:0Xe83  e783                    CLR             HRAM_0X83
+:0Xe84  ea01                    SECTION         0X1
+:0Xe85  503f                    MOV             HRAM_0X3F,      A
+:0Xe86  201c                    MOVAR           HRAM_0X1C
+:0Xe87  5040                    MOV             HRAM_0X40,      A
+:0Xe88  201d                    MOVAR           HRAM_0X1D
+:0Xe89  ec07                    PAGE            0X7
+:0Xe8a  ea00                    SECTION         0X0
+:0Xe8b  63b0                    CALL            HADR_0X3B0
+:0Xe8c  ec01                    PAGE            0X1
+:0Xe8d  501c                    MOV             HRAM_0X1C,      A
+:0Xe8e  20c1                    MOVAR           HRAM_0XC1
+:0Xe8f  501d                    MOV             HRAM_0X1D,      A
+:0Xe90  20c2                    MOVAR           HRAM_0XC2
+:0Xe91  501e                    MOV             HRAM_0X1E,      A
+:0Xe92  20c3                    MOVAR           HRAM_0XC3
+:0Xe93  501f                    MOV             HRAM_0X1F,      A
+:0Xe94  20c4                    MOVAR           HRAM_0XC4
+:0Xe95  e540                    MOVI            0X40
+:0Xe96  e623                    MOVA            HRAM_0X23
+:0Xe97  e503                    MOVI            0X3
+:0Xe98  e622                    MOVA            HRAM_0X22
+:0Xe99  e512                    MOVI            0X12
+:0Xe9a  e621                    MOVA            HRAM_0X21
+:0Xe9b  e56f                    MOVI            0X6F
+:0Xe9c  e620                    MOVA            HRAM_0X20
+:0Xe9d  78c4                    MOVRA           HRAM_0XC4
+:0Xe9e  e61f                    MOVA            HRAM_0X1F
+:0Xe9f  78c3                    MOVRA           HRAM_0XC3
+:0Xea0  e61e                    MOVA            HRAM_0X1E
+:0Xea1  78c2                    MOVRA           HRAM_0XC2
+:0Xea2  e61d                    MOVA            HRAM_0X1D
+:0Xea3  78c1                    MOVRA           HRAM_0XC1
+:0Xea4  e61c                    MOVA            HRAM_0X1C
+:0Xea5  ec07                    PAGE            0X7
+:0Xea6  6140                    CALL            HADR_0X140
+:0Xea7  ec01                    PAGE            0X1
+:0Xea8  501c                    MOV             HRAM_0X1C,      A
+:0Xea9  20c5                    MOVAR           HRAM_0XC5
+:0Xeaa  501d                    MOV             HRAM_0X1D,      A
+:0Xeab  20c6                    MOVAR           HRAM_0XC6
+:0Xeac  501e                    MOV             HRAM_0X1E,      A
+:0Xead  20c7                    MOVAR           HRAM_0XC7
+:0Xeae  501f                    MOV             HRAM_0X1F,      A
+:0Xeaf  20c8                    MOVAR           HRAM_0XC8
+:0Xeb0  e545                    MOVI            0X45
+:0Xeb1  e623                    MOVA            HRAM_0X23
+:0Xeb2  e580                    MOVI            0X80
+:0Xeb3  e622                    MOVA            HRAM_0X22
+:0Xeb4  e500                    MOVI            0X0
+:0Xeb5  e621                    MOVA            HRAM_0X21
+:0Xeb6  e500                    MOVI            0X0
+:0Xeb7  e620                    MOVA            HRAM_0X20
+:0Xeb8  78c8                    MOVRA           HRAM_0XC8
+:0Xeb9  e61f                    MOVA            HRAM_0X1F
+:0Xeba  78c7                    MOVRA           HRAM_0XC7
+:0Xebb  e61e                    MOVA            HRAM_0X1E
+:0Xebc  78c6                    MOVRA           HRAM_0XC6
+:0Xebd  e61d                    MOVA            HRAM_0X1D
+:0Xebe  78c5                    MOVRA           HRAM_0XC5
+:0Xebf  e61c                    MOVA            HRAM_0X1C
+:0Xec0  ec07                    PAGE            0X7
+:0Xec1  6097                    CALL            HADR_0X97
+:0Xec2  ec01                    PAGE            0X1
+:0Xec3  501d                    MOV             HRAM_0X1D,      A
+:0Xec4  2107                    MOVAR           HRAM_0X107
+:0Xec5  501e                    MOV             HRAM_0X1E,      A
+:0Xec6  2108                    MOVAR           HRAM_0X108
+:0Xec7  501f                    MOV             HRAM_0X1F,      A
+:0Xec8  2109                    MOVAR           HRAM_0X109
 ;       // RT=RV*100/(BaseVol-RV);				//«Û≥ˆµ±«∞Œ¬∂»◊Ë÷µ (BaseVoltage-RV)/R16=RV/RT;
 ;		RT=RES/((vcc_val/RV)-1);
-:0Xee9  7909                    MOVRA           HRAM_0X109
-:0Xeea  e621                    MOVA            HRAM_0X21
-:0Xeeb  7908                    MOVRA           HRAM_0X108
-:0Xeec  e620                    MOVA            HRAM_0X20
-:0Xeed  7907                    MOVRA           HRAM_0X107
-:0Xeee  e61f                    MOVA            HRAM_0X1F
-:0Xeef  790f                    MOVRA           HRAM_0X10F
-:0Xef0  e61e                    MOVA            HRAM_0X1E
-:0Xef1  790e                    MOVRA           HRAM_0X10E
-:0Xef2  e61d                    MOVA            HRAM_0X1D
-:0Xef3  790d                    MOVRA           HRAM_0X10D
-:0Xef4  e61c                    MOVA            HRAM_0X1C
-:0Xef5  ec07                    PAGE            0X7
-:0Xef6  627e                    CALL            HADR_0X27E
-:0Xef7  ec01                    PAGE            0X1
-:0Xef8  501c                    MOV             HRAM_0X1C,      A
-:0Xef9  20bf                    MOVAR           HRAM_0XBF
-:0Xefa  501d                    MOV             HRAM_0X1D,      A
-:0Xefb  20c0                    MOVAR           HRAM_0XC0
-:0Xefc  501e                    MOV             HRAM_0X1E,      A
-:0Xefd  20c1                    MOVAR           HRAM_0XC1
-:0Xefe  e53f                    MOVI            0X3F
-:0Xeff  e621                    MOVA            HRAM_0X21
-:0Xf00  e580                    MOVI            0X80
-:0Xf01  e620                    MOVA            HRAM_0X20
-:0Xf02  e500                    MOVI            0X0
-:0Xf03  e61f                    MOVA            HRAM_0X1F
-:0Xf04  78c1                    MOVRA           HRAM_0XC1
-:0Xf05  e61e                    MOVA            HRAM_0X1E
-:0Xf06  78c0                    MOVRA           HRAM_0XC0
-:0Xf07  e61d                    MOVA            HRAM_0X1D
-:0Xf08  78bf                    MOVRA           HRAM_0XBF
-:0Xf09  e61c                    MOVA            HRAM_0X1C
-:0Xf0a  ec07                    PAGE            0X7
-:0Xf0b  627c                    CALL            HADR_0X27C
-:0Xf0c  ec01                    PAGE            0X1
-:0Xf0d  501c                    MOV             HRAM_0X1C,      A
-:0Xf0e  20c2                    MOVAR           HRAM_0XC2
-:0Xf0f  501d                    MOV             HRAM_0X1D,      A
-:0Xf10  20c3                    MOVAR           HRAM_0XC3
-:0Xf11  501e                    MOV             HRAM_0X1E,      A
-:0Xf12  20c4                    MOVAR           HRAM_0XC4
-:0Xf13  78c4                    MOVRA           HRAM_0XC4
-:0Xf14  e621                    MOVA            HRAM_0X21
-:0Xf15  78c3                    MOVRA           HRAM_0XC3
-:0Xf16  e620                    MOVA            HRAM_0X20
-:0Xf17  78c2                    MOVRA           HRAM_0XC2
-:0Xf18  e61f                    MOVA            HRAM_0X1F
-:0Xf19  e543                    MOVI            0X43
-:0Xf1a  e61e                    MOVA            HRAM_0X1E
-:0Xf1b  e548                    MOVI            0X48
-:0Xf1c  e61d                    MOVA            HRAM_0X1D
-:0Xf1d  e500                    MOVI            0X0
-:0Xf1e  e61c                    MOVA            HRAM_0X1C
-:0Xf1f  ec07                    PAGE            0X7
-:0Xf20  627e                    CALL            HADR_0X27E
-:0Xf21  ec01                    PAGE            0X1
-:0Xf22  501c                    MOV             HRAM_0X1C,      A
-:0Xf23  2104                    MOVAR           HRAM_0X104
-:0Xf24  501d                    MOV             HRAM_0X1D,      A
-:0Xf25  2105                    MOVAR           HRAM_0X105
-:0Xf26  501e                    MOV             HRAM_0X1E,      A
-:0Xf27  2106                    MOVAR           HRAM_0X106
+:0Xec9  7909                    MOVRA           HRAM_0X109
+:0Xeca  e621                    MOVA            HRAM_0X21
+:0Xecb  7908                    MOVRA           HRAM_0X108
+:0Xecc  e620                    MOVA            HRAM_0X20
+:0Xecd  7907                    MOVRA           HRAM_0X107
+:0Xece  e61f                    MOVA            HRAM_0X1F
+:0Xecf  790f                    MOVRA           HRAM_0X10F
+:0Xed0  e61e                    MOVA            HRAM_0X1E
+:0Xed1  790e                    MOVRA           HRAM_0X10E
+:0Xed2  e61d                    MOVA            HRAM_0X1D
+:0Xed3  790d                    MOVRA           HRAM_0X10D
+:0Xed4  e61c                    MOVA            HRAM_0X1C
+:0Xed5  ec07                    PAGE            0X7
+:0Xed6  627e                    CALL            HADR_0X27E
+:0Xed7  ec01                    PAGE            0X1
+:0Xed8  501c                    MOV             HRAM_0X1C,      A
+:0Xed9  20bf                    MOVAR           HRAM_0XBF
+:0Xeda  501d                    MOV             HRAM_0X1D,      A
+:0Xedb  20c0                    MOVAR           HRAM_0XC0
+:0Xedc  501e                    MOV             HRAM_0X1E,      A
+:0Xedd  20c1                    MOVAR           HRAM_0XC1
+:0Xede  e53f                    MOVI            0X3F
+:0Xedf  e621                    MOVA            HRAM_0X21
+:0Xee0  e580                    MOVI            0X80
+:0Xee1  e620                    MOVA            HRAM_0X20
+:0Xee2  e500                    MOVI            0X0
+:0Xee3  e61f                    MOVA            HRAM_0X1F
+:0Xee4  78c1                    MOVRA           HRAM_0XC1
+:0Xee5  e61e                    MOVA            HRAM_0X1E
+:0Xee6  78c0                    MOVRA           HRAM_0XC0
+:0Xee7  e61d                    MOVA            HRAM_0X1D
+:0Xee8  78bf                    MOVRA           HRAM_0XBF
+:0Xee9  e61c                    MOVA            HRAM_0X1C
+:0Xeea  ec07                    PAGE            0X7
+:0Xeeb  627c                    CALL            HADR_0X27C
+:0Xeec  ec01                    PAGE            0X1
+:0Xeed  501c                    MOV             HRAM_0X1C,      A
+:0Xeee  20c2                    MOVAR           HRAM_0XC2
+:0Xeef  501d                    MOV             HRAM_0X1D,      A
+:0Xef0  20c3                    MOVAR           HRAM_0XC3
+:0Xef1  501e                    MOV             HRAM_0X1E,      A
+:0Xef2  20c4                    MOVAR           HRAM_0XC4
+:0Xef3  78c4                    MOVRA           HRAM_0XC4
+:0Xef4  e621                    MOVA            HRAM_0X21
+:0Xef5  78c3                    MOVRA           HRAM_0XC3
+:0Xef6  e620                    MOVA            HRAM_0X20
+:0Xef7  78c2                    MOVRA           HRAM_0XC2
+:0Xef8  e61f                    MOVA            HRAM_0X1F
+:0Xef9  e543                    MOVI            0X43
+:0Xefa  e61e                    MOVA            HRAM_0X1E
+:0Xefb  e548                    MOVI            0X48
+:0Xefc  e61d                    MOVA            HRAM_0X1D
+:0Xefd  e500                    MOVI            0X0
+:0Xefe  e61c                    MOVA            HRAM_0X1C
+:0Xeff  ec07                    PAGE            0X7
+:0Xf00  627e                    CALL            HADR_0X27E
+:0Xf01  ec01                    PAGE            0X1
+:0Xf02  501c                    MOV             HRAM_0X1C,      A
+:0Xf03  2104                    MOVAR           HRAM_0X104
+:0Xf04  501d                    MOV             HRAM_0X1D,      A
+:0Xf05  2105                    MOVAR           HRAM_0X105
+:0Xf06  501e                    MOV             HRAM_0X1E,      A
+:0Xf07  2106                    MOVAR           HRAM_0X106
 ;	    Tmp=1/(1/TN+(log(RT/RN)/B))-273.15;//%RT = RN exp*B(1/T-1/TN)%
-:0Xf28  e542                    MOVI            0X42
-:0Xf29  e621                    MOVA            HRAM_0X21
-:0Xf2a  e5c8                    MOVI            0XC8
-:0Xf2b  e620                    MOVA            HRAM_0X20
-:0Xf2c  e500                    MOVI            0X0
-:0Xf2d  e61f                    MOVA            HRAM_0X1F
-:0Xf2e  7906                    MOVRA           HRAM_0X106
-:0Xf2f  e61e                    MOVA            HRAM_0X1E
-:0Xf30  7905                    MOVRA           HRAM_0X105
-:0Xf31  e61d                    MOVA            HRAM_0X1D
-:0Xf32  7904                    MOVRA           HRAM_0X104
-:0Xf33  e61c                    MOVA            HRAM_0X1C
-:0Xf34  ec07                    PAGE            0X7
-:0Xf35  627e                    CALL            HADR_0X27E
-:0Xf36  ec01                    PAGE            0X1
-:0Xf37  501c                    MOV             HRAM_0X1C,      A
-:0Xf38  20c0                    MOVAR           HRAM_0XC0
-:0Xf39  501d                    MOV             HRAM_0X1D,      A
-:0Xf3a  20c1                    MOVAR           HRAM_0XC1
-:0Xf3b  501e                    MOV             HRAM_0X1E,      A
-:0Xf3c  20c2                    MOVAR           HRAM_0XC2
-:0Xf3d  ea01                    SECTION         0X1
-:0Xf3e  e73f                    CLR             HRAM_0X3F
-:0Xf3f  503f                    MOV             HRAM_0X3F,      A
-:0Xf40  e649                    MOVA            HRAM_0X49
-:0Xf41  5040                    MOV             HRAM_0X40,      A
-:0Xf42  e64a                    MOVA            HRAM_0X4A
-:0Xf43  5041                    MOV             HRAM_0X41,      A
-:0Xf44  e64b                    MOVA            HRAM_0X4B
-:0Xf45  5042                    MOV             HRAM_0X42,      A
-:0Xf46  e64c                    MOVA            HRAM_0X4C
-:0Xf47  ec02                    PAGE            0X2
-:0Xf48  62b7                    CALL            HADR_0X2B7
-:0Xf49  ec01                    PAGE            0X1
-:0Xf4a  20bf                    MOVAR           HRAM_0XBF
-:0Xf4b  501d                    MOV             HRAM_0X1D,      A
-:0Xf4c  20c0                    MOVAR           HRAM_0XC0
-:0Xf4d  501e                    MOV             HRAM_0X1E,      A
-:0Xf4e  20c1                    MOVAR           HRAM_0XC1
-:0Xf4f  501f                    MOV             HRAM_0X1F,      A
-:0Xf50  20c2                    MOVAR           HRAM_0XC2
-:0Xf51  e545                    MOVI            0X45
-:0Xf52  e623                    MOVA            HRAM_0X23
-:0Xf53  e576                    MOVI            0X76
-:0Xf54  e622                    MOVA            HRAM_0X22
-:0Xf55  e5e0                    MOVI            0XE0
-:0Xf56  e621                    MOVA            HRAM_0X21
-:0Xf57  e500                    MOVI            0X0
-:0Xf58  e620                    MOVA            HRAM_0X20
-:0Xf59  78c2                    MOVRA           HRAM_0XC2
-:0Xf5a  e61f                    MOVA            HRAM_0X1F
-:0Xf5b  78c1                    MOVRA           HRAM_0XC1
-:0Xf5c  e61e                    MOVA            HRAM_0X1E
-:0Xf5d  78c0                    MOVRA           HRAM_0XC0
-:0Xf5e  e61d                    MOVA            HRAM_0X1D
-:0Xf5f  78bf                    MOVRA           HRAM_0XBF
-:0Xf60  e61c                    MOVA            HRAM_0X1C
-:0Xf61  ec07                    PAGE            0X7
-:0Xf62  6097                    CALL            HADR_0X97
-:0Xf63  ec01                    PAGE            0X1
-:0Xf64  501c                    MOV             HRAM_0X1C,      A
-:0Xf65  20c3                    MOVAR           HRAM_0XC3
-:0Xf66  501d                    MOV             HRAM_0X1D,      A
-:0Xf67  20c4                    MOVAR           HRAM_0XC4
-:0Xf68  501e                    MOV             HRAM_0X1E,      A
-:0Xf69  20c5                    MOVAR           HRAM_0XC5
-:0Xf6a  501f                    MOV             HRAM_0X1F,      A
-:0Xf6b  20c6                    MOVAR           HRAM_0XC6
-:0Xf6c  e53b                    MOVI            0X3B
-:0Xf6d  e623                    MOVA            HRAM_0X23
-:0Xf6e  e55b                    MOVI            0X5B
-:0Xf6f  e622                    MOVA            HRAM_0X22
-:0Xf70  e5cf                    MOVI            0XCF
-:0Xf71  e621                    MOVA            HRAM_0X21
-:0Xf72  e50f                    MOVI            0XF
-:0Xf73  e620                    MOVA            HRAM_0X20
-:0Xf74  78c6                    MOVRA           HRAM_0XC6
-:0Xf75  e61f                    MOVA            HRAM_0X1F
-:0Xf76  78c5                    MOVRA           HRAM_0XC5
-:0Xf77  e61e                    MOVA            HRAM_0X1E
-:0Xf78  78c4                    MOVRA           HRAM_0XC4
-:0Xf79  e61d                    MOVA            HRAM_0X1D
-:0Xf7a  78c3                    MOVRA           HRAM_0XC3
-:0Xf7b  e61c                    MOVA            HRAM_0X1C
-:0Xf7c  ec07                    PAGE            0X7
-:0Xf7d  6023                    CALL            HADR_0X23
-:0Xf7e  ec01                    PAGE            0X1
-:0Xf7f  501c                    MOV             HRAM_0X1C,      A
-:0Xf80  20bf                    MOVAR           HRAM_0XBF
-:0Xf81  501d                    MOV             HRAM_0X1D,      A
-:0Xf82  20c0                    MOVAR           HRAM_0XC0
-:0Xf83  501e                    MOV             HRAM_0X1E,      A
-:0Xf84  20c1                    MOVAR           HRAM_0XC1
-:0Xf85  501f                    MOV             HRAM_0X1F,      A
-:0Xf86  20c2                    MOVAR           HRAM_0XC2
-:0Xf87  78c2                    MOVRA           HRAM_0XC2
-:0Xf88  e623                    MOVA            HRAM_0X23
-:0Xf89  78c1                    MOVRA           HRAM_0XC1
-:0Xf8a  e622                    MOVA            HRAM_0X22
-:0Xf8b  78c0                    MOVRA           HRAM_0XC0
-:0Xf8c  e621                    MOVA            HRAM_0X21
-:0Xf8d  78bf                    MOVRA           HRAM_0XBF
-:0Xf8e  e620                    MOVA            HRAM_0X20
-:0Xf8f  e53f                    MOVI            0X3F
-:0Xf90  e61f                    MOVA            HRAM_0X1F
-:0Xf91  e580                    MOVI            0X80
-:0Xf92  e61e                    MOVA            HRAM_0X1E
-:0Xf93  e500                    MOVI            0X0
-:0Xf94  e61d                    MOVA            HRAM_0X1D
-:0Xf95  e500                    MOVI            0X0
-:0Xf96  e61c                    MOVA            HRAM_0X1C
-:0Xf97  ec07                    PAGE            0X7
-:0Xf98  6097                    CALL            HADR_0X97
-:0Xf99  ec01                    PAGE            0X1
-:0Xf9a  501c                    MOV             HRAM_0X1C,      A
-:0Xf9b  20c3                    MOVAR           HRAM_0XC3
-:0Xf9c  501d                    MOV             HRAM_0X1D,      A
-:0Xf9d  20c4                    MOVAR           HRAM_0XC4
-:0Xf9e  501e                    MOV             HRAM_0X1E,      A
-:0Xf9f  20c5                    MOVAR           HRAM_0XC5
-:0Xfa0  501f                    MOV             HRAM_0X1F,      A
-:0Xfa1  20c6                    MOVAR           HRAM_0XC6
-:0Xfa2  e543                    MOVI            0X43
-:0Xfa3  e623                    MOVA            HRAM_0X23
-:0Xfa4  e588                    MOVI            0X88
-:0Xfa5  e622                    MOVA            HRAM_0X22
-:0Xfa6  e593                    MOVI            0X93
-:0Xfa7  e621                    MOVA            HRAM_0X21
-:0Xfa8  e533                    MOVI            0X33
-:0Xfa9  e620                    MOVA            HRAM_0X20
-:0Xfaa  78c6                    MOVRA           HRAM_0XC6
-:0Xfab  e61f                    MOVA            HRAM_0X1F
-:0Xfac  78c5                    MOVRA           HRAM_0XC5
-:0Xfad  e61e                    MOVA            HRAM_0X1E
-:0Xfae  78c4                    MOVRA           HRAM_0XC4
-:0Xfaf  e61d                    MOVA            HRAM_0X1D
-:0Xfb0  78c3                    MOVRA           HRAM_0XC3
-:0Xfb1  e61c                    MOVA            HRAM_0X1C
-:0Xfb2  ec07                    PAGE            0X7
-:0Xfb3  6095                    CALL            HADR_0X95
-:0Xfb4  ec01                    PAGE            0X1
-:0Xfb5  501d                    MOV             HRAM_0X1D,      A
-:0Xfb6  210a                    MOVAR           HRAM_0X10A
-:0Xfb7  501e                    MOV             HRAM_0X1E,      A
-:0Xfb8  210b                    MOVAR           HRAM_0X10B
-:0Xfb9  501f                    MOV             HRAM_0X1F,      A
-:0Xfba  210c                    MOVAR           HRAM_0X10C
+:0Xf08  e542                    MOVI            0X42
+:0Xf09  e621                    MOVA            HRAM_0X21
+:0Xf0a  e5c8                    MOVI            0XC8
+:0Xf0b  e620                    MOVA            HRAM_0X20
+:0Xf0c  e500                    MOVI            0X0
+:0Xf0d  e61f                    MOVA            HRAM_0X1F
+:0Xf0e  7906                    MOVRA           HRAM_0X106
+:0Xf0f  e61e                    MOVA            HRAM_0X1E
+:0Xf10  7905                    MOVRA           HRAM_0X105
+:0Xf11  e61d                    MOVA            HRAM_0X1D
+:0Xf12  7904                    MOVRA           HRAM_0X104
+:0Xf13  e61c                    MOVA            HRAM_0X1C
+:0Xf14  ec07                    PAGE            0X7
+:0Xf15  627e                    CALL            HADR_0X27E
+:0Xf16  ec01                    PAGE            0X1
+:0Xf17  501c                    MOV             HRAM_0X1C,      A
+:0Xf18  20c0                    MOVAR           HRAM_0XC0
+:0Xf19  501d                    MOV             HRAM_0X1D,      A
+:0Xf1a  20c1                    MOVAR           HRAM_0XC1
+:0Xf1b  501e                    MOV             HRAM_0X1E,      A
+:0Xf1c  20c2                    MOVAR           HRAM_0XC2
+:0Xf1d  ea01                    SECTION         0X1
+:0Xf1e  e73f                    CLR             HRAM_0X3F
+:0Xf1f  503f                    MOV             HRAM_0X3F,      A
+:0Xf20  e649                    MOVA            HRAM_0X49
+:0Xf21  5040                    MOV             HRAM_0X40,      A
+:0Xf22  e64a                    MOVA            HRAM_0X4A
+:0Xf23  5041                    MOV             HRAM_0X41,      A
+:0Xf24  e64b                    MOVA            HRAM_0X4B
+:0Xf25  5042                    MOV             HRAM_0X42,      A
+:0Xf26  e64c                    MOVA            HRAM_0X4C
+:0Xf27  ec02                    PAGE            0X2
+:0Xf28  62b7                    CALL            HADR_0X2B7
+:0Xf29  ec01                    PAGE            0X1
+:0Xf2a  20bf                    MOVAR           HRAM_0XBF
+:0Xf2b  501d                    MOV             HRAM_0X1D,      A
+:0Xf2c  20c0                    MOVAR           HRAM_0XC0
+:0Xf2d  501e                    MOV             HRAM_0X1E,      A
+:0Xf2e  20c1                    MOVAR           HRAM_0XC1
+:0Xf2f  501f                    MOV             HRAM_0X1F,      A
+:0Xf30  20c2                    MOVAR           HRAM_0XC2
+:0Xf31  e545                    MOVI            0X45
+:0Xf32  e623                    MOVA            HRAM_0X23
+:0Xf33  e576                    MOVI            0X76
+:0Xf34  e622                    MOVA            HRAM_0X22
+:0Xf35  e5e0                    MOVI            0XE0
+:0Xf36  e621                    MOVA            HRAM_0X21
+:0Xf37  e500                    MOVI            0X0
+:0Xf38  e620                    MOVA            HRAM_0X20
+:0Xf39  78c2                    MOVRA           HRAM_0XC2
+:0Xf3a  e61f                    MOVA            HRAM_0X1F
+:0Xf3b  78c1                    MOVRA           HRAM_0XC1
+:0Xf3c  e61e                    MOVA            HRAM_0X1E
+:0Xf3d  78c0                    MOVRA           HRAM_0XC0
+:0Xf3e  e61d                    MOVA            HRAM_0X1D
+:0Xf3f  78bf                    MOVRA           HRAM_0XBF
+:0Xf40  e61c                    MOVA            HRAM_0X1C
+:0Xf41  ec07                    PAGE            0X7
+:0Xf42  6097                    CALL            HADR_0X97
+:0Xf43  ec01                    PAGE            0X1
+:0Xf44  501c                    MOV             HRAM_0X1C,      A
+:0Xf45  20c3                    MOVAR           HRAM_0XC3
+:0Xf46  501d                    MOV             HRAM_0X1D,      A
+:0Xf47  20c4                    MOVAR           HRAM_0XC4
+:0Xf48  501e                    MOV             HRAM_0X1E,      A
+:0Xf49  20c5                    MOVAR           HRAM_0XC5
+:0Xf4a  501f                    MOV             HRAM_0X1F,      A
+:0Xf4b  20c6                    MOVAR           HRAM_0XC6
+:0Xf4c  e53b                    MOVI            0X3B
+:0Xf4d  e623                    MOVA            HRAM_0X23
+:0Xf4e  e55b                    MOVI            0X5B
+:0Xf4f  e622                    MOVA            HRAM_0X22
+:0Xf50  e5cf                    MOVI            0XCF
+:0Xf51  e621                    MOVA            HRAM_0X21
+:0Xf52  e50f                    MOVI            0XF
+:0Xf53  e620                    MOVA            HRAM_0X20
+:0Xf54  78c6                    MOVRA           HRAM_0XC6
+:0Xf55  e61f                    MOVA            HRAM_0X1F
+:0Xf56  78c5                    MOVRA           HRAM_0XC5
+:0Xf57  e61e                    MOVA            HRAM_0X1E
+:0Xf58  78c4                    MOVRA           HRAM_0XC4
+:0Xf59  e61d                    MOVA            HRAM_0X1D
+:0Xf5a  78c3                    MOVRA           HRAM_0XC3
+:0Xf5b  e61c                    MOVA            HRAM_0X1C
+:0Xf5c  ec07                    PAGE            0X7
+:0Xf5d  6023                    CALL            HADR_0X23
+:0Xf5e  ec01                    PAGE            0X1
+:0Xf5f  501c                    MOV             HRAM_0X1C,      A
+:0Xf60  20bf                    MOVAR           HRAM_0XBF
+:0Xf61  501d                    MOV             HRAM_0X1D,      A
+:0Xf62  20c0                    MOVAR           HRAM_0XC0
+:0Xf63  501e                    MOV             HRAM_0X1E,      A
+:0Xf64  20c1                    MOVAR           HRAM_0XC1
+:0Xf65  501f                    MOV             HRAM_0X1F,      A
+:0Xf66  20c2                    MOVAR           HRAM_0XC2
+:0Xf67  78c2                    MOVRA           HRAM_0XC2
+:0Xf68  e623                    MOVA            HRAM_0X23
+:0Xf69  78c1                    MOVRA           HRAM_0XC1
+:0Xf6a  e622                    MOVA            HRAM_0X22
+:0Xf6b  78c0                    MOVRA           HRAM_0XC0
+:0Xf6c  e621                    MOVA            HRAM_0X21
+:0Xf6d  78bf                    MOVRA           HRAM_0XBF
+:0Xf6e  e620                    MOVA            HRAM_0X20
+:0Xf6f  e53f                    MOVI            0X3F
+:0Xf70  e61f                    MOVA            HRAM_0X1F
+:0Xf71  e580                    MOVI            0X80
+:0Xf72  e61e                    MOVA            HRAM_0X1E
+:0Xf73  e500                    MOVI            0X0
+:0Xf74  e61d                    MOVA            HRAM_0X1D
+:0Xf75  e500                    MOVI            0X0
+:0Xf76  e61c                    MOVA            HRAM_0X1C
+:0Xf77  ec07                    PAGE            0X7
+:0Xf78  6097                    CALL            HADR_0X97
+:0Xf79  ec01                    PAGE            0X1
+:0Xf7a  501c                    MOV             HRAM_0X1C,      A
+:0Xf7b  20c3                    MOVAR           HRAM_0XC3
+:0Xf7c  501d                    MOV             HRAM_0X1D,      A
+:0Xf7d  20c4                    MOVAR           HRAM_0XC4
+:0Xf7e  501e                    MOV             HRAM_0X1E,      A
+:0Xf7f  20c5                    MOVAR           HRAM_0XC5
+:0Xf80  501f                    MOV             HRAM_0X1F,      A
+:0Xf81  20c6                    MOVAR           HRAM_0XC6
+:0Xf82  e543                    MOVI            0X43
+:0Xf83  e623                    MOVA            HRAM_0X23
+:0Xf84  e588                    MOVI            0X88
+:0Xf85  e622                    MOVA            HRAM_0X22
+:0Xf86  e593                    MOVI            0X93
+:0Xf87  e621                    MOVA            HRAM_0X21
+:0Xf88  e533                    MOVI            0X33
+:0Xf89  e620                    MOVA            HRAM_0X20
+:0Xf8a  78c6                    MOVRA           HRAM_0XC6
+:0Xf8b  e61f                    MOVA            HRAM_0X1F
+:0Xf8c  78c5                    MOVRA           HRAM_0XC5
+:0Xf8d  e61e                    MOVA            HRAM_0X1E
+:0Xf8e  78c4                    MOVRA           HRAM_0XC4
+:0Xf8f  e61d                    MOVA            HRAM_0X1D
+:0Xf90  78c3                    MOVRA           HRAM_0XC3
+:0Xf91  e61c                    MOVA            HRAM_0X1C
+:0Xf92  ec07                    PAGE            0X7
+:0Xf93  6095                    CALL            HADR_0X95
+:0Xf94  ec01                    PAGE            0X1
+:0Xf95  501d                    MOV             HRAM_0X1D,      A
+:0Xf96  210a                    MOVAR           HRAM_0X10A
+:0Xf97  501e                    MOV             HRAM_0X1E,      A
+:0Xf98  210b                    MOVAR           HRAM_0X10B
+:0Xf99  501f                    MOV             HRAM_0X1F,      A
+:0Xf9a  210c                    MOVAR           HRAM_0X10C
 ;        return Tmp;
-:0Xfbb  790a                    MOVRA           HRAM_0X10A
-:0Xfbc  e61c                    MOVA            HRAM_0X1C
-:0Xfbd  790b                    MOVRA           HRAM_0X10B
-:0Xfbe  e61d                    MOVA            HRAM_0X1D
-:0Xfbf  790c                    MOVRA           HRAM_0X10C
-:0Xfc0  e61e                    MOVA            HRAM_0X1E
-:0Xfc1  501c                    MOV             HRAM_0X1C,      A
-:0Xfc2  c183                    RET
+:0Xf9b  790a                    MOVRA           HRAM_0X10A
+:0Xf9c  e61c                    MOVA            HRAM_0X1C
+:0Xf9d  790b                    MOVRA           HRAM_0X10B
+:0Xf9e  e61d                    MOVA            HRAM_0X1D
+:0Xf9f  790c                    MOVRA           HRAM_0X10C
+:0Xfa0  e61e                    MOVA            HRAM_0X1E
+:0Xfa1  501c                    MOV             HRAM_0X1C,      A
+:0Xfa2  c183                    RET
+;}
+;//°™°™°™°™°™°™°™°™°™°™°™°™°™°™°™°™
+;//∞Ê»®…˘√˜£∫±æŒƒŒ™CSDN≤©÷˜°∏LVGRAPE°πµƒ‘≠¥¥Œƒ’¬£¨◊Ò—≠CC 4.0 BY-SA∞Ê»®–≠“È£¨◊™‘ÿ«Î∏Ω…œ‘≠Œƒ≥ˆ¥¶¡¥Ω”º∞±æ…˘√˜°£
+;//‘≠Œƒ¡¥Ω”£∫https://blog.csdn.net/u013866683/article/details/79391849
+;
+;
+;
+;/**********************************************
+;∫Ø ˝√˚£∫UART_send(uchar *str,uchar ch,uint value)
+;√Ë   ˆ£∫UART∑¢ÀÕ∫Ø ˝
+; ‰»Î÷µ£∫◊÷∑˚¥Æ÷∏’Î£¨Õ®µ¿ ˝£¨ADC◊™ªª÷µ
+; ‰≥ˆ÷µ£∫Œﬁ
+;∑µªÿ÷µ£∫Œﬁ
+;**********************************************/
+;void UART_send(uchar *str,uchar ch,uint value)
+;{
+;    *(str+4) = ch+'0';
+;    *(str+16) = value/1000+'0';
+;    *(str+17) = value%1000/100+'0';
+;    *(str+18) = value%100/10+'0';
+;    *(str+19) = value%10+'0';
+;
+;    while(*str)
+;    {
+;        while(!TRMT1);
+;        TX1B = *str++;
+;    }
+;}
+;
+;/**********************************************
+;∫Ø ˝√˚£∫ADC_convert(uchar ch)
+;√Ë   ˆ£∫ADC◊™ªª∫Ø ˝
+; ‰»Î÷µ£∫◊™ªªÕ®µ¿ch
+; ‰≥ˆ÷µ£∫Œﬁ
+;∑µªÿ÷µ£∫◊™ªªµƒ12ŒªΩ·π˚
+;**********************************************/
+;uint ADC_convert(void)
+;{
+;    ADTRG = 1;      //∆Ù∂ØAD◊™ªª
+:0Xfa3  e783                    CLR             HRAM_0X83
+:0Xfa4  a1fa                    BSS             HRAM_0XFA,      1
+;    while(ADTRG);
+:0Xfa5  99fa                    JBC             HRAM_0XFA,      1
+:0Xfa6  6fa5                    GOTO            HADR_0X7A5
+;    ADIF = 0;
+:0Xfa7  a89a                    BCC             HRAM_0X9A,      0
+;
+;    return (uint)ADCRH<<8 | ADCRL;
+:0Xfa8  ea01                    SECTION         0X1
+:0Xfa9  e740                    CLR             HRAM_0X40
+:0Xfaa  50f9                    MOV             HRAM_0XF9,      A
+:0Xfab  e63f                    MOVA            HRAM_0X3F
+:0Xfac  503f                    MOV             HRAM_0X3F,      A
+:0Xfad  e642                    MOVA            HRAM_0X42
+:0Xfae  e741                    CLR             HRAM_0X41
+:0Xfaf  e740                    CLR             HRAM_0X40
+:0Xfb0  50f8                    MOV             HRAM_0XF8,      A
+:0Xfb1  e63f                    MOVA            HRAM_0X3F
+:0Xfb2  503f                    MOV             HRAM_0X3F,      A
+:0Xfb3  5841                    IOR             HRAM_0X41,      A
+:0Xfb4  e643                    MOVA            HRAM_0X43
+:0Xfb5  5040                    MOV             HRAM_0X40,      A
+:0Xfb6  5842                    IOR             HRAM_0X42,      A
+:0Xfb7  e644                    MOVA            HRAM_0X44
+:0Xfb8  5043                    MOV             HRAM_0X43,      A
+:0Xfb9  201c                    MOVAR           HRAM_0X1C
+:0Xfba  5044                    MOV             HRAM_0X44,      A
+:0Xfbb  201d                    MOVAR           HRAM_0X1D
+:0Xfbc  781c                    MOVRA           HRAM_0X1C
+:0Xfbd  ea00                    SECTION         0X0
+:0Xfbe  c183                    RET
 ;}
 ;
 ;/*******************************************************
@@ -5726,82 +5714,82 @@ HADR_0X7F6:
 ;{
 ;	uint value_tmp = 0;
 ;	unsigned char gie_bk = GIE;		//±∏∑›GIE
-:0Xfc3  e783                    CLR             HRAM_0X83
-:0Xfc4  e500                    MOVI            0X0
-:0Xfc5  9f96                    JBC             HRAM_0X96,      7
-:0Xfc6  e501                    MOVI            0X1
-:0Xfc7  ea01                    SECTION         0X1
-:0Xfc8  e642                    MOVA            HRAM_0X42
-:0Xfc9  5042                    MOV             HRAM_0X42,      A
-:0Xfca  e644                    MOVA            HRAM_0X44
+:0Xfbf  e783                    CLR             HRAM_0X83
+:0Xfc0  e500                    MOVI            0X0
+:0Xfc1  9f96                    JBC             HRAM_0X96,      7
+:0Xfc2  e501                    MOVI            0X1
+:0Xfc3  ea01                    SECTION         0X1
+:0Xfc4  e642                    MOVA            HRAM_0X42
+:0Xfc5  5042                    MOV             HRAM_0X42,      A
+:0Xfc6  e644                    MOVA            HRAM_0X44
 ;
 ;    CLRWDT();
-:0Xfcb  c18b                    CWDT
+:0Xfc7  c18b                    CWDT
 ;
 ;	while(GIE) GIE = 0;
-:0Xfcc  9796                    JBS             HRAM_0X96,      7
-:0Xfcd  6fd0                    GOTO            HADR_0X7D0
-:0Xfce  af96                    BCC             HRAM_0X96,      7
-:0Xfcf  6fcc                    GOTO            HADR_0X7CC
+:0Xfc8  9796                    JBS             HRAM_0X96,      7
+:0Xfc9  6fcc                    GOTO            HADR_0X7CC
+:0Xfca  af96                    BCC             HRAM_0X96,      7
+:0Xfcb  6fc8                    GOTO            HADR_0X7C8
 ;	DATARDEN = 1;
-:0Xfd0  a794                    BSS             HRAM_0X94,      7
+:0Xfcc  a794                    BSS             HRAM_0X94,      7
 ;
 ;	FRAH = 0x802F >> 8;
-:0Xfd1  e580                    MOVI            0X80
-:0Xfd2  e691                    MOVA            HRAM_0X91
+:0Xfcd  e580                    MOVI            0X80
+:0Xfce  e691                    MOVA            HRAM_0X91
 ;	FRAL = 0x802F;
-:0Xfd3  e52f                    MOVI            0X2F
-:0Xfd4  e690                    MOVA            HRAM_0X90
+:0Xfcf  e52f                    MOVI            0X2F
+:0Xfd0  e690                    MOVA            HRAM_0X90
 ;	DATARDTRG = 1;
-:0Xfd5  a094                    BSS             HRAM_0X94,      0
+:0Xfd1  a094                    BSS             HRAM_0X94,      0
 ;	while(DATARDTRG) ;	     //µ»¥˝∂¡ÕÍ≥…
-:0Xfd6  9894                    JBC             HRAM_0X94,      0
-:0Xfd7  6fd6                    GOTO            HADR_0X7D6
+:0Xfd2  9894                    JBC             HRAM_0X94,      0
+:0Xfd3  6fd2                    GOTO            HADR_0X7D2
 ;	__Asm TBR;		         //≤È±Ì∂¡÷∏¡Ó
-:0Xfd8  c184                    TBR
+:0Xfd4  c184                    TBR
 ;	value_tmp = (ROMDH<<8) | ROMDL;
-:0Xfd9  e743                    CLR             HRAM_0X43
-:0Xfda  5093                    MOV             HRAM_0X93,      A
-:0Xfdb  e642                    MOVA            HRAM_0X42
-:0Xfdc  5042                    MOV             HRAM_0X42,      A
-:0Xfdd  e646                    MOVA            HRAM_0X46
-:0Xfde  e745                    CLR             HRAM_0X45
-:0Xfdf  e748                    CLR             HRAM_0X48
-:0Xfe0  5092                    MOV             HRAM_0X92,      A
-:0Xfe1  e647                    MOVA            HRAM_0X47
-:0Xfe2  5047                    MOV             HRAM_0X47,      A
-:0Xfe3  5845                    IOR             HRAM_0X45,      A
-:0Xfe4  e642                    MOVA            HRAM_0X42
-:0Xfe5  5048                    MOV             HRAM_0X48,      A
-:0Xfe6  5846                    IOR             HRAM_0X46,      A
-:0Xfe7  e643                    MOVA            HRAM_0X43
+:0Xfd5  e743                    CLR             HRAM_0X43
+:0Xfd6  5093                    MOV             HRAM_0X93,      A
+:0Xfd7  e642                    MOVA            HRAM_0X42
+:0Xfd8  5042                    MOV             HRAM_0X42,      A
+:0Xfd9  e646                    MOVA            HRAM_0X46
+:0Xfda  e745                    CLR             HRAM_0X45
+:0Xfdb  e748                    CLR             HRAM_0X48
+:0Xfdc  5092                    MOV             HRAM_0X92,      A
+:0Xfdd  e647                    MOVA            HRAM_0X47
+:0Xfde  5047                    MOV             HRAM_0X47,      A
+:0Xfdf  5845                    IOR             HRAM_0X45,      A
+:0Xfe0  e642                    MOVA            HRAM_0X42
+:0Xfe1  5048                    MOV             HRAM_0X48,      A
+:0Xfe2  5846                    IOR             HRAM_0X46,      A
+:0Xfe3  e643                    MOVA            HRAM_0X43
 ;
 ;    ROMCL = 0x00;            //ÕÀ≥ˆIAP
-:0Xfe8  e794                    CLR             HRAM_0X94
+:0Xfe4  e794                    CLR             HRAM_0X94
 ;	GIE = gie_bk;            //ª÷∏¥»´æ÷÷–∂œ
-:0Xfe9  ea00                    SECTION         0X0
-:0Xfea  ad40                    BCC             HRAM_0X40,      5
-:0Xfeb  ea01                    SECTION         0X1
-:0Xfec  9044                    JBS             HRAM_0X44,      0
-:0Xfed  6ff0                    GOTO            HADR_0X7F0
-:0Xfee  ea00                    SECTION         0X0
-:0Xfef  a540                    BSS             HRAM_0X40,      5
-:0Xff0  ea00                    SECTION         0X0
-:0Xff1  9d40                    JBC             HRAM_0X40,      5
-:0Xff2  6ff5                    GOTO            HADR_0X7F5
-:0Xff3  af96                    BCC             HRAM_0X96,      7
-:0Xff4  6ff6                    GOTO            HADR_0X7F6
-:0Xff5  a796                    BSS             HRAM_0X96,      7
+:0Xfe5  ea00                    SECTION         0X0
+:0Xfe6  ad40                    BCC             HRAM_0X40,      5
+:0Xfe7  ea01                    SECTION         0X1
+:0Xfe8  9044                    JBS             HRAM_0X44,      0
+:0Xfe9  6fec                    GOTO            HADR_0X7EC
+:0Xfea  ea00                    SECTION         0X0
+:0Xfeb  a540                    BSS             HRAM_0X40,      5
+:0Xfec  ea00                    SECTION         0X0
+:0Xfed  9d40                    JBC             HRAM_0X40,      5
+:0Xfee  6ff1                    GOTO            HADR_0X7F1
+:0Xfef  af96                    BCC             HRAM_0X96,      7
+:0Xff0  6ff2                    GOTO            HADR_0X7F2
+:0Xff1  a796                    BSS             HRAM_0X96,      7
 ;
 ;	return value_tmp;
-:0Xff6  ea01                    SECTION         0X1
-:0Xff7  5042                    MOV             HRAM_0X42,      A
-:0Xff8  201c                    MOVAR           HRAM_0X1C
-:0Xff9  5043                    MOV             HRAM_0X43,      A
-:0Xffa  201d                    MOVAR           HRAM_0X1D
-:0Xffb  781c                    MOVRA           HRAM_0X1C
-:0Xffc  ea00                    SECTION         0X0
-:0Xffd  c183                    RET
+:0Xff2  ea01                    SECTION         0X1
+:0Xff3  5042                    MOV             HRAM_0X42,      A
+:0Xff4  201c                    MOVAR           HRAM_0X1C
+:0Xff5  5043                    MOV             HRAM_0X43,      A
+:0Xff6  201d                    MOVAR           HRAM_0X1D
+:0Xff7  781c                    MOVRA           HRAM_0X1C
+:0Xff8  ea00                    SECTION         0X0
+:0Xff9  c183                    RET
                                 ORG             0X1000
 ;}
 ;
@@ -5905,7 +5893,7 @@ HADR_0X7F6:
 ;	{
 ;        offset_value = GetOffset2048();  //ªÒ»°offset÷µ
 :0X100f  ec01                   PAGE            0X1
-:0X1010  67c3                   CALL            HADR_0X7C3
+:0X1010  67bf                   CALL            HADR_0X7BF
 :0X1011  ec02                   PAGE            0X2
 :0X1012  2083                   MOVAR           HRAM_0X83
 :0X1013  501d                   MOV             HRAM_0X1D,      A
@@ -6085,8 +6073,8 @@ HADR_0X7F6:
 ;
 ;
 ;		adc_value = ADC_convert();
-:0X1081  ec00                   PAGE            0X0
-:0X1082  67e1                   CALL            HADR_0X7E1
+:0X1081  ec01                   PAGE            0X1
+:0X1082  67a3                   CALL            HADR_0X7A3
 :0X1083  ec02                   PAGE            0X2
 :0X1084  20f8                   MOVAR           HRAM_0XF8
 :0X1085  501d                   MOV             HRAM_0X1D,      A
@@ -6314,8 +6302,8 @@ HADR_0X7F6:
 :0X114a  e29f                   ANDI            0X9F
 :0X114b  e6fa                   MOVA            HRAM_0XFA
 ;		adc_value = ADC_convert();
-:0X114c  ec00                   PAGE            0X0
-:0X114d  67e1                   CALL            HADR_0X7E1
+:0X114c  ec01                   PAGE            0X1
+:0X114d  67a3                   CALL            HADR_0X7A3
 :0X114e  ec02                   PAGE            0X2
 :0X114f  20f8                   MOVAR           HRAM_0XF8
 :0X1150  501d                   MOV             HRAM_0X1D,      A
@@ -6349,7 +6337,7 @@ HADR_0X7F6:
 :0X1166  5079                   MOV             HRAM_0X79,      A
 :0X1167  e640                   MOVA            HRAM_0X40
 :0X1168  ec01                   PAGE            0X1
-:0X1169  66a3                   CALL            HADR_0X6A3
+:0X1169  6683                   CALL            HADR_0X683
 :0X116a  ec02                   PAGE            0X2
 :0X116b  20b7                   MOVAR           HRAM_0XB7
 :0X116c  501d                   MOV             HRAM_0X1D,      A

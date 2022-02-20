@@ -2,20 +2,17 @@
 #include <hic.h>
 #include "main.h"
 
-unsigned long global_count;
-unsigned char State_flag=1;
-
-unsigned int sleep_count;
-
+unsigned long global_count;//全局时间计数1ms ++
+unsigned char State_flag=1;//运行状态
+unsigned int  sleep_count;//休眠时间计数
+unsigned char buzzer_flag;//蜂鸣器启动标记
 unsigned char temperature;//温度值 0~99
 unsigned char Vbat_val;   //电量%  0~99
 
-
-unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//显示缓存 display_buf[1-1]=1； 1号LED亮
 unsigned long Get_Sys_time(){
 	return global_count;
 }
-
 /******************************************************
 函数名：void RAMclear(void)
 描  述：RAM区数据清零，RAM区地址0x0000~0x03FF
@@ -90,7 +87,6 @@ void GPIOInit(void)
 	ANSH3=0;  //PB1/AIN11
 	ANSL4=0;  //PB2/AIN4
 	ANSH1=0;  //PB4/AIN9
-
 }
 
 void Timer_T8_Init(){
@@ -100,7 +96,6 @@ void Timer_T8_Init(){
     //T8NC = 0x0C;         //定时器模式，预分频1:(Fosc/2)/32
     //T8NC = 0x0F;         //定时器模式，预分频1:(Fosc/2)/256
 	//T8NC = 0x08;         //定时器模式，预分频1:(Foc/2)/2
-
     T8N = 131;           //赋计数器初值
     T8NIE = 1;           //打开定时器溢出中断
     T8NIF = 0;           //清溢出标志位
@@ -117,7 +112,6 @@ void Delay_ms(unsigned int delay){
 void TEST_Delay_ms(unsigned int delay){
 	   int i;
 	   for(i = 0;i<500*delay;i++);        //延时
-//       for(i = 0;i<50000;i++);
 }
 
 /******************************************************
@@ -163,7 +157,7 @@ void Set_PWM_CH1_Duty(int duty){
 //#define BUZER_N  //无源
 #define BUZER_A	 //有源
 #ifdef BUZER_N
-int Buzzer_Init(void){
+unsigned char Buzzer_Init(void){
 	BEEPC=0xD8;
 	return 0xff;
 }
@@ -176,7 +170,7 @@ void Buzzer_Start(){
 #endif
 
 #ifdef BUZER_A
-int  Buzzer_Init(void){
+unsigned char  Buzzer_Init(void){
 	return 0x88;
 }
 void Buzzer_Stop(){
@@ -187,7 +181,6 @@ void Buzzer_Start(){
 }
 #endif
 
-unsigned char buzzer_flag;
 void State_Trans(unsigned char new_state){
 	State_flag=new_state;
 }
