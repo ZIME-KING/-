@@ -16,7 +16,7 @@ extern unsigned char display_buf[18];
 extern unsigned char buzzer_flag;
 
 
-extern unsigned char temperature;//温度值 0~99
+extern char temperature;//温度值 0~99
 extern unsigned char Vbat_val;   //电量%  0~99
 
 #endif

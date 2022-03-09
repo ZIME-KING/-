@@ -4,6 +4,8 @@
 
 void Uart_Init();
 void ADC_init() ;
+void ADC_dis_init();
+
 void Get_ADC_Val();
 void Send_test();
 

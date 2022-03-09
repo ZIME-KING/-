@@ -6,7 +6,7 @@ unsigned long global_count;//全局时间计数1ms ++
 unsigned char State_flag=1;//运行状态
 unsigned int  sleep_count;//休眠时间计数
 unsigned char buzzer_flag;//蜂鸣器启动标记
-unsigned char temperature;//温度值 0~99
+ char temperature;//温度值 0~99
 unsigned char Vbat_val;   //电量%  0~99
 
 unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//显示缓存 display_buf[1-1]=1； 1号LED亮
@@ -128,8 +128,8 @@ void Timer_T21_Init(){
     T21PH = 999 >> 8;        //pwm周期
     T21PL = 999 & 0xFF;
 
-	ch0_duty=1;
-	ch1_duty=1;
+	ch0_duty=999;
+	ch1_duty=999;
 
     T21R0H = ch0_duty >>8 ;       //pwm0占空比
     T21R0L = ch0_duty & 0xFF;
@@ -221,6 +221,7 @@ static unsigned char last_state;
 	else if(Get_State()==3){
 		if(sleep_count>3){
 			State_Trans(0);
+			//sleep();
 		}
 	}
 }
@@ -233,9 +234,15 @@ void LED_Task(){
 	//D1_NUM(temp /10);
 	//D2_NUM(temp %10);
 	display_buf[13-1]=1;
-	D1_NUM(temperature/10);
-	D2_NUM(temperature%10);
 
+	if(temperature==0xff){
+	  D1_NUM(0xff);
+	  D2_NUM(0xff);	
+	}
+	else{
+	  D1_NUM(temperature/10);
+	  D2_NUM(temperature%10);	
+	}
 
 	//D1_NUM(Vbat_val/10);
 	//D2_NUM(Vbat_val%10);
@@ -292,45 +299,58 @@ void state_0(){
 	while(i--)
 	display_buf[i]=0;
 	Updata_SCAN_LED_BUF_R();
-	
-	Set_PWM_CH0_Duty(999);
 	LED_Clear();
 
+	Set_PWM_CH0_Duty(999);
+	Set_PWM_CH1_Duty(999);
+
+	//RAMclear();
 	 State_Trans(3);
 	//配置PA2中断模式唤醒
+
+	ANSL = 0xFF;        //选择对应端口为数字IO功能
+	ANSH = 0xFF;
+    PAT = 0x00;         //所有IO设为输出低电平
+    PBT = 0x00;
+    PCT = 0x00;
+    PA = 0x00;
+    PB = 0x00;
+    PC = 0x00;
+
 	PAT2=0x01;	//PA2 数字输入
 	KIE=1;
 	KMSK1=1;
 	PAPU=PAPU|0X04;
+
+	ADC_dis_init();
+
+	//PWRC &= 0x3F;
+    //PWRC |= 2<<6;        //选择IDLE模式
+    //__Asm IDLE;     //进入IDLE模式
+
 	sleep();
 }
 //全关检测按键长按开机
 void state_3(){
-	//D1_NUM(0);
-	//D2_NUM(3);
-	//Updata_SCAN_LED_BUF_R();
+
 	unsigned char i=18;
 	while(i--)
 	display_buf[i]=0;
 	Updata_SCAN_LED_BUF_R();
 	LED_Clear();
 
-	Set_PWM_CH0_Duty(999);
 }
 
 //电机关 开灯
 void state_1(){
-	//D1_NUM(0);
-	//D2_NUM(1);
-	//Updata_SCAN_LED_BUF_R();
 	Set_PWM_CH0_Duty(999);
+	Set_PWM_CH1_Duty(999);
 }
 
 //电机开
 void state_2(){
-	//D1_NUM(0);
-	//D2_NUM(2);
-	//Updata_SCAN_LED_BUF_R();
+
+	Set_PWM_CH1_Duty(1);
 	Set_PWM_CH0_Duty(100);
 }
 void State_Ruun(){
@@ -353,21 +373,27 @@ void main(void)
 {
 	int iii=0;
 	//RAMclear();
+	WDTC = 0x16;         //分频比1:128，使能WDT预分频器，看门狗溢出时间t=256*128/32000=1.024s
+
+
+
+
+	SetTime();			//任务间隔时间初始化
 	GPIOInit();
+	
+
 	Timer_T8_Init();
-	SetTime();//任务间隔时间初始化
 	Timer_T21_Init();
-	//Uart_Init();
+	//sleep();
 	ADC_init() ;
-
-	//log(1);
-
-	PB3=1;
-	Set_PWM_CH0_Duty(0);
-	Set_PWM_CH1_Duty(400);
+	//ADC_dis_init();
+	//sleep();
 	Buzzer_Init();
 	LED_Clear();
-	int ii=2;
+	
+
+	PB3=1;
+	int ii=0;
 	while(ii--){
 		Buzzer_Start();
 		Delay_ms(100);
@@ -375,26 +401,30 @@ void main(void)
 		Delay_ms(100);
 	}
 
-	//D1_NUM(1);
-
 	while (1)
     {
-	  if(CompareTime(&Task_5)){
-		  GetTime(&Task_5);
-	  }
 	  if(CompareTime(&Task_50)){
 			GetTime(&Task_50);
 			if(touch_key_busy){
 			touch_key_busy=0;
 			sleep_count=0;
 				if(touch_key_staus==SHORT ){
-						if(Get_State()==2) State_Trans(0);
+						if(Get_State()==2) {
+							State_Trans(0);
+							//state_0();
+							//sleep();
+						}
 				}
 				if(touch_key_staus==DOUBLE){
-						if(Get_State()==1 && USB_Check()==0) State_Trans(2);
+						if(Get_State()==1 && USB_Check()==0){
+								State_Trans(2);
+						}
 				}
 				if(touch_key_staus==LONG_NO_RELEASE){
-						if(Get_State()==3) State_Trans(1);
+						if(Get_State()==3) 
+						{
+							__Asm RST;     //
+						}//State_Trans(1);
 				}
 			}
 	  }
@@ -406,22 +436,16 @@ void main(void)
 			 State_Trans(1);
 			 sleep_count=0;
 		  }
+		  	Get_ADC_Val();
+		  	if(Get_State()!=3){
+				LED_Task();
+			}
 			
-	  }
-	  if(CompareTime(&Task_200)){
-		  GetTime(&Task_200);
 	  }
 	  if(CompareTime(&Task_1000)){
 		  GetTime(&Task_1000);
 			Sleep_Tsak();
-			Get_ADC_Val();
-			if(Get_State()!=3){
-				LED_Task();
-			}
-			//Vbat_val++;
-			//temperature++;
-			//Vbat_val=Vbat_val%100;
-			//temperature=temperature%100;
+			//Get_ADC_Val();
 	  }
         CLRWDT();
     }

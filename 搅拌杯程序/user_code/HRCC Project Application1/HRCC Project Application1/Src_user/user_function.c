@@ -38,7 +38,7 @@ float vcc_val;
 float RV,RT,Tmp;
 float Get_Tempture(unsigned int adc)
 {        //float RV,RT,Tmp;
-        RV=BaseVol*(float)adc/4096.0;		//ADC为10位ADC,求出NTC电压:RV=ADCValu/1024*BaseVoltag
+        RV=BaseVol*(float)adc/4096.0;		//ADC为12位ADC,求出NTC电压:RV=ADCValu/4096*BaseVoltag
        // RT=RV*100/(BaseVol-RV);				//求出当前温度阻值 (BaseVoltage-RV)/R16=RV/RT;
 		RT=RES/((vcc_val/RV)-1);
 	    Tmp=1/(1/TN+(log(RT/RN)/B))-273.15;//%RT = RN exp*B(1/T-1/TN)%
@@ -160,6 +160,28 @@ void Uart_Init(void){
     
 	UART1SEL=1;
 }
+
+void ADC_dis_init(){
+  
+    ANSH1 = 0;          //选择AIN9为模拟口
+    ADCCL = 0xF8;      //ADCCL<7:4>选择通道
+ //   ADCCL &= 0x9F;      //选择通道9
+
+	//ADCCM = 0x6B;       //参考源内部固定选择2.048V,负参考固定选择VSS，转换位数固定选择12位，AD调整offset固定选择档位1
+    ADCCH = 0xC3 ;       //低位对齐;时钟周期FOSC/16
+	ADEN = 0;           //使能ADC模块
+    VREFEN = 0;         //参考电压模块使能
+//	while(j--);         //等待300us以上
+	VREF_CHOPEN = 0 ;    //内部参考必须使能电压斩波器
+//    while(i--);         //等待1ms以上再启动转换
+
+	ADC_LP_EN = 0;      //ADC低功耗必须固定使能
+	PBT4 = 0;
+	PBT2 = 0;
+    SMPS = 1;           //硬件控制采样，ADTRG=1时启动AD采样转换
+}
+
+
 /**********************************************
 函数名：ADC_init()
 描  述：初始化ADC
@@ -303,6 +325,10 @@ void Get_ADC_Val(){
 		else
 		    adc_value = 0;
 
-			//temperature=adc_value/1000*10+(adc_value/100)%10;
-		temperature=Get_Tempture(adc_value);
+		if(adc_value<4000){
+			temperature=Get_Tempture(adc_value);
+		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
+		else{
+			temperature=0xff;
+		}
 }

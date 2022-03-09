@@ -47,6 +47,7 @@ const unsigned char D1_NUM7[]={11,2,7};
 const unsigned char D1_NUM8[]={11,4,2,16,9 ,7,17};
 const unsigned char D1_NUM9[]={11,4,2 ,16,7,17};
 const unsigned char D1_NUM0[]={11,4,2,9,7,17};
+const unsigned char D1_NUM_F[]={11,4,16,9};
 
 const unsigned char D2_NUM1[]={3,8};
 const unsigned char D2_NUM2[]={1,3,6,10,18};
@@ -58,6 +59,7 @@ const unsigned char D2_NUM7[]={1,3,8};
 const unsigned char D2_NUM8[]={1,5,3 ,6,10 ,8,18};
 const unsigned char D2_NUM9[]={1,5,3 ,6,8,18};
 const unsigned char D2_NUM0[]={1,3,5,8,10,18};
+const unsigned char D2_NUM_F[]={1,5,6,10};
 
 const unsigned int LED_BUF[]={0x1E,0x2E,0x4E,0x8E,0x10E,0x1D,0x2D,0x4D,0x8D,0x10D,0x1B,0x2B,0x4B,0x8B,0x10B,0x17,0x27,0x47/*0x87,0x107*/};
 
@@ -233,6 +235,13 @@ void D1_NUM(unsigned char num){
 		while(i--)
 		display_buf[D1_NUM9[i]-1]=1;
 	break;
+	case 0xff:
+		i=sizeof(D1_NUM_F)/sizeof(D1_NUM_F[0]); 
+		while(i--)
+		display_buf[D1_NUM_F[i]-1]=1;
+	break;
+
+
 	}
 }
 void D2_NUM(unsigned char num){
@@ -300,6 +309,12 @@ void D2_NUM(unsigned char num){
 		i=sizeof(D2_NUM9)/sizeof(D2_NUM9[0]); 
 		while(i--)
 		display_buf[D2_NUM9[i]-1]=1;
+	break;
+	
+	case 0xff:
+		i=sizeof(D2_NUM_F)/sizeof(D2_NUM_F[0]); 
+		while(i--)
+		display_buf[D2_NUM_F[i]-1]=1;
 	break;
 	}
 }
