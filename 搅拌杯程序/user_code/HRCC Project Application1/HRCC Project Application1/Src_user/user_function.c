@@ -256,18 +256,18 @@ void ADC_init(void)
     SMPS = 1;           //硬件控制采样，ADTRG=1时启动AD采样转换
 }
 
-void _f(char* num,char len)
+void _f(int a[],char len)
 {
-    int a[10];
+    //int a[10];
 	int n;  //存放数组a中元素的个数
     int i;  //比较的轮数
     int j;  //每轮比较的次数
     int buf;  //交换数据时用于存放中间数据
    // n = sizeof(a) / sizeof(a[0]);  /*a[0]是int型, 占4字节, 所以总的字节数除以4等于元素的个数*/
-   int ii;
-    for(ii=0;ii<len;ii++){
-		a[ii] = *(num+ii);
-	}
+   //int ii;
+    //for(ii=0;ii<len;ii++){
+	//	a[ii] = *(num+ii);
+	//}
 	n=len;
 	for (i=0; i<n-1; ++i)  //比较n-1轮
     {
@@ -281,40 +281,21 @@ void _f(char* num,char len)
             }
         }
     }
-      //  printf("%d\x20", a[i]);
+    //for(int x=0;x<10;x++)
+        //printf("%d\x20", a[x]);
 }
 
-void Get_ADC_Val(){
-		unsigned int vcc_adc_val[10];
+static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
 		unsigned int i;
 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
 		ADCCL &= 0x4F;      //选择通道4
-
-
 
 		adc_value = ADC_convert();
 		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
 		    adc_value -= offset_value;
 		else
 		    adc_value = 0;
-
-		////for( i=0;i<10;i++){
-			//vcc_adc_val[i] = ADC_convert();
-				//if(vcc_adc_val[i] > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
-					//vcc_adc_val[i] -= offset_value;
-				//else 
-					//vcc_adc_val[i] = 0;
-		//}
-		//_f(&vcc_adc_val[0],10);
-
-		//电量值
-		vcc_val=4*2.048*adc_value/4096;
-		//if(vcc_val>4.15) vcc_val=4.15;
-		//if(vcc_val<3.6) vcc_val=3.6;
-		Vbat_val=(vcc_val-3.6)*100/(4.15-3.6);
-
-		if(Vbat_val>99) Vbat_val=99;
-		if(Vbat_val<0) Vbat_val=0;
+		*Vbat_val=adc_value;
 
 
 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
@@ -324,11 +305,30 @@ void Get_ADC_Val(){
 		    adc_value -= offset_value;
 		else
 		    adc_value = 0;
+		*Temp_val=adc_value;
+}
+void User_Get_measure_Val(){
+		static unsigned int Vbat_adc_val[20],Temp_adc_val[20];
+		static char i=0;
+		i=i%20;
+		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
+		i++;
+		if(i==19){
+			_f(Vbat_adc_val,20);  //
+			_f(Temp_adc_val,20);
+		//电量值
+		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
+		Vbat_val=(vcc_val-3.6)*100/(4.15-3.6);
 
-		if(adc_value<4000){
-			temperature=Get_Tempture(adc_value);
+		if(Vbat_val>99) Vbat_val=99;
+		if(Vbat_val<0) Vbat_val=0;
+
+		//温度
+		if(Temp_adc_val[10]<4000){
+			temperature=Get_Tempture(Temp_adc_val[10]);
 		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
 		else{
 			temperature=0xff;
 		}
+	}
 }

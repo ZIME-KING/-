@@ -301,8 +301,11 @@ void state_0(){
 	Updata_SCAN_LED_BUF_R();
 	LED_Clear();
 
-	Set_PWM_CH0_Duty(999);
-	Set_PWM_CH1_Duty(999);
+	//Set_PWM_CH0_Duty(999);
+	//Set_PWM_CH1_Duty(999);
+
+	Timer_T21_Init();
+
 
 	//RAMclear();
 	 State_Trans(3);
@@ -321,6 +324,14 @@ void state_0(){
 	KIE=1;
 	KMSK1=1;
 	PAPU=PAPU|0X04;
+
+	PBT5=0x01;  //PB5 数字输入
+	PB5=1;
+
+	INTC0 |=0x80;       //usb检测双边触发
+	PIE7 = 1;           //打开管脚中断
+    PIF7 = 0;           //清除外部中断标志
+
 
 	ADC_dis_init();
 
@@ -369,37 +380,48 @@ void State_Ruun(){
 				break;
 			}
 }
+
+
+void user_delay(){
+unsigned int i=4000;
+while(i--);
+}
 void main(void) 
 {
-	int iii=0;
 	//RAMclear();
 	WDTC = 0x16;         //分频比1:128，使能WDT预分频器，看门狗溢出时间t=256*128/32000=1.024s
 
-
-
-
 	SetTime();			//任务间隔时间初始化
 	GPIOInit();
-	
-
 	Timer_T8_Init();
 	Timer_T21_Init();
 	//sleep();
 	ADC_init() ;
+	
 	//ADC_dis_init();
 	//sleep();
 	Buzzer_Init();
 	LED_Clear();
-	
 
 	PB3=1;
-	int ii=0;
-	while(ii--){
-		Buzzer_Start();
-		Delay_ms(100);
-		Buzzer_Stop();
-		Delay_ms(100);
+	//int ii=0;
+	//while(ii--){
+		//Buzzer_Start();
+		//Delay_ms(100);
+		//Buzzer_Stop();
+		//Delay_ms(100);
+	//}
+
+	int iii=100;
+	while(iii--){
+		user_delay();
+		//Delay_ms(10);
+		User_Get_measure_Val();
 	}
+	LED_Task();
+
+
+
 
 	while (1)
     {
@@ -430,22 +452,23 @@ void main(void)
 	  }
 	  if(CompareTime(&Task_100)){
 		  GetTime(&Task_100);
+		  User_Get_measure_Val();
 		  State_Ruun();
 		  Buzzer_Task();
 		  if(USB_Check()==1){
 			 State_Trans(1);
 			 sleep_count=0;
 		  }
-		  	Get_ADC_Val();
-		  	if(Get_State()!=3){
-				LED_Task();
-			}
-			
+		  	//Get_ADC_Val();
 	  }
 	  if(CompareTime(&Task_1000)){
 		  GetTime(&Task_1000);
 			Sleep_Tsak();
 			//Get_ADC_Val();
+			if(Get_State()!=3){
+				LED_Task();
+			}
+
 	  }
         CLRWDT();
     }
@@ -481,8 +504,15 @@ void isr(void) interrupt
     }
 	    if(PIE7==1 && PIF7==1) //usb插入
     {
-		State_flag=1;    
 		sleep_count=0;
-        PIF7 = 0;		 //清除外部中断
+		if(State_flag==2 )State_flag=1;    
+		
+        
+		if(State_flag==3){
+			__Asm RST;     //
+		}
+
+		
+		PIF7 = 0;		 //清除外部中断
     }
 }

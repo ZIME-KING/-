@@ -8,8 +8,8 @@
 	EXTERN         	_Uart_Init
 	EXTERN         	_ADC_init
 	EXTERN         	_ADC_dis_init
-	EXTERN         	_Get_ADC_Val
 	EXTERN         	_Send_test
+	EXTERN         	_User_Get_measure_Val
 	EXTERN         	_vcc_val
 	EXTERN         	_RV
 	EXTERN         	_RT
@@ -231,7 +231,7 @@ _SetTime
 	_DESC          	GetTime,0X4,0X0,Get_Sys_time
 
 SECTION1GetTime	UNINTIAL       	0		; Bank 0
-	ORG            	0XB7		; Bank 0
+	ORG            	0XB8		; Bank 0
 _GetTimeDATA	RSEG           	0X4		; Bank 0
 GetTime#	CSEG           
 _GetTime
@@ -284,7 +284,7 @@ _GetTime
 	_DESC          	CompareTime,0X4,0X0,Get_Sys_time
 
 SECTION1CompareTime	UNINTIAL       	0		; Bank 0
-	ORG            	0XB7		; Bank 0
+	ORG            	0XB8		; Bank 0
 _CompareTimeDATA	RSEG           	0XE		; Bank 0
 CompareTime#	CSEG           
 _CompareTime
@@ -426,18 +426,18 @@ _CompareTime
 	RET            			; Bank 0		; ShBank 0
 
 SECTION2C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_software_Time_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X118		; Bank 0
+	ORG            	0X11A		; Bank 0
 _Task_1	RSEG           	0X8		; Bank 0
-	ORG            	0X138		; Bank 0
+	ORG            	0X13A		; Bank 0
 _Task_5	RSEG           	0X8		; Bank 0
-	ORG            	0X140		; Bank 0
+	ORG            	0X142		; Bank 0
 _Task_50	RSEG           	0X8		; Bank 0
-	ORG            	0X120		; Bank 0
+	ORG            	0X122		; Bank 0
 _Task_100	RSEG           	0X8		; Bank 0
-	ORG            	0X130		; Bank 0
+	ORG            	0X132		; Bank 0
 _Task_200	RSEG           	0X8		; Bank 0
-	ORG            	0X148		; Bank 0
+	ORG            	0X14A		; Bank 0
 _Task_500	RSEG           	0X8		; Bank 0
-	ORG            	0X128		; Bank 0
+	ORG            	0X12A		; Bank 0
 _Task_1000	RSEG           	0X8		; Bank 0
 	END

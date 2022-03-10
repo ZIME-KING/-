@@ -3,14 +3,14 @@
 	Ram
 
 Section0 used  65 bytes of total 128 ( 50.781250  %) 
-Section1 used 128 bytes of total 128 (100.000000  %) 
-Section2 used  80 bytes of total 128 ( 62.500000  %) 
-Section3 used   0 bytes of total 128 (  0.000000  %) 
+Section1 used 127 bytes of total 128 ( 99.218750  %) 
+Section2 used 122 bytes of total 128 ( 95.312500  %) 
+Section3 used  40 bytes of total 128 ( 31.250000  %) 
 Section4 used   0 bytes of total 128 (  0.000000  %) 
 Section5 used   0 bytes of total 128 (  0.000000  %) 
 Section6 used   0 bytes of total 128 (  0.000000  %) 
 Section7 used   0 bytes of total 128 (  0.000000  %) 
-Ram      used 273 bytes of total 1024 ( 26.660156  %) 
+Ram      used 354 bytes of total 1024 ( 34.570313  %) 
 Detail Message About Ram Spaces: 
 
 Name: SECTION0	Start: 0	Size: 80	#: Used	-: UnUsed
@@ -212,12 +212,12 @@ FFF0-FFFF:	----------------
 
 	Rom
 
-SEGMENT0 used   2041 words of total   2048 ( 99.658203  %) 
+SEGMENT0 used   2037 words of total   2048 ( 99.462891  %) 
 SEGMENT1 used   2035 words of total   2048 ( 99.365234  %) 
-SEGMENT2 used   1039 words of total   2048 ( 50.732422  %) 
+SEGMENT2 used   1343 words of total   2048 ( 65.576172  %) 
 SEGMENT3 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT4 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT5 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT6 used      0 words of total   2048 (  0.000000  %) 
 SEGMENT7 used    969 words of total   2048 ( 47.314453  %) 
-Rom      used   6084 words of total  16384 ( 37.133789  %) 
+Rom      used   6384 words of total  16384 ( 38.964844  %) 

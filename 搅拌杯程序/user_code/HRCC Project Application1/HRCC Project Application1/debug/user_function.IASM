@@ -8,8 +8,8 @@
 	PUBLIC         	_Uart_Init
 	PUBLIC         	_ADC_init
 	PUBLIC         	_ADC_dis_init
-	PUBLIC         	_Get_ADC_Val
 	EXTERN         	_Send_test
+	PUBLIC         	_User_Get_measure_Val
 	PUBLIC         	_vcc_val
 	PUBLIC         	_RV
 	PUBLIC         	_RT
@@ -153,13 +153,43 @@ _ADC_init_#T20878_59	EQU            	_ADC_initDATA + 0X7		; Bank 0
 _ADC_init_#T20879_59	EQU            	_ADC_initDATA + 0X9		; Bank 0
 _ADC_init_#T20971_58	EQU            	_ADC_initDATA + 0X4		; Bank 0
 _ADC_init_#T20994_58	EQU            	_ADC_initDATA + 0X0		; Bank 0
-_Get_ADC_Val_#T21367_69	EQU            	_Get_ADC_ValDATA + 0X0		; Bank 0
-_Get_ADC_Val_#T21368_69	EQU            	_Get_ADC_ValDATA + 0X3		; Bank 0
-_Get_ADC_Val_#T21387_69	EQU            	_Get_ADC_ValDATA + 0X0		; Bank 0
-_Get_ADC_Val_#T21388_69	EQU            	_Get_ADC_ValDATA + 0X4		; Bank 0
-_Get_ADC_Val_#T21391_69	EQU            	_Get_ADC_ValDATA + 0X0		; Bank 0
-_Get_ADC_Val_#T21398_69	EQU            	_Get_ADC_ValDATA + 0X4		; Bank 0
-_Get_ADC_Val_#T21486_70	EQU            	_Get_ADC_ValDATA + 0X0		; Bank 0
+__f_n_63	EQU            	__fDATA + 0X3		; Bank 0
+__f_i_63	EQU            	__fDATA + 0X5		; Bank 0
+__f_j_63	EQU            	__fDATA + 0X7		; Bank 0
+__f_buf_63	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21057_63	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21058_63	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21079_64	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21083_64	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21084_64	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21101_65	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21102_65	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21117_65	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21121_65	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21122_65	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21142_66	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21143_66	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21159_66	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21160_66	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21175_66	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21179_66	EQU            	__fDATA + 0XF		; Bank 0
+__f_#T21180_66	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21197_66	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21201_66	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21202_66	EQU            	__fDATA + 0XB		; Bank 0
+_User_Get_measure_Val_#T21374_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21376_70	EQU            	_User_Get_measure_ValDATA + 0X2		; Bank 0
+_User_Get_measure_Val_#T21377_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21388_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21390_70	EQU            	_User_Get_measure_ValDATA + 0X2		; Bank 0
+_User_Get_measure_Val_#T21391_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21459_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21460_71	EQU            	_User_Get_measure_ValDATA + 0X3		; Bank 0
+_User_Get_measure_Val_#T21479_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21480_71	EQU            	_User_Get_measure_ValDATA + 0X4		; Bank 0
+_User_Get_measure_Val_#T21483_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21490_71	EQU            	_User_Get_measure_ValDATA + 0X4		; Bank 0
+_User_Get_measure_Val_#T21543_72	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
 #TMP	EQU            	?_TMP+ 0X10		; Bank 0
 ?_TMP_RET	EQU            	?_TMP		; Bank 0
 _ADEN_0#sh	EQU            	0X7D0		; Bank 0
@@ -197,7 +227,7 @@ _FRAL_0#sh	EQU            	(FRAL - 0X6080) % 0X40 + 0xC0		; Bank 0
 	_DESC          	Get_Tempture,0X10,0X0,log
 
 SECTION1Get_Tempture	UNINTIAL       	0		; Bank 0
-	ORG            	0XBF		; Bank 0
+	ORG            	0XC0		; Bank 0
 _Get_TemptureDATA	RSEG           	0XA		; Bank 0
 Get_Tempture#	CSEG           
 _Get_Tempture
@@ -584,7 +614,7 @@ _Get_Tempture
 	_DESC          	ADC_convert,0X2,0X0
 
 SECTION1ADC_convert	UNINTIAL       	0		; Bank 0
-	ORG            	0XBF		; Bank 0
+	ORG            	0XC4		; Bank 0
 _ADC_convertDATA	RSEG           	0X6		; Bank 0
 ADC_convert#	CSEG           
 _ADC_convert
@@ -684,7 +714,7 @@ _ADC_convert
 	_DESC          	GetOffset2048,0X2,0X0
 
 SECTION1GetOffset2048	UNINTIAL       	0		; Bank 0
-	ORG            	0XC2		; Bank 0
+	ORG            	0XC3		; Bank 0
 _GetOffset2048DATA	RSEG           	0X7		; Bank 0
 GetOffset2048#	CSEG           
 _GetOffset2048
@@ -819,21 +849,21 @@ _GetOffset2048
 	BCC            	((_GetOffset2048_#T20657_48)/8) & 0X7F,	(_GetOffset2048_#T20657_48)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_GetOffset2048_gie_bk_48) & 0X7F,	0x0		; Bank 1
-	GOTO           	#L21505
+	GOTO           	#L21572
 	SECTION        	0x0
 	BSS            	((_GetOffset2048_#T20657_48)/8) & 0X7F,	(_GetOffset2048_#T20657_48)%8		; Bank 0
-#L21505
+#L21572
 ;  116:(    ASGN_0,    #T20657 ,            ,       GIE)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
 	JBC            	((_GetOffset2048_#T20657_48)/8) & 0X7F,	(_GetOffset2048_#T20657_48)%8		; Bank 0
-	GOTO           	#L21506
+	GOTO           	#L21573
 	BCC            	(_GIE_0)/8,	(_GIE_0)%8
-	GOTO           	#L21507
-#L21506
+	GOTO           	#L21574
+#L21573
 	BSS            	(_GIE_0)/8,	(_GIE_0)%8
-#L21507
+#L21574
 #line 118	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	return value_tmp;
 ;  118:(     RET_2,  value_tmp ,            ,      #RET)
 
@@ -953,7 +983,7 @@ _ADC_dis_init
 	_DESC          	ADC_init,0X3,0X0,GetOffset2048
 
 SECTION1ADC_init	UNINTIAL       	0		; Bank 0
-	ORG            	0XB7		; Bank 0
+	ORG            	0XB8		; Bank 0
 _ADC_initDATA	RSEG           	0XB		; Bank 0
 ADC_init#	CSEG           
 _ADC_init
@@ -1057,16 +1087,16 @@ _ADC_init
 	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x2		; Bank 0
 	MOVRA          	?_TMP		; Bank 0
-	GOTO           	#L21508
-#L21509
+	GOTO           	#L21575
+#L21576
 	BCC            	PSW,	0x0
 	SECTION        	0x0
 	RR             	(?_TMP+0x2) & 0X7F,	0x1		; Bank 0
 	RR             	(?_TMP+0x1) & 0X7F,	0x1		; Bank 0
-#L21508
+#L21575
 	ADDI           	0xff
 	JBS            	PSW,	0x2
-	GOTO           	#L21509
+	GOTO           	#L21576
 	SECTION        	0x0
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_ADC_init_#T20878_59		; Bank 1
@@ -1088,11 +1118,11 @@ _ADC_init
 	SECTION        	0x1
 	XOR            	(_ADC_init_#T20878_59) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21510
+	GOTO           	#L21577
 	MOV            	(_ADC_init_#T20879_59+0x1) & 0X7F,	0x0		; Bank 1
 	XOR            	(_ADC_init_#T20878_59+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-#L21510
+#L21577
 	GOTO           	#L20860
 ; 		{
 #line 229	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			offset_value =  offset_value & 0x00FF;
@@ -1203,9 +1233,9 @@ _ADC_init
 ; ITemplate_DEC_2_TMP
 	MOV            	(_ADC_init_j_58) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21511
+	GOTO           	#L21578
 	DEC            	(_ADC_init_j_58+0x1) & 0X7F		; Bank 1
-#L21511
+#L21578
 	DEC            	(_ADC_init_j_58) & 0X7F		; Bank 1
 ;  249:(     JNZ_2,    #T20971 ,            ,   #L20966)
 
@@ -1236,9 +1266,9 @@ _ADC_init
 ; ITemplate_DEC_2_TMP
 	MOV            	(_ADC_init_i_58) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21512
+	GOTO           	#L21579
 	DEC            	(_ADC_init_i_58+0x1) & 0X7F		; Bank 1
-#L21512
+#L21579
 	DEC            	(_ADC_init_i_58) & 0X7F		; Bank 1
 ;  251:(     JNZ_2,    #T20994 ,            ,   #L20989)
 
@@ -1274,42 +1304,429 @@ _ADC_init
 ; ITemplate_RET
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
-	_DESC          	Get_ADC_Val,0X10,0X0,ADC_convert,Get_Tempture
+	_DESC          	_f,0X5,0X0
 
-SECTION1Get_ADC_Val	UNINTIAL       	0		; Bank 0
-	ORG            	0XB7		; Bank 0
-_Get_ADC_ValDATA	RSEG           	0X8		; Bank 0
-Get_ADC_Val#	CSEG           
-_Get_ADC_Val
-; void _f(char* num,char len)
+SECTION1_f	UNINTIAL       	0		; Bank 0
+	ORG            	0XC0		; Bank 0
+__fDATA	RSEG           	0X11		; Bank 0
+_f#	CSEG           
+__f
+; void _f(int a[],char len)
 ; {
-;     int a[10];
+;     //int a[10];
 ; 	int n;  //´æ·ÅÊý×éaÖÐÔªËØµÄ¸öÊý
 ;     int i;  //±È½ÏµÄÂÖÊý
 ;     int j;  //Ã¿ÂÖ±È½ÏµÄ´ÎÊý
 ;     int buf;  //½»»»Êý¾ÝÊ±ÓÃÓÚ´æ·ÅÖÐ¼äÊý¾Ý
 ;    // n = sizeof(a) / sizeof(a[0]);  /*a[0]ÊÇintÐÍ, Õ¼4×Ö½Ú, ËùÒÔ×ÜµÄ×Ö½ÚÊý³ýÒÔ4µÈÓÚÔªËØµÄ¸öÊý*/
-;    int ii;
-;     for(ii=0;ii<len;ii++){
-; 		a[ii] = *(num+ii);
-; 	}
-; 	n=len;
-; 	for (i=0; i<n-1; ++i)  //±È½Ïn-1ÂÖ
+;    //int ii;
+;     //for(ii=0;ii<len;ii++){
+; 	//	a[ii] = *(num+ii);
+; 	//}
+#line 271	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	n=len;
+	CLR            	BKSR
+;  271:(   CVUC_SI,        len ,            ,         n)
+
+; ITemplate_CVTMS_U
+	SECTION        	0x1
+	CLR            	(__f_n_63+0x1) & 0X7F		; Bank 1
+	MOV            	(__fDATA+0X2) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_n_63) & 0X7F		; Bank 1
+#line 272	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	for (i=0; i<n-1; ++i)  //±È½Ïn-1ÂÖ
+;  272:(    ASGN_2,          0 ,            ,         i)
+
+; ITemplate_CLR1_4_TMP
+	CLR            	(__f_i_63) & 0X7F		; Bank 1
+	CLR            	(__f_i_63+0x1) & 0X7F		; Bank 1
+;  272:(     LABEL,    #L21038 ,            ,          )
+
+; ITemplate_LABEL
+#L21038
+;  272:(    ASGN_2,          i ,            ,   #T21057)
+
+; ITemplate_ASGN1_4_R
+	MOV            	(__f_i_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21057_63+0x1) & 0X7F		; Bank 1
+	MOV            	(__f_i_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21057_63) & 0X7F		; Bank 1
+;  272:(     SUB_2,          n ,          1 ,   #T21058)
+
+; ITemplate_SUB1_4
+	MOVI           	0x1
+	SUB            	(__f_n_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21058_63) & 0X7F		; Bank 1
+	MOVI           	0x0
+	SUBC           	(__f_n_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21058_63+0x1) & 0X7F		; Bank 1
+;  272:(    JGE_2S,    #T21057 ,    #T21058 ,   #L21235)
+
+; ITemplate_JGE1_4S
+	MOV            	(__f_#T21057_63+0x1) & 0X7F,	0x0		; Bank 1
+	XORI           	0x80
+	MOVAR          	?_TMP		; Bank 0
+	MOV            	(__f_#T21058_63+0x1) & 0X7F,	0x0		; Bank 1
+	XORI           	0x80
+	SECTION        	0x0
+	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
+	JBS            	PSW,	0x2
+	GOTO           	#L21580
+	SECTION        	0x1
+	MOV            	(__f_#T21058_63) & 0X7F,	0x0		; Bank 1
+	SUB            	(__f_#T21057_63) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L21580
+#L21580
+	JBC            	PSW,	0x0
+	GOTO           	#L21235
 ;     {
-;         for (j=0; j<n-1-i; ++j)  //Ã¿ÂÖ±È½Ïn-1-i´Î,
+#line 274	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         for (j=0; j<n-1-i; ++j)  //Ã¿ÂÖ±È½Ïn-1-i´Î,
+;  274:(    ASGN_2,          0 ,            ,         j)
+
+; ITemplate_CLR1_4_TMP
+	SECTION        	0x1
+	CLR            	(__f_j_63) & 0X7F		; Bank 1
+	CLR            	(__f_j_63+0x1) & 0X7F		; Bank 1
+;  274:(     LABEL,    #L21059 ,            ,          )
+
+; ITemplate_LABEL
+#L21059
+;  274:(     SUB_2,          n ,          1 ,   #T21079)
+
+; ITemplate_SUB1_4
+	MOVI           	0x1
+	SUB            	(__f_n_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21079_64) & 0X7F		; Bank 1
+	MOVI           	0x0
+	SUBC           	(__f_n_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21079_64+0x1) & 0X7F		; Bank 1
+;  274:(    ASGN_2,          j ,            ,   #T21083)
+
+; ITemplate_ASGN1_4_R
+	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21083_64+0x1) & 0X7F		; Bank 1
+	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21083_64) & 0X7F		; Bank 1
+;  274:(     SUB_2,    #T21079 ,          i ,   #T21084)
+
+; ITemplate_SUB1_4
+	MOV            	(__f_i_63) & 0X7F,	0x0		; Bank 1
+	SUB            	(__f_#T21079_64) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21084_64) & 0X7F		; Bank 1
+	MOV            	(__f_i_63+0x1) & 0X7F,	0x0		; Bank 1
+	SUBC           	(__f_#T21079_64+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21084_64+0x1) & 0X7F		; Bank 1
+;  274:(    JGE_2S,    #T21083 ,    #T21084 ,   #L21040)
+
+; ITemplate_JGE1_4S
+	MOV            	(__f_#T21083_64+0x1) & 0X7F,	0x0		; Bank 1
+	XORI           	0x80
+	MOVAR          	?_TMP		; Bank 0
+	MOV            	(__f_#T21084_64+0x1) & 0X7F,	0x0		; Bank 1
+	XORI           	0x80
+	SECTION        	0x0
+	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
+	JBS            	PSW,	0x2
+	GOTO           	#L21581
+	SECTION        	0x1
+	MOV            	(__f_#T21084_64) & 0X7F,	0x0		; Bank 1
+	SUB            	(__f_#T21083_64) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L21581
+#L21581
+	JBC            	PSW,	0x0
+	GOTO           	#L21040
 ;         {
-;             if (a[j] < a[j+1])
+#line 276	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;             if (a[j] < a[j+1])
+;  276:(    LSH_2S,          j ,          1 ,   #T21101)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	SECTION        	0x1
+	RL             	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21101_65) & 0X7F		; Bank 1
+	RL             	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21101_65+0x1) & 0X7F		; Bank 1
+;  276:(     ADD_2,    #T21101 ,          a ,   #T21102)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_#T21101_65) & 0X7F,	0x0		; Bank 1
+	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21102_65) & 0X7F		; Bank 1
+	MOV            	(__f_#T21101_65+0x1) & 0X7F,	0x0		; Bank 1
+	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21102_65+0x1) & 0X7F		; Bank 1
+;  276:(     ADD_2,          j ,          1 ,   #T21117)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	ADDI           	0x1
+	MOVA           	(__f_#T21117_65) & 0X7F		; Bank 1
+	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	0x0
+	MOVA           	(__f_#T21117_65+0x1) & 0X7F		; Bank 1
+;  276:(    LSH_2S,    #T21117 ,          1 ,   #T21121)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	RL             	(__f_#T21117_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21121_65) & 0X7F		; Bank 1
+	RL             	(__f_#T21117_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21121_65+0x1) & 0X7F		; Bank 1
+;  276:(     ADD_2,    #T21121 ,          a ,   #T21122)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_#T21121_65) & 0X7F,	0x0		; Bank 1
+	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21122_65) & 0X7F		; Bank 1
+	MOV            	(__f_#T21121_65+0x1) & 0X7F,	0x0		; Bank 1
+	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21122_65+0x1) & 0X7F		; Bank 1
+;  276:(    JGE_2S,   *#T21102 ,   *#T21122 ,   #L21061)
+
+; ITemplate_GetRamRef
+	MOV            	(__f_#T21102_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(__f_#T21102_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP		; Bank 0
+	ISTEP          	0x1
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP+0x1		; Bank 0
+; ITemplate_GetRamRef
+	MOV            	(__f_#T21122_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(__f_#T21122_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP+0x2		; Bank 0
+	ISTEP          	0x1
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP+0x3		; Bank 0
+; ITemplate_JGE1_4S
+	MOVRA          	?_TMP+0x1		; Bank 0
+	XORI           	0x80
+	MOVAR          	?_TMP+0x4		; Bank 0
+	MOVRA          	?_TMP+0x3		; Bank 0
+	XORI           	0x80
+	SECTION        	0x0
+	SUB            	(?_TMP+0x4) & 0X7F,	0x0		; Bank 0
+	JBS            	PSW,	0x2
+	GOTO           	#L21582
+	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
+	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
+	JBS            	PSW,	0x2
+	GOTO           	#L21582
+#L21582
+	JBC            	PSW,	0x0
+	GOTO           	#L21061
 ;             {
-;                 buf = a[j];
-;                 a[j] = a[j+1];
-;                 a[j+1] = buf;
+#line 278	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 buf = a[j];
+;  278:(    LSH_2S,          j ,          1 ,   #T21142)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	SECTION        	0x1
+	RL             	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21142_66) & 0X7F		; Bank 1
+	RL             	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21142_66+0x1) & 0X7F		; Bank 1
+;  278:(     ADD_2,    #T21142 ,          a ,   #T21143)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_#T21142_66) & 0X7F,	0x0		; Bank 1
+	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21143_66) & 0X7F		; Bank 1
+	MOV            	(__f_#T21142_66+0x1) & 0X7F,	0x0		; Bank 1
+	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21143_66+0x1) & 0X7F		; Bank 1
+;  278:(    ASGN_2,   *#T21143 ,            ,       buf)
+
+; ITemplate_GetRamRef
+	MOV            	(__f_#T21143_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(__f_#T21143_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP		; Bank 0
+	ISTEP          	0x1
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP+0x1		; Bank 0
+; ITemplate_ASGN1_4
+	MOVRA          	?_TMP		; Bank 0
+	MOVA           	(__f_buf_63) & 0X7F		; Bank 1
+	MOVRA          	?_TMP+0x1		; Bank 0
+	MOVA           	(__f_buf_63+0x1) & 0X7F		; Bank 1
+#line 279	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 a[j] = a[j+1];
+;  279:(    LSH_2S,          j ,          1 ,   #T21159)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	RL             	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21159_66) & 0X7F		; Bank 1
+	RL             	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21159_66+0x1) & 0X7F		; Bank 1
+;  279:(     ADD_2,    #T21159 ,          a ,   #T21160)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_#T21159_66) & 0X7F,	0x0		; Bank 1
+	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21160_66) & 0X7F		; Bank 1
+	MOV            	(__f_#T21159_66+0x1) & 0X7F,	0x0		; Bank 1
+	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21160_66+0x1) & 0X7F		; Bank 1
+;  279:(     ADD_2,          j ,          1 ,   #T21175)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	ADDI           	0x1
+	MOVA           	(__f_#T21175_66) & 0X7F		; Bank 1
+	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	0x0
+	MOVA           	(__f_#T21175_66+0x1) & 0X7F		; Bank 1
+;  279:(    LSH_2S,    #T21175 ,          1 ,   #T21179)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	RL             	(__f_#T21175_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21179_66) & 0X7F		; Bank 1
+	RL             	(__f_#T21175_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21179_66+0x1) & 0X7F		; Bank 1
+;  279:(     ADD_2,    #T21179 ,          a ,   #T21180)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_#T21179_66) & 0X7F,	0x0		; Bank 1
+	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21180_66) & 0X7F		; Bank 1
+	MOV            	(__f_#T21179_66+0x1) & 0X7F,	0x0		; Bank 1
+	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21180_66+0x1) & 0X7F		; Bank 1
+;  279:(    ASGN_2,   *#T21180 ,            ,  *#T21160)
+
+; ITemplate_GetRamRef
+	MOV            	(__f_#T21180_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(__f_#T21180_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP		; Bank 0
+	ISTEP          	0x1
+	MOV            	IAD,	0x0
+	MOVAR          	?_TMP+0x1		; Bank 0
+; ITemplate_ASGN1_4
+; ITemplate_SetFSR
+	MOV            	(__f_#T21160_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(__f_#T21160_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOVRA          	?_TMP		; Bank 0
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+	MOVRA          	?_TMP+0x1		; Bank 0
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+#line 280	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 a[j+1] = buf;
+;  280:(     ADD_2,          j ,          1 ,   #T21197)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	ADDI           	0x1
+	MOVA           	(__f_#T21197_66) & 0X7F		; Bank 1
+	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	0x0
+	MOVA           	(__f_#T21197_66+0x1) & 0X7F		; Bank 1
+;  280:(    LSH_2S,    #T21197 ,          1 ,   #T21201)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	RL             	(__f_#T21197_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21201_66) & 0X7F		; Bank 1
+	RL             	(__f_#T21197_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21201_66+0x1) & 0X7F		; Bank 1
+;  280:(     ADD_2,    #T21201 ,          a ,   #T21202)
+
+; ITemplate_ADD1_4
+	MOV            	(__f_#T21201_66) & 0X7F,	0x0		; Bank 1
+	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21202_66) & 0X7F		; Bank 1
+	MOV            	(__f_#T21201_66+0x1) & 0X7F,	0x0		; Bank 1
+	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21202_66+0x1) & 0X7F		; Bank 1
+;  280:(    ASGN_2,        buf ,            ,  *#T21202)
+
+; ITemplate_ASGN1_4
+; ITemplate_SetFSR
+	MOV            	(__f_#T21202_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(__f_#T21202_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	(__f_buf_63) & 0X7F,	0x0		; Bank 1
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+	MOV            	(__f_buf_63+0x1) & 0X7F,	0x0		; Bank 1
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
 ;             }
-;         }
-;     }
-;       //  printf("%d\x20", a[i]);
-; }
-; void Get_ADC_Val(){
-; 		unsigned int vcc_adc_val[10];
+#line 282	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         }
+;  282:(     LABEL,    #L21061 ,            ,          )
+
+; ITemplate_LABEL
+#L21061
+;  274:(     ADD_2,          j ,          1 ,         j)
+
+; ITemplate_INC_2_TMP
+	SECTION        	0x1
+	INC            	(__f_j_63) & 0X7F		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L21583
+	INC            	(__f_j_63+0x1) & 0X7F		; Bank 1
+#L21583
+;  282:(       JMP,            ,            ,   #L21059)
+
+; ITemplate_JMP
+	GOTO           	#L21059
+#line 283	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     }
+;  283:(     LABEL,    #L21040 ,            ,          )
+
+; ITemplate_LABEL
+#L21040
+;  272:(     ADD_2,          i ,          1 ,         i)
+
+; ITemplate_INC_2_TMP
+	SECTION        	0x1
+	INC            	(__f_i_63) & 0X7F		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L21584
+	INC            	(__f_i_63+0x1) & 0X7F		; Bank 1
+#L21584
+;  283:(       JMP,            ,            ,   #L21038)
+
+; ITemplate_JMP
+	GOTO           	#L21038
+;     //for(int x=0;x<10;x++)
+;         //printf("%d\x20", a[x]);
+#line 286	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  286:(     LABEL,    #L21235 ,            ,          )
+
+; ITemplate_LABEL
+#L21235
+;  286:(       RET,            ,            ,          )
+
+; ITemplate_RET
+	SECTION        	0x0
+	RET            			; Bank 0		; ShBank 0
+	_DESC          	Get_ADC_Val,0X2,0X0,ADC_convert
+
+SECTION1Get_ADC_Val	UNINTIAL       	0		; Bank 0
+	ORG            	0XC0		; Bank 0
+_Get_ADC_ValDATA	RSEG           	0X4		; Bank 0
+Get_ADC_Val#	CSEG           
+_Get_ADC_Val
+; static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
 ; 		unsigned int i;
 #line 290	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>Ñ¡ÔñÍ¨µÀ
 	CLR            	BKSR
@@ -1326,8 +1743,8 @@ _Get_ADC_Val
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	ANDI           	0x4f
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 295	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
-;  295:(     CALLR, (ADC_convert.0) ,            , adc_value)
+#line 293	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
+;  293:(     CALLR, (ADC_convert.0) ,            , adc_value)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_ADC_convert
@@ -1336,22 +1753,22 @@ _Get_ADC_Val
 	MOVAR          	_adc_value		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_adc_value+0x1		; Bank 1
-#line 296	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD×ª»»Öµ´óÓÚoffsetÖµÔò¼õÈ¥offset£¬·ñÔòADC½á¹û¹é0
-;  296:(    JLE_2U,  adc_value , offset_value ,   #L21331)
+#line 294	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD×ª»»Öµ´óÓÚoffsetÖµÔò¼õÈ¥offset£¬·ñÔòADC½á¹û¹é0
+;  294:(    JLE_2U,  adc_value , offset_value ,   #L21261)
 
 ; ITemplate_JLE1_4U
 	MOVRA          	_adc_value+0x1		; Bank 1
 	SECTION        	0x1
 	SUB            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21513
+	GOTO           	#L21585
 	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
 	SUB            	(_offset_value) & 0X7F,	0x0		; Bank 1
-#L21513
+#L21585
 	JBC            	PSW,	0x0
-	GOTO           	#L21331
-#line 297	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
-;  297:(     SUB_2,  adc_value , offset_value , adc_value)
+	GOTO           	#L21261
+#line 295	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
+;  295:(     SUB_2,  adc_value , offset_value , adc_value)
 
 ; ITemplate_SUB1_4
 	MOV            	(_offset_value) & 0X7F,	0x0		; Bank 1
@@ -1360,53 +1777,281 @@ _Get_ADC_Val
 	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 1
-;  297:(       JMP,            ,            ,   #L21329)
+;  295:(       JMP,            ,            ,   #L21259)
 
 ; ITemplate_JMP
-	GOTO           	#L21329
-#line 298	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
-;  298:(     LABEL,    #L21331 ,            ,          )
+	GOTO           	#L21259
+#line 296	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
+;  296:(     LABEL,    #L21261 ,            ,          )
 
 ; ITemplate_LABEL
-#L21331
-#line 299	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
-;  299:(    ASGN_2,          0 ,            , adc_value)
+#L21261
+#line 297	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
+;  297:(    ASGN_2,          0 ,            , adc_value)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	(_adc_value) & 0X7F		; Bank 1
 	CLR            	(_adc_value+0x1) & 0X7F		; Bank 1
-;  299:(     LABEL,    #L21329 ,            ,          )
+;  297:(     LABEL,    #L21259 ,            ,          )
 
 ; ITemplate_LABEL
-#L21329
-; 		////for( i=0;i<10;i++){
-; 			//vcc_adc_val[i] = ADC_convert();
-; 				//if(vcc_adc_val[i] > offset_value)   //AD×ª»»Öµ´óÓÚoffsetÖµÔò¼õÈ¥offset£¬·ñÔòADC½á¹û¹é0
-; 					//vcc_adc_val[i] -= offset_value;
-; 				//else 
-; 					//vcc_adc_val[i] = 0;
-; 		//}
-; 		//_f(&vcc_adc_val[0],10);
+#L21259
+#line 298	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		*Vbat_val=adc_value;
+;  298:(    ASGN_2,  adc_value ,            , *Vbat_val)
+
+; ITemplate_ASGN1_4
+; ITemplate_SetFSR
+	MOV            	(_Get_ADC_ValDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(_Get_ADC_ValDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+	MOV            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+#line 301	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>Ñ¡ÔñÍ¨µÀ
+;  301:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
+
+; ITemplate_BOR1_4
+	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
+	IORI           	0xf0
+	MOVA           	_ADCCL_0#sh		; ShBank 0
+#line 302	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL &= 0x9F;		//Ñ¡ÔñÍ¨µÀ9
+;  302:(    BAND_1,        159 ,      ADCCL ,     ADCCL)
+
+; ITemplate_BAND1_4
+	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
+	ANDI           	0x9f
+	MOVA           	_ADCCL_0#sh		; ShBank 0
+#line 303	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
+;  303:(     CALLR, (ADC_convert.0) ,            , adc_value)
+
+; ITemplate_CALL
+	SEGMENTSEL     	_ADC_convert
+	CALL           	_ADC_convert		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	MOVAR          	_adc_value		; Bank 1
+	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_adc_value+0x1		; Bank 1
+#line 304	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD×ª»»Öµ´óÓÚoffsetÖµÔò¼õÈ¥offset£¬·ñÔòADC½á¹û¹é0
+;  304:(    JLE_2U,  adc_value , offset_value ,   #L21314)
+
+; ITemplate_JLE1_4U
+	MOVRA          	_adc_value+0x1		; Bank 1
+	SECTION        	0x1
+	SUB            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L21586
+	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+	SUB            	(_offset_value) & 0X7F,	0x0		; Bank 1
+#L21586
+	JBC            	PSW,	0x0
+	GOTO           	#L21314
+#line 305	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
+;  305:(     SUB_2,  adc_value , offset_value , adc_value)
+
+; ITemplate_SUB1_4
+	MOV            	(_offset_value) & 0X7F,	0x0		; Bank 1
+	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_adc_value) & 0X7F		; Bank 1
+	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
+	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 1
+;  305:(       JMP,            ,            ,   #L21312)
+
+; ITemplate_JMP
+	GOTO           	#L21312
+#line 306	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
+;  306:(     LABEL,    #L21314 ,            ,          )
+
+; ITemplate_LABEL
+#L21314
+#line 307	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
+;  307:(    ASGN_2,          0 ,            , adc_value)
+
+; ITemplate_CLR1_4_TMP
+	CLR            	(_adc_value) & 0X7F		; Bank 1
+	CLR            	(_adc_value+0x1) & 0X7F		; Bank 1
+;  307:(     LABEL,    #L21312 ,            ,          )
+
+; ITemplate_LABEL
+#L21312
+#line 308	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		*Temp_val=adc_value;
+;  308:(    ASGN_2,  adc_value ,            , *Temp_val)
+
+; ITemplate_ASGN1_4
+; ITemplate_SetFSR
+	MOV            	(_Get_ADC_ValDATA+0X2+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAH
+	MOV            	(_Get_ADC_ValDATA+0X2) & 0X7F,	0x0		; Bank 1
+	MOVA           	IAAL
+	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+	MOV            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
+; ITemplate_SetINDF
+	MOVA           	IAD
+	ISTEP          	0x1
+#line 309	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  309:(       RET,            ,            ,          )
+
+; ITemplate_RET
+	SECTION        	0x0
+	RET            			; Bank 0		; ShBank 0
+	_DESC          	User_Get_measure_Val,0X10,0X0,Get_ADC_Val,_f,Get_Tempture
+
+SECTION1User_Get_measure_Val	UNINTIAL       	0		; Bank 0
+	ORG            	0XB8		; Bank 0
+_User_Get_measure_ValDATA	RSEG           	0X8		; Bank 0
+User_Get_measure_Val#	CSEG           
+_User_Get_measure_Val
+; void User_Get_measure_Val(){
+; 		static unsigned int Vbat_adc_val[20],Temp_adc_val[20];
+; 		static char i=0;
+#line 313	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i=i%20;
+	CLR            	BKSR
+;  313:(    MOD_1U,          i ,         20 ,         i)
+
+; ITemplate_LibFunc2
+	MOVI           	0x14
+	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
+	MOVRA          	_User_Get_measure_Val_i_70		; Bank 1
+	MOVA           	(?_TMP) & 0X7F		; Bank 0
+	SEGMENTSEL     	BMOD
+	CALL           	BMOD		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_User_Get_measure_Val_i_70		; Bank 1
+#line 314	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
+;  314:(   CVUC_SI,          i ,            ,   #T21374)
+
+; ITemplate_CVTMS_U
+	SECTION        	0x1
+	CLR            	(_User_Get_measure_Val_#T21374_70+0x1) & 0X7F		; Bank 1
+	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21374_70) & 0X7F		; Bank 1
+;  314:(    LSH_2S,    #T21374 ,          1 ,   #T21376)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	RL             	(_User_Get_measure_Val_#T21374_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21376_70) & 0X7F		; Bank 1
+	RL             	(_User_Get_measure_Val_#T21374_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21376_70+0x1) & 0X7F		; Bank 1
+;  314:(     ADD_2,    #T21376 , (Vbat_adc_val.0) ,  Vbat_val)
+
+; ITemplate_ADD1_4
+	MOV            	(_User_Get_measure_Val_#T21376_70) & 0X7F,	0x0		; Bank 1
+	ADDI           	_User_Get_measure_Val_Vbat_adc_val_70
+	MOVA           	(_Get_ADC_ValDATA+0X0) & 0X7F		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21376_70+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	HIGH(_User_Get_measure_Val_Vbat_adc_val_70)
+	MOVA           	(_Get_ADC_ValDATA+0X0+0x1) & 0X7F		; Bank 1
+;  314:(   CVUC_SI,          i ,            ,   #T21388)
+
+; ITemplate_CVTMS_U
+	CLR            	(_User_Get_measure_Val_#T21388_70+0x1) & 0X7F		; Bank 1
+	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21388_70) & 0X7F		; Bank 1
+;  314:(    LSH_2S,    #T21388 ,          1 ,   #T21390)
+
+; ITemplate_LSH1_4_1
+	BCC            	PSW,	0x0
+	RL             	(_User_Get_measure_Val_#T21388_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21390_70) & 0X7F		; Bank 1
+	RL             	(_User_Get_measure_Val_#T21388_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21390_70+0x1) & 0X7F		; Bank 1
+;  314:(     ADD_2,    #T21390 , (Temp_adc_val.0) ,  Temp_val)
+
+; ITemplate_ADD1_4
+	MOV            	(_User_Get_measure_Val_#T21390_70) & 0X7F,	0x0		; Bank 1
+	ADDI           	_User_Get_measure_Val_Temp_adc_val_70
+	MOVA           	(_Get_ADC_ValDATA+0X2) & 0X7F		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21390_70+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	HIGH(_User_Get_measure_Val_Temp_adc_val_70)
+	MOVA           	(_Get_ADC_ValDATA+0X2+0x1) & 0X7F		; Bank 1
+;  314:(      CALL, (Get_ADC_Val.0) ,            ,          )
+
+; ITemplate_CALL
+	SEGMENTSEL     	_Get_ADC_Val
+	CALL           	_Get_ADC_Val		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+#line 315	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i++;
+;  315:(     ADD_1,          i ,          1 ,         i)
+
+; ITemplate_INC_1_TMP
+	SECTION        	0x1
+	INC            	(_User_Get_measure_Val_i_70) & 0X7F		; Bank 1
+#line 316	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(i==19){
+;  316:(    JNEQ_1,         19 ,          i ,   #L21571)
+
+; ITemplate_JNEQ1_4
+	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
+	XORI           	0x13
+	JBS            	PSW,	0x2
+	GOTO           	#L21571
+#line 317	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Vbat_adc_val,20);  //
+;  317:(    PARA_2, (Vbat_adc_val.0) ,            ,         a)
+
+; ITemplate_ASGN1_4
+	MOVI           	_User_Get_measure_Val_Vbat_adc_val_70
+	MOVA           	(__fDATA+0X0) & 0X7F		; Bank 1
+	MOVI           	HIGH(_User_Get_measure_Val_Vbat_adc_val_70)
+	MOVA           	(__fDATA+0X0+0x1) & 0X7F		; Bank 1
+;  317:(    PARA_1,         20 ,            ,       len)
+
+; ITemplate_ASGN1_4
+	MOVI           	0x14
+	MOVA           	(__fDATA+0X2) & 0X7F		; Bank 1
+;  317:(      CALL,     (_f.0) ,            ,          )
+
+; ITemplate_CALL
+	SEGMENTSEL     	__f
+	CALL           	__f		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+#line 318	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Temp_adc_val,20);
+;  318:(    PARA_2, (Temp_adc_val.0) ,            ,         a)
+
+; ITemplate_ASGN1_4
+	MOVI           	_User_Get_measure_Val_Temp_adc_val_70
+	MOVAR          	__fDATA+0X0		; Bank 1
+	MOVI           	HIGH(_User_Get_measure_Val_Temp_adc_val_70)
+	MOVAR          	__fDATA+0X0+0x1		; Bank 1
+;  318:(    PARA_1,         20 ,            ,       len)
+
+; ITemplate_ASGN1_4
+	MOVI           	0x14
+	MOVAR          	__fDATA+0X2		; Bank 1
+;  318:(      CALL,     (_f.0) ,            ,          )
+
+; ITemplate_CALL
+	SEGMENTSEL     	__f
+	CALL           	__f		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
 ; 		//µçÁ¿Öµ
-#line 311	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		vcc_val=4*2.048*adc_value/4096;
-;  311:(    CVUI_F,  adc_value ,            ,   #T21367)
+#line 320	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
+;  320:(    CVUI_F, *(Vbat_adc_val.20) ,            ,   #T21459)
 
 ; ITemplate_LibFunc1
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
-	MOVAR          	?_TMP		; Bank 0
-	MOV            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
-	MOVAR          	?_TMP+0x1		; Bank 0
+	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x14		; Bank 3
+	MOVA           	(?_TMP) & 0X7F		; Bank 0
+	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x15		; Bank 3
+	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
 	SEGMENTSEL     	W2FL
-	SECTION        	0x0
 	CALL           	W2FL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21367_69		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21459_71		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21367_69+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21459_71+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21367_69+0x2		; Bank 1
-;  311:(     MUL_F,    #T21367 ,   8.192000 ,   #T21368)
+	MOVAR          	_User_Get_measure_Val_#T21459_71+0x2		; Bank 1
+;  320:(     MUL_F,    #T21459 ,   8.192000 ,   #T21460)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x41
@@ -1415,25 +2060,25 @@ _Get_ADC_Val
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
 	MOVI           	0x12
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21367_69+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21459_71+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21367_69+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21459_71+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21367_69		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21459_71		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	FLMUL
 	CALL           	FLMUL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_CVF_D_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21368_69+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21460_71+0x1		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21368_69+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21460_71+0x2		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21368_69+0x3		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21460_71+0x3		; Bank 1
 	SECTION        	0x1
-	CLR            	(_Get_ADC_Val_#T21368_69) & 0X7F		; Bank 1
-;  311:(     DIV_D,    #T21368 , 4096.000000 ,   vcc_val)
+	CLR            	(_User_Get_measure_Val_#T21460_71) & 0X7F		; Bank 1
+;  320:(     DIV_D,    #T21460 , 4096.000000 ,   vcc_val)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x45
@@ -1444,13 +2089,13 @@ _Get_ADC_Val
 	MOVAR          	?_TMP+0x5		; Bank 0
 	MOVI           	0x0
 	MOVAR          	?_TMP+0x4		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21368_69+0x3) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21460_71+0x3) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x3		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21368_69+0x2) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21460_71+0x2) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x2		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21368_69+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21460_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x1		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21368_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21460_71) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP		; Bank 0
 	SEGMENTSEL     	DLDIV
 	SECTION        	0x0
@@ -1463,21 +2108,19 @@ _Get_ADC_Val
 	MOVAR          	_vcc_val+0x1		; Bank 2
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_vcc_val+0x2		; Bank 2
-; 		//if(vcc_val>4.15) vcc_val=4.15;
-; 		//if(vcc_val<3.6) vcc_val=3.6;
-#line 314	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		Vbat_val=(vcc_val-3.6)*100/(4.15-3.6);
-;  314:(     CVF_D,    vcc_val ,            ,   #T21387)
+#line 321	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		Vbat_val=(vcc_val-3.6)*100/(4.15-3.6);
+;  321:(     CVF_D,    vcc_val ,            ,   #T21479)
 
 ; ITemplate_CVF_D
 	MOVRA          	_vcc_val		; Bank 2
-	MOVAR          	_Get_ADC_Val_#T21387_69+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21479_71+0x1		; Bank 1
 	MOVRA          	_vcc_val+0x1		; Bank 2
-	MOVAR          	_Get_ADC_Val_#T21387_69+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21479_71+0x2		; Bank 1
 	MOVRA          	_vcc_val+0x2		; Bank 2
-	MOVAR          	_Get_ADC_Val_#T21387_69+0x3		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21479_71+0x3		; Bank 1
 	SECTION        	0x1
-	CLR            	(_Get_ADC_Val_#T21387_69) & 0X7F		; Bank 1
-;  314:(     SUB_D,    #T21387 ,   3.600000 ,   #T21388)
+	CLR            	(_User_Get_measure_Val_#T21479_71) & 0X7F		; Bank 1
+;  321:(     SUB_D,    #T21479 ,   3.600000 ,   #T21480)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x40
@@ -1488,13 +2131,13 @@ _Get_ADC_Val
 	MOVAR          	?_TMP+0x5		; Bank 0
 	MOVI           	0x66
 	MOVAR          	?_TMP+0x4		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21387_69+0x3) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21479_71+0x3) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x3		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21387_69+0x2) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21479_71+0x2) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x2		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21387_69+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21479_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x1		; Bank 0
-	MOV            	(_Get_ADC_Val_#T21387_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21479_71) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP		; Bank 0
 	SEGMENTSEL     	DLSUB
 	SECTION        	0x0
@@ -1502,14 +2145,14 @@ _Get_ADC_Val
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21388_69		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21480_71		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21388_69+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21480_71+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21388_69+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21480_71+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21388_69+0x3		; Bank 1
-;  314:(     MUL_D,    #T21388 , 100.000000 ,   #T21391)
+	MOVAR          	_User_Get_measure_Val_#T21480_71+0x3		; Bank 1
+;  321:(     MUL_D,    #T21480 , 100.000000 ,   #T21483)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x42
@@ -1520,27 +2163,27 @@ _Get_ADC_Val
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0x0
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21388_69+0x3		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21480_71+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21388_69+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21480_71+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21388_69+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21480_71+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21388_69		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21480_71		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLMUL
 	CALL           	DLMUL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21391_69		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21483_71		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21391_69+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21483_71+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21391_69+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21483_71+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21391_69+0x3		; Bank 1
-;  314:(     DIV_D,    #T21391 ,   0.550000 ,   #T21398)
+	MOVAR          	_User_Get_measure_Val_#T21483_71+0x3		; Bank 1
+;  321:(     DIV_D,    #T21483 ,   0.550000 ,   #T21490)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x3f
@@ -1551,196 +2194,133 @@ _Get_ADC_Val
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0xd0
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21391_69+0x3		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21483_71+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21391_69+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21483_71+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21391_69+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21483_71+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21391_69		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21483_71		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLDIV
 	CALL           	DLDIV		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21398_69		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21490_71		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21398_69+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21490_71+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21398_69+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21490_71+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21398_69+0x3		; Bank 1
-;  314:(    CVD_UC,    #T21398 ,            ,  Vbat_val)
+	MOVAR          	_User_Get_measure_Val_#T21490_71+0x3		; Bank 1
+;  321:(    CVD_UC,    #T21490 ,            ,  Vbat_val)
 
 ; ITemplate_LibFunc1
-	MOVRA          	_Get_ADC_Val_#T21398_69		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21490_71		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21398_69+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21490_71+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21398_69+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21490_71+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21398_69+0x3		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21490_71+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
 	SEGMENTSEL     	DL2LG
 	CALL           	DL2LG		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_Vbat_val		; Bank 1
-#line 316	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Vbat_val>99) Vbat_val=99;
-;  316:(    JLE_1U,   Vbat_val ,         99 ,   #L21402)
+#line 323	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Vbat_val>99) Vbat_val=99;
+;  323:(    JLE_1U,   Vbat_val ,         99 ,   #L21494)
 
 ; ITemplate_JLE1_4U
 	MOVRA          	_Vbat_val		; Bank 1
 	SUBI           	0x63
 	JBC            	PSW,	0x0
-	GOTO           	#L21402
-;  316:(    ASGN_1,         99 ,            ,  Vbat_val)
+	GOTO           	#L21494
+;  323:(    ASGN_1,         99 ,            ,  Vbat_val)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x63
 	SECTION        	0x1
 	MOVA           	(_Vbat_val) & 0X7F		; Bank 1
-;  316:(     LABEL,    #L21402 ,            ,          )
+;  323:(     LABEL,    #L21494 ,            ,          )
 
 ; ITemplate_LABEL
-#L21402
+#L21494
 ; 		if(Vbat_val<0) Vbat_val=0;
-#line 320	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>Ñ¡ÔñÍ¨µÀ
-;  320:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
-
-; ITemplate_BOR1_4
-	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
-	IORI           	0xf0
-	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 321	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL &= 0x9F;		//Ñ¡ÔñÍ¨µÀ9
-;  321:(    BAND_1,        159 ,      ADCCL ,     ADCCL)
-
-; ITemplate_BAND1_4
-	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
-	ANDI           	0x9f
-	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 322	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
-;  322:(     CALLR, (ADC_convert.0) ,            , adc_value)
-
-; ITemplate_CALL
-	SEGMENTSEL     	_ADC_convert
-	CALL           	_ADC_convert		; Bank 0		; ShBank 0
-	SEGMENTSEL     	$
-	MOVAR          	_adc_value		; Bank 1
-	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_adc_value+0x1		; Bank 1
-#line 323	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD×ª»»Öµ´óÓÚoffsetÖµÔò¼õÈ¥offset£¬·ñÔòADC½á¹û¹é0
-;  323:(    JLE_2U,  adc_value , offset_value ,   #L21457)
-
-; ITemplate_JLE1_4U
-	MOVRA          	_adc_value+0x1		; Bank 1
-	SECTION        	0x1
-	SUB            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
-	JBS            	PSW,	0x2
-	GOTO           	#L21514
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
-	SUB            	(_offset_value) & 0X7F,	0x0		; Bank 1
-#L21514
-	JBC            	PSW,	0x0
-	GOTO           	#L21457
-#line 324	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
-;  324:(     SUB_2,  adc_value , offset_value , adc_value)
-
-; ITemplate_SUB1_4
-	MOV            	(_offset_value) & 0X7F,	0x0		; Bank 1
-	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_adc_value) & 0X7F		; Bank 1
-	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
-	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 1
-;  324:(       JMP,            ,            ,   #L21455)
-
-; ITemplate_JMP
-	GOTO           	#L21455
-#line 325	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
-;  325:(     LABEL,    #L21457 ,            ,          )
-
-; ITemplate_LABEL
-#L21457
-#line 326	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
-;  326:(    ASGN_2,          0 ,            , adc_value)
-
-; ITemplate_CLR1_4_TMP
-	CLR            	(_adc_value) & 0X7F		; Bank 1
-	CLR            	(_adc_value+0x1) & 0X7F		; Bank 1
-;  326:(     LABEL,    #L21455 ,            ,          )
-
-; ITemplate_LABEL
-#L21455
-#line 328	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value<4000){
-;  328:(    JGE_2U,  adc_value ,       4000 ,   #L21479)
+; 		//ÎÂ¶È
+#line 327	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Temp_adc_val[10]<4000){
+;  327:(    JGE_2U, *(Temp_adc_val.20) ,       4000 ,   #L21526)
 
 ; ITemplate_JGE1_4U
 	MOVI           	0xf
-	SUB            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
+	SECTION        	0x2
+	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x15) & 0X7F,	0x0		; Bank 2
 	JBS            	PSW,	0x2
-	GOTO           	#L21515
+	GOTO           	#L21587
 	MOVI           	0xa0
-	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 1
-#L21515
+	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x14) & 0X7F,	0x0		; Bank 2
+#L21587
 	JBC            	PSW,	0x0
-	GOTO           	#L21479
-#line 329	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=Get_Tempture(adc_value);
-;  329:(    PARA_2,  adc_value ,            ,       adc)
+	GOTO           	#L21526
+#line 328	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=Get_Tempture(Temp_adc_val[10]);
+;  328:(    PARA_2, *(Temp_adc_val.20) ,            ,       adc)
 
 ; ITemplate_ASGN1_4
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_Get_TemptureDATA+0X0) & 0X7F		; Bank 1
-	MOV            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_Get_TemptureDATA+0X0+0x1) & 0X7F		; Bank 1
-;  329:(     CALLR, (Get_Tempture.0) ,            ,   #T21486)
+	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x14) & 0X7F,	0x0		; Bank 2
+	MOVAR          	_Get_TemptureDATA+0X0		; Bank 1
+	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x15) & 0X7F,	0x0		; Bank 2
+	MOVAR          	_Get_TemptureDATA+0X0+0x1		; Bank 1
+;  328:(     CALLR, (Get_Tempture.0) ,            ,   #T21543)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_Tempture
 	CALL           	_Get_Tempture		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Get_ADC_Val_#T21486_70		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21543_72		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21486_70+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21543_72+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_ADC_Val_#T21486_70+0x2		; Bank 1
-;  329:(    CVF_UC,    #T21486 ,            ,temperature)
+	MOVAR          	_User_Get_measure_Val_#T21543_72+0x2		; Bank 1
+;  328:(    CVF_UC,    #T21543 ,            ,temperature)
 
 ; ITemplate_LibFunc1
-	MOVRA          	_Get_ADC_Val_#T21486_70		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21543_72		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21486_70+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21543_72+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_ADC_Val_#T21486_70+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21543_72+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
 	SEGMENTSEL     	FL2LG
 	CALL           	FL2LG		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_temperature		; Bank 1
-#line 330	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
-;  330:(       JMP,            ,            ,   #L21504)
+#line 329	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
+;  329:(       JMP,            ,            ,   #L21571)
 
 ; ITemplate_JMP
-	GOTO           	#L21504
-#line 331	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else{
-;  331:(     LABEL,    #L21479 ,            ,          )
+	GOTO           	#L21571
+#line 330	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else{
+;  330:(     LABEL,    #L21526 ,            ,          )
 
 ; ITemplate_LABEL
-#L21479
-#line 332	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=0xff;
-;  332:(    ASGN_1,        255 ,            ,temperature)
+#L21526
+#line 331	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=0xff;
+;  331:(    ASGN_1,        255 ,            ,temperature)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xff
+	SECTION        	0x1
 	MOVA           	(_temperature) & 0X7F		; Bank 1
 ; 		}
+; 	}
 #line 334	C:\Users\admin\Desktop\½Á°è±­\Mixing_cup\½Á°è±­³ÌÐò\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
-;  334:(     LABEL,    #L21504 ,            ,          )
+;  334:(     LABEL,    #L21571 ,            ,          )
 
 ; ITemplate_LABEL
-#L21504
+#L21571
 ;  334:(       RET,            ,            ,          )
 
 ; ITemplate_RET
@@ -1798,10 +2378,10 @@ _BRGH1_0	RSEG           	0X1		; Bank 0
 SECTION8C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC96	PSECT	FLAG=0X1088,ADDR=0X306BE
 _TX1LEN_0	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c98	IDATA          		0X83		; Bank 0
+SECTION1IC__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c98	IDATA          		0X84		; Bank 0
 _offset_value	DB             	0X0,0XE4,0X0,0XE4		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c100	IDATA          		0X9C		; Bank 0
+SECTION1IC__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c100	IDATA          		0X9D		; Bank 0
 _str	DB             	0XCD,0XE4,0XA8,0XE4,0XB5,0XE4,0XC0,0XE4,0X20,0XE4,0XB5,0XE4,0XC4,0XE4,0XD7,0XE4,0XAA,0XE4,0XBB,0XE4
 	DB		0XBB,0XE4,0XD6,0XE4,0XB5,0XE4,0XCE,0XE4,0XAA,0XE4,0X3A,0XE4,0X20,0XE4,0X20,0XE4,0X20,0XE4,0X20,0XE4
 	DB		0XD,0XE4,0XA,0XE4,0X0,0XE4		; Bank 0
@@ -1812,19 +2392,28 @@ _GetOffset2048_#T20657_48	RSEG           	0X1		; Bank 0
 SECTION0C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC102	PSECT	FLAG=0x88
 _GetOffsetVDD_#T20740_51	RSEG           	0X1		; Bank 0
 
+SECTION1IC__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c104	IDATA          		0X81		; Bank 0
+_User_Get_measure_Val_i_70	DB             	0X0,0XE4		; Bank 0
+
 SECTION1C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0XF8		; Bank 0
+	ORG            	0XF9		; Bank 0
 _adc_value	RSEG           	0X2		; Bank 0
 
 SECTION2C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X10D		; Bank 0
+	ORG            	0X10F		; Bank 0
 _vcc_val	RSEG           	0X3		; Bank 0
-	ORG            	0X107		; Bank 0
+	ORG            	0X109		; Bank 0
 _RV	RSEG           	0X3		; Bank 0
-	ORG            	0X104		; Bank 0
+	ORG            	0X106		; Bank 0
 _RT	RSEG           	0X3		; Bank 0
-	ORG            	0X10A		; Bank 0
+	ORG            	0X10C		; Bank 0
 _Tmp	RSEG           	0X3		; Bank 0
+	ORG            	0X152		; Bank 0
+_User_Get_measure_Val_Temp_adc_val_70	RSEG           	0X28		; Bank 0
+
+SECTION3C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
+	ORG            	0X180		; Bank 0
+_User_Get_measure_Val_Vbat_adc_val_70	RSEG           	0X28		; Bank 0
 
 SECTION8C__Program_Files__x86__HRCC_Tools_HRCC_v1_2_0_122_tools_INCLUDE_ES7P0693_h_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0XFF90		; Bank 0

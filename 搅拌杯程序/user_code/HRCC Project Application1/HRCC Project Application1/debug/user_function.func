@@ -12,7 +12,13 @@ GetOffset2048
 2
 Get_ADC_Val
 0
-16
+2
 Get_Tempture
 0
 16
+User_Get_measure_Val
+0
+16
+_f
+0
+5
