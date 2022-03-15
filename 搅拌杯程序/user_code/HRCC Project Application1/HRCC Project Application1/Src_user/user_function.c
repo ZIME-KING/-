@@ -318,7 +318,8 @@ void User_Get_measure_Val(){
 			_f(Temp_adc_val,20);
 		//µçÁ¿Öµ
 		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
-		Vbat_val=(vcc_val-3.6)*100/(4.15-3.6);
+		if(vcc_val>4.2) vcc_val=4.2;
+		Vbat_val=(vcc_val-3.6)*100/(4.2-3.6);
 
 		if(Vbat_val>99) Vbat_val=99;
 		if(Vbat_val<0) Vbat_val=0;

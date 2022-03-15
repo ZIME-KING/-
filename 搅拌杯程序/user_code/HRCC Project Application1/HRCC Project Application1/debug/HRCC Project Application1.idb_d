@@ -76,28 +76,8 @@ address: ffa8
 basic_type: uchar
 complex_type:  (uchar)->
 
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA1DS_0
-address: 7fdb9
-basic_type: sbit
-complex_type:  (sbit)->
-
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA2_0
 address: 7fd42
-basic_type: sbit
-complex_type:  (sbit)->
-
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA3DS_0
-address: 7fdbb
-basic_type: sbit
-complex_type:  (sbit)->
-
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA4DS_0
-address: 7fdbc
-basic_type: sbit
-complex_type:  (sbit)->
-
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA5DS_0
-address: 7fdbd
 basic_type: sbit
 complex_type:  (sbit)->
 
@@ -125,11 +105,6 @@ sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PR
 address: ffa9
 basic_type: uchar
 complex_type:  (uchar)->
-
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB0DS_0
-address: 7fdc0
-basic_type: sbit
-complex_type:  (sbit)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB3_0
 address: 7fd4b
@@ -161,16 +136,6 @@ address: ffaa
 basic_type: uchar
 complex_type:  (uchar)->
 
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PC0DS_0
-address: 7fdc8
-basic_type: sbit
-complex_type:  (sbit)->
-
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PC1DS_0
-address: 7fdc9
-basic_type: sbit
-complex_type:  (sbit)->
-
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PCT_0
 address: ffaf
 basic_type: uchar
@@ -192,12 +157,12 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: RT
-address: 106
+address: 108
 basic_type: float
 complex_type:  (float)->
 
 sym_name: RV
-address: 109
+address: 10b
 basic_type: float
 complex_type:  (float)->
 
@@ -297,47 +262,47 @@ basic_type: sbit
 complex_type:  (sbit)->
 
 sym_name: Task_1
-address: 11a
+address: 11c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_100
-address: 122
+address: 124
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_1000
-address: 12a
+address: 12c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_200
-address: 132
+address: 134
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_5
-address: 13a
+address: 13c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_50
-address: 142
+address: 144
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_500
-address: 14a
+address: 14c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Tmp
-address: 10c
+address: 10e
 basic_type: float
 complex_type:  (float)->
 
 sym_name: Vbat_val
-address: f4
+address: f6
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -357,7 +322,12 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: buzzer_flag
-address: f5
+address: f7
+basic_type: uchar
+complex_type:  (uchar)->
+
+sym_name: cnt_0
+address: f8
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -367,17 +337,17 @@ basic_type: uchar
 complex_type:  .dim(18)->(uchar)->
 
 sym_name: global_count
-address: 116
+address: 118
 basic_type: ulong
 complex_type:  (ulong)->
 
 sym_name: sleep_count
-address: 104
+address: 106
 basic_type: uint
 complex_type:  (uint)->
 
 sym_name: temperature
-address: f8
+address: fb
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -392,12 +362,12 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: vcc_val
-address: 10f
+address: 111
 basic_type: float
 complex_type:  (float)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$temp_time_52
-address: 112
+address: 114
 basic_type: long
 complex_type:  (long)->
 
@@ -417,7 +387,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$last_state_79
-address: f3
+address: f5
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -447,57 +417,57 @@ basic_type: sbit
 complex_type:  (sbit)->
 
 sym_name: RT
-address: 106
+address: 108
 basic_type: float
 complex_type:  (float)->
 
 sym_name: RV
-address: 109
+address: 10b
 basic_type: float
 complex_type:  (float)->
 
 sym_name: Task_1
-address: 11a
+address: 11c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_100
-address: 122
+address: 124
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_1000
-address: 12a
+address: 12c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_200
-address: 132
+address: 134
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_5
-address: 13a
+address: 13c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_50
-address: 142
+address: 144
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_500
-address: 14a
+address: 14c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Tmp
-address: 10c
+address: 10e
 basic_type: float
 complex_type:  (float)->
 
 sym_name: Vbat_val
-address: f4
+address: f6
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -512,7 +482,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: buzzer_flag
-address: f5
+address: f7
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -522,7 +492,7 @@ basic_type: uchar
 complex_type:  .dim(18)->(uchar)->
 
 sym_name: temperature
-address: f8
+address: fb
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -537,37 +507,37 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: vcc_val
-address: 10f
+address: 111
 basic_type: float
 complex_type:  (float)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$edge_flag_41
-address: f6
+address: f9
 basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$edge_status_41
-address: f7
+address: fa
 basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$perss_count_41
-address: fb
+address: fe
 basic_type: int
 complex_type:  (int)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$perss_count_long_41
-address: fd
-basic_type: int
-complex_type:  (int)->
-
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$release_count_41
 address: 100
 basic_type: int
 complex_type:  (int)->
 
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$release_count_double_41
+sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$release_count_41
 address: 102
+basic_type: int
+complex_type:  (int)->
+
+sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C$release_count_double_41
+address: 104
 basic_type: int
 complex_type:  (int)->
 
@@ -617,12 +587,12 @@ basic_type: sbit
 complex_type:  (sbit)->
 
 sym_name: RT
-address: 106
+address: 108
 basic_type: float
 complex_type:  (float)->
 
 sym_name: RV
-address: 109
+address: 10b
 basic_type: float
 complex_type:  (float)->
 
@@ -632,47 +602,47 @@ basic_type: uchar
 complex_type:  .dim(5)->(uchar)->
 
 sym_name: Task_1
-address: 11a
+address: 11c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_100
-address: 122
+address: 124
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_1000
-address: 12a
+address: 12c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_200
-address: 132
+address: 134
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_5
-address: 13a
+address: 13c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_50
-address: 142
+address: 144
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_500
-address: 14a
+address: 14c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Tmp
-address: 10c
+address: 10e
 basic_type: float
 complex_type:  (float)->
 
 sym_name: Vbat_val
-address: f4
+address: f6
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -687,7 +657,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: buzzer_flag
-address: f5
+address: f7
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -697,7 +667,7 @@ basic_type: uchar
 complex_type:  .dim(18)->(uchar)->
 
 sym_name: temperature
-address: f8
+address: fb
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -712,7 +682,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: vcc_val
-address: 10f
+address: 111
 basic_type: float
 complex_type:  (float)->
 
@@ -752,67 +722,77 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$cnt_73
+address: f4
+basic_type: uchar
+complex_type:  (uchar)->
+
+sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$cnt_76
 address: f1
 basic_type: uchar
 complex_type:  (uchar)->
 
-sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$iii_73
+sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$cnt_79
 address: f2
 basic_type: uchar
 complex_type:  (uchar)->
 
+sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$iii_79
+address: f3
+basic_type: uchar
+complex_type:  (uchar)->
+
 sym_name: RT
-address: 106
+address: 108
 basic_type: float
 complex_type:  (float)->
 
 sym_name: RV
-address: 109
+address: 10b
 basic_type: float
 complex_type:  (float)->
 
 sym_name: Task_1
-address: 11a
+address: 11c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_100
-address: 122
+address: 124
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_1000
-address: 12a
+address: 12c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_200
-address: 132
+address: 134
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_5
-address: 13a
+address: 13c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_50
-address: 142
+address: 144
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_500
-address: 14a
+address: 14c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Tmp
-address: 10c
+address: 10e
 basic_type: float
 complex_type:  (float)->
 
 sym_name: Vbat_val
-address: f4
+address: f6
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -827,7 +807,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: buzzer_flag
-address: f5
+address: f7
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -837,7 +817,7 @@ basic_type: uchar
 complex_type:  .dim(18)->(uchar)->
 
 sym_name: temperature
-address: f8
+address: fb
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -852,7 +832,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: vcc_val
-address: 10f
+address: 111
 basic_type: float
 complex_type:  (float)->
 
@@ -977,12 +957,12 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: RT
-address: 106
+address: 108
 basic_type: float
 complex_type:  (float)->
 
 sym_name: RV
-address: 109
+address: 10b
 basic_type: float
 complex_type:  (float)->
 
@@ -1007,42 +987,42 @@ basic_type: sbit
 complex_type:  (sbit)->
 
 sym_name: Task_1
-address: 11a
+address: 11c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_100
-address: 122
+address: 124
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_1000
-address: 12a
+address: 12c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_200
-address: 132
+address: 134
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_5
-address: 13a
+address: 13c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_50
-address: 142
+address: 144
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Task_500
-address: 14a
+address: 14c
 basic_type: struct
 complex_type:  .struct(struct)->TimeStart(empty)->(ulong)->
 
 sym_name: Tmp
-address: 10c
+address: 10e
 basic_type: float
 complex_type:  (float)->
 
@@ -1062,7 +1042,7 @@ basic_type: sbit
 complex_type:  (sbit)->
 
 sym_name: Vbat_val
-address: f4
+address: f6
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -1077,12 +1057,12 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: adc_value
-address: f9
+address: fc
 basic_type: uint
 complex_type:  (uint)->
 
 sym_name: buzzer_flag
-address: f5
+address: f7
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -1102,7 +1082,7 @@ basic_type: uchar
 complex_type:  .dim(23)->(uchar)->
 
 sym_name: temperature
-address: f8
+address: fb
 basic_type: uchar
 complex_type:  (uchar)->
 
@@ -1117,7 +1097,7 @@ basic_type: uchar
 complex_type:  (uchar)->
 
 sym_name: vcc_val
-address: 10f
+address: 111
 basic_type: float
 complex_type:  (float)->
 
@@ -1192,7 +1172,7 @@ basic_type: ptr
 complex_type:  (ptr)->symbolextern3$$unsigned@int(empty)&->(uint)->
 
 sym_name: $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C$Temp_adc_val_70
-address: 152
+address: 154
 basic_type: uint
 complex_type:  .dim(20)->(uint)->
 
@@ -1253,49 +1233,49 @@ size: 142
 
 section information:
 name: ADC_convert#
-address: 4055
+address: 3867
 size: 56
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(46)
 
 section information:
 name: ADC_dis_init#
-address: 4155
+address: 3954
 size: 28
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(56)
 
 section information:
 name: ADC_init#
-address: 4169
+address: 3968
 size: 244
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(58)
 
 section information:
 name: Buzzer_Init#
-address: 508
+address: 504
 size: 4
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(62)
 
 section information:
 name: Buzzer_Start#
-address: 713
+address: 509
 size: 6
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(66)
 
 section information:
 name: Buzzer_Stop#
-address: 710
+address: 506
 size: 6
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(64)
 
 section information:
 name: Buzzer_Task#
-address: 728
+address: 724
 size: 50
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(72)
 
 section information:
 name: CompareTime#
-address: 3673
+address: 3773
 size: 188
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SOFTWARE_TIME.C(45)
 
@@ -1363,61 +1343,61 @@ size: 44
 
 section information:
 name: GPIOInit#
-address: 603
-size: 60
+address: 622
+size: 46
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(48)
 
 section information:
 name: GetOffset2048#
-address: 4096
+address: 3895
 size: 118
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(48)
 
 section information:
 name: GetTime#
-address: 3641
+address: 3741
 size: 64
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SOFTWARE_TIME.C(43)
 
 section information:
 name: Get_ADC_Val#
-address: 4534
+address: 4627
 size: 166
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(68)
 
 section information:
 name: Get_State#
-address: 722
+address: 718
 size: 12
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(70)
 
 section information:
 name: Get_Sys_time#
-address: 583
+address: 474
 size: 26
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(41)
 
 section information:
 name: Get_Tempture#
-address: 3767
+address: 4096
 size: 576
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(41)
 
 section information:
 name: INT_ENTRY
 address: 4
-size: 486
+size: 496
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
 
 section information:
 name: LED_Clear#
-address: 1772
+address: 1770
 size: 64
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(44)
 
 section information:
 name: LED_Task#
-address: 858
+address: 854
 size: 362
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
 
@@ -1434,7 +1414,7 @@ size: 66
 section information:
 name: SCAN_NEW#
 address: 3016
-size: 1250
+size: 1450
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(73)
 
 section information:
@@ -1444,43 +1424,43 @@ size: 14
 
 section information:
 name: SetTime#
-address: 1980
+address: 1978
 size: 120
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SOFTWARE_TIME.C(41)
 
 section information:
 name: Set_LED#
-address: 1613
+address: 1611
 size: 318
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(41)
 
 section information:
 name: Set_PWM_CH0_Duty#
-address: 668
+address: 670
 size: 42
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(58)
 
 section information:
 name: Set_PWM_CH1_Duty#
-address: 689
+address: 691
 size: 42
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(60)
 
 section information:
 name: Sleep_Tsak#
-address: 763
+address: 759
 size: 190
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(79)
 
 section information:
 name: State_Ruun#
-address: 1174
+address: 1170
 size: 68
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(109)
 
 section information:
 name: State_Trans#
-address: 716
+address: 712
 size: 12
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(68)
 
@@ -1491,32 +1471,32 @@ size: 70
 
 section information:
 name: Timer_T21_Init#
-address: 643
+address: 645
 size: 50
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(56)
 
 section information:
 name: Timer_T8_Init#
-address: 633
+address: 494
 size: 20
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(50)
 
 section information:
 name: USB_Check#
-address: 753
+address: 749
 size: 20
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(77)
 
 section information:
 name: Updata_SCAN_LED_BUF_R#
-address: 1804
+address: 1802
 size: 352
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(47)
 
 section information:
 name: User_Get_measure_Val#
-address: 4617
-size: 552
+address: 4710
+size: 628
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(70)
 
 section information:
@@ -1531,7 +1511,7 @@ size: 20
 
 section information:
 name: _INIT
-address: 469
+address: 583
 size: 78
 
 section information:
@@ -1541,73 +1521,73 @@ size: 8
 
 section information:
 name: _f#
-address: 4291
+address: 4384
 size: 486
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(63)
 
 section information:
 name: eval_poly#
-address: 4930
+address: 5061
 size: 376
 bucket: D:\AE\PROJECTS\COMPILER\LIBRARY\SOURCE\STDLIB\STDLIB\MATH_97\MATH.C(45)
 
 section information:
 name: frexp#
-address: 5118
+address: 5249
 size: 180
 bucket: D:\AE\PROJECTS\COMPILER\LIBRARY\SOURCE\STDLIB\STDLIB\MATH_97\MATH.C(58)
 
 section information:
 name: log#
-address: 5208
+address: 5339
 size: 462
 bucket: D:\AE\PROJECTS\COMPILER\LIBRARY\SOURCE\STDLIB\STDLIB\MATH_97\MATH.C(65)
 
 section information:
 name: main#
-address: 247
+address: 252
 size: 444
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(114)
 
 section information:
 name: scan_touch_key#
-address: 1229
-size: 510
+address: 1225
+size: 514
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C(41)
 
 section information:
 name: sleep#
-address: 596
+address: 487
 size: 14
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(46)
 
 section information:
 name: state_0#
-address: 1039
+address: 1035
 size: 134
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(101)
 
 section information:
 name: state_1#
-address: 1140
+address: 1136
 size: 34
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(105)
 
 section information:
 name: state_2#
-address: 1157
+address: 1153
 size: 34
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(107)
 
 section information:
 name: state_3#
-address: 1106
+address: 1102
 size: 68
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(103)
 
 section information:
 name: user_delay#
-address: 1208
+address: 1204
 size: 42
 bucket: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(112)
 
@@ -1633,6 +1613,7 @@ __MULA__
 __MULB__
 adc_value
 buzzer_flag
+cnt_0
 display_buf
 global_count
 offset_value
@@ -1663,25 +1644,18 @@ $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPL
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$KIF_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$KMSK1_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA1DS_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA2_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA3DS_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA4DS_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PA5DS_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PAPU_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PAT_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PAT2_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PAT3_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB0DS_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB3_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB5_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PB7_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PBT_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PBT5_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PC_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PC0DS_0
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PC1DS_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PCT_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PIE7_0
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$PIF7_0
@@ -1757,13 +1731,6 @@ C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Appli
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[70]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[71]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[73]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[76]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[77]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[78]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[79]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[80]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[81]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[82]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[87]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[88]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[89]
@@ -1775,7 +1742,7 @@ function: Timer_T8_Init
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[94]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[96]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[99]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[100]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[101]
@@ -2011,139 +1978,139 @@ line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[223]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
-start: 229  end: 293
+start: 229  end: 295
 function: LED_Task
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
 line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[236]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[238]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[241]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[242]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[245]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[253]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[274]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[275]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[291]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[292]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[293]
-
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(89)
-start: 238  end: 241
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[239]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[240]
-
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(90)
-start: 242  end: 245
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
-
-line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[243]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[244]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[247]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[255]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[276]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[277]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[293]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[294]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[295]
 
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
-start: 253  end: 274
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(89)
+start: 238  end: 243
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[254]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[241]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[242]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(90)
+start: 244  end: 247
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[245]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[246]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
+start: 255  end: 276
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[256]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[260]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[261]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[265]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[266]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[270]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[271]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(92)
+start: 256  end: 260
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[257]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[258]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[259]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(93)
+start: 261  end: 265
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[262]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[263]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[264]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(94)
+start: 266  end: 270
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[267]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[268]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[269]
 
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(92)
-start: 254  end: 258
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[255]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[256]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[257]
-
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(93)
-start: 259  end: 263
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[260]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[261]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[262]
-
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(94)
-start: 264  end: 268
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[265]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[266]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[267]
-
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(95)
-start: 269  end: 273
+start: 271  end: 275
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(91)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[270]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[271]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[272]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[273]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[274]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(96)
-start: 275  end: 291
+start: 277  end: 293
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(88)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[276]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[278]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[282]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[283]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[287]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[288]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(97)
+start: 278  end: 282
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(96)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[279]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[280]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[281]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(98)
+start: 283  end: 287
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(96)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[284]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[285]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[286]
 
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(97)
-start: 276  end: 280
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(96)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[277]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[278]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[279]
-
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(98)
-start: 281  end: 285
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(96)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[282]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[283]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[284]
-
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(99)
-start: 286  end: 290
+start: 288  end: 292
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(96)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[287]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[288]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[289]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[290]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[291]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(101)
-start: 295  end: 343
+start: 297  end: 345
 function: state_0
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
@@ -2151,36 +2118,36 @@ line information:
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$i_101
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[298]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[299]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[300]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[301]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[302]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[307]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[311]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[314]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[315]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[303]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[304]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[309]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[313]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[316]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[317]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[318]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[319]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[320]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[321]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[322]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[323]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[324]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[325]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[326]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[327]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[328]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[329]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[330]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[331]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[332]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[333]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[336]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[342]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[343]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[334]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[335]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[338]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[344]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[345]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(103)
-start: 345  end: 353
+start: 347  end: 355
 function: state_3
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
@@ -2188,50 +2155,48 @@ line information:
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$i_103
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[347]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[348]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[349]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[350]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[351]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[352]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[353]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[355]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(105)
-start: 356  end: 359
+start: 358  end: 361
 function: state_1
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[357]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[358]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[359]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[360]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[361]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(107)
-start: 362  end: 366
+start: 364  end: 368
 function: state_2
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[364]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[365]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[366]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[367]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[368]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(109)
-start: 367  end: 382
+start: 369  end: 384
 function: State_Ruun
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[368]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[382]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[370]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[384]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(110)
-start: 368  end: 381
+start: 370  end: 383
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(109)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[369]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[370]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[371]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[372]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[373]
@@ -2241,9 +2206,11 @@ C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Appli
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[377]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[378]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[379]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[380]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[381]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(112)
-start: 385  end: 388
+start: 387  end: 390
 function: user_delay
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
@@ -2251,12 +2218,12 @@ line information:
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$i_112
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[386]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[387]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[388]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[389]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[390]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(114)
-start: 390  end: 475
+start: 392  end: 477
 function: main
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
@@ -2264,225 +2231,234 @@ line information:
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C$iii_114
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[392]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[394]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[395]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[396]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[397]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[398]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[399]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[403]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[404]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[401]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[405]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[406]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[415]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[416]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[420]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[421]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[426]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[474]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[408]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[417]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[418]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[422]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[423]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[428]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[476]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(115)
-start: 416  end: 420
+start: 418  end: 422
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(114)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[417]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[419]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[421]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(116)
-start: 427  end: 474
+start: 429  end: 476
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(114)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[428]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[452]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[453]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[463]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[464]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[472]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[430]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[454]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[455]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[465]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[466]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[474]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(117)
-start: 428  end: 452
+start: 430  end: 454
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(116)
-
-line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[429]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[430]
-
-buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(118)
-start: 430  end: 451
-function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(117)
 
 line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[431]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[432]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(118)
+start: 432  end: 453
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(117)
+
+line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[433]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[439]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[440]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[444]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[445]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[434]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[435]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[441]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[442]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[446]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[447]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(119)
-start: 433  end: 439
+start: 435  end: 441
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(118)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[434]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[436]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(120)
-start: 434  end: 438
+start: 436  end: 440
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(119)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[435]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[437]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(121)
-start: 440  end: 444
+start: 442  end: 446
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(118)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[441]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[443]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(122)
-start: 441  end: 443
+start: 443  end: 445
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(121)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[442]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[444]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(123)
-start: 445  end: 450
+start: 447  end: 452
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(118)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[446]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[448]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(124)
-start: 447  end: 449
+start: 449  end: 451
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(123)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[448]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[450]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(125)
-start: 453  end: 463
+start: 455  end: 465
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(116)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[454]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[455]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[456]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[457]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[458]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[459]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[460]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(126)
-start: 458  end: 461
+start: 460  end: 463
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(125)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[459]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[460]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[461]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[462]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(127)
-start: 464  end: 472
+start: 466  end: 474
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(116)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[465]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[466]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[467]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[468]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[470]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(128)
-start: 468  end: 470
+start: 470  end: 472
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(127)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[469]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[471]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(129)
-start: 473  end: 473
+start: 475  end: 475
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(116)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[473]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[475]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
-start: 487  end: 518
+start: 489  end: 523
 function: isr
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(0)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[488]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[495]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[496]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[499]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[490]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[500]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[501]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[504]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[505]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[518]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[509]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[510]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[523]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(132)
-start: 489  end: 495
+start: 491  end: 500
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[490]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[491]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[492]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[493]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[494]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[495]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[496]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(133)
-start: 497  end: 499
+start: 496  end: 499
 function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(132)
 
 line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[497]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[498]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(134)
-start: 501  end: 504
+start: 502  end: 504
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[502]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[503]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(135)
-start: 506  end: 517
+start: 506  end: 509
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
 
 line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[507]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[508]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[511]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[513]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[516]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(136)
-start: 511  end: 513
+start: 511  end: 522
 function: 
-parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(135)
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(131)
 
 line information:
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[512]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[513]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[516]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[518]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[521]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(137)
+start: 516  end: 518
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\MAIN.C(136)
+
+line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\main.c[517]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\KEY.C(0)
 start: 0  end: 100000
@@ -3035,91 +3011,264 @@ C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Appli
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[317]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(73)
-start: 323  end: 418
+start: 322  end: 576
 function: SCAN_NEW
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(0)
 
 line information:
 $C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$cnt_73
-$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$iii_73
 
 line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[324]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[325]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[326]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[327]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[328]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[329]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[330]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[331]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[332]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[333]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[334]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[335]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[336]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[337]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[339]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[340]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[341]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[342]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[343]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[418]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[571]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[573]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[574]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[576]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(74)
-start: 343  end: 415
+start: 334  end: 571
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(73)
 
 line information:
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[335]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[336]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[337]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[338]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[339]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[341]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[342]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[343]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[344]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[345]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[346]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[347]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[348]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[349]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[350]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[351]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[352]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[353]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[354]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[355]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[356]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[357]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[358]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[359]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[360]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[361]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[362]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[363]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[364]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[365]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[366]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[367]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[368]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[369]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[370]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[371]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[372]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[373]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[374]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[375]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[376]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[377]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[378]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[379]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[380]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[381]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[382]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[383]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[384]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[385]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[387]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[388]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[389]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[390]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[391]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[392]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[393]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[394]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[395]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[396]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[397]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[398]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[399]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[401]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[400]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[402]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[403]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[404]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[405]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[407]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[406]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[408]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[409]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[410]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[411]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[412]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[413]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[415]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[416]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[417]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[418]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[419]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[421]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[422]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[423]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[424]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[425]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[426]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[428]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[429]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[430]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[431]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[432]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[434]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[435]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[436]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[437]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[438]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[439]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[441]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[442]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[443]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[444]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[445]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[447]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[448]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[449]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[450]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[451]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[452]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[454]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[455]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[456]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[457]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[458]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[460]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[461]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[462]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[463]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[464]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[465]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[467]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[468]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[469]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[470]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[471]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[473]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[474]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[475]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[476]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[477]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[478]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[480]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[481]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[482]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[483]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[484]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[486]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[487]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[488]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[489]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[490]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[491]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[493]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[494]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[495]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[496]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[497]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[499]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[500]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[501]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[502]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[503]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[504]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[506]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[507]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[508]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[509]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[510]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[512]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[513]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[514]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[515]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[516]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[517]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[519]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[520]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[521]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[522]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[523]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[525]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[526]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[527]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[528]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[529]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[530]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[532]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[533]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[534]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[535]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[536]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[538]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[539]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[540]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[541]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[542]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[543]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[545]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[546]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[547]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[548]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[549]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[551]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[552]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[553]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[554]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[555]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[556]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[559]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[560]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[561]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[562]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[563]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[565]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[566]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[567]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[568]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c[569]
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(76)
+start: 591  end: 743
+function: SCAN_NEW__
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(0)
+
+line information:
+$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$cnt_76
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(77)
+start: 606  end: 739
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(76)
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(79)
+start: 746  end: 837
+function: SCAN_NEW_
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(0)
+
+line information:
+$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$cnt_79
+$C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C$iii_79
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(80)
+start: 751  end: 836
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(79)
+
+buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(81)
+start: 762  end: 833
+function: 
+parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SCAN_LED.C(80)
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\SOFTWARE_TIME.C(0)
 start: 0  end: 100000
@@ -3435,7 +3584,7 @@ C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Appli
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[309]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(70)
-start: 310  end: 334
+start: 310  end: 335
 function: User_Get_measure_Val
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(0)
 
@@ -3449,10 +3598,10 @@ C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Appli
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[314]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[315]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[316]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[334]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[335]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(71)
-start: 316  end: 333
+start: 316  end: 334
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(70)
 
@@ -3461,26 +3610,27 @@ C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Appli
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[318]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[320]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[321]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[323]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[327]
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[329]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[322]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[324]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[328]
 C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[330]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[331]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(72)
-start: 327  end: 329
+start: 328  end: 330
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(71)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[328]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[329]
 
 buck_name: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(73)
-start: 330  end: 332
+start: 331  end: 333
 function: 
 parent: C:\USERS\ADMIN\DESKTOP\Ω¡∞Ë±≠\MIXING_CUP\Ω¡∞Ë±≠≥Ã–Ú\USER_CODE\HRCC PROJECT APPLICATION1\HRCC PROJECT APPLICATION1\SRC_USER\USER_FUNCTION.C(71)
 
 line information:
-C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[331]
+C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c[332]
 
 buck_name: D:\AE\PROJECTS\COMPILER\LIBRARY\SOURCE\STDLIB\STDLIB\MATH_97\MATH.C(0)
 start: 0  end: 100000

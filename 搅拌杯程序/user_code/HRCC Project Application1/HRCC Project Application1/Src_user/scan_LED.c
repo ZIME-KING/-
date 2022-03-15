@@ -319,17 +319,436 @@ void D2_NUM(unsigned char num){
 	}
 }
 
-
 void SCAN_NEW(){
+static char cnt;
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+
+			LED_IO_0(0);
+			LED_IO_1(0);
+			LED_IO_2(0);
+			LED_IO_3(0);
+		switch (cnt){
+		case 0:
+			LED_IO_0(SCAN_LED_BUF_R[0]    & 0x01);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(1);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 1:
+			LED_IO_0(1);
+        	LED_IO_1(SCAN_LED_BUF_R[0]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(1);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 2:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[0]>>2 & 0x01);
+        	LED_IO_3(1);
+
+			LED_IO_4(1);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 3:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(SCAN_LED_BUF_R[0]>>3 & 0x01);
+
+			LED_IO_4(1);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+/////////////////////////////////////////////////////////////////////////
+
+		case 4:
+			LED_IO_0(SCAN_LED_BUF_R[1]    & 0x01);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(1);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 5:
+			LED_IO_0(1);
+        	LED_IO_1(SCAN_LED_BUF_R[1]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(1);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+		
+		case 6:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[1]>>2 & 0x01);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(1);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 7:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(SCAN_LED_BUF_R[1]>>3 & 0x01);
+
+			LED_IO_4(0);
+			LED_IO_5(1);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+////////////////////////////////////////////////////////////////////
+		case 8:
+			LED_IO_0(SCAN_LED_BUF_R[2]    & 0x01);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+			
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(1);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 9:
+			LED_IO_0(1);
+        	LED_IO_1(SCAN_LED_BUF_R[2]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+			
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(1);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 10:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[2]>>2 & 0x01);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(1);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+		
+		case 11:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(SCAN_LED_BUF_R[2]>>3 & 0x01);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(1);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;		
+///////////////////////////////////////////////////////////////////////
+		case 12:
+			LED_IO_0(SCAN_LED_BUF_R[3]    & 0x01);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+		
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(1);
+			LED_IO_8(0);
+		break;
+
+		case 13:
+			LED_IO_0(1);
+        	LED_IO_1(SCAN_LED_BUF_R[3]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+		
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(1);
+			LED_IO_8(0);
+		break;
+
+		case 14:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[3]>>2 & 0x01);
+        	LED_IO_3(1);
+		
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(1);
+			LED_IO_8(0);
+		break;
+			
+		case 16-1:
+			LED_IO_0(SCAN_LED_BUF_R[4]    & 0x01);
+        	LED_IO_1(1);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(1);
+		break;
+
+		case 17-1:
+			LED_IO_0(1);
+        	LED_IO_1(SCAN_LED_BUF_R[4]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(1);
+		break;
+		
+
+		case 18-1:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[4]>>2 & 0x01);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(1);
+		break;
+		}
+
+		cnt++;
+		cnt=cnt%18;
+	//}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void SCAN_NEW__(){
+static char cnt;
+//static char iii;	
+	//iii++;
+	//if(iii%1){
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+
+			LED_IO_0(0);
+			LED_IO_1(0);
+			LED_IO_2(0);
+			LED_IO_3(0);
+		switch (cnt){
+		case 0:
+			LED_IO_0(SCAN_LED_BUF_R[0]    & 0x01);
+        	LED_IO_1(SCAN_LED_BUF_R[0]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(1);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 1:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[0]>>2 & 0x01);
+        	LED_IO_3(SCAN_LED_BUF_R[0]>>3 & 0x01);
+
+			LED_IO_4(1);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+
+		case 2:
+			LED_IO_0(SCAN_LED_BUF_R[1]    & 0x01);
+        	LED_IO_1(SCAN_LED_BUF_R[1]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(1);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 3:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[1]>>2 & 0x01);
+        	LED_IO_3(SCAN_LED_BUF_R[1]>>3 & 0x01);
+			LED_IO_4(0);
+			LED_IO_5(1);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+
+		case 4:
+			LED_IO_0(SCAN_LED_BUF_R[2]    & 0x01);
+        	LED_IO_1(SCAN_LED_BUF_R[2]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+			
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(1);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+
+		case 5:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[2]>>2 & 0x01);
+        	LED_IO_3(SCAN_LED_BUF_R[2]>>3 & 0x01);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(1);
+			LED_IO_7(0);
+			LED_IO_8(0);
+		break;
+		
+		case 6:
+			
+			LED_IO_0(SCAN_LED_BUF_R[3]    & 0x01);
+        	LED_IO_1(SCAN_LED_BUF_R[3]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+		
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(1);
+			LED_IO_8(0);
+		break;
+
+		case 7:	
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[3]>>2 & 0x01);
+        	LED_IO_3(SCAN_LED_BUF_R[3]>>3 & 0x01);
+		
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(1);
+			LED_IO_8(0);
+		break;
+
+		
+		case 8:
+			LED_IO_0(SCAN_LED_BUF_R[4]    & 0x01);
+        	LED_IO_1(SCAN_LED_BUF_R[4]>>1 & 0x01);
+			LED_IO_2(1);
+        	LED_IO_3(1);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(1);
+		break;
+
+		case 9:
+			LED_IO_0(1);
+        	LED_IO_1(1);
+			LED_IO_2(SCAN_LED_BUF_R[4]>>2 & 0x01);
+        	LED_IO_3(SCAN_LED_BUF_R[4]>>3 & 0x01);
+
+			LED_IO_4(0);
+			LED_IO_5(0);
+			LED_IO_6(0);
+			LED_IO_7(0);
+			LED_IO_8(1);
+		break;
+		}
+		cnt++;
+		cnt=cnt%10;
+	//}
+}
+
+
+void SCAN_NEW_(){
 static char cnt;
 static char iii;	
 	
 	iii++;
-	if(iii%2)
-		cnt++;
-
-		cnt=cnt%5;
-
+	if(iii%3){
 			LED_IO_4(0);
 			LED_IO_5(0);
 			LED_IO_6(0);
@@ -354,18 +773,18 @@ static char iii;
 			LED_IO_8(0);
 
 		break;
+
 		case 1:
 			LED_IO_0(SCAN_LED_BUF_R[1]    & 0x01);
         	LED_IO_1(SCAN_LED_BUF_R[1]>>1 & 0x01);
 			LED_IO_2(SCAN_LED_BUF_R[1]>>2 & 0x01);
         	LED_IO_3(SCAN_LED_BUF_R[1]>>3 & 0x01);
+			
 			LED_IO_4(0);
 			LED_IO_5(1);
 			LED_IO_6(0);
 			LED_IO_7(0);
 			LED_IO_8(0);
-
-
 		break;
 
 		case 2:
@@ -379,8 +798,8 @@ static char iii;
 			LED_IO_6(1);
 			LED_IO_7(0);
 			LED_IO_8(0);
-
 		break;
+
 		
 		case 3:
 			
@@ -389,15 +808,15 @@ static char iii;
 			LED_IO_2(SCAN_LED_BUF_R[3]>>2 & 0x01);
         	LED_IO_3(SCAN_LED_BUF_R[3]>>3 & 0x01);
 		
-		LED_IO_4(0);
+			LED_IO_4(0);
 			LED_IO_5(0);
 			LED_IO_6(0);
 			LED_IO_7(1);
 			LED_IO_8(0);
-
-		
 		break;
-		
+
+
+
 		case 4:
 			LED_IO_0(SCAN_LED_BUF_R[4]    & 0x01);
         	LED_IO_1(SCAN_LED_BUF_R[4]>>1 & 0x01);
@@ -409,10 +828,10 @@ static char iii;
 			LED_IO_6(0);
 			LED_IO_7(0);
 			LED_IO_8(1);
-
-
 		break;
+
 		}
-		
-		
+		cnt++;
+		cnt=cnt%5;
+	}
 }

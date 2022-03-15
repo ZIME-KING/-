@@ -73,13 +73,13 @@ void GPIOInit(void)
 	PAPU=0x00;
 	
 	//PA3DS：PA3 端口电流选择位
-	 PA1DS=1;	
-	 PA3DS=1;
-	 PA4DS=1;
-	 PA5DS=1;
-	 PB0DS=1;
-	 PC1DS=1;
-	 PC0DS=1;
+	// PA1DS=1;	
+	 //PA3DS=1;
+	 //PA4DS=1;
+	 //PA5DS=1;
+	 //PB0DS=1;
+	 //PC1DS=1;
+	 //PC0DS=1;
 
 	// 设置AIN11 PB1  MOTO_CUR
 	// 设置AIN4  PB2  VBAT
@@ -91,9 +91,9 @@ void GPIOInit(void)
 
 void Timer_T8_Init(){
 	//16MHZ 时钟 1ms中断
-    T8NC = 0x0D;         //定时器模式，预分频1:(Fosc/2)/64
-	//16MHZ 时钟 0.51ms中断
-    //T8NC = 0x0C;         //定时器模式，预分频1:(Fosc/2)/32
+   // T8NC = 0x0D;         //定时器模式，预分频1:(Fosc/2)/64
+	//  16MHZ 时钟 0.51ms中断
+    T8NC = 0x0C;         //定时器模式，预分频1:(Fosc/2)/32
     //T8NC = 0x0F;         //定时器模式，预分频1:(Fosc/2)/256
 	//T8NC = 0x08;         //定时器模式，预分频1:(Foc/2)/2
     T8N = 131;           //赋计数器初值
@@ -236,8 +236,10 @@ void LED_Task(){
 	display_buf[13-1]=1;
 
 	if(temperature==0xff){
-	  D1_NUM(0xff);
-	  D2_NUM(0xff);	
+	  //D1_NUM(0xff);
+	  //D2_NUM(0xff);	
+	  D1_NUM(8);
+	  D2_NUM(8);	
 	}
 	else{
 	  D1_NUM(temperature/10);
@@ -490,8 +492,11 @@ void isr(void) interrupt
         T8NIF = 0;        //清标志位
         T8N += 131;         //进中断先赋计数器初值
 		SCAN_NEW();
-		global_count++;
-		scan_touch_key();
+		cnt_0++;
+		if(cnt_0%2){
+			global_count++;
+			scan_touch_key();
+		}
     }
 	  if (T21PIE==1 && T21PIF==1)        //定时器pwm周期中断
     {

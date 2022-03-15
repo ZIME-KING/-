@@ -426,19 +426,19 @@ _CompareTime
 	RET            			; Bank 0		; ShBank 0
 
 SECTION2C__Users_admin_Desktop_½Á°è±­_Mixing_cup_½Á°è±­³ÌÐò_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_software_Time_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X11A		; Bank 0
+	ORG            	0X11C		; Bank 0
 _Task_1	RSEG           	0X8		; Bank 0
-	ORG            	0X13A		; Bank 0
+	ORG            	0X13C		; Bank 0
 _Task_5	RSEG           	0X8		; Bank 0
-	ORG            	0X142		; Bank 0
+	ORG            	0X144		; Bank 0
 _Task_50	RSEG           	0X8		; Bank 0
-	ORG            	0X122		; Bank 0
+	ORG            	0X124		; Bank 0
 _Task_100	RSEG           	0X8		; Bank 0
-	ORG            	0X132		; Bank 0
+	ORG            	0X134		; Bank 0
 _Task_200	RSEG           	0X8		; Bank 0
-	ORG            	0X14A		; Bank 0
+	ORG            	0X14C		; Bank 0
 _Task_500	RSEG           	0X8		; Bank 0
-	ORG            	0X12A		; Bank 0
+	ORG            	0X12C		; Bank 0
 _Task_1000	RSEG           	0X8		; Bank 0
 	END
 
