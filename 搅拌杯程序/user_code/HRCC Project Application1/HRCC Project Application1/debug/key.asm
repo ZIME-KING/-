@@ -127,7 +127,7 @@ _scan_touch_key
 ;   
 ; #define SHORT_TIME 20
 ; #define LONG_TIME  400
-; #define DOUBLE_RELEASE_TIME_MAX 150
+; #define DOUBLE_RELEASE_TIME_MAX 220
 ; #define DOUBLE_RELEASE_TIME_MIN 20	
 ; //1MSËøõ‰∏ÄÊ¨°‰∏≠Êñ≠ÔºåÊ£ÄÊµãËß¶Êë∏ÊåâÈîÆ
 ; void scan_touch_key(){
@@ -185,17 +185,16 @@ _scan_touch_key
 ;   29:(    ASGN_2, release_count ,            ,release_count_double)
 
 ; ITemplate_ASGN1_4_R
-	MOVRA          	_scan_touch_key_release_count_41+0x1		; Bank 2
+	MOV            	(_scan_touch_key_release_count_41+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	_scan_touch_key_release_count_double_41+0x1		; Bank 2
-	MOVRA          	_scan_touch_key_release_count_41		; Bank 2
+	MOV            	(_scan_touch_key_release_count_41) & 0X7F,	0x0		; Bank 1
 	MOVAR          	_scan_touch_key_release_count_double_41		; Bank 2
 #line 30	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 				release_count=0;
 ;   30:(    ASGN_2,          0 ,            ,release_count)
 
 ; ITemplate_CLR1_4_TMP
-	SECTION        	0x2
-	CLR            	(_scan_touch_key_release_count_41) & 0X7F		; Bank 2
-	CLR            	(_scan_touch_key_release_count_41+0x1) & 0X7F		; Bank 2
+	CLR            	(_scan_touch_key_release_count_41) & 0X7F		; Bank 1
+	CLR            	(_scan_touch_key_release_count_41+0x1) & 0X7F		; Bank 1
 #line 31	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 			}
 ;   31:(       JMP,            ,            ,   #L20300)
 
@@ -233,7 +232,6 @@ _scan_touch_key
 ;   36:(      JZ_1, edge_status ,            ,   #L20350)
 
 ; ITemplate_JZ1_4
-	SECTION        	0x1
 	MOV            	(_scan_touch_key_edge_status_41) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L20350
@@ -241,22 +239,20 @@ _scan_touch_key
 ;   37:(     ADD_2, release_count ,          1 ,release_count)
 
 ; ITemplate_INC_2_TMP
-	SECTION        	0x2
-	INC            	(_scan_touch_key_release_count_41) & 0X7F		; Bank 2
+	INC            	(_scan_touch_key_release_count_41) & 0X7F		; Bank 1
 	JBS            	PSW,	0x2
 	GOTO           	#L20561
-	INC            	(_scan_touch_key_release_count_41+0x1) & 0X7F		; Bank 2
+	INC            	(_scan_touch_key_release_count_41+0x1) & 0X7F		; Bank 1
 #L20561
 #line 38	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 					if(release_count>65530)release_count=65530;
 ;   38:(   CVSI_SL, release_count ,            ,   #T20375)
 
 ; ITemplate_CVTMS_S
-	MOV            	(_scan_touch_key_release_count_41) & 0X7F,	0x0		; Bank 2
-	MOVAR          	_scan_touch_key_#T20375_44		; Bank 1
-	MOV            	(_scan_touch_key_release_count_41+0x1) & 0X7F,	0x0		; Bank 2
-	MOVAR          	_scan_touch_key_#T20375_44+0x1		; Bank 1
+	MOV            	(_scan_touch_key_release_count_41) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_scan_touch_key_#T20375_44) & 0X7F		; Bank 1
+	MOV            	(_scan_touch_key_release_count_41+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_scan_touch_key_#T20375_44+0x1) & 0X7F		; Bank 1
 	MOVI           	0x0
-	SECTION        	0x1
 	JBC            	(_scan_touch_key_#T20375_44+0x1) & 0X7F,	0x7		; Bank 1
 	MOVI           	0xff
 	MOVA           	(_scan_touch_key_#T20375_44+0x2) & 0X7F		; Bank 1
@@ -293,10 +289,10 @@ _scan_touch_key
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xff
-	SECTION        	0x2
-	MOVA           	(_scan_touch_key_release_count_41+0x1) & 0X7F		; Bank 2
+	SECTION        	0x1
+	MOVA           	(_scan_touch_key_release_count_41+0x1) & 0X7F		; Bank 1
 	MOVI           	0xfa
-	MOVA           	(_scan_touch_key_release_count_41) & 0X7F		; Bank 2
+	MOVA           	(_scan_touch_key_release_count_41) & 0X7F		; Bank 1
 #line 39	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 			}
 ;   39:(       JMP,            ,            ,   #L20348)
 
@@ -320,11 +316,10 @@ _scan_touch_key
 ;   42:(     ADD_2, perss_count_long ,          1 ,perss_count_long)
 
 ; ITemplate_INC_2_TMP
-	SECTION        	0x2
-	INC            	(_scan_touch_key_perss_count_long_41) & 0X7F		; Bank 2
+	INC            	(_scan_touch_key_perss_count_long_41) & 0X7F		; Bank 1
 	JBS            	PSW,	0x2
 	GOTO           	#L20564
-	INC            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F		; Bank 2
+	INC            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F		; Bank 1
 #L20564
 #line 43	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 			}
 ;   43:(     LABEL,    #L20348 ,            ,          )
@@ -345,15 +340,14 @@ _scan_touch_key
 ; 			
 ; 			//ÊåâÈîÆÈáäÊîæ Â§ß‰∫éÂèåÂáªÊúÄÂ§ßÊó∂Èó¥ÂêéËøõË°åÂ§ÑÁêÜ
 #line 49	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 			if(release_count==(DOUBLE_RELEASE_TIME_MAX)){
-;   49:(    JNEQ_2,        150 , release_count ,   #L20426)
+;   49:(    JNEQ_2,        220 , release_count ,   #L20426)
 
 ; ITemplate_JNEQ1_4
-	SECTION        	0x2
-	MOV            	(_scan_touch_key_release_count_41) & 0X7F,	0x0		; Bank 2
-	XORI           	0x96
+	MOV            	(_scan_touch_key_release_count_41) & 0X7F,	0x0		; Bank 1
+	XORI           	0xdc
 	JBS            	PSW,	0x2
 	GOTO           	#L20565
-	MOV            	(_scan_touch_key_release_count_41+0x1) & 0X7F,	0x0		; Bank 2
+	MOV            	(_scan_touch_key_release_count_41+0x1) & 0X7F,	0x0		; Bank 1
 	XORI           	0x0
 	JBS            	PSW,	0x2
 #L20565
@@ -379,7 +373,7 @@ _scan_touch_key
 #L20566
 	JBC            	PSW,	0x0
 	GOTO           	#L20435
-;   50:(    JGE_2S, release_count_double ,        150 ,   #L20435)
+;   50:(    JGE_2S, release_count_double ,        220 ,   #L20435)
 
 ; ITemplate_JGE1_4S
 	SECTION        	0x2
@@ -392,7 +386,7 @@ _scan_touch_key
 	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	JBS            	PSW,	0x2
 	GOTO           	#L20567
-	MOVI           	0x96
+	MOVI           	0xdc
 	SECTION        	0x2
 	SUB            	(_scan_touch_key_release_count_double_41) & 0X7F,	0x0		; Bank 2
 	JBS            	PSW,	0x2
@@ -546,9 +540,8 @@ _scan_touch_key
 ;   67:(    ASGN_2,          0 ,            ,perss_count_long)
 
 ; ITemplate_CLR1_4_TMP
-	SECTION        	0x2
-	CLR            	(_scan_touch_key_perss_count_long_41) & 0X7F		; Bank 2
-	CLR            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F		; Bank 2
+	CLR            	(_scan_touch_key_perss_count_long_41) & 0X7F		; Bank 1
+	CLR            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F		; Bank 1
 #line 68	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; 			}
 ;   68:(       JMP,            ,            ,   #L20560)
 
@@ -562,9 +555,9 @@ _scan_touch_key
 ;   69:(    CVSI_F, perss_count_long ,            ,   #T20540)
 
 ; ITemplate_LibFunc1
-	MOV            	(_scan_touch_key_perss_count_long_41) & 0X7F,	0x0		; Bank 2
+	MOV            	(_scan_touch_key_perss_count_long_41) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP		; Bank 0
-	MOV            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F,	0x0		; Bank 2
+	MOV            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x1		; Bank 0
 	SEGMENTSEL     	SW2FL
 	SECTION        	0x0
@@ -613,9 +606,8 @@ _scan_touch_key
 ;   72:(    ASGN_2,          0 ,            ,perss_count_long)
 
 ; ITemplate_CLR1_4_TMP
-	SECTION        	0x2
-	CLR            	(_scan_touch_key_perss_count_long_41) & 0X7F		; Bank 2
-	CLR            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F		; Bank 2
+	CLR            	(_scan_touch_key_perss_count_long_41) & 0X7F		; Bank 1
+	CLR            	(_scan_touch_key_perss_count_long_41+0x1) & 0X7F		; Bank 1
 ; 			}
 ; 	}
 #line 75	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\key.c ; }
@@ -629,28 +621,28 @@ _scan_touch_key
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c_STATIC27	PSECT	FLAG=0X1088,ADDR=0X7FD42
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c_STATIC35	PSECT	FLAG=0X1088,ADDR=0X7FD42
 _PA2_0	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c29	IDATA          		0X82		; Bank 0
+SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c37	IDATA          		0X82		; Bank 0
 _touch_key_busy	DB             	0X0,0XE4		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c31	IDATA          		0X83		; Bank 0
+SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c39	IDATA          		0X83		; Bank 0
 _touch_key_staus	DB             	0X0,0XE4		; Bank 0
 
 SECTION1C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0XFE		; Bank 0
-_scan_touch_key_perss_count_41	RSEG           	0X2		; Bank 0
-	ORG            	0XF9		; Bank 0
-_scan_touch_key_edge_flag_41	RSEG           	0X1		; Bank 0
+_scan_touch_key_release_count_41	RSEG           	0X2		; Bank 0
 	ORG            	0XFA		; Bank 0
+_scan_touch_key_perss_count_41	RSEG           	0X2		; Bank 0
+	ORG            	0XFC		; Bank 0
+_scan_touch_key_perss_count_long_41	RSEG           	0X2		; Bank 0
+	ORG            	0XF5		; Bank 0
+_scan_touch_key_edge_flag_41	RSEG           	0X1		; Bank 0
+	ORG            	0XF6		; Bank 0
 _scan_touch_key_edge_status_41	RSEG           	0X1		; Bank 0
 
 SECTION2C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X104		; Bank 0
-_scan_touch_key_release_count_double_41	RSEG           	0X2		; Bank 0
-	ORG            	0X102		; Bank 0
-_scan_touch_key_release_count_41	RSEG           	0X2		; Bank 0
 	ORG            	0X100		; Bank 0
-_scan_touch_key_perss_count_long_41	RSEG           	0X2		; Bank 0
+_scan_touch_key_release_count_double_41	RSEG           	0X2		; Bank 0
 	END

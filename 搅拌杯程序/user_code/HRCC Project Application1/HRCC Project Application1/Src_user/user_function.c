@@ -308,16 +308,16 @@ static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
 		*Temp_val=adc_value;
 }
 void User_Get_measure_Val(){
-		static unsigned int Vbat_adc_val[20],Temp_adc_val[20];
+		static unsigned int Vbat_adc_val[50],Temp_adc_val[50];
 		static char i=0;
-		i=i%20;
+		i=i%50; 
 		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
 		i++;
-		if(i==19){
-			_f(Vbat_adc_val,20);  //
-			_f(Temp_adc_val,20);
+		if(i==49){
+			_f(Vbat_adc_val,50);  //
+			_f(Temp_adc_val,50);
 		//电量值
-		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
+		vcc_val=4*2.048*Vbat_adc_val[25]/4096;
 		if(vcc_val>4.2) vcc_val=4.2;
 		Vbat_val=(vcc_val-3.6)*100/(4.2-3.6);
 
@@ -325,8 +325,8 @@ void User_Get_measure_Val(){
 		if(Vbat_val<0) Vbat_val=0;
 
 		//温度
-		if(Temp_adc_val[10]<4000){
-			temperature=Get_Tempture(Temp_adc_val[10]);
+		if(Temp_adc_val[25]<4000){
+			temperature=Get_Tempture(Temp_adc_val[25]);
 		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
 		else{
 			temperature=0xff;

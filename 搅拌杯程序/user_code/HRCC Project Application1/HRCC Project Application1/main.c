@@ -103,6 +103,7 @@ void Timer_T8_Init(){
     T8NEN = 1;           //使能T8N
 }
 
+
 void Delay_ms(unsigned int delay){
 	static long temp_time;
 	temp_time=Get_Sys_time();
@@ -143,6 +144,23 @@ void Timer_T21_Init(){
     GIE = 1;             //开全局中断    
     T21EN = 1;           //使能T21
 }
+
+void Timer_T31_Init(){
+    T31C2L = 0x00;      //禁止从模式，使用内部HRC(16mHz)作为计数器时钟源
+    T31C0L = 0x00;      //T31CNTLD寄存器无缓冲，写入值立即生效。计数器边沿计数模式，向上计数
+    T31CNTLDH = 0x00;     //重装载值，计数器与其匹配时产生事件
+    T31CNTLDL = 0x3E;
+    T31PRSH = 0x00;       //预分频系数1:16
+    T31PRSL = 0x0F;
+    T31POS = 0x0F;        //计数器与T31CNTLD第16次匹配事件时产生溢出中断  
+    UPIE = 1;       //打开计数溢出中断
+    T31IE = 1;      //开启多功能定时器中断
+    UPIC = 1;       //清溢出标志位
+    T31IF = 0;      //清定时器总标志位
+    GIE = 1;        //开启全局中断
+    T31EN = 1;      //使能计数器
+}
+
 //
 //输入值为0~999
 //
@@ -301,14 +319,10 @@ void state_0(){
 	while(i--)
 	display_buf[i]=0;
 	Updata_SCAN_LED_BUF_R();
-	LED_Clear();
-
+	//LED_Clear();
 	//Set_PWM_CH0_Duty(999);
 	//Set_PWM_CH1_Duty(999);
-
 	Timer_T21_Init();
-
-
 	//RAMclear();
 	 State_Trans(3);
 	//配置PA2中断模式唤醒
@@ -334,13 +348,7 @@ void state_0(){
 	PIE7 = 1;           //打开管脚中断
     PIF7 = 0;           //清除外部中断标志
 
-
 	ADC_dis_init();
-
-	//PWRC &= 0x3F;
-    //PWRC |= 2<<6;        //选择IDLE模式
-    //__Asm IDLE;     //进入IDLE模式
-
 	sleep();
 }
 //全关检测按键长按开机
@@ -351,7 +359,7 @@ void state_3(){
 	display_buf[i]=0;
 	Updata_SCAN_LED_BUF_R();
 	LED_Clear();
-
+	T8NEN = 0;           //使能T8N
 }
 
 //电机关 开灯
@@ -397,33 +405,18 @@ void main(void)
 	GPIOInit();
 	Timer_T8_Init();
 	Timer_T21_Init();
-	//sleep();
 	ADC_init() ;
-	
-	//ADC_dis_init();
-	//sleep();
 	Buzzer_Init();
 	LED_Clear();
-
 	PB3=1;
-	//int ii=0;
-	//while(ii--){
-		//Buzzer_Start();
-		//Delay_ms(100);
-		//Buzzer_Stop();
-		//Delay_ms(100);
-	//}
 
-	int iii=100;
+	int iii=110;
 	while(iii--){
 		user_delay();
-		//Delay_ms(10);
 		User_Get_measure_Val();
 	}
+	Timer_T31_Init();
 	LED_Task();
-
-
-
 
 	while (1)
     {
@@ -441,7 +434,7 @@ void main(void)
 				}
 				if(touch_key_staus==DOUBLE){
 						if(Get_State()==1 && USB_Check()==0){
-								State_Trans(2);
+							State_Trans(2);
 						}
 				}
 				if(touch_key_staus==LONG_NO_RELEASE){
@@ -454,7 +447,9 @@ void main(void)
 	  }
 	  if(CompareTime(&Task_100)){
 		  GetTime(&Task_100);
-		  User_Get_measure_Val();
+		  if(Get_State()!=2){
+			User_Get_measure_Val();		  
+		  }
 		  State_Ruun();
 		  Buzzer_Task();
 		  if(USB_Check()==1){
@@ -472,6 +467,13 @@ void main(void)
 			}
 
 	  }
+		//if(Get_State()==3){
+			//unsigned char i=18;
+			//while(i--)
+			//display_buf[i]=0;
+			//Updata_SCAN_LED_BUF_R();
+			//LED_Clear();
+		//}
         CLRWDT();
     }
 }
@@ -490,18 +492,24 @@ void isr(void) interrupt
     if (T8NIE==1 && T8NIF==1)        //定时器溢出中断
     {
         T8NIF = 0;        //清标志位
-        T8N += 131;         //进中断先赋计数器初值
-		SCAN_NEW();
-		cnt_0++;
-		if(cnt_0%2){
-			global_count++;
-			scan_touch_key();
-		}
+        T8N += 131;       //进中断先赋计数器初值
+		SCAN_NEW();       //刷新LED
     }
 	  if (T21PIE==1 && T21PIF==1)        //定时器pwm周期中断
     {
         T21PIF = 0;                //清标志位
     }
+
+	if (UPIS==1 && UPIF==1)        //定时器溢出中断
+    {
+        UPIC = 1;       //清溢出标志位，UPIF必须要在T31IF之前清除
+        T31IF = 0;      //清定时器总标志位，UPIF必须要在T31IF之前清除
+		//PB3=~PB3;
+		global_count++;
+		scan_touch_key();
+    }
+
+
 	    if(KIF==1 && KIE==1)
     {
 		PA2=1;

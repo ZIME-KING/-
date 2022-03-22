@@ -1912,14 +1912,14 @@ _User_Get_measure_ValDATA	RSEG           	0X8		; Bank 0
 User_Get_measure_Val#	CSEG           
 _User_Get_measure_Val
 ; void User_Get_measure_Val(){
-; 		static unsigned int Vbat_adc_val[20],Temp_adc_val[20];
+; 		static unsigned int Vbat_adc_val[50],Temp_adc_val[50];
 ; 		static char i=0;
-#line 313	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i=i%20;
+#line 313	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i=i%50; 
 	CLR            	BKSR
-;  313:(    MOD_1U,          i ,         20 ,         i)
+;  313:(    MOD_1U,          i ,         50 ,         i)
 
 ; ITemplate_LibFunc2
-	MOVI           	0x14
+	MOVI           	0x32
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
 	MOVRA          	_User_Get_measure_Val_i_70		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
@@ -1988,15 +1988,15 @@ _User_Get_measure_Val
 ; ITemplate_INC_1_TMP
 	SECTION        	0x1
 	INC            	(_User_Get_measure_Val_i_70) & 0X7F		; Bank 1
-#line 316	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(i==19){
-;  316:(    JNEQ_1,         19 ,          i ,   #L21587)
+#line 316	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(i==49){
+;  316:(    JNEQ_1,         49 ,          i ,   #L21587)
 
 ; ITemplate_JNEQ1_4
 	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
-	XORI           	0x13
+	XORI           	0x31
 	JBS            	PSW,	0x2
 	GOTO           	#L21587
-#line 317	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Vbat_adc_val,20);  //
+#line 317	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Vbat_adc_val,50);  //
 ;  317:(    PARA_2, (Vbat_adc_val.0) ,            ,         a)
 
 ; ITemplate_ASGN1_4
@@ -2004,10 +2004,10 @@ _User_Get_measure_Val
 	MOVA           	(__fDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_User_Get_measure_Val_Vbat_adc_val_70)
 	MOVA           	(__fDATA+0X0+0x1) & 0X7F		; Bank 1
-;  317:(    PARA_1,         20 ,            ,       len)
+;  317:(    PARA_1,         50 ,            ,       len)
 
 ; ITemplate_ASGN1_4
-	MOVI           	0x14
+	MOVI           	0x32
 	MOVA           	(__fDATA+0X2) & 0X7F		; Bank 1
 ;  317:(      CALL,     (_f.0) ,            ,          )
 
@@ -2015,7 +2015,7 @@ _User_Get_measure_Val
 	SEGMENTSEL     	__f
 	CALL           	__f		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 318	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Temp_adc_val,20);
+#line 318	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Temp_adc_val,50);
 ;  318:(    PARA_2, (Temp_adc_val.0) ,            ,         a)
 
 ; ITemplate_ASGN1_4
@@ -2023,10 +2023,10 @@ _User_Get_measure_Val
 	MOVAR          	__fDATA+0X0		; Bank 1
 	MOVI           	HIGH(_User_Get_measure_Val_Temp_adc_val_70)
 	MOVAR          	__fDATA+0X0+0x1		; Bank 1
-;  318:(    PARA_1,         20 ,            ,       len)
+;  318:(    PARA_1,         50 ,            ,       len)
 
 ; ITemplate_ASGN1_4
-	MOVI           	0x14
+	MOVI           	0x32
 	MOVAR          	__fDATA+0X2		; Bank 1
 ;  318:(      CALL,     (_f.0) ,            ,          )
 
@@ -2035,13 +2035,13 @@ _User_Get_measure_Val
 	CALL           	__f		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; 		//µÁ¡ø÷µ
-#line 320	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
-;  320:(    CVUI_F, *(Vbat_adc_val.20) ,            ,   #T21459)
+#line 320	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		vcc_val=4*2.048*Vbat_adc_val[25]/4096;
+;  320:(    CVUI_F, *(Vbat_adc_val.50) ,            ,   #T21459)
 
 ; ITemplate_LibFunc1
-	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x14		; Bank 3
+	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x32		; Bank 4
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x15		; Bank 3
+	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x33		; Bank 4
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
 	SEGMENTSEL     	W2FL
 	CALL           	W2FL		; Bank 0		; ShBank 0
@@ -2303,27 +2303,27 @@ _User_Get_measure_Val
 #L21510
 ; 		if(Vbat_val<0) Vbat_val=0;
 ; 		//Œ¬∂»
-#line 328	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Temp_adc_val[10]<4000){
-;  328:(    JGE_2U, *(Temp_adc_val.20) ,       4000 ,   #L21542)
+#line 328	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Temp_adc_val[25]<4000){
+;  328:(    JGE_2U, *(Temp_adc_val.50) ,       4000 ,   #L21542)
 
 ; ITemplate_JGE1_4U
 	MOVI           	0xf
-	SECTION        	0x2
-	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x15) & 0X7F,	0x0		; Bank 2
+	SECTION        	0x3
+	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x33) & 0X7F,	0x0		; Bank 3
 	JBS            	PSW,	0x2
 	GOTO           	#L21603
 	MOVI           	0xa0
-	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x14) & 0X7F,	0x0		; Bank 2
+	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x32) & 0X7F,	0x0		; Bank 3
 #L21603
 	JBC            	PSW,	0x0
 	GOTO           	#L21542
-#line 329	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=Get_Tempture(Temp_adc_val[10]);
-;  329:(    PARA_2, *(Temp_adc_val.20) ,            ,       adc)
+#line 329	C:\Users\admin\Desktop\Ω¡∞Ë±≠\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=Get_Tempture(Temp_adc_val[25]);
+;  329:(    PARA_2, *(Temp_adc_val.50) ,            ,       adc)
 
 ; ITemplate_ASGN1_4
-	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x14) & 0X7F,	0x0		; Bank 2
+	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x32) & 0X7F,	0x0		; Bank 3
 	MOVAR          	_Get_TemptureDATA+0X0		; Bank 1
-	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x15) & 0X7F,	0x0		; Bank 2
+	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x33) & 0X7F,	0x0		; Bank 3
 	MOVAR          	_Get_TemptureDATA+0X0+0x1		; Bank 1
 ;  329:(     CALLR, (Get_Tempture.0) ,            ,   #T21559)
 
@@ -2380,93 +2380,95 @@ _User_Get_measure_Val
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC110	PSECT	FLAG=0X1088,ADDR=0X7FC69
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC78	PSECT	FLAG=0X1088,ADDR=0X7FC69
 _ANSH1_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC111	PSECT	FLAG=0X1088,ADDR=0X7FCA0
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC79	PSECT	FLAG=0X1088,ADDR=0X7FCA0
 _DATARDTRG_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC112	PSECT	FLAG=0X1088,ADDR=0X7FCA7
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC80	PSECT	FLAG=0X1088,ADDR=0X7FCA7
 _DATARDEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC113	PSECT	FLAG=0X1088,ADDR=0X7FCB7
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC81	PSECT	FLAG=0X1088,ADDR=0X7FCB7
 _GIE_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC114	PSECT	FLAG=0X1088,ADDR=0X7FCD0
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC82	PSECT	FLAG=0X1088,ADDR=0X7FCD0
 _ADIF_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC115	PSECT	FLAG=0X1088,ADDR=0X7FD72
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC83	PSECT	FLAG=0X1088,ADDR=0X7FD72
 _PBT2_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC116	PSECT	FLAG=0X1088,ADDR=0X7FD74
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC84	PSECT	FLAG=0X1088,ADDR=0X7FD74
 _PBT4_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC117	PSECT	FLAG=0X1088,ADDR=0X7FDD5
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC85	PSECT	FLAG=0X1088,ADDR=0X7FDD5
 _ADC_LP_EN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC118	PSECT	FLAG=0X1088,ADDR=0X7FDDF
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC86	PSECT	FLAG=0X1088,ADDR=0X7FDDF
 _UART1SEL_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC119	PSECT	FLAG=0X1088,ADDR=0X305D0
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC87	PSECT	FLAG=0X1088,ADDR=0X305D0
 _ADEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC120	PSECT	FLAG=0X1088,ADDR=0X305D1
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC88	PSECT	FLAG=0X1088,ADDR=0X305D1
 _ADTRG_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC121	PSECT	FLAG=0X1088,ADDR=0X305D2
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC89	PSECT	FLAG=0X1088,ADDR=0X305D2
 _SMPS_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC122	PSECT	FLAG=0X1088,ADDR=0X305D8
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC90	PSECT	FLAG=0X1088,ADDR=0X305D8
 _VREFEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC123	PSECT	FLAG=0X1088,ADDR=0X305D9
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC91	PSECT	FLAG=0X1088,ADDR=0X305D9
 _VREF_CHOPEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC124	PSECT	FLAG=0X1088,ADDR=0X306B9
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC92	PSECT	FLAG=0X1088,ADDR=0X306B9
 _TRMT1_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC125	PSECT	FLAG=0X1088,ADDR=0X306BD
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC93	PSECT	FLAG=0X1088,ADDR=0X306BD
 _BRGH1_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC126	PSECT	FLAG=0X1088,ADDR=0X306BE
+SECTION8C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC94	PSECT	FLAG=0X1088,ADDR=0X306BE
 _TX1LEN_0	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c128	IDATA          		0X84		; Bank 0
+SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c96	IDATA          		0X84		; Bank 0
 _offset_value	DB             	0X0,0XE4,0X0,0XE4		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c130	IDATA          		0X9D		; Bank 0
+SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c98	IDATA          		0X9D		; Bank 0
 _str	DB             	0XCD,0XE4,0XA8,0XE4,0XB5,0XE4,0XC0,0XE4,0X20,0XE4,0XB5,0XE4,0XC4,0XE4,0XD7,0XE4,0XAA,0XE4,0XBB,0XE4
 	DB		0XBB,0XE4,0XD6,0XE4,0XB5,0XE4,0XCE,0XE4,0XAA,0XE4,0X3A,0XE4,0X20,0XE4,0X20,0XE4,0X20,0XE4,0X20,0XE4
 	DB		0XD,0XE4,0XA,0XE4,0X0,0XE4		; Bank 0
 
-SECTION0C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC131	PSECT	FLAG=0x88
+SECTION0C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC99	PSECT	FLAG=0x88
 _GetOffset2048_#T20657_48	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC132	PSECT	FLAG=0x88
+SECTION0C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC100	PSECT	FLAG=0x88
 _GetOffsetVDD_#T20740_51	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c134	IDATA          		0X81		; Bank 0
+SECTION1IC__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c102	IDATA          		0X81		; Bank 0
 _User_Get_measure_Val_i_70	DB             	0X0,0XE4		; Bank 0
 
 SECTION1C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0XFC		; Bank 0
+	ORG            	0XF8		; Bank 0
 _adc_value	RSEG           	0X2		; Bank 0
 
 SECTION2C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X111		; Bank 0
+	ORG            	0X10D		; Bank 0
 _vcc_val	RSEG           	0X3		; Bank 0
-	ORG            	0X10B		; Bank 0
+	ORG            	0X107		; Bank 0
 _RV	RSEG           	0X3		; Bank 0
-	ORG            	0X108		; Bank 0
+	ORG            	0X104		; Bank 0
 _RT	RSEG           	0X3		; Bank 0
-	ORG            	0X10E		; Bank 0
+	ORG            	0X10A		; Bank 0
 _Tmp	RSEG           	0X3		; Bank 0
-	ORG            	0X154		; Bank 0
-_User_Get_measure_Val_Temp_adc_val_70	RSEG           	0X28		; Bank 0
 
 SECTION3C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0X180		; Bank 0
-_User_Get_measure_Val_Vbat_adc_val_70	RSEG           	0X28		; Bank 0
+_User_Get_measure_Val_Temp_adc_val_70	RSEG           	0X64		; Bank 0
+
+SECTION4C__Users_admin_Desktop_Ω¡∞Ë±≠_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
+	ORG            	0X200		; Bank 0
+_User_Get_measure_Val_Vbat_adc_val_70	RSEG           	0X64		; Bank 0
 
 SECTION8C__Program_Files__x86__HRCC_Tools_HRCC_v1_2_0_122_tools_INCLUDE_ES7P0693_h_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0XFF90		; Bank 0

@@ -9,7 +9,7 @@ unsigned char touch_key_staus=0;
   
 #define SHORT_TIME 20
 #define LONG_TIME  400
-#define DOUBLE_RELEASE_TIME_MAX 150
+#define DOUBLE_RELEASE_TIME_MAX 220
 #define DOUBLE_RELEASE_TIME_MIN 20	
 
 //1MS进一次中断，检测触摸按键
