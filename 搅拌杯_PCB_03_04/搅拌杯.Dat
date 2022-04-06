@@ -1,0 +1,31 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~177|Field=Description~String~Description~177|Field=Designator~String~Designator~355|Field=Footprint~String~Footprint~118|Field=LibRef~String~LibRef~118|Field=Quantity~Integer~Quantity~117|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~搅拌杯.PrjPcb|ReportField=ProjectFullPath~C:\Users\king\Desktop\Mixing_cup\搅拌杯_PCB_03_04\搅拌杯.PrjPcb|ReportField=Title~Bill of Materials For Project [搅拌杯.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~76|ReportField=ReportTime~19:05:45|ReportField=ReportDate~2022/3/29|ReportField=ReportDateTime~2022/3/29 19:05:45|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~2022/3/29|ReportField=CurrentTime~19:05:17|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\king\Desktop\Mixing_cup\搅拌杯_PCB_03_04\搅拌杯原理图.schdoc|ReportField=DocumentName~搅拌杯原理图.schdoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~2022/3/5|ReportField=Organization~|ReportField=ProjectName~搅拌杯.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~搅拌杯.PrjPcb|ReportField=DataSourceFullPath~C:\Users\king\Desktop\Mixing_cup\搅拌杯_PCB_03_04\搅拌杯.PrjPcb
+1|FMQ-BUZZER2||BUZZER1|BUZ-TH_BD12.0-P7.60-D0.6-FD|FMQ-BUZZER2|1
+2|4.7nF||C1|C0603|4.7nF|1
+3|0.1u||C2, C4, C6, C7, C11, C12|C0603|0.1u|6
+4|nc||C3|C0603|nc|1
+5|1uF||C5|C0603|1uF|1
+6|10uF||C8, C10|C0603|10uF|2
+7|4.7uF||C9|C0603|4.7uF|1
+8|0530470210||CN1, CN2, CN3, CN4|CONN-TH_0530470210|0530470210|4
+9|1N4148W||D1|SOD-123FL_L2.6-W1.6-LS3.4-RD|1N4148W|1
+10|HDR-F-2.54_1x5||H1|1.27mm_5PIN|HDR-F-2.54_1x5|1
+11|HDR-M-2.54_1x1||J1|HDR-M-2.54_1X1|HDR-M-2.54_1x1|1
+12|22uH||L1, L2|L0603|22uH|2
+13|BEAD||L3|L0603|22uH|1
+14|LED-0603_W||LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18, LED19, LED20, LED21|LED0603-FD_WHITE|LED-0603_W|21
+15|2N7002||Q1, Q2, Q3|SOT-23_L2.9-W1.3-P0.95-LS2.4-BR|2N7002|3
+16|50R||R1|R0603|100R|1
+17|1K||R2, R8, R12, R14, R15, R19, R20, R22|R0603|1K|8
+18|100K||R3|R0603|1K|1
+19|100R||R4, R5, R17, R18|R0603|100R|4
+20|0R||R6, R16, R23|R0603|NC, NC, 1k|3
+21|10K||R7|R0603|NC|1
+22|NC||R9, R10|R0603|NC|2
+23|3M||R11|R0603|430k|1
+24|1M||R13|R0603|430K|1
+25|200K||R21|R0603|33K|1
+26|1R||R24, R25|R1206|1R|2
+27|33K||R26|R0603|33K|1
+28|ES7P0693FHTF||U1|TSOP20|ES7P0693FHTF|1
+29|AS01C(AI01)||U2|SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL|AS01C(AI01)|1
+30|HE4054B||U3|SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR|HE4054B|1
