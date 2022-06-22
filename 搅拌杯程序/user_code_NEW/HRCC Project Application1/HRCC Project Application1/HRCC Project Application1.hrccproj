@@ -6,7 +6,7 @@
     <ProjectGuid>{20c48386-27e3-48c2-a041-b541bd31af74}</ProjectGuid>
     <ProjectType>HRCC</ProjectType>
     <ChipType>ES7P0693FHTF</ChipType>
-    <ChipConfig>AA5571678E98FFFF609FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</ChipConfig>
+    <ChipConfig>AA5571478E98FFFF609FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</ChipConfig>
     <TargetPath>debug\</TargetPath>
     <HiccInclude>
     </HiccInclude>
@@ -62,6 +62,7 @@
     <HasmExtraOption />
     <OUTCG>False</OUTCG>
     <TMPM>False</TMPM>
+    <Crystal>8</Crystal>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

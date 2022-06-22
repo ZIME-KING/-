@@ -8,6 +8,8 @@
 	EXTERN         	_Uart_Init
 	EXTERN         	_ADC_init
 	EXTERN         	_ADC_dis_init
+	EXTERN         	_UART_send
+	EXTERN         	_UART_sendDATA
 	EXTERN         	_Send_test
 	EXTERN         	_User_Get_measure_Val
 	EXTERN         	_vcc_val
@@ -86,14 +88,17 @@
 	EXTERN         	_Get_Sys_time
 	EXTERN         	_display_buf
 	EXTERN         	_buzzer_flag
+	EXTERN         	_State_flag
 	EXTERN         	_temperature
 	EXTERN         	_Vbat_val
-_GetTime_#T20372_43	EQU            	_GetTimeDATA + 0X2		; Bank 0
-_CompareTime_#T20378_45	EQU            	_CompareTimeDATA + 0X2		; Bank 0
-_CompareTime_#T20399_45	EQU            	_CompareTimeDATA + 0X6		; Bank 0
-_CompareTime_#T20409_45	EQU            	_CompareTimeDATA + 0X8		; Bank 0
-_CompareTime_#T20410_45	EQU            	_CompareTimeDATA + 0XA		; Bank 0
-_CompareTime_#T20412_45	EQU            	_CompareTimeDATA + 0X0		; Bank 0
+	EXTERN         	_global_count
+	EXTERN         	_USB_Check
+_GetTime_#T20372_45	EQU            	_GetTimeDATA + 0X2		; Bank 0
+_CompareTime_#T20378_47	EQU            	_CompareTimeDATA + 0X2		; Bank 0
+_CompareTime_#T20399_47	EQU            	_CompareTimeDATA + 0X6		; Bank 0
+_CompareTime_#T20409_47	EQU            	_CompareTimeDATA + 0X8		; Bank 0
+_CompareTime_#T20410_47	EQU            	_CompareTimeDATA + 0XA		; Bank 0
+_CompareTime_#T20412_47	EQU            	_CompareTimeDATA + 0X0		; Bank 0
 #TMP	EQU            	?_TMP+ 0X4		; Bank 0
 ?_TMP_RET	EQU            	?_TMP		; Bank 0
 _MULA_0#sh	EQU            	(MULA - 0X6080) % 0X40 + 0xC0		; Bank 0
@@ -244,9 +249,9 @@ _GetTime
 ; ITemplate_ASGN1_4_R
 	SECTION        	0x1
 	MOV            	(_GetTimeDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetTime_#T20372_43+0x1) & 0X7F		; Bank 1
+	MOVA           	(_GetTime_#T20372_45+0x1) & 0X7F		; Bank 1
 	MOV            	(_GetTimeDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetTime_#T20372_43) & 0X7F		; Bank 1
+	MOVA           	(_GetTime_#T20372_45) & 0X7F		; Bank 1
 ;   36:(     CALLR, (Get_Sys_time.0) ,            ,  *#T20372)
 
 ; ITemplate_CALL
@@ -261,9 +266,9 @@ _GetTime
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
 ; ITemplate_SetRamRef
-	MOVRA          	_GetTime_#T20372_43+0x1		; Bank 1
+	MOVRA          	_GetTime_#T20372_45+0x1		; Bank 1
 	MOVA           	IAAH
-	MOVRA          	_GetTime_#T20372_43		; Bank 1
+	MOVRA          	_GetTime_#T20372_45		; Bank 1
 	MOVA           	IAAL
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVA           	IAD
@@ -299,35 +304,35 @@ _CompareTime
 	SEGMENTSEL     	_Get_Sys_time
 	CALL           	_Get_Sys_time		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_CompareTime_#T20378_45		; Bank 1
+	MOVAR          	_CompareTime_#T20378_47		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_CompareTime_#T20378_45+0x1		; Bank 1
+	MOVAR          	_CompareTime_#T20378_47+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_CompareTime_#T20378_45+0x2		; Bank 1
+	MOVAR          	_CompareTime_#T20378_47+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_CompareTime_#T20378_45+0x3		; Bank 1
+	MOVAR          	_CompareTime_#T20378_47+0x3		; Bank 1
 ;   41:(    ASGN_1,   TimeType ,            ,   #T20399)
 
 ; ITemplate_ASGN1_4_R
 	MOVRA          	_CompareTimeDATA+0X0+0x1		; Bank 1
-	MOVAR          	_CompareTime_#T20399_45+0x1		; Bank 1
+	MOVAR          	_CompareTime_#T20399_47+0x1		; Bank 1
 	MOVRA          	_CompareTimeDATA+0X0		; Bank 1
-	MOVAR          	_CompareTime_#T20399_45		; Bank 1
+	MOVAR          	_CompareTime_#T20399_47		; Bank 1
 ;   41:(     ADD_2,   TimeType ,          4 ,   #T20409)
 
 ; ITemplate_ADD1_4
 	MOVRA          	_CompareTimeDATA+0X0		; Bank 1
 	ADDI           	0x4
-	MOVAR          	_CompareTime_#T20409_45		; Bank 1
+	MOVAR          	_CompareTime_#T20409_47		; Bank 1
 	MOVRA          	_CompareTimeDATA+0X0+0x1		; Bank 1
 	ADDCI          	0x0
-	MOVAR          	_CompareTime_#T20409_45+0x1		; Bank 1
+	MOVAR          	_CompareTime_#T20409_47+0x1		; Bank 1
 ;   41:(     SUB_4,    #T20378 ,   *#T20399 ,   #T20410)
 
 ; ITemplate_GetRamRef
-	MOVRA          	_CompareTime_#T20399_45+0x1		; Bank 1
+	MOVRA          	_CompareTime_#T20399_47+0x1		; Bank 1
 	MOVA           	IAAH
-	MOVRA          	_CompareTime_#T20399_45		; Bank 1
+	MOVRA          	_CompareTime_#T20399_47		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
@@ -343,23 +348,23 @@ _CompareTime
 ; ITemplate_SUB1_4
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20378_45) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_45) & 0X7F		; Bank 1
+	SUB            	(_CompareTime_#T20378_47) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20410_47) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x1		; Bank 0
-	SUBC           	(_CompareTime_#T20378_45+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_45+0x1) & 0X7F		; Bank 1
+	SUBC           	(_CompareTime_#T20378_47+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20410_47+0x1) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x2		; Bank 0
-	SUBC           	(_CompareTime_#T20378_45+0x2) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_45+0x2) & 0X7F		; Bank 1
+	SUBC           	(_CompareTime_#T20378_47+0x2) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20410_47+0x2) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x3		; Bank 0
-	SUBC           	(_CompareTime_#T20378_45+0x3) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_45+0x3) & 0X7F		; Bank 1
+	SUBC           	(_CompareTime_#T20378_47+0x3) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20410_47+0x3) & 0X7F		; Bank 1
 ;   41:(    JLT_4U,    #T20410 ,   *#T20409 ,   #L20384)
 
 ; ITemplate_GetRamRef
-	MOV            	(_CompareTime_#T20409_45+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_CompareTime_#T20409_47+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_CompareTime_#T20409_45) & 0X7F,	0x0		; Bank 1
+	MOV            	(_CompareTime_#T20409_47) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP		; Bank 0
@@ -374,25 +379,25 @@ _CompareTime
 	MOVAR          	?_TMP+0x3		; Bank 0
 ; ITemplate_JLT1_4U
 	MOVRA          	?_TMP+0x3		; Bank 0
-	SUB            	(_CompareTime_#T20410_45+0x3) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20410_47+0x3) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
 	GOTO           	#L20415
 	SECTION        	0x0
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20410_45+0x2) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20410_47+0x2) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
 	GOTO           	#L20415
 	SECTION        	0x0
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20410_45+0x1) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20410_47+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
 	GOTO           	#L20415
 	SECTION        	0x0
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20410_45) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20410_47) & 0X7F,	0x0		; Bank 1
 #L20415
 	JBS            	PSW,	0x0
 	GOTO           	#L20384
@@ -400,7 +405,7 @@ _CompareTime
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x1
-	MOVA           	(_CompareTime_#T20412_45) & 0X7F		; Bank 1
+	MOVA           	(_CompareTime_#T20412_47) & 0X7F		; Bank 1
 ;   41:(       JMP,            ,            ,   #L20413)
 
 ; ITemplate_JMP
@@ -412,7 +417,7 @@ _CompareTime
 ;   41:(    ASGN_1,          0 ,            ,   #T20412)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_CompareTime_#T20412_45) & 0X7F		; Bank 1
+	CLR            	(_CompareTime_#T20412_47) & 0X7F		; Bank 1
 ;   41:(     LABEL,    #L20413 ,            ,          )
 
 ; ITemplate_LABEL
@@ -420,24 +425,24 @@ _CompareTime
 ;   41:(     RET_1,    #T20412 ,            ,      #RET)
 
 ; ITemplate_RET2_N
-	MOV            	(_CompareTime_#T20412_45) & 0X7F,	0x0		; Bank 1
+	MOV            	(_CompareTime_#T20412_47) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET		; Bank 0
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
 
 SECTION2C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_software_Time_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X11E		; Bank 0
+	ORG            	0X120		; Bank 0
 _Task_1	RSEG           	0X8		; Bank 0
-	ORG            	0X13E		; Bank 0
+	ORG            	0X140		; Bank 0
 _Task_5	RSEG           	0X8		; Bank 0
-	ORG            	0X146		; Bank 0
+	ORG            	0X148		; Bank 0
 _Task_50	RSEG           	0X8		; Bank 0
-	ORG            	0X126		; Bank 0
+	ORG            	0X128		; Bank 0
 _Task_100	RSEG           	0X8		; Bank 0
-	ORG            	0X136		; Bank 0
+	ORG            	0X138		; Bank 0
 _Task_200	RSEG           	0X8		; Bank 0
-	ORG            	0X14E		; Bank 0
+	ORG            	0X150		; Bank 0
 _Task_500	RSEG           	0X8		; Bank 0
-	ORG            	0X12E		; Bank 0
+	ORG            	0X130		; Bank 0
 _Task_1000	RSEG           	0X8		; Bank 0
 	END

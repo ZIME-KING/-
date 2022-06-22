@@ -8,6 +8,8 @@
 	EXTERN         	_Uart_Init
 	EXTERN         	_ADC_init
 	EXTERN         	_ADC_dis_init
+	EXTERN         	_UART_send
+	EXTERN         	_UART_sendDATA
 	EXTERN         	_Send_test
 	EXTERN         	_User_Get_measure_Val
 	EXTERN         	_vcc_val
@@ -86,10 +88,11 @@
 	PUBLIC         	_Get_Sys_time
 	PUBLIC         	_display_buf
 	PUBLIC         	_buzzer_flag
+	PUBLIC         	_State_flag
 	PUBLIC         	_temperature
 	PUBLIC         	_Vbat_val
 	PUBLIC         	_global_count
-	PUBLIC         	_State_flag
+	PUBLIC         	_USB_Check
 	PUBLIC         	_sleep_count
 	PUBLIC         	_RAMclear
 	PUBLIC         	_sleep
@@ -112,7 +115,6 @@
 	PUBLIC         	_State_TransDATA
 	PUBLIC         	_Get_State
 	PUBLIC         	_Buzzer_Task
-	PUBLIC         	_USB_Check
 	PUBLIC         	_Sleep_Tsak
 	PUBLIC         	_LED_Task
 	PUBLIC         	_state_0
@@ -124,49 +126,53 @@
 	PUBLIC         	_main
 	PUBLIC         	_cnt_0
 	PUBLIC         	_isr
-_Buzzer_Task_#T20963_74	EQU            	_Buzzer_TaskDATA + 0X0		; Bank 0
-_USB_Check_#T20989_79	EQU            	_USB_CheckDATA + 0X0		; Bank 0
-_Sleep_Tsak_#T20992_81	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
-_Sleep_Tsak_#T21044_81	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
-_Sleep_Tsak_#T21071_81	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
-_Sleep_Tsak_#T21098_81	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
-_LED_Task_#T21168_92	EQU            	_LED_TaskDATA + 0X0		; Bank 0
-_LED_Task_#T21180_92	EQU            	_LED_TaskDATA + 0X0		; Bank 0
-_LED_Task_#T21182_90	EQU            	_LED_TaskDATA + 0X0		; Bank 0
-_LED_Task_#T21240_94	EQU            	_LED_TaskDATA + 0X0		; Bank 0
-_LED_Task_#T21355_95	EQU            	_LED_TaskDATA + 0X0		; Bank 0
-_LED_Task_#T21470_96	EQU            	_LED_TaskDATA + 0X0		; Bank 0
-_state_0_i_103	EQU            	_state_0DATA + 0X0		; Bank 0
-_state_0_#T21792_103	EQU            	_state_0DATA + 0X1		; Bank 0
-_state_0_#T21820_103	EQU            	_state_0DATA + 0X1		; Bank 0
-_state_0_#T21821_103	EQU            	_state_0DATA + 0X3		; Bank 0
-_state_3_i_105	EQU            	_state_3DATA + 0X0		; Bank 0
-_state_3_#T21962_105	EQU            	_state_3DATA + 0X1		; Bank 0
-_state_3_#T21990_105	EQU            	_state_3DATA + 0X1		; Bank 0
-_state_3_#T21991_105	EQU            	_state_3DATA + 0X3		; Bank 0
-_user_delay_i_114	EQU            	_user_delayDATA + 0X0		; Bank 0
-_user_delay_#T22075_114	EQU            	_user_delayDATA + 0X2		; Bank 0
-_main_iii_116	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22136_116	EQU            	_mainDATA + 0X2		; Bank 0
-_main_#T22168_118	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22219_121	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22248_123	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22256_123	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22283_125	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22286_118	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22317_127	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22332_118	EQU            	_mainDATA + 0X0		; Bank 0
-_main_#T22359_129	EQU            	_mainDATA + 0X0		; Bank 0
-_isr_#T22374_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22381_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22409_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22416_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22433_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22440_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22483_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22490_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22513_133	EQU            	_isrDATA + 0X0		; Bank 0
-_isr_#T22520_133	EQU            	_isrDATA + 0X0		; Bank 0
+_Delay_ms_#T20607_54	EQU            	_Delay_msDATA + 0X2		; Bank 0
+_Delay_ms_#T20621_54	EQU            	_Delay_msDATA + 0X6		; Bank 0
+_Delay_ms_#T20622_54	EQU            	_Delay_msDATA + 0XA		; Bank 0
+_Buzzer_Task_#T20963_76	EQU            	_Buzzer_TaskDATA + 0X0		; Bank 0
+_USB_Check_#T20989_81	EQU            	_USB_CheckDATA + 0X0		; Bank 0
+_Sleep_Tsak_#T20992_83	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
+_Sleep_Tsak_#T21044_83	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
+_Sleep_Tsak_#T21071_83	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
+_Sleep_Tsak_#T21098_83	EQU            	_Sleep_TsakDATA + 0X0		; Bank 0
+_LED_Task_#T21168_94	EQU            	_LED_TaskDATA + 0X0		; Bank 0
+_LED_Task_#T21180_94	EQU            	_LED_TaskDATA + 0X0		; Bank 0
+_LED_Task_#T21182_92	EQU            	_LED_TaskDATA + 0X0		; Bank 0
+_LED_Task_#T21240_96	EQU            	_LED_TaskDATA + 0X0		; Bank 0
+_LED_Task_#T21355_97	EQU            	_LED_TaskDATA + 0X0		; Bank 0
+_LED_Task_#T21470_98	EQU            	_LED_TaskDATA + 0X0		; Bank 0
+_state_0_i_105	EQU            	_state_0DATA + 0X0		; Bank 0
+_state_0_#T21804_105	EQU            	_state_0DATA + 0X1		; Bank 0
+_state_0_#T21832_105	EQU            	_state_0DATA + 0X1		; Bank 0
+_state_0_#T21833_105	EQU            	_state_0DATA + 0X3		; Bank 0
+_state_3_i_107	EQU            	_state_3DATA + 0X0		; Bank 0
+_state_3_#T21974_107	EQU            	_state_3DATA + 0X1		; Bank 0
+_state_3_#T22002_107	EQU            	_state_3DATA + 0X1		; Bank 0
+_state_3_#T22003_107	EQU            	_state_3DATA + 0X3		; Bank 0
+_user_delay_i_116	EQU            	_user_delayDATA + 0X0		; Bank 0
+_user_delay_#T22087_116	EQU            	_user_delayDATA + 0X2		; Bank 0
+_main_iii_118	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22148_118	EQU            	_mainDATA + 0X2		; Bank 0
+_main_#T22185_118	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22209_121	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22260_124	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22289_126	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22297_126	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22324_128	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22327_121	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22358_130	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22373_121	EQU            	_mainDATA + 0X0		; Bank 0
+_main_#T22400_132	EQU            	_mainDATA + 0X0		; Bank 0
+_isr_#T22415_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22422_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22450_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22457_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22474_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22481_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22524_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22531_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22554_136	EQU            	_isrDATA + 0X0		; Bank 0
+_isr_#T22561_136	EQU            	_isrDATA + 0X0		; Bank 0
 #TMP	EQU            	?_TMP+ 0X0		; Bank 0
 ?_TMP_RET	EQU            	?_TMP		; Bank 0
 _T31EN_0#sh	EQU            	0X608		; Bank 0
@@ -219,7 +225,7 @@ _Get_Sys_time
 ; unsigned char State_flag=1;//‘À––◊¥Ã¨
 ; unsigned int  sleep_count;//–›√ﬂ ±º‰º∆ ˝
 ; unsigned char buzzer_flag;//∑‰√˘∆˜∆Ù∂Ø±Íº«
-;  char temperature;//Œ¬∂»÷µ 0~99
+; char temperature;//Œ¬∂»÷µ 0~99
 ; unsigned char Vbat_val;   //µÁ¡ø%  0~99
 ; unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//œ‘ æª∫¥Ê display_buf[1-1]=1£ª 1∫≈LED¡¡
 ; unsigned long Get_Sys_time(){
@@ -482,14 +488,102 @@ _Timer_T8_Init
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
+	_DESC          	Delay_ms,0X4,0X0,Get_Sys_time
+
+SECTION1Delay_ms	UNINTIAL       	0		; Bank 0
+	ORG            	0XC2		; Bank 0
+_Delay_msDATA	RSEG           	0XE		; Bank 0
+Delay_ms#	CSEG           
+_Delay_ms
+; void Delay_ms(unsigned int delay){
+; 	static long temp_time;
+#line 109	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	temp_time=Get_Sys_time();
+	CLR            	BKSR
+;  109:(     CALLR, (Get_Sys_time.0) ,            , temp_time)
+
+; ITemplate_CALL
+	SEGMENTSEL     	_Get_Sys_time
+	CALL           	_Get_Sys_time		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	MOVAR          	_Delay_ms_temp_time_54		; Bank 2
+	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_Delay_ms_temp_time_54+0x1		; Bank 2
+	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_Delay_ms_temp_time_54+0x2		; Bank 2
+	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_Delay_ms_temp_time_54+0x3		; Bank 2
+#line 110	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(Get_Sys_time()-temp_time<delay);
+;  110:(     LABEL,    #L20606 ,            ,          )
+
+; ITemplate_LABEL
+#L20606
+;  110:(     CALLR, (Get_Sys_time.0) ,            ,   #T20607)
+
+; ITemplate_CALL
+	SEGMENTSEL     	_Get_Sys_time
+	CALL           	_Get_Sys_time		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	MOVAR          	_Delay_ms_#T20607_54		; Bank 1
+	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_Delay_ms_#T20607_54+0x1		; Bank 1
+	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_Delay_ms_#T20607_54+0x2		; Bank 1
+	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
+	MOVAR          	_Delay_ms_#T20607_54+0x3		; Bank 1
+;  110:(   CVUI_UL,      delay ,            ,   #T20621)
+
+; ITemplate_CVTMS_U
+	SECTION        	0x1
+	CLR            	(_Delay_ms_#T20621_54+0x2) & 0X7F		; Bank 1
+	CLR            	(_Delay_ms_#T20621_54+0x3) & 0X7F		; Bank 1
+	MOV            	(_Delay_msDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_Delay_ms_#T20621_54+0x1) & 0X7F		; Bank 1
+	MOV            	(_Delay_msDATA+0X0) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_Delay_ms_#T20621_54) & 0X7F		; Bank 1
+;  110:(     SUB_4,    #T20607 ,  temp_time ,   #T20622)
+
+; ITemplate_SUB1_4
+	MOVRA          	_Delay_ms_temp_time_54		; Bank 2
+	SUB            	(_Delay_ms_#T20607_54) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_Delay_ms_#T20622_54) & 0X7F		; Bank 1
+	MOVRA          	_Delay_ms_temp_time_54+0x1		; Bank 2
+	SUBC           	(_Delay_ms_#T20607_54+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_Delay_ms_#T20622_54+0x1) & 0X7F		; Bank 1
+	MOVRA          	_Delay_ms_temp_time_54+0x2		; Bank 2
+	SUBC           	(_Delay_ms_#T20607_54+0x2) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_Delay_ms_#T20622_54+0x2) & 0X7F		; Bank 1
+	MOVRA          	_Delay_ms_temp_time_54+0x3		; Bank 2
+	SUBC           	(_Delay_ms_#T20607_54+0x3) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_Delay_ms_#T20622_54+0x3) & 0X7F		; Bank 1
+;  110:(    JLT_4U,    #T20622 ,    #T20621 ,   #L20606)
+
+; ITemplate_JLT1_4U
+	MOV            	(_Delay_ms_#T20621_54+0x3) & 0X7F,	0x0		; Bank 1
+	SUB            	(_Delay_ms_#T20622_54+0x3) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L22601
+	MOV            	(_Delay_ms_#T20621_54+0x2) & 0X7F,	0x0		; Bank 1
+	SUB            	(_Delay_ms_#T20622_54+0x2) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L22601
+	MOV            	(_Delay_ms_#T20621_54+0x1) & 0X7F,	0x0		; Bank 1
+	SUB            	(_Delay_ms_#T20622_54+0x1) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L22601
+	MOV            	(_Delay_ms_#T20621_54) & 0X7F,	0x0		; Bank 1
+	SUB            	(_Delay_ms_#T20622_54) & 0X7F,	0x0		; Bank 1
+#L22601
+	JBS            	PSW,	0x0
+	GOTO           	#L20606
+#line 111	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  111:(       RET,            ,            ,          )
+
+; ITemplate_RET
+	SECTION        	0x0
+	RET            			; Bank 0		; ShBank 0
 	_DESC          	Timer_T21_Init,0X0,0X0
 Timer_T21_Init#	CSEG           
 _Timer_T21_Init
-; void Delay_ms(unsigned int delay){
-; 	static long temp_time;
-; 	temp_time=Get_Sys_time();
-; 	while(Get_Sys_time()-temp_time<delay);
-; }
 ; void TEST_Delay_ms(unsigned int delay){
 ; 	   int i;
 ; 	   for(i = 0;i<500*delay;i++);        //—” ±
@@ -521,43 +615,43 @@ _Timer_T21_Init
 	MOVI           	0x45
 	MOVA           	_T21OC_0#sh		; ShBank 0
 ;    
-#line 129	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21PH = 999 >> 8;        //pwm÷‹∆⁄
-;  129:(    ASGN_1,          3 ,            ,     T21PH)
+#line 129	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21PH = 4000 >> 8;        //pwm÷‹∆⁄
+;  129:(    ASGN_1,         15 ,            ,     T21PH)
 
 ; ITemplate_ASGN1_4_R
-	MOVI           	0x3
+	MOVI           	0xf
 	MOVA           	_T21PH_0#sh		; ShBank 0
-#line 130	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21PL = 999 & 0xFF;
-;  130:(    ASGN_1,        -25 ,            ,     T21PL)
+#line 130	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21PL = 4000 & 0xFF;
+;  130:(    ASGN_1,        -96 ,            ,     T21PL)
 
 ; ITemplate_ASGN1_4_R
-	MOVI           	0xe7
+	MOVI           	0xa0
 	MOVA           	_T21PL_0#sh		; ShBank 0
-; 	ch0_duty=999;
-; 	ch1_duty=999;
+; 	ch0_duty=4000;
+; 	ch1_duty=4000;
 #line 135	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21R0H = ch0_duty >>8 ;       //pwm0’ºø’±»
-;  135:(    ASGN_1,          3 ,            ,    T21R0H)
+;  135:(    ASGN_1,         15 ,            ,    T21R0H)
 
 ; ITemplate_ASGN1_4_R
-	MOVI           	0x3
+	MOVI           	0xf
 	MOVA           	_T21R0H_0#sh		; ShBank 0
 #line 136	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21R0L = ch0_duty & 0xFF;
-;  136:(    ASGN_1,        231 ,            ,    T21R0L)
+;  136:(    ASGN_1,        160 ,            ,    T21R0L)
 
 ; ITemplate_ASGN1_4_R
-	MOVI           	0xe7
+	MOVI           	0xa0
 	MOVA           	_T21R0L_0#sh		; ShBank 0
 #line 138	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21R1H = ch1_duty >>8;		//pwm1’ºø’±»
-;  138:(    ASGN_1,          3 ,            ,    T21R1H)
+;  138:(    ASGN_1,         15 ,            ,    T21R1H)
 
 ; ITemplate_ASGN1_4_R
-	MOVI           	0x3
+	MOVI           	0xf
 	MOVA           	_T21R1H_0#sh		; ShBank 0
 #line 139	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     T21R1L = ch1_duty & 0xFF;
-;  139:(    ASGN_1,        231 ,            ,    T21R1L)
+;  139:(    ASGN_1,        160 ,            ,    T21R1L)
 
 ; ITemplate_ASGN1_4_R
-	MOVI           	0xe7
+	MOVI           	0xa0
 	MOVA           	_T21R1L_0#sh		; ShBank 0
 ;     
 #line 141	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	T21TR = 1;           //∆Ù∂Øpwm ‰≥ˆ
@@ -692,14 +786,14 @@ _Set_PWM_CH0_Duty
 	MOVRA          	_Set_PWM_CH0_DutyDATA+0X0+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	GOTO           	#L22560
-#L22561
+	GOTO           	#L22602
+#L22603
 	RL             	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	RR             	(?_TMP+0x1) & 0X7F,	0x1		; Bank 0
 	RR             	(?_TMP) & 0X7F,	0x1		; Bank 0
-#L22560
+#L22602
 	JDEC           	(?_TMP+0x2) & 0X7F,	0x1		; Bank 0
-	GOTO           	#L22561
+	GOTO           	#L22603
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVA           	_T21R0H_0#sh		; ShBank 0
 #line 169	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		T21R0L = duty & 0xFF;
@@ -735,14 +829,14 @@ _Set_PWM_CH1_Duty
 	MOVRA          	_Set_PWM_CH1_DutyDATA+0X0+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	GOTO           	#L22562
-#L22563
+	GOTO           	#L22604
+#L22605
 	RL             	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	RR             	(?_TMP+0x1) & 0X7F,	0x1		; Bank 0
 	RR             	(?_TMP) & 0X7F,	0x1		; Bank 0
-#L22562
+#L22604
 	JDEC           	(?_TMP+0x2) & 0X7F,	0x1		; Bank 0
-	GOTO           	#L22563
+	GOTO           	#L22605
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVA           	_T21R1H_0#sh		; ShBank 0
 #line 173	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		T21R1L = duty & 0xFF;
@@ -867,11 +961,11 @@ _Buzzer_Task
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Buzzer_Task_#T20963_74		; Bank 1
+	MOVAR          	_Buzzer_Task_#T20963_76		; Bank 1
 ;  209:(     JEQ_1,          3 ,    #T20963 ,   #L20982)
 
 ; ITemplate_JEQ1_4
-	MOVRA          	_Buzzer_Task_#T20963_74		; Bank 1
+	MOVRA          	_Buzzer_Task_#T20963_76		; Bank 1
 	XORI           	0x3
 	JBC            	PSW,	0x2
 	GOTO           	#L20982
@@ -929,7 +1023,7 @@ _Buzzer_Task
 	_DESC          	USB_Check,0X0,0X0
 
 SECTION1USB_Check	UNINTIAL       	0		; Bank 0
-	ORG            	0XBE		; Bank 0
+	ORG            	0XC5		; Bank 0
 _USB_CheckDATA	RSEG           	0X1		; Bank 0
 USB_Check#	CSEG           
 _USB_Check
@@ -943,11 +1037,11 @@ _USB_Check
 	JBC            	(_PB5_0)/8,	(_PB5_0)%8
 	MOVI           	0x1
 	SECTION        	0x1
-	MOVA           	(_USB_Check_#T20989_79) & 0X7F		; Bank 1
+	MOVA           	(_USB_Check_#T20989_81) & 0X7F		; Bank 1
 ;  220:(     RET_1,    #T20989 ,            ,      #RET)
 
 ; ITemplate_RET2_N
-	MOV            	(_USB_Check_#T20989_79) & 0X7F,	0x0		; Bank 1
+	MOV            	(_USB_Check_#T20989_81) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET		; Bank 0
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
@@ -969,13 +1063,13 @@ _Sleep_Tsak
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Sleep_Tsak_#T20992_81		; Bank 1
+	MOVAR          	_Sleep_Tsak_#T20992_83		; Bank 1
 ;  224:(     JEQ_1, last_state ,    #T20992 ,   #L20994)
 
 ; ITemplate_JEQ1_4
-	MOVRA          	_Sleep_Tsak_#T20992_81		; Bank 1
+	MOVRA          	_Sleep_Tsak_#T20992_83		; Bank 1
 	SECTION        	0x1
-	XOR            	(_Sleep_Tsak_last_state_81) & 0X7F,	0x0		; Bank 1
+	XOR            	(_Sleep_Tsak_last_state_83) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L20994
 #line 225	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		last_state=Get_State();
@@ -985,7 +1079,7 @@ _Sleep_Tsak
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Sleep_Tsak_last_state_81		; Bank 1
+	MOVAR          	_Sleep_Tsak_last_state_83		; Bank 1
 #line 226	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		sleep_count=0;
 ;  226:(    ASGN_2,          0 ,            ,sleep_count)
 
@@ -1005,9 +1099,9 @@ _Sleep_Tsak
 	SECTION        	0x2
 	INC            	(_sleep_count) & 0X7F		; Bank 2
 	JBS            	PSW,	0x2
-	GOTO           	#L22564
+	GOTO           	#L22606
 	INC            	(_sleep_count+0x1) & 0X7F		; Bank 2
-#L22564
+#L22606
 #line 229	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	if(Get_State()==1){
 ;  229:(     CALLR, (Get_State.0) ,            ,   #T21044)
 
@@ -1015,11 +1109,11 @@ _Sleep_Tsak
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Sleep_Tsak_#T21044_81		; Bank 1
+	MOVAR          	_Sleep_Tsak_#T21044_83		; Bank 1
 ;  229:(    JNEQ_1,          1 ,    #T21044 ,   #L21037)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_Sleep_Tsak_#T21044_81		; Bank 1
+	MOVRA          	_Sleep_Tsak_#T21044_83		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21037
@@ -1031,10 +1125,10 @@ _Sleep_Tsak
 	MOV            	(_sleep_count+0x1) & 0X7F,	0x0		; Bank 2
 	SUBI           	0x0
 	JBS            	PSW,	0x2
-	GOTO           	#L22565
+	GOTO           	#L22607
 	MOV            	(_sleep_count) & 0X7F,	0x0		; Bank 2
 	SUBI           	0xb4
-#L22565
+#L22607
 	JBC            	PSW,	0x0
 	GOTO           	#L21115
 #line 231	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			State_Trans(0);
@@ -1067,11 +1161,11 @@ _Sleep_Tsak
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Sleep_Tsak_#T21071_81		; Bank 1
+	MOVAR          	_Sleep_Tsak_#T21071_83		; Bank 1
 ;  234:(    JNEQ_1,          2 ,    #T21071 ,   #L21064)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_Sleep_Tsak_#T21071_81		; Bank 1
+	MOVRA          	_Sleep_Tsak_#T21071_83		; Bank 1
 	XORI           	0x2
 	JBS            	PSW,	0x2
 	GOTO           	#L21064
@@ -1083,10 +1177,10 @@ _Sleep_Tsak
 	MOV            	(_sleep_count+0x1) & 0X7F,	0x0		; Bank 2
 	SUBI           	0x0
 	JBS            	PSW,	0x2
-	GOTO           	#L22566
+	GOTO           	#L22608
 	MOV            	(_sleep_count) & 0X7F,	0x0		; Bank 2
 	SUBI           	0x78
-#L22566
+#L22608
 	JBC            	PSW,	0x0
 	GOTO           	#L21115
 #line 236	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			State_Trans(0);
@@ -1119,11 +1213,11 @@ _Sleep_Tsak
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Sleep_Tsak_#T21098_81		; Bank 1
+	MOVAR          	_Sleep_Tsak_#T21098_83		; Bank 1
 ;  239:(    JNEQ_1,          3 ,    #T21098 ,   #L21115)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_Sleep_Tsak_#T21098_81		; Bank 1
+	MOVRA          	_Sleep_Tsak_#T21098_83		; Bank 1
 	XORI           	0x3
 	JBS            	PSW,	0x2
 	GOTO           	#L21115
@@ -1135,10 +1229,10 @@ _Sleep_Tsak
 	MOV            	(_sleep_count+0x1) & 0X7F,	0x0		; Bank 2
 	SUBI           	0x0
 	JBS            	PSW,	0x2
-	GOTO           	#L22567
+	GOTO           	#L22609
 	MOV            	(_sleep_count) & 0X7F,	0x0		; Bank 2
 	SUBI           	0x3
-#L22567
+#L22609
 	JBC            	PSW,	0x0
 	GOTO           	#L21115
 #line 241	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			State_Trans(0);
@@ -1246,11 +1340,11 @@ _LED_Task
 	CALL           	BDIV		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_LED_Task_#T21168_92		; Bank 1
+	MOVAR          	_LED_Task_#T21168_94		; Bank 1
 ;  263:(    PARA_1,    #T21168 ,            ,       num)
 
 ; ITemplate_ASGN1_4
-	MOVRA          	_LED_Task_#T21168_92		; Bank 1
+	MOVRA          	_LED_Task_#T21168_94		; Bank 1
 	MOVAR          	_D1_NUMDATA+0X0		; Bank 1
 ;  263:(      CALL, (D1_NUM.0) ,            ,          )
 
@@ -1270,11 +1364,11 @@ _LED_Task
 	CALL           	BMOD		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_LED_Task_#T21180_92		; Bank 1
+	MOVAR          	_LED_Task_#T21180_94		; Bank 1
 ;  264:(    PARA_1,    #T21180 ,            ,       num)
 
 ; ITemplate_ASGN1_4
-	MOVRA          	_LED_Task_#T21180_92		; Bank 1
+	MOVRA          	_LED_Task_#T21180_94		; Bank 1
 	MOVAR          	_D2_NUMDATA+0X0		; Bank 1
 ;  264:(      CALL, (D2_NUM.0) ,            ,          )
 
@@ -1298,12 +1392,12 @@ _LED_Task
 	SEGMENTSEL     	_USB_Check
 	CALL           	_USB_Check		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_LED_Task_#T21182_90		; Bank 1
+	MOVAR          	_LED_Task_#T21182_92		; Bank 1
 ;  273:(      JZ_1,    #T21182 ,            ,   #L21184)
 
 ; ITemplate_JZ1_4
 	SECTION        	0x1
-	MOV            	(_LED_Task_#T21182_90) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Task_#T21182_92) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L21184
 #line 274	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		if(0<=Vbat_val && Vbat_val<30){
@@ -1332,7 +1426,7 @@ _LED_Task
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x1
-	MOVA           	(_LED_Task_#T21240_94) & 0X7F		; Bank 1
+	MOVA           	(_LED_Task_#T21240_96) & 0X7F		; Bank 1
 ;  275:(       JMP,            ,            ,   #L21241)
 
 ; ITemplate_JMP
@@ -1344,7 +1438,7 @@ _LED_Task
 ;  275:(    ASGN_1,          0 ,            ,   #T21240)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_LED_Task_#T21240_94) & 0X7F		; Bank 1
+	CLR            	(_LED_Task_#T21240_96) & 0X7F		; Bank 1
 ;  275:(     LABEL,    #L21241 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1352,7 +1446,7 @@ _LED_Task
 ;  275:(    ASGN_1,    #T21240 ,            ,*(display_buf.13))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_LED_Task_#T21240_94) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Task_#T21240_96) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_display_buf+0xd) & 0X7F		; Bank 1
 #line 276	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			display_buf[12-1]=0; 
 ;  276:(    ASGN_1,          0 ,            ,*(display_buf.11))
@@ -1407,7 +1501,7 @@ _LED_Task
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x1
-	MOVA           	(_LED_Task_#T21355_95) & 0X7F		; Bank 1
+	MOVA           	(_LED_Task_#T21355_97) & 0X7F		; Bank 1
 ;  281:(       JMP,            ,            ,   #L21356)
 
 ; ITemplate_JMP
@@ -1419,7 +1513,7 @@ _LED_Task
 ;  281:(    ASGN_1,          0 ,            ,   #T21355)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_LED_Task_#T21355_95) & 0X7F		; Bank 1
+	CLR            	(_LED_Task_#T21355_97) & 0X7F		; Bank 1
 ;  281:(     LABEL,    #L21356 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1427,7 +1521,7 @@ _LED_Task
 ;  281:(    ASGN_1,    #T21355 ,            ,*(display_buf.11))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_LED_Task_#T21355_95) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Task_#T21355_97) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_display_buf+0xb) & 0X7F		; Bank 1
 #line 282	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			display_buf[15-1]=0;
 ;  282:(    ASGN_1,          0 ,            ,*(display_buf.14))
@@ -1482,7 +1576,7 @@ _LED_Task
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x1
-	MOVA           	(_LED_Task_#T21470_96) & 0X7F		; Bank 1
+	MOVA           	(_LED_Task_#T21470_98) & 0X7F		; Bank 1
 ;  287:(       JMP,            ,            ,   #L21471)
 
 ; ITemplate_JMP
@@ -1494,7 +1588,7 @@ _LED_Task
 ;  287:(    ASGN_1,          0 ,            ,   #T21470)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_LED_Task_#T21470_96) & 0X7F		; Bank 1
+	CLR            	(_LED_Task_#T21470_98) & 0X7F		; Bank 1
 ;  287:(     LABEL,    #L21471 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1502,7 +1596,7 @@ _LED_Task
 ;  287:(    ASGN_1,    #T21470 ,            ,*(display_buf.14))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_LED_Task_#T21470_96) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Task_#T21470_98) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_display_buf+0xe) & 0X7F		; Bank 1
 #line 288	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		}
 ;  288:(       JMP,            ,            ,   #L21181)
@@ -1630,7 +1724,7 @@ _LED_Task
 
 ; ITemplate_JMP
 	GOTO           	#L21181
-#line 306	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		else if(66<=Vbat_val && Vbat_val<99){
+#line 306	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		else if(66<=Vbat_val && Vbat_val<=99){
 ;  306:(     LABEL,    #L21622 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1642,12 +1736,12 @@ _LED_Task
 	SUB            	(_Vbat_val) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x0
 	GOTO           	#L21181
-;  306:(    JGE_1U,   Vbat_val ,         99 ,   #L21181)
+;  306:(    JGT_1U,   Vbat_val ,         99 ,   #L21181)
 
-; ITemplate_JGE1_4U
-	MOVI           	0x63
-	SUB            	(_Vbat_val) & 0X7F,	0x0		; Bank 1
-	JBC            	PSW,	0x0
+; ITemplate_JGT1_4U
+	MOV            	(_Vbat_val) & 0X7F,	0x0		; Bank 1
+	SUBI           	0x63
+	JBS            	PSW,	0x0
 	GOTO           	#L21181
 #line 307	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			display_buf[14-1]=1;
 ;  307:(    ASGN_1,          1 ,            ,*(display_buf.13))
@@ -1685,7 +1779,7 @@ _LED_Task
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
-	_DESC          	state_0,0X0,0X0,Updata_SCAN_LED_BUF_L,Timer_T21_Init,State_Trans,ADC_dis_init,sleep
+	_DESC          	state_0,0X0,0X0,Delay_ms,Updata_SCAN_LED_BUF_L,Timer_T21_Init,State_Trans,ADC_dis_init,sleep
 
 SECTION1state_0	UNINTIAL       	0		; Bank 0
 	ORG            	0XBD		; Bank 0
@@ -1695,73 +1789,96 @@ _state_0
 ; //Ω¯»Î–›√ﬂ◊¥Ã¨
 ; void state_0(){
 ; 	//PA1=0;
-; 	char i;
-#line 318	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	i=18;
+; 	//Buzzer_Stop();
+; 	//unsigned char str[]="aaa";
+; 	//UART_send(str,1,1);
+#line 320	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Delay_ms(20);
 	CLR            	BKSR
-;  318:(    ASGN_1,         18 ,            ,         i)
+;  320:(    PARA_2,         20 ,            ,     delay)
+
+; ITemplate_ASGN1_4
+	MOVI           	0x14
+	SECTION        	0x1
+	MOVA           	(_Delay_msDATA+0X0) & 0X7F		; Bank 1
+	MOVI           	0x0
+	MOVA           	(_Delay_msDATA+0X0+0x1) & 0X7F		; Bank 1
+;  320:(      CALL, (Delay_ms.0) ,            ,          )
+
+; ITemplate_CALL
+	SEGMENTSEL     	_Delay_ms
+	CALL           	_Delay_ms		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+#line 321	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	buzzer_flag=0;
+;  321:(    ASGN_1,          0 ,            ,buzzer_flag)
+
+; ITemplate_CLR1_4_TMP
+	SECTION        	0x1
+	CLR            	(_buzzer_flag) & 0X7F		; Bank 1
+; 	char i;
+#line 323	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	i=18;
+;  323:(    ASGN_1,         18 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x12
-	SECTION        	0x1
-	MOVA           	(_state_0_i_103) & 0X7F		; Bank 1
-#line 319	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(i--)
-;  319:(     LABEL,    #L21787 ,            ,          )
+	MOVA           	(_state_0_i_105) & 0X7F		; Bank 1
+#line 324	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(i--)
+;  324:(     LABEL,    #L21799 ,            ,          )
 
 ; ITemplate_LABEL
-#L21787
-;  319:(    ASGN_1,          i ,            ,   #T21792)
+#L21799
+;  324:(    ASGN_1,          i ,            ,   #T21804)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_state_0_i_103) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_state_0_#T21792_103) & 0X7F		; Bank 1
-;  319:(     SUB_1,          i ,          1 ,         i)
+	MOV            	(_state_0_i_105) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_state_0_#T21804_105) & 0X7F		; Bank 1
+;  324:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_state_0_i_103) & 0X7F		; Bank 1
-;  319:(      JZ_1,    #T21792 ,            ,   #L21789)
+	DEC            	(_state_0_i_105) & 0X7F		; Bank 1
+;  324:(      JZ_1,    #T21804 ,            ,   #L21801)
 
 ; ITemplate_JZ1_4
-	MOV            	(_state_0_#T21792_103) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_0_#T21804_105) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L21789
-#line 320	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	display_buf[i]=0;
-;  320:(   CVUC_UI,          i ,            ,   #T21820)
+	GOTO           	#L21801
+#line 325	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	display_buf[i]=0;
+;  325:(   CVUC_UI,          i ,            ,   #T21832)
 
 ; ITemplate_CVTMS_U
-	CLR            	(_state_0_#T21820_103+0x1) & 0X7F		; Bank 1
-	MOV            	(_state_0_i_103) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_state_0_#T21820_103) & 0X7F		; Bank 1
-;  320:(     ADD_2,    #T21820 , (display_buf.0) ,   #T21821)
+	CLR            	(_state_0_#T21832_105+0x1) & 0X7F		; Bank 1
+	MOV            	(_state_0_i_105) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_state_0_#T21832_105) & 0X7F		; Bank 1
+;  325:(     ADD_2,    #T21832 , (display_buf.0) ,   #T21833)
 
 ; ITemplate_ADD1_4
-	MOV            	(_state_0_#T21820_103) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_0_#T21832_105) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_state_0_#T21821_103) & 0X7F		; Bank 1
-	MOV            	(_state_0_#T21820_103+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_state_0_#T21833_105) & 0X7F		; Bank 1
+	MOV            	(_state_0_#T21832_105+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_state_0_#T21821_103+0x1) & 0X7F		; Bank 1
-;  320:(    ASGN_1,          0 ,            ,  *#T21821)
+	MOVA           	(_state_0_#T21833_105+0x1) & 0X7F		; Bank 1
+;  325:(    ASGN_1,          0 ,            ,  *#T21833)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_state_0_#T21821_103+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_0_#T21833_105+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_state_0_#T21821_103) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_0_#T21833_105) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x0
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-;  320:(       JMP,            ,            ,   #L21787)
+;  325:(       JMP,            ,            ,   #L21799)
 
 ; ITemplate_JMP
-	GOTO           	#L21787
-;  320:(     LABEL,    #L21789 ,            ,          )
+	GOTO           	#L21799
+;  325:(     LABEL,    #L21801 ,            ,          )
 
 ; ITemplate_LABEL
-#L21789
-#line 321	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Updata_SCAN_LED_BUF_L();
-;  321:(      CALL, (Updata_SCAN_LED_BUF_L.0) ,            ,          )
+#L21801
+#line 326	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Updata_SCAN_LED_BUF_L();
+;  326:(      CALL, (Updata_SCAN_LED_BUF_L.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Updata_SCAN_LED_BUF_L
@@ -1770,130 +1887,131 @@ _state_0
 ; 	//LED_Clear();
 ; 	//Set_PWM_CH0_Duty(999);
 ; 	//Set_PWM_CH1_Duty(999);
-#line 325	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T21_Init();
-;  325:(      CALL, (Timer_T21_Init.0) ,            ,          )
+#line 330	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T21_Init();
+;  330:(      CALL, (Timer_T21_Init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Timer_T21_Init
 	CALL           	_Timer_T21_Init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; 	//RAMclear();
-#line 327	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	 State_Trans(3);
-;  327:(    PARA_1,          3 ,            , new_state)
+#line 332	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	 State_Trans(3);
+;  332:(    PARA_1,          3 ,            , new_state)
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x3
 	MOVAR          	_State_TransDATA+0X0		; Bank 1
-;  327:(      CALL, (State_Trans.0) ,            ,          )
+;  332:(      CALL, (State_Trans.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_State_Trans
 	CALL           	_State_Trans		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; 	//≈‰÷√PA2÷–∂œƒ£ ΩªΩ–—
-#line 330	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ANSL = 0xFF;        //—°‘Ò∂‘”¶∂Àø⁄Œ™ ˝◊÷IOπ¶ƒ‹
-;  330:(    ASGN_1,        255 ,            ,      ANSL)
+; 	
+#line 335	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ANSL = 0xFF;        //—°‘Ò∂‘”¶∂Àø⁄Œ™ ˝◊÷IOπ¶ƒ‹
+;  335:(    ASGN_1,        255 ,            ,      ANSL)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xff
 	MOVA           	_ANSL_0
-#line 331	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ANSH = 0xFF;
-;  331:(    ASGN_1,        255 ,            ,      ANSH)
+#line 336	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ANSH = 0xFF;
+;  336:(    ASGN_1,        255 ,            ,      ANSH)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xff
 	MOVA           	_ANSH_0
-#line 332	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PAT = 0x00;         //À˘”–IO…ËŒ™ ‰≥ˆµÕµÁ∆Ω
-;  332:(    ASGN_1,          0 ,            ,       PAT)
+#line 337	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PAT = 0x00;         //À˘”–IO…ËŒ™ ‰≥ˆµÕµÁ∆Ω
+;  337:(    ASGN_1,          0 ,            ,       PAT)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_PAT_0
-#line 333	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PBT = 0x00;
-;  333:(    ASGN_1,          0 ,            ,       PBT)
+#line 338	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PBT = 0x00;
+;  338:(    ASGN_1,          0 ,            ,       PBT)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_PBT_0
-#line 334	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PCT = 0x00;
-;  334:(    ASGN_1,          0 ,            ,       PCT)
+#line 339	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PCT = 0x00;
+;  339:(    ASGN_1,          0 ,            ,       PCT)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_PCT_0
-#line 335	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PA = 0x00;
-;  335:(    ASGN_1,          0 ,            ,        PA)
+#line 340	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PA = 0x00;
+;  340:(    ASGN_1,          0 ,            ,        PA)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_PA_0
-#line 336	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PB = 0x00;
-;  336:(    ASGN_1,          0 ,            ,        PB)
+#line 341	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PB = 0x00;
+;  341:(    ASGN_1,          0 ,            ,        PB)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_PB_0
-#line 337	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PC = 0x00;
-;  337:(    ASGN_1,          0 ,            ,        PC)
+#line 342	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PC = 0x00;
+;  342:(    ASGN_1,          0 ,            ,        PC)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_PC_0
-#line 339	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PAT2=0x01;	//PA2  ˝◊÷ ‰»Î
-;  339:(    ASGN_0,          1 ,            ,      PAT2)
+#line 344	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PAT2=0x01;	//PA2  ˝◊÷ ‰»Î
+;  344:(    ASGN_0,          1 ,            ,      PAT2)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PAT2_0)/8,	(_PAT2_0)%8
-#line 340	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	KIE=1;
-;  340:(    ASGN_0,          1 ,            ,       KIE)
+#line 345	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	KIE=1;
+;  345:(    ASGN_0,          1 ,            ,       KIE)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_KIE_0)/8,	(_KIE_0)%8
-#line 341	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	KMSK1=1;
-;  341:(    ASGN_0,          1 ,            ,     KMSK1)
+#line 346	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	KMSK1=1;
+;  346:(    ASGN_0,          1 ,            ,     KMSK1)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_KMSK1_0)/8,	(_KMSK1_0)%8
-#line 342	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PAPU=PAPU|0X04;
-;  342:(   ASGN_B$,          1 ,          2 ,      PAPU)
+#line 347	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PAPU=PAPU|0X04;
+;  347:(   ASGN_B$,          1 ,          2 ,      PAPU)
 
 ; ITemplate_SET_B1_TMP
 	BSS            	_PAPU_0,	0x2
-#line 344	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PBT5=0x01;  //PB5  ˝◊÷ ‰»Î
-;  344:(    ASGN_0,          1 ,            ,      PBT5)
+#line 349	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PBT5=0x01;  //PB5  ˝◊÷ ‰»Î
+;  349:(    ASGN_0,          1 ,            ,      PBT5)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PBT5_0)/8,	(_PBT5_0)%8
-#line 345	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PB5=1;
-;  345:(    ASGN_0,          1 ,            ,       PB5)
+#line 350	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PB5=1;
+;  350:(    ASGN_0,          1 ,            ,       PB5)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PB5_0)/8,	(_PB5_0)%8
-#line 347	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	INTC0 |=0x80;       //usbºÏ≤‚À´±ﬂ¥•∑¢
-;  347:(   ASGN_B$,          1 ,          7 ,     INTC0)
+#line 352	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	INTC0 |=0x80;       //usbºÏ≤‚À´±ﬂ¥•∑¢
+;  352:(   ASGN_B$,          1 ,          7 ,     INTC0)
 
 ; ITemplate_SET_B1_TMP
 	BSS            	_INTC0_0,	0x7
-#line 348	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PIE7 = 1;           //¥Úø™π‹Ω≈÷–∂œ
-;  348:(    ASGN_0,          1 ,            ,      PIE7)
+#line 353	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PIE7 = 1;           //¥Úø™π‹Ω≈÷–∂œ
+;  353:(    ASGN_0,          1 ,            ,      PIE7)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PIE7_0)/8,	(_PIE7_0)%8
-#line 349	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PIF7 = 0;           //«Â≥˝Õ‚≤ø÷–∂œ±Í÷æ
-;  349:(    ASGN_0,          0 ,            ,      PIF7)
+#line 354	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     PIF7 = 0;           //«Â≥˝Õ‚≤ø÷–∂œ±Í÷æ
+;  354:(    ASGN_0,          0 ,            ,      PIF7)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PIF7_0)/8,	(_PIF7_0)%8
-#line 351	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ADC_dis_init();
-;  351:(      CALL, (ADC_dis_init.0) ,            ,          )
+#line 356	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ADC_dis_init();
+;  356:(      CALL, (ADC_dis_init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_ADC_dis_init
 	CALL           	_ADC_dis_init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 352	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	sleep();
-;  352:(      CALL,  (sleep.0) ,            ,          )
+#line 357	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	sleep();
+;  357:(      CALL,  (sleep.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_sleep
 	CALL           	_sleep		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 353	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  353:(       RET,            ,            ,          )
+#line 358	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  358:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
@@ -1906,91 +2024,91 @@ state_3#	CSEG
 _state_3
 ; //»´πÿºÏ≤‚∞¥º¸≥§∞¥ø™ª˙
 ; void state_3(){
-#line 357	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	unsigned char i=18;
+#line 362	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	unsigned char i=18;
 	CLR            	BKSR
-;  357:(    ASGN_1,         18 ,            ,         i)
+;  362:(    ASGN_1,         18 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x12
 	SECTION        	0x1
-	MOVA           	(_state_3_i_105) & 0X7F		; Bank 1
-#line 358	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(i--)
-;  358:(     LABEL,    #L21957 ,            ,          )
+	MOVA           	(_state_3_i_107) & 0X7F		; Bank 1
+#line 363	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(i--)
+;  363:(     LABEL,    #L21969 ,            ,          )
 
 ; ITemplate_LABEL
-#L21957
-;  358:(    ASGN_1,          i ,            ,   #T21962)
+#L21969
+;  363:(    ASGN_1,          i ,            ,   #T21974)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_state_3_i_105) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_state_3_#T21962_105) & 0X7F		; Bank 1
-;  358:(     SUB_1,          i ,          1 ,         i)
+	MOV            	(_state_3_i_107) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_state_3_#T21974_107) & 0X7F		; Bank 1
+;  363:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_state_3_i_105) & 0X7F		; Bank 1
-;  358:(      JZ_1,    #T21962 ,            ,   #L21959)
+	DEC            	(_state_3_i_107) & 0X7F		; Bank 1
+;  363:(      JZ_1,    #T21974 ,            ,   #L21971)
 
 ; ITemplate_JZ1_4
-	MOV            	(_state_3_#T21962_105) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_3_#T21974_107) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L21959
-#line 359	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	display_buf[i]=0;
-;  359:(   CVUC_UI,          i ,            ,   #T21990)
+	GOTO           	#L21971
+#line 364	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	display_buf[i]=0;
+;  364:(   CVUC_UI,          i ,            ,   #T22002)
 
 ; ITemplate_CVTMS_U
-	CLR            	(_state_3_#T21990_105+0x1) & 0X7F		; Bank 1
-	MOV            	(_state_3_i_105) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_state_3_#T21990_105) & 0X7F		; Bank 1
-;  359:(     ADD_2,    #T21990 , (display_buf.0) ,   #T21991)
+	CLR            	(_state_3_#T22002_107+0x1) & 0X7F		; Bank 1
+	MOV            	(_state_3_i_107) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_state_3_#T22002_107) & 0X7F		; Bank 1
+;  364:(     ADD_2,    #T22002 , (display_buf.0) ,   #T22003)
 
 ; ITemplate_ADD1_4
-	MOV            	(_state_3_#T21990_105) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_3_#T22002_107) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_state_3_#T21991_105) & 0X7F		; Bank 1
-	MOV            	(_state_3_#T21990_105+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_state_3_#T22003_107) & 0X7F		; Bank 1
+	MOV            	(_state_3_#T22002_107+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_state_3_#T21991_105+0x1) & 0X7F		; Bank 1
-;  359:(    ASGN_1,          0 ,            ,  *#T21991)
+	MOVA           	(_state_3_#T22003_107+0x1) & 0X7F		; Bank 1
+;  364:(    ASGN_1,          0 ,            ,  *#T22003)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_state_3_#T21991_105+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_3_#T22003_107+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_state_3_#T21991_105) & 0X7F,	0x0		; Bank 1
+	MOV            	(_state_3_#T22003_107) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x0
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-;  359:(       JMP,            ,            ,   #L21957)
+;  364:(       JMP,            ,            ,   #L21969)
 
 ; ITemplate_JMP
-	GOTO           	#L21957
-;  359:(     LABEL,    #L21959 ,            ,          )
+	GOTO           	#L21969
+;  364:(     LABEL,    #L21971 ,            ,          )
 
 ; ITemplate_LABEL
-#L21959
-#line 360	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Updata_SCAN_LED_BUF_L();
-;  360:(      CALL, (Updata_SCAN_LED_BUF_L.0) ,            ,          )
+#L21971
+#line 365	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Updata_SCAN_LED_BUF_L();
+;  365:(      CALL, (Updata_SCAN_LED_BUF_L.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Updata_SCAN_LED_BUF_L
 	CALL           	_Updata_SCAN_LED_BUF_L		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 361	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	LED_Clear();
-;  361:(      CALL, (LED_Clear.0) ,            ,          )
+#line 366	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	LED_Clear();
+;  366:(      CALL, (LED_Clear.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_LED_Clear
 	CALL           	_LED_Clear		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 362	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	T8NEN = 0;           // πƒ‹T8N
-;  362:(    ASGN_0,          0 ,            ,     T8NEN)
+#line 367	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	T8NEN = 0;           // πƒ‹T8N
+;  367:(    ASGN_0,          0 ,            ,     T8NEN)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_T8NEN_0)/8,	(_T8NEN_0)%8
-#line 363	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  363:(       RET,            ,            ,          )
+#line 368	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  368:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
@@ -1999,38 +2117,38 @@ state_1#	CSEG
 _state_1
 ; //µÁª˙πÿ ø™µ∆
 ; void state_1(){
-#line 367	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH0_Duty(999);
+#line 372	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH0_Duty(4000);
 	CLR            	BKSR
-;  367:(    PARA_2,        999 ,            ,      duty)
+;  372:(    PARA_2,       4000 ,            ,      duty)
 
 ; ITemplate_ASGN1_4
-	MOVI           	0xe7
+	MOVI           	0xa0
 	SECTION        	0x1
 	MOVA           	(_Set_PWM_CH0_DutyDATA+0X0) & 0X7F		; Bank 1
-	MOVI           	0x3
+	MOVI           	0xf
 	MOVA           	(_Set_PWM_CH0_DutyDATA+0X0+0x1) & 0X7F		; Bank 1
-;  367:(      CALL, (Set_PWM_CH0_Duty.0) ,            ,          )
+;  372:(      CALL, (Set_PWM_CH0_Duty.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Set_PWM_CH0_Duty
 	CALL           	_Set_PWM_CH0_Duty		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 368	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH1_Duty(999);
-;  368:(    PARA_2,        999 ,            ,      duty)
+#line 373	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH1_Duty(4000);
+;  373:(    PARA_2,       4000 ,            ,      duty)
 
 ; ITemplate_ASGN1_4
-	MOVI           	0xe7
+	MOVI           	0xa0
 	MOVAR          	_Set_PWM_CH1_DutyDATA+0X0		; Bank 1
-	MOVI           	0x3
+	MOVI           	0xf
 	MOVAR          	_Set_PWM_CH1_DutyDATA+0X0+0x1		; Bank 1
-;  368:(      CALL, (Set_PWM_CH1_Duty.0) ,            ,          )
+;  373:(      CALL, (Set_PWM_CH1_Duty.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Set_PWM_CH1_Duty
 	CALL           	_Set_PWM_CH1_Duty		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 369	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  369:(       RET,            ,            ,          )
+#line 374	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  374:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
@@ -2039,38 +2157,38 @@ state_2#	CSEG
 _state_2
 ; //µÁª˙ø™
 ; void state_2(){
-#line 374	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH1_Duty(1);
+#line 378	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH1_Duty(0);
 	CLR            	BKSR
-;  374:(    PARA_2,          1 ,            ,      duty)
+;  378:(    PARA_2,          0 ,            ,      duty)
 
 ; ITemplate_ASGN1_4
-	MOVI           	0x1
+	MOVI           	0x0
 	SECTION        	0x1
 	MOVA           	(_Set_PWM_CH1_DutyDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	0x0
 	MOVA           	(_Set_PWM_CH1_DutyDATA+0X0+0x1) & 0X7F		; Bank 1
-;  374:(      CALL, (Set_PWM_CH1_Duty.0) ,            ,          )
+;  378:(      CALL, (Set_PWM_CH1_Duty.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Set_PWM_CH1_Duty
 	CALL           	_Set_PWM_CH1_Duty		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 375	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH0_Duty(100);
-;  375:(    PARA_2,        100 ,            ,      duty)
+#line 379	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Set_PWM_CH0_Duty(400);
+;  379:(    PARA_2,        400 ,            ,      duty)
 
 ; ITemplate_ASGN1_4
-	MOVI           	0x64
+	MOVI           	0x90
 	MOVAR          	_Set_PWM_CH0_DutyDATA+0X0		; Bank 1
-	MOVI           	0x0
+	MOVI           	0x1
 	MOVAR          	_Set_PWM_CH0_DutyDATA+0X0+0x1		; Bank 1
-;  375:(      CALL, (Set_PWM_CH0_Duty.0) ,            ,          )
+;  379:(      CALL, (Set_PWM_CH0_Duty.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Set_PWM_CH0_Duty
 	CALL           	_Set_PWM_CH0_Duty		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 376	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  376:(       RET,            ,            ,          )
+#line 380	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  380:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
@@ -2078,89 +2196,89 @@ _state_2
 State_Ruun#	CSEG           
 _State_Ruun
 ; void State_Ruun(){
-#line 378	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			switch (State_flag){
+#line 382	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			switch (State_flag){
 	CLR            	BKSR
-;  378:(  SWITCH_B, State_flag ,            ,          )
+;  382:(  SWITCH_B, State_flag ,            ,          )
 
 ; ITemplate_SW
 	SECTION        	0x1
 	MOV            	((_State_flag) & 0x7F),	0x0		; Bank 1
 	XORI           	0x3
 	JBC            	PSW,	0x2
-	GOTO           	#L22039
+	GOTO           	#L22051
 	XORI           	0x2
 	JBC            	PSW,	0x2
-	GOTO           	#L22046
+	GOTO           	#L22058
 	XORI           	0x3
 	JBC            	PSW,	0x2
-	GOTO           	#L22053
+	GOTO           	#L22065
 	XORI           	0x2
 	JBC            	PSW,	0x2
-	GOTO           	#L22060
-	GOTO           	#L22568
-#L22568
-;  378:(       JMP,            ,            ,   #L22067)
+	GOTO           	#L22072
+	GOTO           	#L22610
+#L22610
+;  382:(       JMP,            ,            ,   #L22079)
 
 ; ITemplate_JMP
-	GOTO           	#L22067
-#line 379	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 3:
-;  379:(     LABEL,    #L22039 ,            ,          )
+	GOTO           	#L22079
+#line 383	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 3:
+;  383:(     LABEL,    #L22051 ,            ,          )
 
 ; ITemplate_LABEL
-#L22039
-#line 380	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_3();
-;  380:(      CALL, (state_3.0) ,            ,          )
+#L22051
+#line 384	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_3();
+;  384:(      CALL, (state_3.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_state_3
 	CALL           	_state_3		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 381	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				break;
-;  381:(       JMP,            ,            ,   #L22067)
+#line 385	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				break;
+;  385:(       JMP,            ,            ,   #L22079)
 
 ; ITemplate_JMP
-	GOTO           	#L22067
-#line 382	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 1:
-;  382:(     LABEL,    #L22046 ,            ,          )
+	GOTO           	#L22079
+#line 386	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 1:
+;  386:(     LABEL,    #L22058 ,            ,          )
 
 ; ITemplate_LABEL
-#L22046
-#line 383	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_1();
-;  383:(      CALL, (state_1.0) ,            ,          )
+#L22058
+#line 387	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_1();
+;  387:(      CALL, (state_1.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_state_1
 	CALL           	_state_1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 384	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				break;
-;  384:(       JMP,            ,            ,   #L22067)
+#line 388	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				break;
+;  388:(       JMP,            ,            ,   #L22079)
 
 ; ITemplate_JMP
-	GOTO           	#L22067
-#line 385	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 2:
-;  385:(     LABEL,    #L22053 ,            ,          )
+	GOTO           	#L22079
+#line 389	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 2:
+;  389:(     LABEL,    #L22065 ,            ,          )
 
 ; ITemplate_LABEL
-#L22053
-#line 386	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_2();
-;  386:(      CALL, (state_2.0) ,            ,          )
+#L22065
+#line 390	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_2();
+;  390:(      CALL, (state_2.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_state_2
 	CALL           	_state_2		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 387	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				break;
-;  387:(       JMP,            ,            ,   #L22067)
+#line 391	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				break;
+;  391:(       JMP,            ,            ,   #L22079)
 
 ; ITemplate_JMP
-	GOTO           	#L22067
-#line 388	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 0:
-;  388:(     LABEL,    #L22060 ,            ,          )
+	GOTO           	#L22079
+#line 392	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				case 0:
+;  392:(     LABEL,    #L22072 ,            ,          )
 
 ; ITemplate_LABEL
-#L22060
-#line 389	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_0();
-;  389:(      CALL, (state_0.0) ,            ,          )
+#L22072
+#line 393	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 					state_0();
+;  393:(      CALL, (state_0.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_state_0
@@ -2168,12 +2286,12 @@ _State_Ruun
 	SEGMENTSEL     	$
 ; 				break;
 ; 			}
-#line 392	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  392:(     LABEL,    #L22067 ,            ,          )
+#line 396	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  396:(     LABEL,    #L22079 ,            ,          )
 
 ; ITemplate_LABEL
-#L22067
-;  392:(       RET,            ,            ,          )
+#L22079
+;  396:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
@@ -2186,51 +2304,51 @@ _user_delayDATA	RSEG           	0X4		; Bank 0
 user_delay#	CSEG           
 _user_delay
 ; void user_delay(){
-#line 396	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; unsigned int i=4000;
+#line 400	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; unsigned int i=4000;
 	CLR            	BKSR
-;  396:(    ASGN_2,       4000 ,            ,         i)
+;  400:(    ASGN_2,       4000 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xf
 	SECTION        	0x1
-	MOVA           	(_user_delay_i_114+0x1) & 0X7F		; Bank 1
+	MOVA           	(_user_delay_i_116+0x1) & 0X7F		; Bank 1
 	MOVI           	0xa0
-	MOVA           	(_user_delay_i_114) & 0X7F		; Bank 1
-#line 397	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; while(i--);
-;  397:(     LABEL,    #L22070 ,            ,          )
+	MOVA           	(_user_delay_i_116) & 0X7F		; Bank 1
+#line 401	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; while(i--);
+;  401:(     LABEL,    #L22082 ,            ,          )
 
 ; ITemplate_LABEL
-#L22070
-;  397:(    ASGN_2,          i ,            ,   #T22075)
+#L22082
+;  401:(    ASGN_2,          i ,            ,   #T22087)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_user_delay_i_114+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_user_delay_#T22075_114+0x1) & 0X7F		; Bank 1
-	MOV            	(_user_delay_i_114) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_user_delay_#T22075_114) & 0X7F		; Bank 1
-;  397:(     SUB_2,          i ,          1 ,         i)
+	MOV            	(_user_delay_i_116+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_user_delay_#T22087_116+0x1) & 0X7F		; Bank 1
+	MOV            	(_user_delay_i_116) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_user_delay_#T22087_116) & 0X7F		; Bank 1
+;  401:(     SUB_2,          i ,          1 ,         i)
 
 ; ITemplate_DEC_2_TMP
-	MOV            	(_user_delay_i_114) & 0X7F,	0x0		; Bank 1
+	MOV            	(_user_delay_i_116) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L22569
-	DEC            	(_user_delay_i_114+0x1) & 0X7F		; Bank 1
-#L22569
-	DEC            	(_user_delay_i_114) & 0X7F		; Bank 1
-;  397:(     JNZ_2,    #T22075 ,            ,   #L22070)
+	GOTO           	#L22611
+	DEC            	(_user_delay_i_116+0x1) & 0X7F		; Bank 1
+#L22611
+	DEC            	(_user_delay_i_116) & 0X7F		; Bank 1
+;  401:(     JNZ_2,    #T22087 ,            ,   #L22082)
 
 ; ITemplate_JNZ1_4
-	MOV            	(_user_delay_#T22075_114) & 0X7F,	0x0		; Bank 1
-	IOR            	(_user_delay_#T22075_114+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_user_delay_#T22087_116) & 0X7F,	0x0		; Bank 1
+	IOR            	(_user_delay_#T22087_116+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L22070
-#line 398	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  398:(       RET,            ,            ,          )
+	GOTO           	#L22082
+#line 402	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  402:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
-	_DESC          	main,0X0,0X0,SetTime,GPIOInit,Timer_T8_Init,Timer_T21_Init,ADC_init,Buzzer_Init,LED_Clear,user_delay,User_Get_measure_Val,Timer_T31_Init,LED_Task,CompareTime,GetTime,Buzzer_Task,Get_State,State_Trans,USB_Check,State_Ruun,Sleep_Tsak
+	_DESC          	main,0X0,0X0,SetTime,GPIOInit,Timer_T8_Init,Timer_T21_Init,ADC_init,Buzzer_Init,LED_Clear,user_delay,User_Get_measure_Val,USB_Check,state_0,Timer_T31_Init,LED_Task,CompareTime,GetTime,Buzzer_Task,Get_State,State_Trans,State_Ruun,Sleep_Tsak
 
 SECTION1main	UNINTIAL       	0		; Bank 0
 	ORG            	0XB9		; Bank 0
@@ -2240,150 +2358,194 @@ _main
 ; void main(void) 
 ; {
 ; 	//RAMclear();
-#line 402	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	WDTC = 0x16;         //∑÷∆µ±»1:128£¨ πƒ‹WDT‘§∑÷∆µ∆˜£¨ø¥√≈π∑“Á≥ˆ ±º‰t=256*128/32000=1.024s
+#line 406	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	WDTC = 0x16;         //∑÷∆µ±»1:128£¨ πƒ‹WDT‘§∑÷∆µ∆˜£¨ø¥√≈π∑“Á≥ˆ ±º‰t=256*128/32000=1.024s
 	CLR            	BKSR
-;  402:(    ASGN_1,         22 ,            ,      WDTC)
+;  406:(    ASGN_1,         22 ,            ,      WDTC)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x16
 	MOVA           	_WDTC_0
-#line 404	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	SetTime();			//»ŒŒÒº‰∏Ù ±º‰≥ı ºªØ
-;  404:(      CALL, (SetTime.0) ,            ,          )
+#line 408	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	SetTime();			//»ŒŒÒº‰∏Ù ±º‰≥ı ºªØ
+;  408:(      CALL, (SetTime.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_SetTime
 	CALL           	_SetTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 405	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	GPIOInit();
-;  405:(      CALL, (GPIOInit.0) ,            ,          )
+#line 409	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	GPIOInit();
+;  409:(      CALL, (GPIOInit.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_GPIOInit
 	CALL           	_GPIOInit		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 406	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T8_Init();
-;  406:(      CALL, (Timer_T8_Init.0) ,            ,          )
+#line 410	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T8_Init();
+;  410:(      CALL, (Timer_T8_Init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Timer_T8_Init
 	CALL           	_Timer_T8_Init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 407	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T21_Init();
-;  407:(      CALL, (Timer_T21_Init.0) ,            ,          )
+#line 411	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T21_Init();
+;  411:(      CALL, (Timer_T21_Init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Timer_T21_Init
 	CALL           	_Timer_T21_Init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 408	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ADC_init() ;
-;  408:(      CALL, (ADC_init.0) ,            ,          )
+#line 412	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	ADC_init() ;
+;  412:(      CALL, (ADC_init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_ADC_init
 	CALL           	_ADC_init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 409	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Buzzer_Init();
-;  409:(      CALL, (Buzzer_Init.0) ,            ,          )
+#line 413	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Buzzer_Init();
+;  413:(      CALL, (Buzzer_Init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Buzzer_Init
 	CALL           	_Buzzer_Init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 410	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	LED_Clear();
-;  410:(      CALL, (LED_Clear.0) ,            ,          )
+#line 414	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	LED_Clear();
+;  414:(      CALL, (LED_Clear.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_LED_Clear
 	CALL           	_LED_Clear		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 411	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PB3=1;
-;  411:(    ASGN_0,          1 ,            ,       PB3)
+#line 415	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	PB3=1;
+;  415:(    ASGN_0,          1 ,            ,       PB3)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PB3_0)/8,	(_PB3_0)%8
-#line 413	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	int iii=110;
-;  413:(    ASGN_2,        110 ,            ,       iii)
+; #ifdef UART_TEST
+; 	Uart_Init();
+; #endif
+#line 421	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	int iii=110;
+;  421:(    ASGN_2,        110 ,            ,       iii)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x0
-	MOVAR          	_main_iii_116+0x1		; Bank 1
+	MOVAR          	_main_iii_118+0x1		; Bank 1
 	MOVI           	0x6e
-	MOVAR          	_main_iii_116		; Bank 1
-#line 414	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(iii--){
-;  414:(     LABEL,    #L22131 ,            ,          )
+	MOVAR          	_main_iii_118		; Bank 1
+#line 422	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while(iii--){
+;  422:(     LABEL,    #L22143 ,            ,          )
 
 ; ITemplate_LABEL
-#L22131
-;  414:(    ASGN_2,        iii ,            ,   #T22136)
+#L22143
+;  422:(    ASGN_2,        iii ,            ,   #T22148)
 
 ; ITemplate_ASGN1_4_R
 	SECTION        	0x1
-	MOV            	(_main_iii_116+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_main_#T22136_116+0x1) & 0X7F		; Bank 1
-	MOV            	(_main_iii_116) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_main_#T22136_116) & 0X7F		; Bank 1
-;  414:(     SUB_2,        iii ,          1 ,       iii)
+	MOV            	(_main_iii_118+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_main_#T22148_118+0x1) & 0X7F		; Bank 1
+	MOV            	(_main_iii_118) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_main_#T22148_118) & 0X7F		; Bank 1
+;  422:(     SUB_2,        iii ,          1 ,       iii)
 
 ; ITemplate_DEC_2_TMP
-	MOV            	(_main_iii_116) & 0X7F,	0x0		; Bank 1
+	MOV            	(_main_iii_118) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L22570
-	DEC            	(_main_iii_116+0x1) & 0X7F		; Bank 1
-#L22570
-	DEC            	(_main_iii_116) & 0X7F		; Bank 1
-;  414:(      JZ_2,    #T22136 ,            ,   #L22133)
+	GOTO           	#L22612
+	DEC            	(_main_iii_118+0x1) & 0X7F		; Bank 1
+#L22612
+	DEC            	(_main_iii_118) & 0X7F		; Bank 1
+;  422:(      JZ_2,    #T22148 ,            ,   #L22145)
 
 ; ITemplate_JZ1_4
-	MOV            	(_main_#T22136_116) & 0X7F,	0x0		; Bank 1
-	IOR            	(_main_#T22136_116+0x1) & 0X7F,	0x0		; Bank 1
-	SECTION        	0x0
+	MOV            	(_main_#T22148_118) & 0X7F,	0x0		; Bank 1
+	IOR            	(_main_#T22148_118+0x1) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L22133
-#line 415	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		user_delay();
-;  415:(      CALL, (user_delay.0) ,            ,          )
+	GOTO           	#L22145
+#line 423	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		user_delay();
+;  423:(      CALL, (user_delay.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_user_delay
 	CALL           	_user_delay		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 416	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		User_Get_measure_Val();
-;  416:(      CALL, (User_Get_measure_Val.0) ,            ,          )
+#line 424	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		User_Get_measure_Val();
+;  424:(      CALL, (User_Get_measure_Val.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_User_Get_measure_Val
 	CALL           	_User_Get_measure_Val		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 417	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	}
-;  417:(       JMP,            ,            ,   #L22131)
+#line 425	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	}
+;  425:(       JMP,            ,            ,   #L22143)
 
 ; ITemplate_JMP
-	GOTO           	#L22131
-;  417:(     LABEL,    #L22133 ,            ,          )
+	GOTO           	#L22143
+;  425:(     LABEL,    #L22145 ,            ,          )
 
 ; ITemplate_LABEL
-#L22133
-#line 418	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T31_Init();
-;  418:(      CALL, (Timer_T31_Init.0) ,            ,          )
+#L22145
+#line 426	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	if(Vbat_val==0 && USB_Check()==0){
+;  426:(     JNZ_1,   Vbat_val ,            ,   #L22171)
+
+; ITemplate_JNZ1_4
+	MOV            	(_Vbat_val) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L22171
+;  426:(     CALLR, (USB_Check.0) ,            ,   #T22185)
+
+; ITemplate_CALL
+	SEGMENTSEL     	_USB_Check
+	CALL           	_USB_Check		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	MOVAR          	_main_#T22185_118		; Bank 1
+;  426:(     JNZ_1,    #T22185 ,            ,   #L22171)
+
+; ITemplate_JNZ1_4
+	SECTION        	0x1
+	MOV            	(_main_#T22185_118) & 0X7F,	0x0		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L22171
+#line 427	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		 state_0();
+;  427:(      CALL, (state_0.0) ,            ,          )
+
+; ITemplate_CALL
+	SEGMENTSEL     	_state_0
+	CALL           	_state_0		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+; 		//sleep();
+; 		//__Asm RST;
+#line 430	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	}
+;  430:(     LABEL,    #L22171 ,            ,          )
+
+; ITemplate_LABEL
+#L22171
+; 	
+#line 432	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	Timer_T31_Init();
+;  432:(      CALL, (Timer_T31_Init.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Timer_T31_Init
 	CALL           	_Timer_T31_Init		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 419	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	LED_Task();
-;  419:(      CALL, (LED_Task.0) ,            ,          )
+#line 433	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	LED_Task();
+;  433:(      CALL, (LED_Task.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_LED_Task
 	CALL           	_LED_Task		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 421	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while (1)
-;  421:(     LABEL,    #L22164 ,            ,          )
+#line 434	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	buzzer_flag=1;
+;  434:(    ASGN_1,          1 ,            ,buzzer_flag)
+
+; ITemplate_ASGN1_4_R
+	MOVI           	0x1
+	MOVAR          	_buzzer_flag		; Bank 1
+#line 436	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	while (1)
+;  436:(     LABEL,    #L22205 ,            ,          )
 
 ; ITemplate_LABEL
-#L22164
+#L22205
 ;     {
-#line 423	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if(CompareTime(&Task_50)){
-;  423:(    PARA_2, (Task_50.0) ,            ,  TimeType)
+#line 438	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if(CompareTime(&Task_50)){
+;  438:(    PARA_2, (Task_50.0) ,            ,  TimeType)
 
 ; ITemplate_ASGN1_4
 	MOVI           	_Task_50
@@ -2391,92 +2553,92 @@ _main
 	MOVA           	(_CompareTimeDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_Task_50)
 	MOVA           	(_CompareTimeDATA+0X0+0x1) & 0X7F		; Bank 1
-;  423:(     CALLR, (CompareTime.0) ,            ,   #T22168)
+;  438:(     CALLR, (CompareTime.0) ,            ,   #T22209)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_CompareTime
 	CALL           	_CompareTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22168_118		; Bank 1
-;  423:(      JZ_1,    #T22168 ,            ,   #L22170)
+	MOVAR          	_main_#T22209_121		; Bank 1
+;  438:(      JZ_1,    #T22209 ,            ,   #L22211)
 
 ; ITemplate_JZ1_4
 	SECTION        	0x1
-	MOV            	(_main_#T22168_118) & 0X7F,	0x0		; Bank 1
+	MOV            	(_main_#T22209_121) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L22170
-#line 424	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			GetTime(&Task_50);
-;  424:(    PARA_2, (Task_50.0) ,            ,  TimeType)
+	GOTO           	#L22211
+#line 439	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			GetTime(&Task_50);
+;  439:(    PARA_2, (Task_50.0) ,            ,  TimeType)
 
 ; ITemplate_ASGN1_4
 	MOVI           	_Task_50
 	MOVA           	(_GetTimeDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_Task_50)
 	MOVA           	(_GetTimeDATA+0X0+0x1) & 0X7F		; Bank 1
-;  424:(      CALL, (GetTime.0) ,            ,          )
+;  439:(      CALL, (GetTime.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_GetTime
 	CALL           	_GetTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 425	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			Buzzer_Task();
-;  425:(      CALL, (Buzzer_Task.0) ,            ,          )
+#line 440	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			Buzzer_Task();
+;  440:(      CALL, (Buzzer_Task.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Buzzer_Task
 	CALL           	_Buzzer_Task		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 426	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			if(touch_key_busy){
-;  426:(      JZ_1, touch_key_busy ,            ,   #L22170)
+#line 441	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			if(touch_key_busy){
+;  441:(      JZ_1, touch_key_busy ,            ,   #L22211)
 
 ; ITemplate_JZ1_4
 	SECTION        	0x1
 	MOV            	(_touch_key_busy) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L22170
-#line 427	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			touch_key_busy=0;
-;  427:(    ASGN_1,          0 ,            ,touch_key_busy)
+	GOTO           	#L22211
+#line 442	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			touch_key_busy=0;
+;  442:(    ASGN_1,          0 ,            ,touch_key_busy)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	(_touch_key_busy) & 0X7F		; Bank 1
-#line 428	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			sleep_count=0;
-;  428:(    ASGN_2,          0 ,            ,sleep_count)
+#line 443	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			sleep_count=0;
+;  443:(    ASGN_2,          0 ,            ,sleep_count)
 
 ; ITemplate_CLR1_4_TMP
 	SECTION        	0x2
 	CLR            	(_sleep_count) & 0X7F		; Bank 2
 	CLR            	(_sleep_count+0x1) & 0X7F		; Bank 2
-#line 429	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				if(touch_key_staus==SHORT ){
-;  429:(    JNEQ_1,          1 , touch_key_staus ,   #L22202)
+#line 444	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				if(touch_key_staus==SHORT ){
+;  444:(    JNEQ_1,          1 , touch_key_staus ,   #L22243)
 
 ; ITemplate_JNEQ1_4
 	MOVRA          	_touch_key_staus		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22202
-#line 430	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 						if(Get_State()==2) {
-;  430:(     CALLR, (Get_State.0) ,            ,   #T22219)
+	GOTO           	#L22243
+#line 445	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 						if(Get_State()==2) {
+;  445:(     CALLR, (Get_State.0) ,            ,   #T22260)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22219_121		; Bank 1
-;  430:(    JNEQ_1,          2 ,    #T22219 ,   #L22202)
+	MOVAR          	_main_#T22260_124		; Bank 1
+;  445:(    JNEQ_1,          2 ,    #T22260 ,   #L22243)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_main_#T22219_121		; Bank 1
+	MOVRA          	_main_#T22260_124		; Bank 1
 	XORI           	0x2
 	JBS            	PSW,	0x2
-	GOTO           	#L22202
-#line 431	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 							State_Trans(0);
-;  431:(    PARA_1,          0 ,            , new_state)
+	GOTO           	#L22243
+#line 446	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 							State_Trans(0);
+;  446:(    PARA_1,          0 ,            , new_state)
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x0
 	SECTION        	0x1
 	MOVA           	(_State_TransDATA+0X0) & 0X7F		; Bank 1
-;  431:(      CALL, (State_Trans.0) ,            ,          )
+;  446:(      CALL, (State_Trans.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_State_Trans
@@ -2485,93 +2647,93 @@ _main
 ; 							//state_0();
 ; 							//sleep();
 ; 						}
-#line 435	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				}
-;  435:(     LABEL,    #L22202 ,            ,          )
+#line 450	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				}
+;  450:(     LABEL,    #L22243 ,            ,          )
 
 ; ITemplate_LABEL
-#L22202
-#line 436	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				if(touch_key_staus==DOUBLE){
-;  436:(    JNEQ_1,          3 , touch_key_staus ,   #L22229)
+#L22243
+#line 451	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				if(touch_key_staus==DOUBLE){
+;  451:(    JNEQ_1,          3 , touch_key_staus ,   #L22270)
 
 ; ITemplate_JNEQ1_4
 	SECTION        	0x1
 	MOV            	(_touch_key_staus) & 0X7F,	0x0		; Bank 1
 	XORI           	0x3
 	JBS            	PSW,	0x2
-	GOTO           	#L22229
-#line 437	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 						if(Get_State()==1 && USB_Check()==0){
-;  437:(     CALLR, (Get_State.0) ,            ,   #T22248)
+	GOTO           	#L22270
+#line 452	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 						if(Get_State()==1 && USB_Check()==0){
+;  452:(     CALLR, (Get_State.0) ,            ,   #T22289)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22248_123		; Bank 1
-;  437:(    JNEQ_1,          1 ,    #T22248 ,   #L22229)
+	MOVAR          	_main_#T22289_126		; Bank 1
+;  452:(    JNEQ_1,          1 ,    #T22289 ,   #L22270)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_main_#T22248_123		; Bank 1
+	MOVRA          	_main_#T22289_126		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22229
-;  437:(     CALLR, (USB_Check.0) ,            ,   #T22256)
+	GOTO           	#L22270
+;  452:(     CALLR, (USB_Check.0) ,            ,   #T22297)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_USB_Check
 	CALL           	_USB_Check		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22256_123		; Bank 1
-;  437:(     JNZ_1,    #T22256 ,            ,   #L22229)
+	MOVAR          	_main_#T22297_126		; Bank 1
+;  452:(     JNZ_1,    #T22297 ,            ,   #L22270)
 
 ; ITemplate_JNZ1_4
 	SECTION        	0x1
-	MOV            	(_main_#T22256_123) & 0X7F,	0x0		; Bank 1
+	MOV            	(_main_#T22297_126) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L22229
-#line 438	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 							State_Trans(2);
-;  438:(    PARA_1,          2 ,            , new_state)
+	GOTO           	#L22270
+#line 453	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 							State_Trans(2);
+;  453:(    PARA_1,          2 ,            , new_state)
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x2
 	MOVA           	(_State_TransDATA+0X0) & 0X7F		; Bank 1
-;  438:(      CALL, (State_Trans.0) ,            ,          )
+;  453:(      CALL, (State_Trans.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_State_Trans
 	CALL           	_State_Trans		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; 						}
-#line 440	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				}
-;  440:(     LABEL,    #L22229 ,            ,          )
+#line 455	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				}
+;  455:(     LABEL,    #L22270 ,            ,          )
 
 ; ITemplate_LABEL
-#L22229
-#line 441	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				if(touch_key_staus==LONG_NO_RELEASE){
-;  441:(    JNEQ_1,          4 , touch_key_staus ,   #L22170)
+#L22270
+#line 456	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				if(touch_key_staus==LONG_NO_RELEASE){
+;  456:(    JNEQ_1,          4 , touch_key_staus ,   #L22211)
 
 ; ITemplate_JNEQ1_4
 	SECTION        	0x1
 	MOV            	(_touch_key_staus) & 0X7F,	0x0		; Bank 1
 	XORI           	0x4
 	JBS            	PSW,	0x2
-	GOTO           	#L22170
-#line 442	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 						if(Get_State()==3) 
-;  442:(     CALLR, (Get_State.0) ,            ,   #T22283)
+	GOTO           	#L22211
+#line 457	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 						if(Get_State()==3) 
+;  457:(     CALLR, (Get_State.0) ,            ,   #T22324)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22283_125		; Bank 1
-;  442:(    JNEQ_1,          3 ,    #T22283 ,   #L22170)
+	MOVAR          	_main_#T22324_128		; Bank 1
+;  457:(    JNEQ_1,          3 ,    #T22324 ,   #L22211)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_main_#T22283_125		; Bank 1
+	MOVRA          	_main_#T22324_128		; Bank 1
 	XORI           	0x3
 	JBS            	PSW,	0x2
-	GOTO           	#L22170
+	GOTO           	#L22211
 ; 						{
-#line 444	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 							__Asm RST;     //
+#line 459	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 							__Asm RST;     //
 ; ITemplate_LABEL
 ;-----------Embedded Asm--------------
 	RST
@@ -2579,13 +2741,13 @@ _main
 ; 						}//State_Trans(1);
 ; 				}
 ; 			}
-#line 448	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  }
-;  448:(     LABEL,    #L22170 ,            ,          )
+#line 463	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  }
+;  463:(     LABEL,    #L22211 ,            ,          )
 
 ; ITemplate_LABEL
-#L22170
-#line 449	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if(CompareTime(&Task_100)){
-;  449:(    PARA_2, (Task_100.0) ,            ,  TimeType)
+#L22211
+#line 464	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if(CompareTime(&Task_100)){
+;  464:(    PARA_2, (Task_100.0) ,            ,  TimeType)
 
 ; ITemplate_ASGN1_4
 	MOVI           	_Task_100
@@ -2593,95 +2755,99 @@ _main
 	MOVA           	(_CompareTimeDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_Task_100)
 	MOVA           	(_CompareTimeDATA+0X0+0x1) & 0X7F		; Bank 1
-;  449:(     CALLR, (CompareTime.0) ,            ,   #T22286)
+;  464:(     CALLR, (CompareTime.0) ,            ,   #T22327)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_CompareTime
 	CALL           	_CompareTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22286_118		; Bank 1
-;  449:(      JZ_1,    #T22286 ,            ,   #L22288)
+	MOVAR          	_main_#T22327_121		; Bank 1
+;  464:(      JZ_1,    #T22327 ,            ,   #L22329)
 
 ; ITemplate_JZ1_4
 	SECTION        	0x1
-	MOV            	(_main_#T22286_118) & 0X7F,	0x0		; Bank 1
+	MOV            	(_main_#T22327_121) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L22288
-#line 450	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  GetTime(&Task_100);
-;  450:(    PARA_2, (Task_100.0) ,            ,  TimeType)
+	GOTO           	#L22329
+#line 465	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  GetTime(&Task_100);
+;  465:(    PARA_2, (Task_100.0) ,            ,  TimeType)
 
 ; ITemplate_ASGN1_4
 	MOVI           	_Task_100
 	MOVA           	(_GetTimeDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_Task_100)
 	MOVA           	(_GetTimeDATA+0X0+0x1) & 0X7F		; Bank 1
-;  450:(      CALL, (GetTime.0) ,            ,          )
+;  465:(      CALL, (GetTime.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_GetTime
 	CALL           	_GetTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-; 		  //if(Get_State()!=2){
-#line 452	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			User_Get_measure_Val();		  
-;  452:(      CALL, (User_Get_measure_Val.0) ,            ,          )
+#line 466	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  User_Get_measure_Val();		//ADC≤‚¡ø
+;  466:(      CALL, (User_Get_measure_Val.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_User_Get_measure_Val
 	CALL           	_User_Get_measure_Val		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-; 		  //}
-#line 454	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  State_Ruun();
-;  454:(      CALL, (State_Ruun.0) ,            ,          )
+#line 467	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  State_Ruun();					//◊¥Ã¨‘À––
+;  467:(      CALL, (State_Ruun.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_State_Ruun
 	CALL           	_State_Ruun		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-; 		  //Buzzer_Task();
-#line 456	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  if(USB_Check()==1){
-;  456:(     CALLR, (USB_Check.0) ,            ,   #T22317)
+; 		  #ifdef UART_TEST
+; 		    unsigned char str[]="◊¥Ã¨ µƒ◊™ªª÷µŒ™:    \r\n\0";
+; 		    unsigned char str1[]="…˘“Ù µƒ◊™ªª÷µŒ™:    \r\n\0";
+; 			GIE=0;
+; 			UART_send(str,1,State_flag);
+; 			UART_send(str1,1,buzzer_flag);
+; 			GIE=1;
+; 		#endif
+#line 479	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  if(USB_Check()==1){
+;  479:(     CALLR, (USB_Check.0) ,            ,   #T22358)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_USB_Check
 	CALL           	_USB_Check		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22317_127		; Bank 1
-;  456:(    JNEQ_1,          1 ,    #T22317 ,   #L22288)
+	MOVAR          	_main_#T22358_130		; Bank 1
+;  479:(    JNEQ_1,          1 ,    #T22358 ,   #L22329)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_main_#T22317_127		; Bank 1
+	MOVRA          	_main_#T22358_130		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22288
-#line 457	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			 State_Trans(1);
-;  457:(    PARA_1,          1 ,            , new_state)
+	GOTO           	#L22329
+#line 480	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			 State_Trans(1);
+;  480:(    PARA_1,          1 ,            , new_state)
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x1
 	SECTION        	0x1
 	MOVA           	(_State_TransDATA+0X0) & 0X7F		; Bank 1
-;  457:(      CALL, (State_Trans.0) ,            ,          )
+;  480:(      CALL, (State_Trans.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_State_Trans
 	CALL           	_State_Trans		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 458	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			 sleep_count=0;
-;  458:(    ASGN_2,          0 ,            ,sleep_count)
+#line 481	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			 sleep_count=0;
+;  481:(    ASGN_2,          0 ,            ,sleep_count)
 
 ; ITemplate_CLR1_4_TMP
 	SECTION        	0x2
 	CLR            	(_sleep_count) & 0X7F		; Bank 2
 	CLR            	(_sleep_count+0x1) & 0X7F		; Bank 2
 ; 		  }
-; 		  	//Get_ADC_Val();
-#line 461	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  }
-;  461:(     LABEL,    #L22288 ,            ,          )
+#line 483	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  }
+;  483:(     LABEL,    #L22329 ,            ,          )
 
 ; ITemplate_LABEL
-#L22288
-#line 462	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if(CompareTime(&Task_1000)){
-;  462:(    PARA_2, (Task_1000.0) ,            ,  TimeType)
+#L22329
+#line 484	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if(CompareTime(&Task_1000)){
+;  484:(    PARA_2, (Task_1000.0) ,            ,  TimeType)
 
 ; ITemplate_ASGN1_4
 	MOVI           	_Task_1000
@@ -2689,70 +2855,69 @@ _main
 	MOVA           	(_CompareTimeDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_Task_1000)
 	MOVA           	(_CompareTimeDATA+0X0+0x1) & 0X7F		; Bank 1
-;  462:(     CALLR, (CompareTime.0) ,            ,   #T22332)
+;  484:(     CALLR, (CompareTime.0) ,            ,   #T22373)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_CompareTime
 	CALL           	_CompareTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22332_118		; Bank 1
-;  462:(      JZ_1,    #T22332 ,            ,   #L22334)
+	MOVAR          	_main_#T22373_121		; Bank 1
+;  484:(      JZ_1,    #T22373 ,            ,   #L22375)
 
 ; ITemplate_JZ1_4
 	SECTION        	0x1
-	MOV            	(_main_#T22332_118) & 0X7F,	0x0		; Bank 1
+	MOV            	(_main_#T22373_121) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L22334
-#line 463	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  GetTime(&Task_1000);
-;  463:(    PARA_2, (Task_1000.0) ,            ,  TimeType)
+	GOTO           	#L22375
+#line 485	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		  GetTime(&Task_1000);
+;  485:(    PARA_2, (Task_1000.0) ,            ,  TimeType)
 
 ; ITemplate_ASGN1_4
 	MOVI           	_Task_1000
 	MOVA           	(_GetTimeDATA+0X0) & 0X7F		; Bank 1
 	MOVI           	HIGH(_Task_1000)
 	MOVA           	(_GetTimeDATA+0X0+0x1) & 0X7F		; Bank 1
-;  463:(      CALL, (GetTime.0) ,            ,          )
+;  485:(      CALL, (GetTime.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_GetTime
 	CALL           	_GetTime		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 464	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			Sleep_Tsak();
-;  464:(      CALL, (Sleep_Tsak.0) ,            ,          )
+#line 486	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			Sleep_Tsak();
+;  486:(      CALL, (Sleep_Tsak.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Sleep_Tsak
 	CALL           	_Sleep_Tsak		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-; 			//Get_ADC_Val();
-#line 466	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			if(Get_State()!=3){
-;  466:(     CALLR, (Get_State.0) ,            ,   #T22359)
+#line 487	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			if(Get_State()!=3){
+;  487:(     CALLR, (Get_State.0) ,            ,   #T22400)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_State
 	CALL           	_Get_State		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_main_#T22359_129		; Bank 1
-;  466:(     JEQ_1,          3 ,    #T22359 ,   #L22334)
+	MOVAR          	_main_#T22400_132		; Bank 1
+;  487:(     JEQ_1,          3 ,    #T22400 ,   #L22375)
 
 ; ITemplate_JEQ1_4
-	MOVRA          	_main_#T22359_129		; Bank 1
+	MOVRA          	_main_#T22400_132		; Bank 1
 	XORI           	0x3
 	JBC            	PSW,	0x2
-	GOTO           	#L22334
-#line 467	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				LED_Task();
-;  467:(      CALL, (LED_Task.0) ,            ,          )
+	GOTO           	#L22375
+#line 488	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 				LED_Task();
+;  488:(      CALL, (LED_Task.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_LED_Task
 	CALL           	_LED_Task		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; 			}
-#line 470	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  }
-;  470:(     LABEL,    #L22334 ,            ,          )
+#line 491	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  }
+;  491:(     LABEL,    #L22375 ,            ,          )
 
 ; ITemplate_LABEL
-#L22334
+#L22375
 ; 		//if(Get_State()==3){
 ; 			//unsigned char i=18;
 ; 			//while(i--)
@@ -2760,16 +2925,16 @@ _main
 ; 			//Updata_SCAN_LED_BUF_R();
 ; 			//LED_Clear();
 ; 		//}
-#line 478	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         CLRWDT();
+#line 499	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         CLRWDT();
 ; ITemplate_LABEL
 ;-----------Embedded Asm--------------
 	CWDT
 ;-------------------------------------
-#line 479	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
-;  479:(       JMP,            ,            ,   #L22164)
+#line 500	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
+;  500:(       JMP,            ,            ,   #L22205)
 
 ; ITemplate_JMP
-	GOTO           	#L22164
+	GOTO           	#L22205
 	_DESC          	##isr,0X0,0X0,SCAN_NEW,scan_touch_key
 
 SECTION1isr	UNINTIAL       	0		; Bank 0
@@ -2813,145 +2978,145 @@ _isr
 ;  unsigned char cnt_0;
 ; void isr(void) interrupt
 ; {
-#line 493	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     if (T8NIE==1 && T8NIF==1)        //∂® ±∆˜“Á≥ˆ÷–∂œ
-;  493:(    CVB_SC,      T8NIE ,            ,   #T22374)
+#line 514	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     if (T8NIE==1 && T8NIF==1)        //∂® ±∆˜“Á≥ˆ÷–∂œ
+;  514:(    CVB_SC,      T8NIE ,            ,   #T22415)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_T8NIE_0)/8,	(_T8NIE_0)%8
 	MOVI           	0x1
 	SECTION        	0x1
-	MOVA           	(_isr_#T22374_133) & 0X7F		; Bank 1
-;  493:(    JNEQ_1,          1 ,    #T22374 ,   #L22368)
+	MOVA           	(_isr_#T22415_136) & 0X7F		; Bank 1
+;  514:(    JNEQ_1,          1 ,    #T22415 ,   #L22409)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22374_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22415_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22368
-;  493:(    CVB_SC,      T8NIF ,            ,   #T22381)
+	GOTO           	#L22409
+;  514:(    CVB_SC,      T8NIF ,            ,   #T22422)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_T8NIF_0)/8,	(_T8NIF_0)%8
 	MOVI           	0x1
-	MOVA           	(_isr_#T22381_133) & 0X7F		; Bank 1
-;  493:(    JNEQ_1,          1 ,    #T22381 ,   #L22368)
+	MOVA           	(_isr_#T22422_136) & 0X7F		; Bank 1
+;  514:(    JNEQ_1,          1 ,    #T22422 ,   #L22409)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22381_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22422_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22368
+	GOTO           	#L22409
 ;     {
-#line 495	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T8NIF = 0;        //«Â±Í÷æŒª
-;  495:(    ASGN_0,          0 ,            ,     T8NIF)
+#line 516	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T8NIF = 0;        //«Â±Í÷æŒª
+;  516:(    ASGN_0,          0 ,            ,     T8NIF)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_T8NIF_0)/8,	(_T8NIF_0)%8
-#line 496	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T8N += 131;       //Ω¯÷–∂œœ»∏≥º∆ ˝∆˜≥ı÷µ
-;  496:(     ADD_1,        T8N ,        131 ,       T8N)
+#line 517	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T8N += 131;       //Ω¯÷–∂œœ»∏≥º∆ ˝∆˜≥ı÷µ
+;  517:(     ADD_1,        T8N ,        131 ,       T8N)
 
 ; ITemplate_ADD1_4
 	MOV            	_T8N_0,	0x0
 	ADDI           	0x83
 	MOVA           	_T8N_0
-#line 497	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		SCAN_NEW();       //À¢–¬LED
-;  497:(      CALL, (SCAN_NEW.0) ,            ,          )
+#line 518	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		SCAN_NEW();       //À¢–¬LED
+;  518:(      CALL, (SCAN_NEW.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_SCAN_NEW
 	CALL           	_SCAN_NEW		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 498	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
-;  498:(     LABEL,    #L22368 ,            ,          )
+#line 519	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
+;  519:(     LABEL,    #L22409 ,            ,          )
 
 ; ITemplate_LABEL
-#L22368
-#line 499	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if (T21PIE==1 && T21PIF==1)        //∂® ±∆˜pwm÷‹∆⁄÷–∂œ
-;  499:(    CVB_SC,     T21PIE ,            ,   #T22409)
+#L22409
+#line 520	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	  if (T21PIE==1 && T21PIF==1)        //∂® ±∆˜pwm÷‹∆⁄÷–∂œ
+;  520:(    CVB_SC,     T21PIE ,            ,   #T22450)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_T21PIE_0)/8,	(_T21PIE_0)%8
 	MOVI           	0x1
 	SECTION        	0x1
-	MOVA           	(_isr_#T22409_133) & 0X7F		; Bank 1
-;  499:(    JNEQ_1,          1 ,    #T22409 ,   #L22403)
+	MOVA           	(_isr_#T22450_136) & 0X7F		; Bank 1
+;  520:(    JNEQ_1,          1 ,    #T22450 ,   #L22444)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22409_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22450_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22403
-;  499:(    CVB_SC,     T21PIF ,            ,   #T22416)
+	GOTO           	#L22444
+;  520:(    CVB_SC,     T21PIF ,            ,   #T22457)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_T21PIF_0)/8,	(_T21PIF_0)%8
 	MOVI           	0x1
-	MOVA           	(_isr_#T22416_133) & 0X7F		; Bank 1
-;  499:(    JNEQ_1,          1 ,    #T22416 ,   #L22403)
+	MOVA           	(_isr_#T22457_136) & 0X7F		; Bank 1
+;  520:(    JNEQ_1,          1 ,    #T22457 ,   #L22444)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22416_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22457_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22403
+	GOTO           	#L22444
 ;     {
-#line 501	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T21PIF = 0;                //«Â±Í÷æŒª
-;  501:(    ASGN_0,          0 ,            ,    T21PIF)
+#line 522	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T21PIF = 0;                //«Â±Í÷æŒª
+;  522:(    ASGN_0,          0 ,            ,    T21PIF)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_T21PIF_0)/8,	(_T21PIF_0)%8
-#line 502	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
-;  502:(     LABEL,    #L22403 ,            ,          )
+#line 523	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
+;  523:(     LABEL,    #L22444 ,            ,          )
 
 ; ITemplate_LABEL
-#L22403
-#line 504	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	if (UPIS==1 && UPIF==1)        //∂® ±∆˜“Á≥ˆ÷–∂œ
-;  504:(    CVB_SC,       UPIS ,            ,   #T22433)
+#L22444
+#line 525	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	if (UPIS==1 && UPIF==1)        //∂® ±∆˜“Á≥ˆ÷–∂œ
+;  525:(    CVB_SC,       UPIS ,            ,   #T22474)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_UPIS_0#sh)/8,	(_UPIS_0#sh)%8		; ShBank 0
 	MOVI           	0x1
-	MOVA           	(_isr_#T22433_133) & 0X7F		; Bank 1
-;  504:(    JNEQ_1,          1 ,    #T22433 ,   #L22427)
+	MOVA           	(_isr_#T22474_136) & 0X7F		; Bank 1
+;  525:(    JNEQ_1,          1 ,    #T22474 ,   #L22468)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22433_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22474_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22427
-;  504:(    CVB_SC,       UPIF ,            ,   #T22440)
+	GOTO           	#L22468
+;  525:(    CVB_SC,       UPIF ,            ,   #T22481)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_UPIF_0#sh)/8,	(_UPIF_0#sh)%8		; ShBank 0
 	MOVI           	0x1
-	MOVA           	(_isr_#T22440_133) & 0X7F		; Bank 1
-;  504:(    JNEQ_1,          1 ,    #T22440 ,   #L22427)
+	MOVA           	(_isr_#T22481_136) & 0X7F		; Bank 1
+;  525:(    JNEQ_1,          1 ,    #T22481 ,   #L22468)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22440_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22481_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22427
+	GOTO           	#L22468
 ;     {
-#line 506	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         UPIC = 1;       //«Â“Á≥ˆ±Í÷æŒª£¨UPIF±ÿ–Î“™‘⁄T31IF÷Æ«∞«Â≥˝
-;  506:(    ASGN_0,          1 ,            ,      UPIC)
+#line 527	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         UPIC = 1;       //«Â“Á≥ˆ±Í÷æŒª£¨UPIF±ÿ–Î“™‘⁄T31IF÷Æ«∞«Â≥˝
+;  527:(    ASGN_0,          1 ,            ,      UPIC)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_UPIC_0#sh)/8,	(_UPIC_0#sh)%8		; ShBank 0
-#line 507	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T31IF = 0;      //«Â∂® ±∆˜◊‹±Í÷æŒª£¨UPIF±ÿ–Î“™‘⁄T31IF÷Æ«∞«Â≥˝
-;  507:(    ASGN_0,          0 ,            ,     T31IF)
+#line 528	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;         T31IF = 0;      //«Â∂® ±∆˜◊‹±Í÷æŒª£¨UPIF±ÿ–Î“™‘⁄T31IF÷Æ«∞«Â≥˝
+;  528:(    ASGN_0,          0 ,            ,     T31IF)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_T31IF_0)/8,	(_T31IF_0)%8
 ; 		//PB3=~PB3;
-#line 509	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		global_count++;
-;  509:(     ADD_4, global_count ,          1 ,global_count)
+#line 530	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		global_count++;
+;  530:(     ADD_4, global_count ,          1 ,global_count)
 
 ; ITemplate_ADD1_4
 	SECTION        	0x2
@@ -2967,153 +3132,153 @@ _isr
 	MOV            	(_global_count+0x3) & 0X7F,	0x0		; Bank 2
 	ADDCI          	0x0
 	MOVA           	(_global_count+0x3) & 0X7F		; Bank 2
-#line 510	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		scan_touch_key();
-;  510:(      CALL, (scan_touch_key.0) ,            ,          )
+#line 531	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		scan_touch_key();
+;  531:(      CALL, (scan_touch_key.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_scan_touch_key
 	CALL           	_scan_touch_key		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 511	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
-;  511:(     LABEL,    #L22427 ,            ,          )
+#line 532	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
+;  532:(     LABEL,    #L22468 ,            ,          )
 
 ; ITemplate_LABEL
-#L22427
-#line 514	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	    if(KIF==1 && KIE==1)
-;  514:(    CVB_SC,        KIF ,            ,   #T22483)
+#L22468
+#line 535	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	    if(KIF==1 && KIE==1)
+;  535:(    CVB_SC,        KIF ,            ,   #T22524)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_KIF_0)/8,	(_KIF_0)%8
 	MOVI           	0x1
 	SECTION        	0x1
-	MOVA           	(_isr_#T22483_133) & 0X7F		; Bank 1
-;  514:(    JNEQ_1,          1 ,    #T22483 ,   #L22477)
+	MOVA           	(_isr_#T22524_136) & 0X7F		; Bank 1
+;  535:(    JNEQ_1,          1 ,    #T22524 ,   #L22518)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22483_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22524_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22477
-;  514:(    CVB_SC,        KIE ,            ,   #T22490)
+	GOTO           	#L22518
+;  535:(    CVB_SC,        KIE ,            ,   #T22531)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_KIE_0)/8,	(_KIE_0)%8
 	MOVI           	0x1
-	MOVA           	(_isr_#T22490_133) & 0X7F		; Bank 1
-;  514:(    JNEQ_1,          1 ,    #T22490 ,   #L22477)
+	MOVA           	(_isr_#T22531_136) & 0X7F		; Bank 1
+;  535:(    JNEQ_1,          1 ,    #T22531 ,   #L22518)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22490_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22531_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22477
+	GOTO           	#L22518
 ;     {
-#line 516	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		PA2=1;
-;  516:(    ASGN_0,          1 ,            ,       PA2)
+#line 537	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		PA2=1;
+;  537:(    ASGN_0,          1 ,            ,       PA2)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA2_0)/8,	(_PA2_0)%8
-#line 517	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		KIF = 0;       //«Â÷–∂œ±Í÷æŒª
-;  517:(    ASGN_0,          0 ,            ,       KIF)
+#line 538	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		KIF = 0;       //«Â÷–∂œ±Í÷æŒª
+;  538:(    ASGN_0,          0 ,            ,       KIF)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_KIF_0)/8,	(_KIF_0)%8
-#line 518	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
-;  518:(     LABEL,    #L22477 ,            ,          )
+#line 539	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ;     }
+;  539:(     LABEL,    #L22518 ,            ,          )
 
 ; ITemplate_LABEL
-#L22477
-#line 519	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	    if(PIE7==1 && PIF7==1) //usb≤Â»Î
-;  519:(    CVB_SC,       PIE7 ,            ,   #T22513)
+#L22518
+#line 540	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 	    if(PIE7==1 && PIF7==1) //usb≤Â»Î
+;  540:(    CVB_SC,       PIE7 ,            ,   #T22554)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_PIE7_0)/8,	(_PIE7_0)%8
 	MOVI           	0x1
-	MOVA           	(_isr_#T22513_133) & 0X7F		; Bank 1
-;  519:(    JNEQ_1,          1 ,    #T22513 ,   #L22559)
+	MOVA           	(_isr_#T22554_136) & 0X7F		; Bank 1
+;  540:(    JNEQ_1,          1 ,    #T22554 ,   #L22600)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22513_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22554_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22559
-;  519:(    CVB_SC,       PIF7 ,            ,   #T22520)
+	GOTO           	#L22600
+;  540:(    CVB_SC,       PIF7 ,            ,   #T22561)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_PIF7_0)/8,	(_PIF7_0)%8
 	MOVI           	0x1
-	MOVA           	(_isr_#T22520_133) & 0X7F		; Bank 1
-;  519:(    JNEQ_1,          1 ,    #T22520 ,   #L22559)
+	MOVA           	(_isr_#T22561_136) & 0X7F		; Bank 1
+;  540:(    JNEQ_1,          1 ,    #T22561 ,   #L22600)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_isr_#T22520_133) & 0X7F,	0x0		; Bank 1
+	MOV            	(_isr_#T22561_136) & 0X7F,	0x0		; Bank 1
 	XORI           	0x1
 	JBS            	PSW,	0x2
-	GOTO           	#L22559
+	GOTO           	#L22600
 ;     {
-#line 521	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		sleep_count=0;
-;  521:(    ASGN_2,          0 ,            ,sleep_count)
+#line 542	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		sleep_count=0;
+;  542:(    ASGN_2,          0 ,            ,sleep_count)
 
 ; ITemplate_CLR1_4_TMP
 	SECTION        	0x2
 	CLR            	(_sleep_count) & 0X7F		; Bank 2
 	CLR            	(_sleep_count+0x1) & 0X7F		; Bank 2
-#line 522	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		if(State_flag==2 )State_flag=1;    
-;  522:(    JNEQ_1,          2 , State_flag ,   #L22531)
+#line 543	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		if(State_flag==2 )State_flag=1;    
+;  543:(    JNEQ_1,          2 , State_flag ,   #L22572)
 
 ; ITemplate_JNEQ1_4
 	MOVRA          	_State_flag		; Bank 1
 	XORI           	0x2
 	JBS            	PSW,	0x2
-	GOTO           	#L22531
-;  522:(    ASGN_1,          1 ,            ,State_flag)
+	GOTO           	#L22572
+;  543:(    ASGN_1,          1 ,            ,State_flag)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x1
 	SECTION        	0x1
 	MOVA           	(_State_flag) & 0X7F		; Bank 1
-;  522:(     LABEL,    #L22531 ,            ,          )
+;  543:(     LABEL,    #L22572 ,            ,          )
 
 ; ITemplate_LABEL
-#L22531
+#L22572
 ; 		
 ;         
-#line 525	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		if(State_flag==3){
-;  525:(    JNEQ_1,          3 , State_flag ,   #L22546)
+#line 546	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		if(State_flag==3){
+;  546:(    JNEQ_1,          3 , State_flag ,   #L22587)
 
 ; ITemplate_JNEQ1_4
 	SECTION        	0x1
 	MOV            	(_State_flag) & 0X7F,	0x0		; Bank 1
 	XORI           	0x3
 	JBS            	PSW,	0x2
-	GOTO           	#L22546
-#line 526	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			__Asm RST;     //
+	GOTO           	#L22587
+#line 547	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 			__Asm RST;     //
 ; ITemplate_LABEL
 ;-----------Embedded Asm--------------
 	RST
 ;-------------------------------------
-#line 527	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		}
-;  527:(     LABEL,    #L22546 ,            ,          )
+#line 548	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		}
+;  548:(     LABEL,    #L22587 ,            ,          )
 
 ; ITemplate_LABEL
-#L22546
+#L22587
 ; 		
-#line 530	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		PIF7 = 0;		 //«Â≥˝Õ‚≤ø÷–∂œ
-;  530:(    ASGN_0,          0 ,            ,      PIF7)
+#line 551	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; 		PIF7 = 0;		 //«Â≥˝Õ‚≤ø÷–∂œ
+;  551:(    ASGN_0,          0 ,            ,      PIF7)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PIF7_0)/8,	(_PIF7_0)%8
 ;     }
-#line 532	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
-;  532:(     LABEL,    #L22559 ,            ,          )
+#line 553	C:\Users\king\Desktop\Mixing_cup\Ω¡∞Ë±≠≥Ã–Ú\user_code_NEW\HRCC Project Application1\HRCC Project Application1\main.c ; }
+;  553:(     LABEL,    #L22600 ,            ,          )
 
 ; ITemplate_LABEL
-#L22559
-;  532:(     RET_I,            ,            ,          )
+#L22600
+;  553:(     RET_I,            ,            ,          )
 
 ; ITemplate_RET_I
 	SECTION        	0x0
@@ -3261,15 +3426,15 @@ _temperature	RSEG           	0X1		; Bank 0
 	ORG            	0XF8		; Bank 0
 _Vbat_val	RSEG           	0X1		; Bank 0
 	ORG            	0XF7		; Bank 0
-_Sleep_Tsak_last_state_81	RSEG           	0X1		; Bank 0
+_Sleep_Tsak_last_state_83	RSEG           	0X1		; Bank 0
 
 SECTION2C__Users_king_Desktop_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_main_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X11A		; Bank 0
+	ORG            	0X11C		; Bank 0
 _global_count	RSEG           	0X4		; Bank 0
-	ORG            	0X108		; Bank 0
+	ORG            	0X10A		; Bank 0
 _sleep_count	RSEG           	0X2		; Bank 0
-	ORG            	0X116		; Bank 0
-_Delay_ms_temp_time_52	RSEG           	0X4		; Bank 0
+	ORG            	0X118		; Bank 0
+_Delay_ms_temp_time_54	RSEG           	0X4		; Bank 0
 
 SECTION8C__Program_Files__x86__HRCC_Tools_HRCC_v1_2_0_122_tools_INCLUDE_ES7P0693_h_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0XFF80		; Bank 0

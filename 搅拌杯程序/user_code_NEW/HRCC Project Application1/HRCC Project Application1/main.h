@@ -15,8 +15,15 @@ extern unsigned char display_buf[18];
 
 extern unsigned char buzzer_flag;
 
+extern unsigned char State_flag;//运行状态
 
 extern char temperature;//温度值 0~99
 extern unsigned char Vbat_val;   //电量%  0~99
+
+extern unsigned long global_count;
+unsigned char USB_Check();
+
+//#define UART_TEST
+
 
 #endif

@@ -30,7 +30,9 @@ void scan_touch_key(){
 				release_count=0;
 			}
 			else if(edge_flag == 0xF0){
-				buzzer_flag=1;
+				if(buzzer_flag!=1 && State_flag!=3){
+					buzzer_flag=1;
+				}
 				edge_status=0;				//下降延
 			}
 			if(edge_status){

@@ -8,6 +8,8 @@
 	PUBLIC         	_Uart_Init
 	PUBLIC         	_ADC_init
 	PUBLIC         	_ADC_dis_init
+	PUBLIC         	_UART_send
+	PUBLIC         	_UART_sendDATA
 	EXTERN         	_Send_test
 	PUBLIC         	_User_Get_measure_Val
 	PUBLIC         	_vcc_val
@@ -86,15 +88,16 @@
 	EXTERN         	_Get_Sys_time
 	EXTERN         	_display_buf
 	EXTERN         	_buzzer_flag
+	EXTERN         	_State_flag
 	EXTERN         	_temperature
 	EXTERN         	_Vbat_val
+	EXTERN         	_global_count
+	EXTERN         	_USB_Check
 	PUBLIC         	_adc_value
 	PUBLIC         	_offset_value
 	PUBLIC         	_str
 	PUBLIC         	_Get_Tempture
 	PUBLIC         	_Get_TemptureDATA
-	PUBLIC         	_UART_send
-	PUBLIC         	_UART_sendDATA
 	PUBLIC         	_ADC_convert
 	PUBLIC         	_GetOffset2048
 	PUBLIC         	_GetOffsetVDD
@@ -126,71 +129,73 @@ _#S20278
 	RETIA          	0XD
 	RETIA          	0XA
 	RETIA          	0X0
-_Get_Tempture_#T20294_41	EQU            	_Get_TemptureDATA + 0X2		; Bank 0
-_Get_Tempture_#T20295_41	EQU            	_Get_TemptureDATA + 0X6		; Bank 0
-_Get_Tempture_#T20316_41	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
-_Get_Tempture_#T20319_41	EQU            	_Get_TemptureDATA + 0X3		; Bank 0
-_Get_Tempture_#T20321_41	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
-_Get_Tempture_#T20353_41	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
-_Get_Tempture_#T20356_41	EQU            	_Get_TemptureDATA + 0X4		; Bank 0
-_Get_Tempture_#T20357_41	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
-_Get_Tempture_#T20358_41	EQU            	_Get_TemptureDATA + 0X4		; Bank 0
-_ADC_convert_#T20573_46	EQU            	_ADC_convertDATA + 0X0		; Bank 0
-_ADC_convert_#T20576_46	EQU            	_ADC_convertDATA + 0X2		; Bank 0
-_ADC_convert_#T20579_46	EQU            	_ADC_convertDATA + 0X0		; Bank 0
-_ADC_convert_#T20580_46	EQU            	_ADC_convertDATA + 0X4		; Bank 0
-_GetOffset2048_value_tmp_48	EQU            	_GetOffset2048DATA + 0X0		; Bank 0
-_GetOffset2048_gie_bk_48	EQU            	_GetOffset2048DATA + 0X2		; Bank 0
-_GetOffset2048_#T20586_48	EQU            	_GetOffset2048DATA + 0X0		; Bank 0
-_GetOffset2048_#T20639_48	EQU            	_GetOffset2048DATA + 0X0		; Bank 0
-_GetOffset2048_#T20640_48	EQU            	_GetOffset2048DATA + 0X3		; Bank 0
-_GetOffset2048_#T20643_48	EQU            	_GetOffset2048DATA + 0X5		; Bank 0
-_ADC_init_j_58	EQU            	_ADC_initDATA + 0X0		; Bank 0
-_ADC_init_i_58	EQU            	_ADC_initDATA + 0X2		; Bank 0
-_ADC_init_cnt_58	EQU            	_ADC_initDATA + 0X4		; Bank 0
-_ADC_init_#T20874_59	EQU            	_ADC_initDATA + 0X5		; Bank 0
-_ADC_init_#T20878_59	EQU            	_ADC_initDATA + 0X7		; Bank 0
-_ADC_init_#T20879_59	EQU            	_ADC_initDATA + 0X9		; Bank 0
-_ADC_init_#T20971_58	EQU            	_ADC_initDATA + 0X4		; Bank 0
-_ADC_init_#T20994_58	EQU            	_ADC_initDATA + 0X0		; Bank 0
-__f_n_63	EQU            	__fDATA + 0X3		; Bank 0
-__f_i_63	EQU            	__fDATA + 0X5		; Bank 0
-__f_j_63	EQU            	__fDATA + 0X7		; Bank 0
-__f_buf_63	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21057_63	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21058_63	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21079_64	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21083_64	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21084_64	EQU            	__fDATA + 0XD		; Bank 0
-__f_#T21101_65	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21102_65	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21117_65	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21121_65	EQU            	__fDATA + 0XD		; Bank 0
-__f_#T21122_65	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21142_66	EQU            	__fDATA + 0X9		; Bank 0
-__f_#T21143_66	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21159_66	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21160_66	EQU            	__fDATA + 0XD		; Bank 0
-__f_#T21175_66	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21179_66	EQU            	__fDATA + 0XF		; Bank 0
-__f_#T21180_66	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21197_66	EQU            	__fDATA + 0XB		; Bank 0
-__f_#T21201_66	EQU            	__fDATA + 0XD		; Bank 0
-__f_#T21202_66	EQU            	__fDATA + 0XB		; Bank 0
-_User_Get_measure_Val_#T21374_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21376_70	EQU            	_User_Get_measure_ValDATA + 0X2		; Bank 0
-_User_Get_measure_Val_#T21377_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21388_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21390_70	EQU            	_User_Get_measure_ValDATA + 0X2		; Bank 0
-_User_Get_measure_Val_#T21391_70	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21459_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21460_71	EQU            	_User_Get_measure_ValDATA + 0X3		; Bank 0
-_User_Get_measure_Val_#T21473_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21495_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21496_71	EQU            	_User_Get_measure_ValDATA + 0X4		; Bank 0
-_User_Get_measure_Val_#T21499_71	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
-_User_Get_measure_Val_#T21506_71	EQU            	_User_Get_measure_ValDATA + 0X4		; Bank 0
-_User_Get_measure_Val_#T21559_72	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_Get_Tempture_#T20294_43	EQU            	_Get_TemptureDATA + 0X2		; Bank 0
+_Get_Tempture_#T20295_43	EQU            	_Get_TemptureDATA + 0X6		; Bank 0
+_Get_Tempture_#T20316_43	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
+_Get_Tempture_#T20319_43	EQU            	_Get_TemptureDATA + 0X3		; Bank 0
+_Get_Tempture_#T20321_43	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
+_Get_Tempture_#T20353_43	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
+_Get_Tempture_#T20356_43	EQU            	_Get_TemptureDATA + 0X4		; Bank 0
+_Get_Tempture_#T20357_43	EQU            	_Get_TemptureDATA + 0X0		; Bank 0
+_Get_Tempture_#T20358_43	EQU            	_Get_TemptureDATA + 0X4		; Bank 0
+_ADC_convert_#T20573_48	EQU            	_ADC_convertDATA + 0X0		; Bank 0
+_ADC_convert_#T20576_48	EQU            	_ADC_convertDATA + 0X2		; Bank 0
+_ADC_convert_#T20579_48	EQU            	_ADC_convertDATA + 0X0		; Bank 0
+_ADC_convert_#T20580_48	EQU            	_ADC_convertDATA + 0X4		; Bank 0
+_GetOffset2048_value_tmp_50	EQU            	_GetOffset2048DATA + 0X0		; Bank 0
+_GetOffset2048_gie_bk_50	EQU            	_GetOffset2048DATA + 0X2		; Bank 0
+_GetOffset2048_#T20586_50	EQU            	_GetOffset2048DATA + 0X0		; Bank 0
+_GetOffset2048_#T20639_50	EQU            	_GetOffset2048DATA + 0X0		; Bank 0
+_GetOffset2048_#T20640_50	EQU            	_GetOffset2048DATA + 0X3		; Bank 0
+_GetOffset2048_#T20643_50	EQU            	_GetOffset2048DATA + 0X5		; Bank 0
+_ADC_init_j_60	EQU            	_ADC_initDATA + 0X0		; Bank 0
+_ADC_init_i_60	EQU            	_ADC_initDATA + 0X2		; Bank 0
+_ADC_init_cnt_60	EQU            	_ADC_initDATA + 0X4		; Bank 0
+_ADC_init_#T20892_61	EQU            	_ADC_initDATA + 0X5		; Bank 0
+_ADC_init_#T20896_61	EQU            	_ADC_initDATA + 0X7		; Bank 0
+_ADC_init_#T20897_61	EQU            	_ADC_initDATA + 0X9		; Bank 0
+_ADC_init_#T20989_60	EQU            	_ADC_initDATA + 0X4		; Bank 0
+_ADC_init_#T21012_60	EQU            	_ADC_initDATA + 0X0		; Bank 0
+__f_n_65	EQU            	__fDATA + 0X3		; Bank 0
+__f_i_65	EQU            	__fDATA + 0X5		; Bank 0
+__f_j_65	EQU            	__fDATA + 0X7		; Bank 0
+__f_buf_65	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21075_65	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21076_65	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21097_66	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21101_66	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21102_66	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21119_67	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21120_67	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21135_67	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21139_67	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21140_67	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21160_68	EQU            	__fDATA + 0X9		; Bank 0
+__f_#T21161_68	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21177_68	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21178_68	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21193_68	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21197_68	EQU            	__fDATA + 0XF		; Bank 0
+__f_#T21198_68	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21215_68	EQU            	__fDATA + 0XB		; Bank 0
+__f_#T21219_68	EQU            	__fDATA + 0XD		; Bank 0
+__f_#T21220_68	EQU            	__fDATA + 0XB		; Bank 0
+_User_Get_measure_Val_#T21392_72	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21394_72	EQU            	_User_Get_measure_ValDATA + 0X2		; Bank 0
+_User_Get_measure_Val_#T21395_72	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21406_72	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21408_72	EQU            	_User_Get_measure_ValDATA + 0X2		; Bank 0
+_User_Get_measure_Val_#T21409_72	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21458_73	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21579_77	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21580_77	EQU            	_User_Get_measure_ValDATA + 0X3		; Bank 0
+_User_Get_measure_Val_#T21593_77	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21609_77	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21631_77	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21632_77	EQU            	_User_Get_measure_ValDATA + 0X4		; Bank 0
+_User_Get_measure_Val_#T21635_77	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
+_User_Get_measure_Val_#T21642_77	EQU            	_User_Get_measure_ValDATA + 0X4		; Bank 0
+_User_Get_measure_Val_#T21644_73	EQU            	_User_Get_measure_ValDATA + 0X0		; Bank 0
 #TMP	EQU            	?_TMP+ 0X10		; Bank 0
 ?_TMP_RET	EQU            	?_TMP		; Bank 0
 _ADEN_0#sh	EQU            	0X7D0		; Bank 0
@@ -201,6 +206,7 @@ _VREF_CHOPEN_0#sh	EQU            	0X7D9		; Bank 0
 _TRMT1_0#sh	EQU            	0X6B9		; Bank 0
 _BRGH1_0#sh	EQU            	0X6BD		; Bank 0
 _TX1LEN_0#sh	EQU            	0X6BE		; Bank 0
+_TX1EN_0#sh	EQU            	0X6BF		; Bank 0
 _ADCCM_0#sh	EQU            	0XF7		; Bank 0
 _ADCRL_0#sh	EQU            	0XF8		; Bank 0
 _ADCRH_0#sh	EQU            	0XF9		; Bank 0
@@ -235,6 +241,7 @@ _Get_Tempture
 ; #include "../main.h"
 ; #include "../inc_user/user_function.h"
 ; #include <math.h>
+; //#include <stdlib.h>
 ; /*********************************************************
 ; *Copyright (C), 2020, Shanghai Eastsoft Microelectronics Co., Ltd
 ; *文件名:  adc_offset.c
@@ -253,23 +260,23 @@ _Get_Tempture
 ; *备  注:  本软件仅供学习和演示使用，对用户直接引用代码所带来的风险或后果不承担任何法律责任。
 ; **********************************************************/
 ; //#define VDDVREF        //宏定义选择VDD作为参考电压，注释本句则选择内部2.048V作为参考电压正端
-; typedef unsigned char uchar;
-; typedef unsigned int uint;
+; //typedef unsigned char uchar;
+; //typedef unsigned int uint;
 ; uint adc_value;
 ; uint offset_value = 0;  //保存ADC校准值
 ; uchar str[] = "通道 的转换值为:    \r\n\0";
 ; #define B 3950.0//温度系数
 ; #define TN 298.15//额定温度(绝对温度加常温:273.15+25)
-; #define RN 100// 额定阻值(绝对温度时的电阻值10k)
+; #define RN 100// 额定阻值(绝对温度时的电阻值100k)
 ; #define RES 200// 分压电阻200K
 ; #define BaseVol  2.048 //ADC基准电压
 ; float vcc_val;
 ; float RV,RT,Tmp;
 ; float Get_Tempture(unsigned int adc)
 ; {        //float RV,RT,Tmp;
-#line 41	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         RV=BaseVol*(float)adc/4096.0;		//ADC为12位ADC,求出NTC电压:RV=ADCValu/4096*BaseVoltag
+#line 45	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         RV=BaseVol*(float)adc/4096.0;		//ADC为12位ADC,求出NTC电压:RV=ADCValu/4096*BaseVoltag
 	CLR            	BKSR
-;   41:(    CVUI_D,        adc ,            ,   #T20294)
+;   45:(    CVUI_D,        adc ,            ,   #T20294)
 
 ; ITemplate_LibFunc1
 	SECTION        	0x1
@@ -282,14 +289,14 @@ _Get_Tempture
 	CALL           	W2DL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20294_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20294_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20294_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20294_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20294_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20294_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20294_41+0x3		; Bank 1
-;   41:(     MUL_D,    #T20294 ,   2.048000 ,   #T20295)
+	MOVAR          	_Get_Tempture_#T20294_43+0x3		; Bank 1
+;   45:(     MUL_D,    #T20294 ,   2.048000 ,   #T20295)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x40
@@ -300,27 +307,27 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0x6f
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20294_41+0x3		; Bank 1
+	MOVRA          	_Get_Tempture_#T20294_43+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20294_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20294_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20294_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20294_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20294_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20294_43		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLMUL
 	CALL           	DLMUL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20295_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20295_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20295_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20295_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20295_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20295_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20295_41+0x3		; Bank 1
-;   41:(     DIV_D,    #T20295 , 4096.000000 ,        RV)
+	MOVAR          	_Get_Tempture_#T20295_43+0x3		; Bank 1
+;   45:(     DIV_D,    #T20295 , 4096.000000 ,        RV)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x45
@@ -331,13 +338,13 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0x0
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20295_41+0x3		; Bank 1
+	MOVRA          	_Get_Tempture_#T20295_43+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20295_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20295_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20295_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20295_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20295_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20295_43		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLDIV
 	CALL           	DLDIV		; Bank 0		; ShBank 0
@@ -350,8 +357,8 @@ _Get_Tempture
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_RV+0x2		; Bank 2
 ;        // RT=RV*100/(BaseVol-RV);				//求出当前温度阻值 (BaseVoltage-RV)/R16=RV/RT;
-#line 43	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		RT=RES/((vcc_val/RV)-1);
-;   43:(     DIV_F,    vcc_val ,         RV ,   #T20316)
+#line 47	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		RT=RES/((vcc_val/RV)-1);
+;   47:(     DIV_F,    vcc_val ,         RV ,   #T20316)
 
 ; ITemplate_LibFunc3
 	MOVRA          	_RV+0x2		; Bank 2
@@ -371,12 +378,12 @@ _Get_Tempture
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20316_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20316_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20316_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20316_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20316_41+0x2		; Bank 1
-;   43:(     SUB_F,    #T20316 ,   1.000000 ,   #T20319)
+	MOVAR          	_Get_Tempture_#T20316_43+0x2		; Bank 1
+;   47:(     SUB_F,    #T20316 ,   1.000000 ,   #T20319)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x3f
@@ -385,30 +392,30 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
 	MOVI           	0x0
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20316_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20316_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20316_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20316_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20316_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20316_43		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	FLSUB
 	CALL           	FLSUB		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20319_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20319_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20319_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20319_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20319_41+0x2		; Bank 1
-;   43:(     DIV_F, 200.000000 ,    #T20319 ,        RT)
+	MOVAR          	_Get_Tempture_#T20319_43+0x2		; Bank 1
+;   47:(     DIV_F, 200.000000 ,    #T20319 ,        RT)
 
 ; ITemplate_LibFunc3
-	MOVRA          	_Get_Tempture_#T20319_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20319_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20319_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20319_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20319_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20319_43		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
 	MOVI           	0x43
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
@@ -426,8 +433,8 @@ _Get_Tempture
 	MOVAR          	_RT+0x1		; Bank 2
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_RT+0x2		; Bank 2
-#line 44	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	    Tmp=1/(1/TN+(log(RT/RN)/B))-273.15;//%RT = RN exp*B(1/T-1/TN)%
-;   44:(     DIV_F,         RT , 100.000000 ,   #T20353)
+#line 48	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	    Tmp=1/(1/TN+(log(RT/RN)/B))-273.15;//%RT = RN exp*B(1/T-1/TN)%
+;   48:(     DIV_F,         RT , 100.000000 ,   #T20353)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x42
@@ -447,38 +454,38 @@ _Get_Tempture
 	SEGMENTSEL     	$
 ; ITemplate_CVF_D_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20353_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20353_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20353_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20353_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20353_41+0x3		; Bank 1
+	MOVAR          	_Get_Tempture_#T20353_43+0x3		; Bank 1
 	SECTION        	0x1
-	CLR            	(_Get_Tempture_#T20353_41) & 0X7F		; Bank 1
-;   44:(    PARA_4,    #T20353 ,            ,         f)
+	CLR            	(_Get_Tempture_#T20353_43) & 0X7F		; Bank 1
+;   48:(    PARA_4,    #T20353 ,            ,         f)
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Get_Tempture_#T20353_41) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Get_Tempture_#T20353_43) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_logDATA+0X0) & 0X7F		; Bank 1
-	MOV            	(_Get_Tempture_#T20353_41+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Get_Tempture_#T20353_43+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_logDATA+0X0+0x1) & 0X7F		; Bank 1
-	MOV            	(_Get_Tempture_#T20353_41+0x2) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Get_Tempture_#T20353_43+0x2) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_logDATA+0X0+0x2) & 0X7F		; Bank 1
-	MOV            	(_Get_Tempture_#T20353_41+0x3) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Get_Tempture_#T20353_43+0x3) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_logDATA+0X0+0x3) & 0X7F		; Bank 1
-;   44:(     CALLR,    (log.0) ,            ,   #T20321)
+;   48:(     CALLR,    (log.0) ,            ,   #T20321)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_log
 	CALL           	_log		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_Get_Tempture_#T20321_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20321_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20321_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20321_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20321_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20321_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20321_41+0x3		; Bank 1
-;   44:(     DIV_D,    #T20321 , 3950.000000 ,   #T20356)
+	MOVAR          	_Get_Tempture_#T20321_43+0x3		; Bank 1
+;   48:(     DIV_D,    #T20321 , 3950.000000 ,   #T20356)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x45
@@ -489,27 +496,27 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0x0
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20321_41+0x3		; Bank 1
+	MOVRA          	_Get_Tempture_#T20321_43+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20321_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20321_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20321_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20321_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20321_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20321_43		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLDIV
 	CALL           	DLDIV		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20356_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20356_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20356_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20356_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20356_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20356_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20356_41+0x3		; Bank 1
-;   44:(     ADD_D,    #T20356 ,   0.003354 ,   #T20357)
+	MOVAR          	_Get_Tempture_#T20356_43+0x3		; Bank 1
+;   48:(     ADD_D,    #T20356 ,   0.003354 ,   #T20357)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x3b
@@ -520,36 +527,36 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0xf
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20356_41+0x3		; Bank 1
+	MOVRA          	_Get_Tempture_#T20356_43+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20356_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20356_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20356_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20356_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20356_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20356_43		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLADD
 	CALL           	DLADD		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20357_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20357_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20357_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20357_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20357_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20357_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20357_41+0x3		; Bank 1
-;   44:(     DIV_D,   1.000000 ,    #T20357 ,   #T20358)
+	MOVAR          	_Get_Tempture_#T20357_43+0x3		; Bank 1
+;   48:(     DIV_D,   1.000000 ,    #T20357 ,   #T20358)
 
 ; ITemplate_LibFunc3
-	MOVRA          	_Get_Tempture_#T20357_41+0x3		; Bank 1
+	MOVRA          	_Get_Tempture_#T20357_43+0x3		; Bank 1
 	MOVA           	(?_TMP+0x7) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20357_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20357_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x6) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20357_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20357_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20357_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20357_43		; Bank 1
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
 	MOVI           	0x3f
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
@@ -564,14 +571,14 @@ _Get_Tempture
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20358_41		; Bank 1
+	MOVAR          	_Get_Tempture_#T20358_43		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20358_41+0x1		; Bank 1
+	MOVAR          	_Get_Tempture_#T20358_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20358_41+0x2		; Bank 1
+	MOVAR          	_Get_Tempture_#T20358_43+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_Get_Tempture_#T20358_41+0x3		; Bank 1
-;   44:(     SUB_D,    #T20358 , 273.149994 ,       Tmp)
+	MOVAR          	_Get_Tempture_#T20358_43+0x3		; Bank 1
+;   48:(     SUB_D,    #T20358 , 273.149994 ,       Tmp)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x43
@@ -582,13 +589,13 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0x33
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20358_41+0x3		; Bank 1
+	MOVRA          	_Get_Tempture_#T20358_43+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20358_41+0x2		; Bank 1
+	MOVRA          	_Get_Tempture_#T20358_43+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20358_41+0x1		; Bank 1
+	MOVRA          	_Get_Tempture_#T20358_43+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_Get_Tempture_#T20358_41		; Bank 1
+	MOVRA          	_Get_Tempture_#T20358_43		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLSUB
 	CALL           	DLSUB		; Bank 0		; ShBank 0
@@ -600,8 +607,8 @@ _Get_Tempture
 	MOVAR          	_Tmp+0x1		; Bank 2
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_Tmp+0x2		; Bank 2
-#line 45	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         return Tmp;
-;   45:(     RET_3,        Tmp ,            ,      #RET)
+#line 50	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         return Tmp;
+;   50:(     RET_3,        Tmp ,            ,      #RET)
 
 ; ITemplate_RET2_N
 	MOVRA          	_Tmp		; Bank 2
@@ -652,62 +659,62 @@ _ADC_convert
 ; **********************************************/
 ; uint ADC_convert(void)
 ; {
-#line 84	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADTRG = 1;      //启动AD转换
+#line 89	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADTRG = 1;      //启动AD转换
 	CLR            	BKSR
-;   84:(    ASGN_0,          1 ,            ,     ADTRG)
+;   89:(    ASGN_0,          1 ,            ,     ADTRG)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_ADTRG_0#sh)/8,	(_ADTRG_0#sh)%8		; ShBank 0
-#line 85	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     while(ADTRG);
-;   85:(     LABEL,    #L20552 ,            ,          )
+#line 90	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     while(ADTRG);
+;   90:(     LABEL,    #L20552 ,            ,          )
 
 ; ITemplate_LABEL
 #L20552
-;   85:(     JNZ_0,      ADTRG ,            ,   #L20552)
+;   90:(     JNZ_0,      ADTRG ,            ,   #L20552)
 
 ; ITemplate_JNZ_0
 	JBC            	(_ADTRG_0#sh)/8,	(_ADTRG_0#sh)%8		; ShBank 0
 	GOTO           	#L20552
-#line 86	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADIF = 0;
-;   86:(    ASGN_0,          0 ,            ,      ADIF)
+#line 91	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADIF = 0;
+;   91:(    ASGN_0,          0 ,            ,      ADIF)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_ADIF_0)/8,	(_ADIF_0)%8
-#line 88	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     return (uint)ADCRH<<8 | ADCRL;
-;   88:(   CVUC_UI,      ADCRH ,            ,   #T20573)
+#line 93	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     return (uint)ADCRH<<8 | ADCRL;
+;   93:(   CVUC_UI,      ADCRH ,            ,   #T20573)
 
 ; ITemplate_CVTMS_U
 	SECTION        	0x1
-	CLR            	(_ADC_convert_#T20573_46+0x1) & 0X7F		; Bank 1
+	CLR            	(_ADC_convert_#T20573_48+0x1) & 0X7F		; Bank 1
 	MOV            	_ADCRH_0#sh,	0x0		; ShBank 0
-	MOVA           	(_ADC_convert_#T20573_46) & 0X7F		; Bank 1
-;   88:(    LSH_2U,    #T20573 ,          8 ,   #T20576)
+	MOVA           	(_ADC_convert_#T20573_48) & 0X7F		; Bank 1
+;   93:(    LSH_2U,    #T20573 ,          8 ,   #T20576)
 
 ; ITemplate_LSH1_4_8
-	MOV            	(_ADC_convert_#T20573_46) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_convert_#T20576_46+0x1) & 0X7F		; Bank 1
-	CLR            	(_ADC_convert_#T20576_46) & 0X7F		; Bank 1
-;   88:(   CVUC_UI,      ADCRL ,            ,   #T20579)
+	MOV            	(_ADC_convert_#T20573_48) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_convert_#T20576_48+0x1) & 0X7F		; Bank 1
+	CLR            	(_ADC_convert_#T20576_48) & 0X7F		; Bank 1
+;   93:(   CVUC_UI,      ADCRL ,            ,   #T20579)
 
 ; ITemplate_CVTMS_U
-	CLR            	(_ADC_convert_#T20579_46+0x1) & 0X7F		; Bank 1
+	CLR            	(_ADC_convert_#T20579_48+0x1) & 0X7F		; Bank 1
 	MOV            	_ADCRL_0#sh,	0x0		; ShBank 0
-	MOVA           	(_ADC_convert_#T20579_46) & 0X7F		; Bank 1
-;   88:(     BOR_2,    #T20576 ,    #T20579 ,   #T20580)
+	MOVA           	(_ADC_convert_#T20579_48) & 0X7F		; Bank 1
+;   93:(     BOR_2,    #T20576 ,    #T20579 ,   #T20580)
 
 ; ITemplate_BOR1_4
-	MOV            	(_ADC_convert_#T20579_46) & 0X7F,	0x0		; Bank 1
-	IOR            	(_ADC_convert_#T20576_46) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_convert_#T20580_46) & 0X7F		; Bank 1
-	MOV            	(_ADC_convert_#T20579_46+0x1) & 0X7F,	0x0		; Bank 1
-	IOR            	(_ADC_convert_#T20576_46+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_convert_#T20580_46+0x1) & 0X7F		; Bank 1
-;   88:(     RET_2,    #T20580 ,            ,      #RET)
+	MOV            	(_ADC_convert_#T20579_48) & 0X7F,	0x0		; Bank 1
+	IOR            	(_ADC_convert_#T20576_48) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_convert_#T20580_48) & 0X7F		; Bank 1
+	MOV            	(_ADC_convert_#T20579_48+0x1) & 0X7F,	0x0		; Bank 1
+	IOR            	(_ADC_convert_#T20576_48+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_convert_#T20580_48+0x1) & 0X7F		; Bank 1
+;   93:(     RET_2,    #T20580 ,            ,      #RET)
 
 ; ITemplate_RET2_N
-	MOV            	(_ADC_convert_#T20580_46) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_convert_#T20580_48) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET		; Bank 0
-	MOV            	(_ADC_convert_#T20580_46+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_convert_#T20580_48+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET+0x1		; Bank 0
 	MOVRA          	?_TMP_RET		; Bank 0
 	SECTION        	0x0
@@ -730,149 +737,149 @@ _GetOffset2048
 ; uint GetOffset2048(void)
 ; {
 ; 	uint value_tmp = 0;
-#line 101	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	unsigned char gie_bk = GIE;		//备份GIE
+#line 106	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	unsigned char gie_bk = GIE;		//备份GIE
 	CLR            	BKSR
-;  101:(    CVB_UC,        GIE ,            ,   #T20586)
+;  106:(    CVB_UC,        GIE ,            ,   #T20586)
 
 ; ITemplate_CVB_UC
 	MOVI           	0x0
 	JBC            	(_GIE_0)/8,	(_GIE_0)%8
 	MOVI           	0x1
 	SECTION        	0x1
-	MOVA           	(_GetOffset2048_#T20586_48) & 0X7F		; Bank 1
-;  101:(    ASGN_1,    #T20586 ,            ,    gie_bk)
+	MOVA           	(_GetOffset2048_#T20586_50) & 0X7F		; Bank 1
+;  106:(    ASGN_1,    #T20586 ,            ,    gie_bk)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_GetOffset2048_#T20586_48) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetOffset2048_gie_bk_48) & 0X7F		; Bank 1
-#line 103	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     CLRWDT();
+	MOV            	(_GetOffset2048_#T20586_50) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_GetOffset2048_gie_bk_50) & 0X7F		; Bank 1
+#line 108	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     CLRWDT();
 ; ITemplate_LABEL
 ;-----------Embedded Asm--------------
 	CWDT
 ;-------------------------------------
-#line 105	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(GIE) GIE = 0;
-;  105:(     LABEL,    #L20587 ,            ,          )
+#line 110	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(GIE) GIE = 0;
+;  110:(     LABEL,    #L20587 ,            ,          )
 
 ; ITemplate_LABEL
 #L20587
-;  105:(      JZ_0,        GIE ,            ,   #L20589)
+;  110:(      JZ_0,        GIE ,            ,   #L20589)
 
 ; ITemplate_JZ_0
 	JBS            	(_GIE_0)/8,	(_GIE_0)%8
 	GOTO           	#L20589
-;  105:(    ASGN_0,          0 ,            ,       GIE)
+;  110:(    ASGN_0,          0 ,            ,       GIE)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_GIE_0)/8,	(_GIE_0)%8
-;  105:(       JMP,            ,            ,   #L20587)
+;  110:(       JMP,            ,            ,   #L20587)
 
 ; ITemplate_JMP
 	GOTO           	#L20587
-;  105:(     LABEL,    #L20589 ,            ,          )
+;  110:(     LABEL,    #L20589 ,            ,          )
 
 ; ITemplate_LABEL
 #L20589
-#line 106	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	DATARDEN = 1;
-;  106:(    ASGN_0,          1 ,            ,  DATARDEN)
+#line 111	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	DATARDEN = 1;
+;  111:(    ASGN_0,          1 ,            ,  DATARDEN)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_DATARDEN_0)/8,	(_DATARDEN_0)%8
-#line 108	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	FRAH = 0x802F >> 8;
-;  108:(    ASGN_1,        128 ,            ,      FRAH)
+#line 113	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	FRAH = 0x802F >> 8;
+;  113:(    ASGN_1,        128 ,            ,      FRAH)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x80
 	MOVA           	_FRAH_0
-#line 109	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	FRAL = 0x802F;
-;  109:(    ASGN_1,         47 ,            ,      FRAL)
+#line 114	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	FRAL = 0x802F;
+;  114:(    ASGN_1,         47 ,            ,      FRAL)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x2f
 	MOVA           	_FRAL_0
-#line 110	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	DATARDTRG = 1;
-;  110:(    ASGN_0,          1 ,            , DATARDTRG)
+#line 115	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	DATARDTRG = 1;
+;  115:(    ASGN_0,          1 ,            , DATARDTRG)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_DATARDTRG_0)/8,	(_DATARDTRG_0)%8
-#line 111	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(DATARDTRG) ;	     //等待读完成
-;  111:(     LABEL,    #L20624 ,            ,          )
+#line 116	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(DATARDTRG) ;	     //等待读完成
+;  116:(     LABEL,    #L20624 ,            ,          )
 
 ; ITemplate_LABEL
 #L20624
-;  111:(     JNZ_0,  DATARDTRG ,            ,   #L20624)
+;  116:(     JNZ_0,  DATARDTRG ,            ,   #L20624)
 
 ; ITemplate_JNZ_0
 	JBC            	(_DATARDTRG_0)/8,	(_DATARDTRG_0)%8
 	GOTO           	#L20624
-#line 112	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	__Asm TBR;		         //查表读指令
+#line 117	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	__Asm TBR;		         //查表读指令
 ; ITemplate_LABEL
 ;-----------Embedded Asm--------------
 	TBR
 ;-------------------------------------
-#line 113	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	value_tmp = (ROMDH<<8) | ROMDL;
-;  113:(   CVUC_SI,      ROMDH ,            ,   #T20639)
+#line 118	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	value_tmp = (ROMDH<<8) | ROMDL;
+;  118:(   CVUC_SI,      ROMDH ,            ,   #T20639)
 
 ; ITemplate_CVTMS_U
-	CLR            	(_GetOffset2048_#T20639_48+0x1) & 0X7F		; Bank 1
+	CLR            	(_GetOffset2048_#T20639_50+0x1) & 0X7F		; Bank 1
 	MOV            	_ROMDH_0,	0x0
-	MOVA           	(_GetOffset2048_#T20639_48) & 0X7F		; Bank 1
-;  113:(    LSH_2S,    #T20639 ,          8 ,   #T20640)
+	MOVA           	(_GetOffset2048_#T20639_50) & 0X7F		; Bank 1
+;  118:(    LSH_2S,    #T20639 ,          8 ,   #T20640)
 
 ; ITemplate_LSH1_4_8
-	MOV            	(_GetOffset2048_#T20639_48) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetOffset2048_#T20640_48+0x1) & 0X7F		; Bank 1
-	CLR            	(_GetOffset2048_#T20640_48) & 0X7F		; Bank 1
-;  113:(   CVUC_SI,      ROMDL ,            ,   #T20643)
+	MOV            	(_GetOffset2048_#T20639_50) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_GetOffset2048_#T20640_50+0x1) & 0X7F		; Bank 1
+	CLR            	(_GetOffset2048_#T20640_50) & 0X7F		; Bank 1
+;  118:(   CVUC_SI,      ROMDL ,            ,   #T20643)
 
 ; ITemplate_CVTMS_U
-	CLR            	(_GetOffset2048_#T20643_48+0x1) & 0X7F		; Bank 1
+	CLR            	(_GetOffset2048_#T20643_50+0x1) & 0X7F		; Bank 1
 	MOV            	_ROMDL_0,	0x0
-	MOVA           	(_GetOffset2048_#T20643_48) & 0X7F		; Bank 1
-;  113:(     BOR_2,    #T20640 ,    #T20643 , value_tmp)
+	MOVA           	(_GetOffset2048_#T20643_50) & 0X7F		; Bank 1
+;  118:(     BOR_2,    #T20640 ,    #T20643 , value_tmp)
 
 ; ITemplate_BOR1_4
-	MOV            	(_GetOffset2048_#T20643_48) & 0X7F,	0x0		; Bank 1
-	IOR            	(_GetOffset2048_#T20640_48) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetOffset2048_value_tmp_48) & 0X7F		; Bank 1
-	MOV            	(_GetOffset2048_#T20643_48+0x1) & 0X7F,	0x0		; Bank 1
-	IOR            	(_GetOffset2048_#T20640_48+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetOffset2048_value_tmp_48+0x1) & 0X7F		; Bank 1
-#line 115	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ROMCL = 0x00;            //退出IAP
-;  115:(    ASGN_1,          0 ,            ,     ROMCL)
+	MOV            	(_GetOffset2048_#T20643_50) & 0X7F,	0x0		; Bank 1
+	IOR            	(_GetOffset2048_#T20640_50) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_GetOffset2048_value_tmp_50) & 0X7F		; Bank 1
+	MOV            	(_GetOffset2048_#T20643_50+0x1) & 0X7F,	0x0		; Bank 1
+	IOR            	(_GetOffset2048_#T20640_50+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_GetOffset2048_value_tmp_50+0x1) & 0X7F		; Bank 1
+#line 120	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ROMCL = 0x00;            //退出IAP
+;  120:(    ASGN_1,          0 ,            ,     ROMCL)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	_ROMCL_0
-#line 116	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	GIE = gie_bk;            //恢复全局中断
-;  116:(    CVUC_B,     gie_bk ,            ,   #T20657)
+#line 121	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	GIE = gie_bk;            //恢复全局中断
+;  121:(    CVUC_B,     gie_bk ,            ,   #T20657)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_GetOffset2048_#T20657_48)/8) & 0X7F,	(_GetOffset2048_#T20657_48)%8		; Bank 0
+	BCC            	((_GetOffset2048_#T20657_50)/8) & 0X7F,	(_GetOffset2048_#T20657_50)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_GetOffset2048_gie_bk_48) & 0X7F,	0x0		; Bank 1
-	GOTO           	#L21588
+	JBS            	(_GetOffset2048_gie_bk_50) & 0X7F,	0x0		; Bank 1
+	GOTO           	#L21667
 	SECTION        	0x0
-	BSS            	((_GetOffset2048_#T20657_48)/8) & 0X7F,	(_GetOffset2048_#T20657_48)%8		; Bank 0
-#L21588
-;  116:(    ASGN_0,    #T20657 ,            ,       GIE)
+	BSS            	((_GetOffset2048_#T20657_50)/8) & 0X7F,	(_GetOffset2048_#T20657_50)%8		; Bank 0
+#L21667
+;  121:(    ASGN_0,    #T20657 ,            ,       GIE)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_GetOffset2048_#T20657_48)/8) & 0X7F,	(_GetOffset2048_#T20657_48)%8		; Bank 0
-	GOTO           	#L21589
+	JBC            	((_GetOffset2048_#T20657_50)/8) & 0X7F,	(_GetOffset2048_#T20657_50)%8		; Bank 0
+	GOTO           	#L21668
 	BCC            	(_GIE_0)/8,	(_GIE_0)%8
-	GOTO           	#L21590
-#L21589
+	GOTO           	#L21669
+#L21668
 	BSS            	(_GIE_0)/8,	(_GIE_0)%8
-#L21590
-#line 118	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	return value_tmp;
-;  118:(     RET_2,  value_tmp ,            ,      #RET)
+#L21669
+#line 123	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	return value_tmp;
+;  123:(     RET_2,  value_tmp ,            ,      #RET)
 
 ; ITemplate_RET2_N
 	SECTION        	0x1
-	MOV            	(_GetOffset2048_value_tmp_48) & 0X7F,	0x0		; Bank 1
+	MOV            	(_GetOffset2048_value_tmp_50) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET		; Bank 0
-	MOV            	(_GetOffset2048_value_tmp_48+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_GetOffset2048_value_tmp_50+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET+0x1		; Bank 0
 	MOVRA          	?_TMP_RET		; Bank 0
 	SECTION        	0x0
@@ -907,77 +914,77 @@ _ADC_dis_init
 ; }
 ; /****************初始化UART*******************/
 ; void Uart_Init(void){
-;     //PCT1 = 0;       //TX输出
-;     //PAT5 = 1;       //RX输入
+;     PCT1 = 0;       //TX输出
+;     PAT5 = 1;       //RX输入
 ;    // PBT5 = 0;       //TX输出
 ;    // PBT6 = 1;       //RX输入
 ;     TX1LEN = 0;     //8位数据发送格式 UART1SEL
 ;     BRGH1 = 0;      //波特率低速模式：波特率=Fosc/(64*(BRR<7:0>+1))
 ;     BR1R = 25;      //波特率=16MHz/(64*26)≈9600bps
-;     
+;     TX1EN = 1;       //打开发送
 ; 	UART1SEL=1;
 ; }
 ; void ADC_dis_init(){
 ;   
-#line 166	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ANSH1 = 0;          //选择AIN9为模拟口
+#line 171	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ANSH1 = 0;          //选择AIN9为模拟口
 	CLR            	BKSR
-;  166:(    ASGN_0,          0 ,            ,     ANSH1)
+;  171:(    ASGN_0,          0 ,            ,     ANSH1)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_ANSH1_0)/8,	(_ANSH1_0)%8
-#line 167	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCL = 0xF8;      //ADCCL<7:4>选择通道
-;  167:(    ASGN_1,        248 ,            ,     ADCCL)
+#line 172	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCL = 0xF8;      //ADCCL<7:4>选择通道
+;  172:(    ASGN_1,        248 ,            ,     ADCCL)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xf8
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-;  //   ADCCL &= 0x9F;      //选择通道9
+; 	//ADCCL &= 0x9F;      //选择通道9
 ; 	//ADCCM = 0x6B;       //参考源内部固定选择2.048V,负参考固定选择VSS，转换位数固定选择12位，AD调整offset固定选择档位1
-#line 171	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCH = 0xC3 ;       //低位对齐;时钟周期FOSC/16
-;  171:(    ASGN_1,        195 ,            ,     ADCCH)
+#line 175	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCH = 0xC3 ;       //低位对齐;时钟周期FOSC/16
+;  175:(    ASGN_1,        195 ,            ,     ADCCH)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xc3
 	MOVA           	_ADCCH_0#sh		; ShBank 0
-#line 172	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADEN = 0;           //使能ADC模块
-;  172:(    ASGN_0,          0 ,            ,      ADEN)
+#line 176	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADEN = 0;           //使能ADC模块
+;  176:(    ASGN_0,          0 ,            ,      ADEN)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_ADEN_0#sh)/8,	(_ADEN_0#sh)%8		; ShBank 0
-#line 173	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     VREFEN = 0;         //参考电压模块使能
-;  173:(    ASGN_0,          0 ,            ,    VREFEN)
+#line 177	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     VREFEN = 0;         //参考电压模块使能
+;  177:(    ASGN_0,          0 ,            ,    VREFEN)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_VREFEN_0#sh)/8,	(_VREFEN_0#sh)%8		; ShBank 0
 ; //	while(j--);         //等待300us以上
-#line 175	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	VREF_CHOPEN = 0 ;    //内部参考必须使能电压斩波器
-;  175:(    ASGN_0,          0 ,            ,VREF_CHOPEN)
+#line 179	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	VREF_CHOPEN = 0 ;    //内部参考必须使能电压斩波器
+;  179:(    ASGN_0,          0 ,            ,VREF_CHOPEN)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_VREF_CHOPEN_0#sh)/8,	(_VREF_CHOPEN_0#sh)%8		; ShBank 0
 ; //    while(i--);         //等待1ms以上再启动转换
-#line 178	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADC_LP_EN = 0;      //ADC低功耗必须固定使能
-;  178:(    ASGN_0,          0 ,            , ADC_LP_EN)
+#line 182	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADC_LP_EN = 0;      //ADC低功耗必须固定使能
+;  182:(    ASGN_0,          0 ,            , ADC_LP_EN)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_ADC_LP_EN_0)/8,	(_ADC_LP_EN_0)%8
-#line 179	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT4 = 0;
-;  179:(    ASGN_0,          0 ,            ,      PBT4)
+#line 183	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT4 = 0;
+;  183:(    ASGN_0,          0 ,            ,      PBT4)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PBT4_0)/8,	(_PBT4_0)%8
-#line 180	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT2 = 0;
-;  180:(    ASGN_0,          0 ,            ,      PBT2)
+#line 184	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT2 = 0;
+;  184:(    ASGN_0,          0 ,            ,      PBT2)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PBT2_0)/8,	(_PBT2_0)%8
-#line 181	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     SMPS = 1;           //硬件控制采样，ADTRG=1时启动AD采样转换
-;  181:(    ASGN_0,          1 ,            ,      SMPS)
+#line 185	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     SMPS = 1;           //硬件控制采样，ADTRG=1时启动AD采样转换
+;  185:(    ASGN_0,          1 ,            ,      SMPS)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_SMPS_0#sh)/8,	(_SMPS_0#sh)%8		; ShBank 0
-#line 182	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
-;  182:(       RET,            ,            ,          )
+#line 186	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  186:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
@@ -997,30 +1004,30 @@ _ADC_init
 ; **********************************************/
 ; void ADC_init(void) 
 ; {
-#line 194	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     uint j = 3000;        //延时变量
+#line 198	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     uint j = 3000;        //延时变量
 	CLR            	BKSR
-;  194:(    ASGN_2,       3000 ,            ,         j)
+;  198:(    ASGN_2,       3000 ,            ,         j)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xb
 	SECTION        	0x1
-	MOVA           	(_ADC_init_j_58+0x1) & 0X7F		; Bank 1
+	MOVA           	(_ADC_init_j_60+0x1) & 0X7F		; Bank 1
 	MOVI           	0xb8
-	MOVA           	(_ADC_init_j_58) & 0X7F		; Bank 1
-#line 195	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	uint i = 10000;       //延时变量
-;  195:(    ASGN_2,      10000 ,            ,         i)
+	MOVA           	(_ADC_init_j_60) & 0X7F		; Bank 1
+#line 199	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	uint i = 10000;       //延时变量
+;  199:(    ASGN_2,      10000 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x27
-	MOVA           	(_ADC_init_i_58+0x1) & 0X7F		; Bank 1
+	MOVA           	(_ADC_init_i_60+0x1) & 0X7F		; Bank 1
 	MOVI           	0x10
-	MOVA           	(_ADC_init_i_58) & 0X7F		; Bank 1
-#line 196	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	uchar cnt = 3;
-;  196:(    ASGN_1,          3 ,            ,       cnt)
+	MOVA           	(_ADC_init_i_60) & 0X7F		; Bank 1
+#line 200	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	uchar cnt = 3;
+;  200:(    ASGN_1,          3 ,            ,       cnt)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x3
-	MOVA           	(_ADC_init_cnt_58) & 0X7F		; Bank 1
+	MOVA           	(_ADC_init_cnt_60) & 0X7F		; Bank 1
 ;      
 ; /****************初始化ADC********************/
 ; #ifdef VDDVREF
@@ -1046,20 +1053,20 @@ _ADC_init
 ;     ADCCH = 0xC8;       //低位对齐;时钟周期FOSC/16
 ; 	ADEN = 1;           //使能ADC模块
 ; #else
-#line 224	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(cnt != 0)
-;  224:(     LABEL,    #L20840 ,            ,          )
+#line 228	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(cnt != 0)
+;  228:(     LABEL,    #L20858 ,            ,          )
 
 ; ITemplate_LABEL
-#L20840
-;  224:(      JZ_1,        cnt ,            ,   #L20842)
+#L20858
+;  228:(      JZ_1,        cnt ,            ,   #L20860)
 
 ; ITemplate_JZ1_4
-	MOV            	(_ADC_init_cnt_58) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_init_cnt_60) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
-	GOTO           	#L20842
+	GOTO           	#L20860
 ; 	{
-#line 226	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         offset_value = GetOffset2048();  //获取offset值
-;  226:(     CALLR, (GetOffset2048.0) ,            ,offset_value)
+#line 230	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         offset_value = GetOffset2048();  //获取offset值
+;  230:(     CALLR, (GetOffset2048.0) ,            ,offset_value)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_GetOffset2048
@@ -1068,16 +1075,16 @@ _ADC_init
 	MOVAR          	_offset_value		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_offset_value+0x1		; Bank 1
-#line 227	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if((offset_value>>8) == ((~offset_value) & 0x00FF)) //是否满足高低八位取反，是则取低8位作为offset
-;  227:(    BCOM_2, offset_value ,            ,   #T20874)
+#line 231	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if((offset_value>>8) == ((~offset_value) & 0x00FF)) //是否满足高低八位取反，是则取低8位作为offset
+;  231:(    BCOM_2, offset_value ,            ,   #T20892)
 
 ; ITemplate_BCOM1_4
 	SECTION        	0x1
 	COM            	(_offset_value) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_init_#T20874_59) & 0X7F		; Bank 1
+	MOVA           	(_ADC_init_#T20892_61) & 0X7F		; Bank 1
 	COM            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_init_#T20874_59+0x1) & 0X7F		; Bank 1
-;  227:(    RSH_2U, offset_value ,          8 ,   #T20878)
+	MOVA           	(_ADC_init_#T20892_61+0x1) & 0X7F		; Bank 1
+;  231:(    RSH_2U, offset_value ,          8 ,   #T20896)
 
 ; ITemplate_RSH1_4U
 	MOVI           	0x8
@@ -1088,46 +1095,46 @@ _ADC_init
 	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x2		; Bank 0
 	MOVRA          	?_TMP		; Bank 0
-	GOTO           	#L21591
-#L21592
+	GOTO           	#L21670
+#L21671
 	BCC            	PSW,	0x0
 	SECTION        	0x0
 	RR             	(?_TMP+0x2) & 0X7F,	0x1		; Bank 0
 	RR             	(?_TMP+0x1) & 0X7F,	0x1		; Bank 0
-#L21591
+#L21670
 	ADDI           	0xff
 	JBS            	PSW,	0x2
-	GOTO           	#L21592
+	GOTO           	#L21671
 	SECTION        	0x0
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_ADC_init_#T20878_59		; Bank 1
+	MOVAR          	_ADC_init_#T20896_61		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_ADC_init_#T20878_59+0x1		; Bank 1
-;  227:(    BAND_2,        255 ,    #T20874 ,   #T20879)
+	MOVAR          	_ADC_init_#T20896_61+0x1		; Bank 1
+;  231:(    BAND_2,        255 ,    #T20892 ,   #T20897)
 
 ; ITemplate_BAND1_4
-	MOVRA          	_ADC_init_#T20874_59		; Bank 1
+	MOVRA          	_ADC_init_#T20892_61		; Bank 1
 	ANDI           	0xff
-	MOVAR          	_ADC_init_#T20879_59		; Bank 1
-	MOVRA          	_ADC_init_#T20874_59+0x1		; Bank 1
+	MOVAR          	_ADC_init_#T20897_61		; Bank 1
+	MOVRA          	_ADC_init_#T20892_61+0x1		; Bank 1
 	ANDI           	0x0
-	MOVAR          	_ADC_init_#T20879_59+0x1		; Bank 1
-;  227:(    JNEQ_2,    #T20878 ,    #T20879 ,   #L20860)
+	MOVAR          	_ADC_init_#T20897_61+0x1		; Bank 1
+;  231:(    JNEQ_2,    #T20896 ,    #T20897 ,   #L20878)
 
 ; ITemplate_JNEQ1_4
-	MOVRA          	_ADC_init_#T20879_59		; Bank 1
+	MOVRA          	_ADC_init_#T20897_61		; Bank 1
 	SECTION        	0x1
-	XOR            	(_ADC_init_#T20878_59) & 0X7F,	0x0		; Bank 1
+	XOR            	(_ADC_init_#T20896_61) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21593
-	MOV            	(_ADC_init_#T20879_59+0x1) & 0X7F,	0x0		; Bank 1
-	XOR            	(_ADC_init_#T20878_59+0x1) & 0X7F,	0x0		; Bank 1
+	GOTO           	#L21672
+	MOV            	(_ADC_init_#T20897_61+0x1) & 0X7F,	0x0		; Bank 1
+	XOR            	(_ADC_init_#T20896_61+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-#L21593
-	GOTO           	#L20860
+#L21672
+	GOTO           	#L20878
 ; 		{
-#line 229	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			offset_value =  offset_value & 0x00FF;
-;  229:(    BAND_2,        255 , offset_value ,offset_value)
+#line 233	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			offset_value =  offset_value & 0x00FF;
+;  233:(    BAND_2,        255 , offset_value ,offset_value)
 
 ; ITemplate_BAND1_4
 	MOV            	(_offset_value) & 0X7F,	0x0		; Bank 1
@@ -1136,171 +1143,171 @@ _ADC_init
 	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
 	MOVA           	(_offset_value+0x1) & 0X7F		; Bank 1
-#line 231	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			break;
-;  231:(       JMP,            ,            ,   #L20842)
+#line 235	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			break;
+;  235:(       JMP,            ,            ,   #L20860)
 
 ; ITemplate_JMP
-	GOTO           	#L20842
+	GOTO           	#L20860
 ; 		}
-#line 233	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
-;  233:(     LABEL,    #L20860 ,            ,          )
+#line 237	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
+;  237:(     LABEL,    #L20878 ,            ,          )
 
 ; ITemplate_LABEL
-#L20860
+#L20878
 ; 		{
-#line 235	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    cnt--;
-;  235:(     SUB_1,        cnt ,          1 ,       cnt)
+#line 239	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    cnt--;
+;  239:(     SUB_1,        cnt ,          1 ,       cnt)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_ADC_init_cnt_58) & 0X7F		; Bank 1
-#line 237	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			if(cnt == 0)
-;  237:(     JNZ_1,        cnt ,            ,   #L20840)
+	DEC            	(_ADC_init_cnt_60) & 0X7F		; Bank 1
+#line 241	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			if(cnt == 0)
+;  241:(     JNZ_1,        cnt ,            ,   #L20858)
 
 ; ITemplate_JNZ1_4
-	MOV            	(_ADC_init_cnt_58) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_init_cnt_60) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L20840
-#line 238	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			    offset_value = 0;    //读IAP超过3次后仍不满足高低8位取反则offset固定为0
-;  238:(    ASGN_2,          0 ,            ,offset_value)
+	GOTO           	#L20858
+#line 242	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			    offset_value = 0;    //读IAP超过3次后仍不满足高低8位取反则offset固定为0
+;  242:(    ASGN_2,          0 ,            ,offset_value)
 
 ; ITemplate_CLR1_4_TMP
 	CLR            	(_offset_value) & 0X7F		; Bank 1
 	CLR            	(_offset_value+0x1) & 0X7F		; Bank 1
 ; 		}
-#line 240	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	}
-;  240:(       JMP,            ,            ,   #L20840)
+#line 244	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	}
+;  244:(       JMP,            ,            ,   #L20858)
 
 ; ITemplate_JMP
-	GOTO           	#L20840
-;  240:(     LABEL,    #L20842 ,            ,          )
+	GOTO           	#L20858
+;  244:(     LABEL,    #L20860 ,            ,          )
 
 ; ITemplate_LABEL
-#L20842
-#line 241	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ANSH1 = 0;          //选择AIN9为模拟口
-;  241:(    ASGN_0,          0 ,            ,     ANSH1)
+#L20860
+#line 245	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ANSH1 = 0;          //选择AIN9为模拟口
+;  245:(    ASGN_0,          0 ,            ,     ANSH1)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_ANSH1_0)/8,	(_ANSH1_0)%8
-#line 242	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
-;  242:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
+#line 246	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
+;  246:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
 
 ; ITemplate_BOR1_4
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	IORI           	0xf0
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 243	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCL &= 0x9F;      //选择通道9
-;  243:(    BAND_1,        159 ,      ADCCL ,     ADCCL)
+#line 247	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCL &= 0x9F;      //选择通道9
+;  247:(    BAND_1,        159 ,      ADCCL ,     ADCCL)
 
 ; ITemplate_BAND1_4
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	ANDI           	0x9f
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 245	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADCCM = 0x6B;       //参考源内部固定选择2.048V,负参考固定选择VSS，转换位数固定选择12位，AD调整offset固定选择档位1
-;  245:(    ASGN_1,        107 ,            ,     ADCCM)
+#line 249	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADCCM = 0x6B;       //参考源内部固定选择2.048V,负参考固定选择VSS，转换位数固定选择12位，AD调整offset固定选择档位1
+;  249:(    ASGN_1,        107 ,            ,     ADCCM)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6b
 	MOVA           	_ADCCM_0#sh		; ShBank 0
-#line 246	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCH = 0xC8;       //低位对齐;时钟周期FOSC/16
-;  246:(    ASGN_1,        200 ,            ,     ADCCH)
+#line 250	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     ADCCH = 0xC8;       //低位对齐;时钟周期FOSC/16
+;  250:(    ASGN_1,        200 ,            ,     ADCCH)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0xc8
 	MOVA           	_ADCCH_0#sh		; ShBank 0
-#line 247	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADEN = 1;           //使能ADC模块
-;  247:(    ASGN_0,          1 ,            ,      ADEN)
+#line 251	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADEN = 1;           //使能ADC模块
+;  251:(    ASGN_0,          1 ,            ,      ADEN)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_ADEN_0#sh)/8,	(_ADEN_0#sh)%8		; ShBank 0
-#line 248	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     VREFEN = 1;         //参考电压模块使能
-;  248:(    ASGN_0,          1 ,            ,    VREFEN)
+#line 252	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     VREFEN = 1;         //参考电压模块使能
+;  252:(    ASGN_0,          1 ,            ,    VREFEN)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_VREFEN_0#sh)/8,	(_VREFEN_0#sh)%8		; ShBank 0
-#line 249	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(j--);         //等待300us以上
-;  249:(     LABEL,    #L20966 ,            ,          )
+#line 253	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	while(j--);         //等待300us以上
+;  253:(     LABEL,    #L20984 ,            ,          )
 
 ; ITemplate_LABEL
-#L20966
-;  249:(    ASGN_2,          j ,            ,   #T20971)
+#L20984
+;  253:(    ASGN_2,          j ,            ,   #T20989)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_ADC_init_j_58+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_init_#T20971_58+0x1) & 0X7F		; Bank 1
-	MOV            	(_ADC_init_j_58) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_init_#T20971_58) & 0X7F		; Bank 1
-;  249:(     SUB_2,          j ,          1 ,         j)
+	MOV            	(_ADC_init_j_60+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_init_#T20989_60+0x1) & 0X7F		; Bank 1
+	MOV            	(_ADC_init_j_60) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_init_#T20989_60) & 0X7F		; Bank 1
+;  253:(     SUB_2,          j ,          1 ,         j)
 
 ; ITemplate_DEC_2_TMP
-	MOV            	(_ADC_init_j_58) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_init_j_60) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21594
-	DEC            	(_ADC_init_j_58+0x1) & 0X7F		; Bank 1
-#L21594
-	DEC            	(_ADC_init_j_58) & 0X7F		; Bank 1
-;  249:(     JNZ_2,    #T20971 ,            ,   #L20966)
+	GOTO           	#L21673
+	DEC            	(_ADC_init_j_60+0x1) & 0X7F		; Bank 1
+#L21673
+	DEC            	(_ADC_init_j_60) & 0X7F		; Bank 1
+;  253:(     JNZ_2,    #T20989 ,            ,   #L20984)
 
 ; ITemplate_JNZ1_4
-	MOV            	(_ADC_init_#T20971_58) & 0X7F,	0x0		; Bank 1
-	IOR            	(_ADC_init_#T20971_58+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_init_#T20989_60) & 0X7F,	0x0		; Bank 1
+	IOR            	(_ADC_init_#T20989_60+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L20966
-#line 250	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	VREF_CHOPEN = 1;    //内部参考必须使能电压斩波器
-;  250:(    ASGN_0,          1 ,            ,VREF_CHOPEN)
+	GOTO           	#L20984
+#line 254	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	VREF_CHOPEN = 1;    //内部参考必须使能电压斩波器
+;  254:(    ASGN_0,          1 ,            ,VREF_CHOPEN)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_VREF_CHOPEN_0#sh)/8,	(_VREF_CHOPEN_0#sh)%8		; ShBank 0
-#line 251	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     while(i--);         //等待1ms以上再启动转换
-;  251:(     LABEL,    #L20989 ,            ,          )
+#line 255	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     while(i--);         //等待1ms以上再启动转换
+;  255:(     LABEL,    #L21007 ,            ,          )
 
 ; ITemplate_LABEL
-#L20989
-;  251:(    ASGN_2,          i ,            ,   #T20994)
+#L21007
+;  255:(    ASGN_2,          i ,            ,   #T21012)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_ADC_init_i_58+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_init_#T20994_58+0x1) & 0X7F		; Bank 1
-	MOV            	(_ADC_init_i_58) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_ADC_init_#T20994_58) & 0X7F		; Bank 1
-;  251:(     SUB_2,          i ,          1 ,         i)
+	MOV            	(_ADC_init_i_60+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_init_#T21012_60+0x1) & 0X7F		; Bank 1
+	MOV            	(_ADC_init_i_60) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_ADC_init_#T21012_60) & 0X7F		; Bank 1
+;  255:(     SUB_2,          i ,          1 ,         i)
 
 ; ITemplate_DEC_2_TMP
-	MOV            	(_ADC_init_i_58) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_init_i_60) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21595
-	DEC            	(_ADC_init_i_58+0x1) & 0X7F		; Bank 1
-#L21595
-	DEC            	(_ADC_init_i_58) & 0X7F		; Bank 1
-;  251:(     JNZ_2,    #T20994 ,            ,   #L20989)
+	GOTO           	#L21674
+	DEC            	(_ADC_init_i_60+0x1) & 0X7F		; Bank 1
+#L21674
+	DEC            	(_ADC_init_i_60) & 0X7F		; Bank 1
+;  255:(     JNZ_2,    #T21012 ,            ,   #L21007)
 
 ; ITemplate_JNZ1_4
-	MOV            	(_ADC_init_#T20994_58) & 0X7F,	0x0		; Bank 1
-	IOR            	(_ADC_init_#T20994_58+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_ADC_init_#T21012_60) & 0X7F,	0x0		; Bank 1
+	IOR            	(_ADC_init_#T21012_60+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L20989
+	GOTO           	#L21007
 ; #endif
-#line 253	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADC_LP_EN = 1;      //ADC低功耗必须固定使能
-;  253:(    ASGN_0,          1 ,            , ADC_LP_EN)
+#line 257	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	ADC_LP_EN = 1;      //ADC低功耗必须固定使能
+;  257:(    ASGN_0,          1 ,            , ADC_LP_EN)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_ADC_LP_EN_0)/8,	(_ADC_LP_EN_0)%8
-#line 254	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT4 = 1;
-;  254:(    ASGN_0,          1 ,            ,      PBT4)
+#line 258	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT4 = 1;
+;  258:(    ASGN_0,          1 ,            ,      PBT4)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PBT4_0)/8,	(_PBT4_0)%8
-#line 255	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT2 = 1;
-;  255:(    ASGN_0,          1 ,            ,      PBT2)
+#line 259	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	PBT2 = 1;
+;  259:(    ASGN_0,          1 ,            ,      PBT2)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PBT2_0)/8,	(_PBT2_0)%8
-#line 256	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     SMPS = 1;           //硬件控制采样，ADTRG=1时启动AD采样转换
-;  256:(    ASGN_0,          1 ,            ,      SMPS)
+#line 260	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     SMPS = 1;           //硬件控制采样，ADTRG=1时启动AD采样转换
+;  260:(    ASGN_0,          1 ,            ,      SMPS)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_SMPS_0#sh)/8,	(_SMPS_0#sh)%8		; ShBank 0
-#line 257	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
-;  257:(       RET,            ,            ,          )
+#line 261	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  261:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
@@ -1324,170 +1331,170 @@ __f
 ;     //for(ii=0;ii<len;ii++){
 ; 	//	a[ii] = *(num+ii);
 ; 	//}
-#line 271	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	n=len;
+#line 275	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	n=len;
 	CLR            	BKSR
-;  271:(   CVUC_SI,        len ,            ,         n)
+;  275:(   CVUC_SI,        len ,            ,         n)
 
 ; ITemplate_CVTMS_U
 	SECTION        	0x1
-	CLR            	(__f_n_63+0x1) & 0X7F		; Bank 1
+	CLR            	(__f_n_65+0x1) & 0X7F		; Bank 1
 	MOV            	(__fDATA+0X2) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_n_63) & 0X7F		; Bank 1
-#line 272	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	for (i=0; i<n-1; ++i)  //比较n-1轮
-;  272:(    ASGN_2,          0 ,            ,         i)
+	MOVA           	(__f_n_65) & 0X7F		; Bank 1
+#line 276	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 	for (i=0; i<n-1; ++i)  //比较n-1轮
+;  276:(    ASGN_2,          0 ,            ,         i)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(__f_i_63) & 0X7F		; Bank 1
-	CLR            	(__f_i_63+0x1) & 0X7F		; Bank 1
-;  272:(     LABEL,    #L21038 ,            ,          )
+	CLR            	(__f_i_65) & 0X7F		; Bank 1
+	CLR            	(__f_i_65+0x1) & 0X7F		; Bank 1
+;  276:(     LABEL,    #L21056 ,            ,          )
 
 ; ITemplate_LABEL
-#L21038
-;  272:(    ASGN_2,          i ,            ,   #T21057)
+#L21056
+;  276:(    ASGN_2,          i ,            ,   #T21075)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(__f_i_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21057_63+0x1) & 0X7F		; Bank 1
-	MOV            	(__f_i_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21057_63) & 0X7F		; Bank 1
-;  272:(     SUB_2,          n ,          1 ,   #T21058)
+	MOV            	(__f_i_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21075_65+0x1) & 0X7F		; Bank 1
+	MOV            	(__f_i_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21075_65) & 0X7F		; Bank 1
+;  276:(     SUB_2,          n ,          1 ,   #T21076)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
-	SUB            	(__f_n_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21058_63) & 0X7F		; Bank 1
+	SUB            	(__f_n_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21076_65) & 0X7F		; Bank 1
 	MOVI           	0x0
-	SUBC           	(__f_n_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21058_63+0x1) & 0X7F		; Bank 1
-;  272:(    JGE_2S,    #T21057 ,    #T21058 ,   #L21235)
+	SUBC           	(__f_n_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21076_65+0x1) & 0X7F		; Bank 1
+;  276:(    JGE_2S,    #T21075 ,    #T21076 ,   #L21253)
 
 ; ITemplate_JGE1_4S
-	MOV            	(__f_#T21057_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21075_65+0x1) & 0X7F,	0x0		; Bank 1
 	XORI           	0x80
 	MOVAR          	?_TMP		; Bank 0
-	MOV            	(__f_#T21058_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21076_65+0x1) & 0X7F,	0x0		; Bank 1
 	XORI           	0x80
 	SECTION        	0x0
 	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	JBS            	PSW,	0x2
-	GOTO           	#L21596
+	GOTO           	#L21675
 	SECTION        	0x1
-	MOV            	(__f_#T21058_63) & 0X7F,	0x0		; Bank 1
-	SUB            	(__f_#T21057_63) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21076_65) & 0X7F,	0x0		; Bank 1
+	SUB            	(__f_#T21075_65) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21596
-#L21596
+	GOTO           	#L21675
+#L21675
 	JBC            	PSW,	0x0
-	GOTO           	#L21235
+	GOTO           	#L21253
 ;     {
-#line 274	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         for (j=0; j<n-1-i; ++j)  //每轮比较n-1-i次,
-;  274:(    ASGN_2,          0 ,            ,         j)
+#line 278	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         for (j=0; j<n-1-i; ++j)  //每轮比较n-1-i次,
+;  278:(    ASGN_2,          0 ,            ,         j)
 
 ; ITemplate_CLR1_4_TMP
 	SECTION        	0x1
-	CLR            	(__f_j_63) & 0X7F		; Bank 1
-	CLR            	(__f_j_63+0x1) & 0X7F		; Bank 1
-;  274:(     LABEL,    #L21059 ,            ,          )
+	CLR            	(__f_j_65) & 0X7F		; Bank 1
+	CLR            	(__f_j_65+0x1) & 0X7F		; Bank 1
+;  278:(     LABEL,    #L21077 ,            ,          )
 
 ; ITemplate_LABEL
-#L21059
-;  274:(     SUB_2,          n ,          1 ,   #T21079)
+#L21077
+;  278:(     SUB_2,          n ,          1 ,   #T21097)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
-	SUB            	(__f_n_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21079_64) & 0X7F		; Bank 1
+	SUB            	(__f_n_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21097_66) & 0X7F		; Bank 1
 	MOVI           	0x0
-	SUBC           	(__f_n_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21079_64+0x1) & 0X7F		; Bank 1
-;  274:(    ASGN_2,          j ,            ,   #T21083)
+	SUBC           	(__f_n_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21097_66+0x1) & 0X7F		; Bank 1
+;  278:(    ASGN_2,          j ,            ,   #T21101)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21083_64+0x1) & 0X7F		; Bank 1
-	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21083_64) & 0X7F		; Bank 1
-;  274:(     SUB_2,    #T21079 ,          i ,   #T21084)
+	MOV            	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21101_66+0x1) & 0X7F		; Bank 1
+	MOV            	(__f_j_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21101_66) & 0X7F		; Bank 1
+;  278:(     SUB_2,    #T21097 ,          i ,   #T21102)
 
 ; ITemplate_SUB1_4
-	MOV            	(__f_i_63) & 0X7F,	0x0		; Bank 1
-	SUB            	(__f_#T21079_64) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21084_64) & 0X7F		; Bank 1
-	MOV            	(__f_i_63+0x1) & 0X7F,	0x0		; Bank 1
-	SUBC           	(__f_#T21079_64+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21084_64+0x1) & 0X7F		; Bank 1
-;  274:(    JGE_2S,    #T21083 ,    #T21084 ,   #L21040)
+	MOV            	(__f_i_65) & 0X7F,	0x0		; Bank 1
+	SUB            	(__f_#T21097_66) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21102_66) & 0X7F		; Bank 1
+	MOV            	(__f_i_65+0x1) & 0X7F,	0x0		; Bank 1
+	SUBC           	(__f_#T21097_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21102_66+0x1) & 0X7F		; Bank 1
+;  278:(    JGE_2S,    #T21101 ,    #T21102 ,   #L21058)
 
 ; ITemplate_JGE1_4S
-	MOV            	(__f_#T21083_64+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21101_66+0x1) & 0X7F,	0x0		; Bank 1
 	XORI           	0x80
 	MOVAR          	?_TMP		; Bank 0
-	MOV            	(__f_#T21084_64+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21102_66+0x1) & 0X7F,	0x0		; Bank 1
 	XORI           	0x80
 	SECTION        	0x0
 	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	JBS            	PSW,	0x2
-	GOTO           	#L21597
+	GOTO           	#L21676
 	SECTION        	0x1
-	MOV            	(__f_#T21084_64) & 0X7F,	0x0		; Bank 1
-	SUB            	(__f_#T21083_64) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21102_66) & 0X7F,	0x0		; Bank 1
+	SUB            	(__f_#T21101_66) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21597
-#L21597
+	GOTO           	#L21676
+#L21676
 	JBC            	PSW,	0x0
-	GOTO           	#L21040
+	GOTO           	#L21058
 ;         {
-#line 276	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;             if (a[j] < a[j+1])
-;  276:(    LSH_2S,          j ,          1 ,   #T21101)
+#line 280	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;             if (a[j] < a[j+1])
+;  280:(    LSH_2S,          j ,          1 ,   #T21119)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
 	SECTION        	0x1
-	RL             	(__f_j_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21101_65) & 0X7F		; Bank 1
-	RL             	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21101_65+0x1) & 0X7F		; Bank 1
-;  276:(     ADD_2,    #T21101 ,          a ,   #T21102)
+	RL             	(__f_j_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21119_67) & 0X7F		; Bank 1
+	RL             	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21119_67+0x1) & 0X7F		; Bank 1
+;  280:(     ADD_2,    #T21119 ,          a ,   #T21120)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_#T21101_65) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21119_67) & 0X7F,	0x0		; Bank 1
 	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21102_65) & 0X7F		; Bank 1
-	MOV            	(__f_#T21101_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21120_67) & 0X7F		; Bank 1
+	MOV            	(__f_#T21119_67+0x1) & 0X7F,	0x0		; Bank 1
 	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21102_65+0x1) & 0X7F		; Bank 1
-;  276:(     ADD_2,          j ,          1 ,   #T21117)
+	MOVA           	(__f_#T21120_67+0x1) & 0X7F		; Bank 1
+;  280:(     ADD_2,          j ,          1 ,   #T21135)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_j_65) & 0X7F,	0x0		; Bank 1
 	ADDI           	0x1
-	MOVA           	(__f_#T21117_65) & 0X7F		; Bank 1
-	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21135_67) & 0X7F		; Bank 1
+	MOV            	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	0x0
-	MOVA           	(__f_#T21117_65+0x1) & 0X7F		; Bank 1
-;  276:(    LSH_2S,    #T21117 ,          1 ,   #T21121)
+	MOVA           	(__f_#T21135_67+0x1) & 0X7F		; Bank 1
+;  280:(    LSH_2S,    #T21135 ,          1 ,   #T21139)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
-	RL             	(__f_#T21117_65) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21121_65) & 0X7F		; Bank 1
-	RL             	(__f_#T21117_65+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21121_65+0x1) & 0X7F		; Bank 1
-;  276:(     ADD_2,    #T21121 ,          a ,   #T21122)
+	RL             	(__f_#T21135_67) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21139_67) & 0X7F		; Bank 1
+	RL             	(__f_#T21135_67+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21139_67+0x1) & 0X7F		; Bank 1
+;  280:(     ADD_2,    #T21139 ,          a ,   #T21140)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_#T21121_65) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21139_67) & 0X7F,	0x0		; Bank 1
 	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21122_65) & 0X7F		; Bank 1
-	MOV            	(__f_#T21121_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21140_67) & 0X7F		; Bank 1
+	MOV            	(__f_#T21139_67+0x1) & 0X7F,	0x0		; Bank 1
 	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21122_65+0x1) & 0X7F		; Bank 1
-;  276:(    JGE_2S,   *#T21102 ,   *#T21122 ,   #L21061)
+	MOVA           	(__f_#T21140_67+0x1) & 0X7F		; Bank 1
+;  280:(    JGE_2S,   *#T21120 ,   *#T21140 ,   #L21079)
 
 ; ITemplate_GetRamRef
-	MOV            	(__f_#T21102_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21120_67+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(__f_#T21102_65) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21120_67) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP		; Bank 0
@@ -1495,9 +1502,9 @@ __f
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP+0x1		; Bank 0
 ; ITemplate_GetRamRef
-	MOV            	(__f_#T21122_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21140_67+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(__f_#T21122_65) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21140_67) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP+0x2		; Bank 0
@@ -1513,40 +1520,40 @@ __f
 	SECTION        	0x0
 	SUB            	(?_TMP+0x4) & 0X7F,	0x0		; Bank 0
 	JBS            	PSW,	0x2
-	GOTO           	#L21598
+	GOTO           	#L21677
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
 	SUB            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	JBS            	PSW,	0x2
-	GOTO           	#L21598
-#L21598
+	GOTO           	#L21677
+#L21677
 	JBC            	PSW,	0x0
-	GOTO           	#L21061
+	GOTO           	#L21079
 ;             {
-#line 278	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 buf = a[j];
-;  278:(    LSH_2S,          j ,          1 ,   #T21142)
+#line 282	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 buf = a[j];
+;  282:(    LSH_2S,          j ,          1 ,   #T21160)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
 	SECTION        	0x1
-	RL             	(__f_j_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21142_66) & 0X7F		; Bank 1
-	RL             	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21142_66+0x1) & 0X7F		; Bank 1
-;  278:(     ADD_2,    #T21142 ,          a ,   #T21143)
+	RL             	(__f_j_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21160_68) & 0X7F		; Bank 1
+	RL             	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21160_68+0x1) & 0X7F		; Bank 1
+;  282:(     ADD_2,    #T21160 ,          a ,   #T21161)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_#T21142_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21160_68) & 0X7F,	0x0		; Bank 1
 	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21143_66) & 0X7F		; Bank 1
-	MOV            	(__f_#T21142_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21161_68) & 0X7F		; Bank 1
+	MOV            	(__f_#T21160_68+0x1) & 0X7F,	0x0		; Bank 1
 	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21143_66+0x1) & 0X7F		; Bank 1
-;  278:(    ASGN_2,   *#T21143 ,            ,       buf)
+	MOVA           	(__f_#T21161_68+0x1) & 0X7F		; Bank 1
+;  282:(    ASGN_2,   *#T21161 ,            ,       buf)
 
 ; ITemplate_GetRamRef
-	MOV            	(__f_#T21143_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21161_68+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(__f_#T21143_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21161_68) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP		; Bank 0
@@ -1555,59 +1562,59 @@ __f
 	MOVAR          	?_TMP+0x1		; Bank 0
 ; ITemplate_ASGN1_4
 	MOVRA          	?_TMP		; Bank 0
-	MOVA           	(__f_buf_63) & 0X7F		; Bank 1
+	MOVA           	(__f_buf_65) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x1		; Bank 0
-	MOVA           	(__f_buf_63+0x1) & 0X7F		; Bank 1
-#line 279	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 a[j] = a[j+1];
-;  279:(    LSH_2S,          j ,          1 ,   #T21159)
+	MOVA           	(__f_buf_65+0x1) & 0X7F		; Bank 1
+#line 283	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 a[j] = a[j+1];
+;  283:(    LSH_2S,          j ,          1 ,   #T21177)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
-	RL             	(__f_j_63) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21159_66) & 0X7F		; Bank 1
-	RL             	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21159_66+0x1) & 0X7F		; Bank 1
-;  279:(     ADD_2,    #T21159 ,          a ,   #T21160)
+	RL             	(__f_j_65) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21177_68) & 0X7F		; Bank 1
+	RL             	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21177_68+0x1) & 0X7F		; Bank 1
+;  283:(     ADD_2,    #T21177 ,          a ,   #T21178)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_#T21159_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21177_68) & 0X7F,	0x0		; Bank 1
 	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21160_66) & 0X7F		; Bank 1
-	MOV            	(__f_#T21159_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21178_68) & 0X7F		; Bank 1
+	MOV            	(__f_#T21177_68+0x1) & 0X7F,	0x0		; Bank 1
 	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21160_66+0x1) & 0X7F		; Bank 1
-;  279:(     ADD_2,          j ,          1 ,   #T21175)
+	MOVA           	(__f_#T21178_68+0x1) & 0X7F		; Bank 1
+;  283:(     ADD_2,          j ,          1 ,   #T21193)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_j_65) & 0X7F,	0x0		; Bank 1
 	ADDI           	0x1
-	MOVA           	(__f_#T21175_66) & 0X7F		; Bank 1
-	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21193_68) & 0X7F		; Bank 1
+	MOV            	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	0x0
-	MOVA           	(__f_#T21175_66+0x1) & 0X7F		; Bank 1
-;  279:(    LSH_2S,    #T21175 ,          1 ,   #T21179)
+	MOVA           	(__f_#T21193_68+0x1) & 0X7F		; Bank 1
+;  283:(    LSH_2S,    #T21193 ,          1 ,   #T21197)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
-	RL             	(__f_#T21175_66) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21179_66) & 0X7F		; Bank 1
-	RL             	(__f_#T21175_66+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21179_66+0x1) & 0X7F		; Bank 1
-;  279:(     ADD_2,    #T21179 ,          a ,   #T21180)
+	RL             	(__f_#T21193_68) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21197_68) & 0X7F		; Bank 1
+	RL             	(__f_#T21193_68+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21197_68+0x1) & 0X7F		; Bank 1
+;  283:(     ADD_2,    #T21197 ,          a ,   #T21198)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_#T21179_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21197_68) & 0X7F,	0x0		; Bank 1
 	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21180_66) & 0X7F		; Bank 1
-	MOV            	(__f_#T21179_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21198_68) & 0X7F		; Bank 1
+	MOV            	(__f_#T21197_68+0x1) & 0X7F,	0x0		; Bank 1
 	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21180_66+0x1) & 0X7F		; Bank 1
-;  279:(    ASGN_2,   *#T21180 ,            ,  *#T21160)
+	MOVA           	(__f_#T21198_68+0x1) & 0X7F		; Bank 1
+;  283:(    ASGN_2,   *#T21198 ,            ,  *#T21178)
 
 ; ITemplate_GetRamRef
-	MOV            	(__f_#T21180_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21198_68+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(__f_#T21180_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21198_68) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP		; Bank 0
@@ -1616,9 +1623,9 @@ __f
 	MOVAR          	?_TMP+0x1		; Bank 0
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(__f_#T21160_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21178_68+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(__f_#T21160_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21178_68) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVRA          	?_TMP		; Bank 0
 ; ITemplate_SetINDF
@@ -1628,94 +1635,94 @@ __f
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-#line 280	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 a[j+1] = buf;
-;  280:(     ADD_2,          j ,          1 ,   #T21197)
+#line 284	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;                 a[j+1] = buf;
+;  284:(     ADD_2,          j ,          1 ,   #T21215)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_j_63) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_j_65) & 0X7F,	0x0		; Bank 1
 	ADDI           	0x1
-	MOVA           	(__f_#T21197_66) & 0X7F		; Bank 1
-	MOV            	(__f_j_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21215_68) & 0X7F		; Bank 1
+	MOV            	(__f_j_65+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	0x0
-	MOVA           	(__f_#T21197_66+0x1) & 0X7F		; Bank 1
-;  280:(    LSH_2S,    #T21197 ,          1 ,   #T21201)
+	MOVA           	(__f_#T21215_68+0x1) & 0X7F		; Bank 1
+;  284:(    LSH_2S,    #T21215 ,          1 ,   #T21219)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
-	RL             	(__f_#T21197_66) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21201_66) & 0X7F		; Bank 1
-	RL             	(__f_#T21197_66+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21201_66+0x1) & 0X7F		; Bank 1
-;  280:(     ADD_2,    #T21201 ,          a ,   #T21202)
+	RL             	(__f_#T21215_68) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21219_68) & 0X7F		; Bank 1
+	RL             	(__f_#T21215_68+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21219_68+0x1) & 0X7F		; Bank 1
+;  284:(     ADD_2,    #T21219 ,          a ,   #T21220)
 
 ; ITemplate_ADD1_4
-	MOV            	(__f_#T21201_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21219_68) & 0X7F,	0x0		; Bank 1
 	ADD            	(__fDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21202_66) & 0X7F		; Bank 1
-	MOV            	(__f_#T21201_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(__f_#T21220_68) & 0X7F		; Bank 1
+	MOV            	(__f_#T21219_68+0x1) & 0X7F,	0x0		; Bank 1
 	ADDC           	(__fDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(__f_#T21202_66+0x1) & 0X7F		; Bank 1
-;  280:(    ASGN_2,        buf ,            ,  *#T21202)
+	MOVA           	(__f_#T21220_68+0x1) & 0X7F		; Bank 1
+;  284:(    ASGN_2,        buf ,            ,  *#T21220)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(__f_#T21202_66+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21220_68+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(__f_#T21202_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_#T21220_68) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
-	MOV            	(__f_buf_63) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_buf_65) & 0X7F,	0x0		; Bank 1
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-	MOV            	(__f_buf_63+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(__f_buf_65+0x1) & 0X7F,	0x0		; Bank 1
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
 ;             }
-#line 282	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         }
-;  282:(     LABEL,    #L21061 ,            ,          )
+#line 286	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;         }
+;  286:(     LABEL,    #L21079 ,            ,          )
 
 ; ITemplate_LABEL
-#L21061
-;  274:(     ADD_2,          j ,          1 ,         j)
+#L21079
+;  278:(     ADD_2,          j ,          1 ,         j)
 
 ; ITemplate_INC_2_TMP
 	SECTION        	0x1
-	INC            	(__f_j_63) & 0X7F		; Bank 1
+	INC            	(__f_j_65) & 0X7F		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21599
-	INC            	(__f_j_63+0x1) & 0X7F		; Bank 1
-#L21599
-;  282:(       JMP,            ,            ,   #L21059)
+	GOTO           	#L21678
+	INC            	(__f_j_65+0x1) & 0X7F		; Bank 1
+#L21678
+;  286:(       JMP,            ,            ,   #L21077)
 
 ; ITemplate_JMP
-	GOTO           	#L21059
-#line 283	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     }
-;  283:(     LABEL,    #L21040 ,            ,          )
+	GOTO           	#L21077
+#line 287	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ;     }
+;  287:(     LABEL,    #L21058 ,            ,          )
 
 ; ITemplate_LABEL
-#L21040
-;  272:(     ADD_2,          i ,          1 ,         i)
+#L21058
+;  276:(     ADD_2,          i ,          1 ,         i)
 
 ; ITemplate_INC_2_TMP
 	SECTION        	0x1
-	INC            	(__f_i_63) & 0X7F		; Bank 1
+	INC            	(__f_i_65) & 0X7F		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21600
-	INC            	(__f_i_63+0x1) & 0X7F		; Bank 1
-#L21600
-;  283:(       JMP,            ,            ,   #L21038)
+	GOTO           	#L21679
+	INC            	(__f_i_65+0x1) & 0X7F		; Bank 1
+#L21679
+;  287:(       JMP,            ,            ,   #L21056)
 
 ; ITemplate_JMP
-	GOTO           	#L21038
+	GOTO           	#L21056
 ;     //for(int x=0;x<10;x++)
 ;         //printf("%d\x20", a[x]);
-#line 286	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
-;  286:(     LABEL,    #L21235 ,            ,          )
+#line 290	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  290:(     LABEL,    #L21253 ,            ,          )
 
 ; ITemplate_LABEL
-#L21235
-;  286:(       RET,            ,            ,          )
+#L21253
+;  290:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
@@ -1729,182 +1736,192 @@ Get_ADC_Val#	CSEG
 _Get_ADC_Val
 ; static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
 ; 		unsigned int i;
-#line 290	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
+#line 294	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
 	CLR            	BKSR
-;  290:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
+;  294:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
 
 ; ITemplate_BOR1_4
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	IORI           	0xf0
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 291	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL &= 0x4F;      //选择通道4
-;  291:(    BAND_1,         79 ,      ADCCL ,     ADCCL)
+#line 295	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL &= 0x4F;      //选择通道4
+;  295:(    BAND_1,         79 ,      ADCCL ,     ADCCL)
 
 ; ITemplate_BAND1_4
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	ANDI           	0x4f
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 293	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
-;  293:(     CALLR, (ADC_convert.0) ,            , adc_value)
+#line 297	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
+;  297:(     CALLR, (ADC_convert.0) ,            , adc_value)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_ADC_convert
 	CALL           	_ADC_convert		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_adc_value		; Bank 1
+	MOVAR          	_adc_value		; Bank 2
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_adc_value+0x1		; Bank 1
-#line 294	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
-;  294:(    JLE_2U,  adc_value , offset_value ,   #L21261)
+	MOVAR          	_adc_value+0x1		; Bank 2
+#line 298	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
+;  298:(    JLE_2U,  adc_value , offset_value ,   #L21279)
 
 ; ITemplate_JLE1_4U
-	MOVRA          	_adc_value+0x1		; Bank 1
+	MOVRA          	_adc_value+0x1		; Bank 2
 	SECTION        	0x1
 	SUB            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21601
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+	GOTO           	#L21680
+	SECTION        	0x2
+	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 2
+	SECTION        	0x1
 	SUB            	(_offset_value) & 0X7F,	0x0		; Bank 1
-#L21601
+#L21680
 	JBC            	PSW,	0x0
-	GOTO           	#L21261
-#line 295	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
-;  295:(     SUB_2,  adc_value , offset_value , adc_value)
+	GOTO           	#L21279
+#line 299	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
+;  299:(     SUB_2,  adc_value , offset_value , adc_value)
 
 ; ITemplate_SUB1_4
 	MOV            	(_offset_value) & 0X7F,	0x0		; Bank 1
-	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_adc_value) & 0X7F		; Bank 1
-	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
-	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 1
-;  295:(       JMP,            ,            ,   #L21259)
+	SECTION        	0x2
+	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 2
+	MOVA           	(_adc_value) & 0X7F		; Bank 2
+	MOVRA          	_offset_value+0x1		; Bank 1
+	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 2
+	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 2
+;  299:(       JMP,            ,            ,   #L21277)
 
 ; ITemplate_JMP
-	GOTO           	#L21259
-#line 296	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
-;  296:(     LABEL,    #L21261 ,            ,          )
+	GOTO           	#L21277
+#line 300	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
+;  300:(     LABEL,    #L21279 ,            ,          )
 
 ; ITemplate_LABEL
-#L21261
-#line 297	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
-;  297:(    ASGN_2,          0 ,            , adc_value)
+#L21279
+#line 301	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
+;  301:(    ASGN_2,          0 ,            , adc_value)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_adc_value) & 0X7F		; Bank 1
-	CLR            	(_adc_value+0x1) & 0X7F		; Bank 1
-;  297:(     LABEL,    #L21259 ,            ,          )
+	SECTION        	0x2
+	CLR            	(_adc_value) & 0X7F		; Bank 2
+	CLR            	(_adc_value+0x1) & 0X7F		; Bank 2
+;  301:(     LABEL,    #L21277 ,            ,          )
 
 ; ITemplate_LABEL
-#L21259
-#line 298	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		*Vbat_val=adc_value;
-;  298:(    ASGN_2,  adc_value ,            , *Vbat_val)
+#L21277
+#line 302	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			*Vbat_val=adc_value;
+;  302:(    ASGN_2,  adc_value ,            , *Vbat_val)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
+	SECTION        	0x1
 	MOV            	(_Get_ADC_ValDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
 	MOV            	(_Get_ADC_ValDATA+0X0) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+	MOVRA          	_adc_value		; Bank 2
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-	MOV            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
+	MOVRA          	_adc_value+0x1		; Bank 2
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-#line 301	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
-;  301:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
+#line 303	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
+;  303:(     BOR_1,        240 ,      ADCCL ,     ADCCL)
 
 ; ITemplate_BOR1_4
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	IORI           	0xf0
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 302	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL &= 0x9F;		//选择通道9
-;  302:(    BAND_1,        159 ,      ADCCL ,     ADCCL)
+#line 304	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		ADCCL &= 0x9F;		//选择通道9
+;  304:(    BAND_1,        159 ,      ADCCL ,     ADCCL)
 
 ; ITemplate_BAND1_4
 	MOV            	_ADCCL_0#sh,	0x0		; ShBank 0
 	ANDI           	0x9f
 	MOVA           	_ADCCL_0#sh		; ShBank 0
-#line 303	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
-;  303:(     CALLR, (ADC_convert.0) ,            , adc_value)
+#line 305	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		adc_value = ADC_convert();
+;  305:(     CALLR, (ADC_convert.0) ,            , adc_value)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_ADC_convert
 	CALL           	_ADC_convert		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_adc_value		; Bank 1
+	MOVAR          	_adc_value		; Bank 2
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_adc_value+0x1		; Bank 1
-#line 304	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
-;  304:(    JLE_2U,  adc_value , offset_value ,   #L21314)
+	MOVAR          	_adc_value+0x1		; Bank 2
+#line 306	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
+;  306:(    JLE_2U,  adc_value , offset_value ,   #L21332)
 
 ; ITemplate_JLE1_4U
-	MOVRA          	_adc_value+0x1		; Bank 1
+	MOVRA          	_adc_value+0x1		; Bank 2
 	SECTION        	0x1
 	SUB            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L21602
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+	GOTO           	#L21681
+	SECTION        	0x2
+	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 2
+	SECTION        	0x1
 	SUB            	(_offset_value) & 0X7F,	0x0		; Bank 1
-#L21602
+#L21681
 	JBC            	PSW,	0x0
-	GOTO           	#L21314
-#line 305	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
-;  305:(     SUB_2,  adc_value , offset_value , adc_value)
+	GOTO           	#L21332
+#line 307	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value -= offset_value;
+;  307:(     SUB_2,  adc_value , offset_value , adc_value)
 
 ; ITemplate_SUB1_4
 	MOV            	(_offset_value) & 0X7F,	0x0		; Bank 1
-	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_adc_value) & 0X7F		; Bank 1
-	MOV            	(_offset_value+0x1) & 0X7F,	0x0		; Bank 1
-	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 1
-;  305:(       JMP,            ,            ,   #L21312)
+	SECTION        	0x2
+	SUB            	(_adc_value) & 0X7F,	0x0		; Bank 2
+	MOVA           	(_adc_value) & 0X7F		; Bank 2
+	MOVRA          	_offset_value+0x1		; Bank 1
+	SUBC           	(_adc_value+0x1) & 0X7F,	0x0		; Bank 2
+	MOVA           	(_adc_value+0x1) & 0X7F		; Bank 2
+;  307:(       JMP,            ,            ,   #L21330)
 
 ; ITemplate_JMP
-	GOTO           	#L21312
-#line 306	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
-;  306:(     LABEL,    #L21314 ,            ,          )
+	GOTO           	#L21330
+#line 308	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else
+;  308:(     LABEL,    #L21332 ,            ,          )
 
 ; ITemplate_LABEL
-#L21314
-#line 307	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
-;  307:(    ASGN_2,          0 ,            , adc_value)
+#L21332
+#line 309	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		    adc_value = 0;
+;  309:(    ASGN_2,          0 ,            , adc_value)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_adc_value) & 0X7F		; Bank 1
-	CLR            	(_adc_value+0x1) & 0X7F		; Bank 1
-;  307:(     LABEL,    #L21312 ,            ,          )
+	SECTION        	0x2
+	CLR            	(_adc_value) & 0X7F		; Bank 2
+	CLR            	(_adc_value+0x1) & 0X7F		; Bank 2
+;  309:(     LABEL,    #L21330 ,            ,          )
 
 ; ITemplate_LABEL
-#L21312
-#line 308	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		*Temp_val=adc_value;
-;  308:(    ASGN_2,  adc_value ,            , *Temp_val)
+#L21330
+#line 310	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		*Temp_val=adc_value;
+;  310:(    ASGN_2,  adc_value ,            , *Temp_val)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
+	SECTION        	0x1
 	MOV            	(_Get_ADC_ValDATA+0X2+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
 	MOV            	(_Get_ADC_ValDATA+0X2) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
-	MOV            	(_adc_value) & 0X7F,	0x0		; Bank 1
+	MOVRA          	_adc_value		; Bank 2
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-	MOV            	(_adc_value+0x1) & 0X7F,	0x0		; Bank 1
+	MOVRA          	_adc_value+0x1		; Bank 2
 ; ITemplate_SetINDF
 	MOVA           	IAD
 	ISTEP          	0x1
-#line 309	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
-;  309:(       RET,            ,            ,          )
+#line 311	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  311:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
-	_DESC          	User_Get_measure_Val,0X10,0X0,Get_ADC_Val,_f,Get_Tempture
+	_DESC          	User_Get_measure_Val,0X10,0X0,Get_ADC_Val,_f,USB_Check,Get_Tempture
 
 SECTION1User_Get_measure_Val	UNINTIAL       	0		; Bank 0
 	ORG            	0XBD		; Bank 0
@@ -1914,145 +1931,256 @@ _User_Get_measure_Val
 ; void User_Get_measure_Val(){
 ; 		static unsigned int Vbat_adc_val[20],Temp_adc_val[20];
 ; 		static char i=0;
-#line 313	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i=i%20; 
+#line 315	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i=i%20; 
 	CLR            	BKSR
-;  313:(    MOD_1U,          i ,         20 ,         i)
+;  315:(    MOD_1U,          i ,         20 ,         i)
 
 ; ITemplate_LibFunc2
 	MOVI           	0x14
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_i_70		; Bank 1
+	MOVRA          	_User_Get_measure_Val_i_72		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	BMOD
 	CALL           	BMOD		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_i_70		; Bank 1
-#line 314	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
-;  314:(   CVUC_SI,          i ,            ,   #T21374)
+	MOVAR          	_User_Get_measure_Val_i_72		; Bank 1
+#line 316	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
+;  316:(   CVUC_SI,          i ,            ,   #T21392)
 
 ; ITemplate_CVTMS_U
 	SECTION        	0x1
-	CLR            	(_User_Get_measure_Val_#T21374_70+0x1) & 0X7F		; Bank 1
-	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_User_Get_measure_Val_#T21374_70) & 0X7F		; Bank 1
-;  314:(    LSH_2S,    #T21374 ,          1 ,   #T21376)
+	CLR            	(_User_Get_measure_Val_#T21392_72+0x1) & 0X7F		; Bank 1
+	MOV            	(_User_Get_measure_Val_i_72) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21392_72) & 0X7F		; Bank 1
+;  316:(    LSH_2S,    #T21392 ,          1 ,   #T21394)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
-	RL             	(_User_Get_measure_Val_#T21374_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_User_Get_measure_Val_#T21376_70) & 0X7F		; Bank 1
-	RL             	(_User_Get_measure_Val_#T21374_70+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_User_Get_measure_Val_#T21376_70+0x1) & 0X7F		; Bank 1
-;  314:(     ADD_2,    #T21376 , (Vbat_adc_val.0) ,  Vbat_val)
+	RL             	(_User_Get_measure_Val_#T21392_72) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21394_72) & 0X7F		; Bank 1
+	RL             	(_User_Get_measure_Val_#T21392_72+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21394_72+0x1) & 0X7F		; Bank 1
+;  316:(     ADD_2,    #T21394 , (Vbat_adc_val.0) ,  Vbat_val)
 
 ; ITemplate_ADD1_4
-	MOV            	(_User_Get_measure_Val_#T21376_70) & 0X7F,	0x0		; Bank 1
-	ADDI           	_User_Get_measure_Val_Vbat_adc_val_70
+	MOV            	(_User_Get_measure_Val_#T21394_72) & 0X7F,	0x0		; Bank 1
+	ADDI           	_User_Get_measure_Val_Vbat_adc_val_72
 	MOVA           	(_Get_ADC_ValDATA+0X0) & 0X7F		; Bank 1
-	MOV            	(_User_Get_measure_Val_#T21376_70+0x1) & 0X7F,	0x0		; Bank 1
-	ADDCI          	HIGH(_User_Get_measure_Val_Vbat_adc_val_70)
+	MOV            	(_User_Get_measure_Val_#T21394_72+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	HIGH(_User_Get_measure_Val_Vbat_adc_val_72)
 	MOVA           	(_Get_ADC_ValDATA+0X0+0x1) & 0X7F		; Bank 1
-;  314:(   CVUC_SI,          i ,            ,   #T21388)
+;  316:(   CVUC_SI,          i ,            ,   #T21406)
 
 ; ITemplate_CVTMS_U
-	CLR            	(_User_Get_measure_Val_#T21388_70+0x1) & 0X7F		; Bank 1
-	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_User_Get_measure_Val_#T21388_70) & 0X7F		; Bank 1
-;  314:(    LSH_2S,    #T21388 ,          1 ,   #T21390)
+	CLR            	(_User_Get_measure_Val_#T21406_72+0x1) & 0X7F		; Bank 1
+	MOV            	(_User_Get_measure_Val_i_72) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21406_72) & 0X7F		; Bank 1
+;  316:(    LSH_2S,    #T21406 ,          1 ,   #T21408)
 
 ; ITemplate_LSH1_4_1
 	BCC            	PSW,	0x0
-	RL             	(_User_Get_measure_Val_#T21388_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_User_Get_measure_Val_#T21390_70) & 0X7F		; Bank 1
-	RL             	(_User_Get_measure_Val_#T21388_70+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_User_Get_measure_Val_#T21390_70+0x1) & 0X7F		; Bank 1
-;  314:(     ADD_2,    #T21390 , (Temp_adc_val.0) ,  Temp_val)
+	RL             	(_User_Get_measure_Val_#T21406_72) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21408_72) & 0X7F		; Bank 1
+	RL             	(_User_Get_measure_Val_#T21406_72+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_User_Get_measure_Val_#T21408_72+0x1) & 0X7F		; Bank 1
+;  316:(     ADD_2,    #T21408 , (Temp_adc_val.0) ,  Temp_val)
 
 ; ITemplate_ADD1_4
-	MOV            	(_User_Get_measure_Val_#T21390_70) & 0X7F,	0x0		; Bank 1
-	ADDI           	_User_Get_measure_Val_Temp_adc_val_70
+	MOV            	(_User_Get_measure_Val_#T21408_72) & 0X7F,	0x0		; Bank 1
+	ADDI           	_User_Get_measure_Val_Temp_adc_val_72
 	MOVA           	(_Get_ADC_ValDATA+0X2) & 0X7F		; Bank 1
-	MOV            	(_User_Get_measure_Val_#T21390_70+0x1) & 0X7F,	0x0		; Bank 1
-	ADDCI          	HIGH(_User_Get_measure_Val_Temp_adc_val_70)
+	MOV            	(_User_Get_measure_Val_#T21408_72+0x1) & 0X7F,	0x0		; Bank 1
+	ADDCI          	HIGH(_User_Get_measure_Val_Temp_adc_val_72)
 	MOVA           	(_Get_ADC_ValDATA+0X2+0x1) & 0X7F		; Bank 1
-;  314:(      CALL, (Get_ADC_Val.0) ,            ,          )
+;  316:(      CALL, (Get_ADC_Val.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_ADC_Val
 	CALL           	_Get_ADC_Val		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 315	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i++;
-;  315:(     ADD_1,          i ,          1 ,         i)
+#line 317	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		i++;
+;  317:(     ADD_1,          i ,          1 ,         i)
 
 ; ITemplate_INC_1_TMP
 	SECTION        	0x1
-	INC            	(_User_Get_measure_Val_i_70) & 0X7F		; Bank 1
-#line 316	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(i==19){
-;  316:(    JNEQ_1,         19 ,          i ,   #L21587)
+	INC            	(_User_Get_measure_Val_i_72) & 0X7F		; Bank 1
+#line 318	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(i==19){
+;  318:(    JNEQ_1,         19 ,          i ,   #L21666)
 
 ; ITemplate_JNEQ1_4
-	MOV            	(_User_Get_measure_Val_i_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_i_72) & 0X7F,	0x0		; Bank 1
 	XORI           	0x13
 	JBS            	PSW,	0x2
-	GOTO           	#L21587
-#line 317	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Vbat_adc_val,20);  //
-;  317:(    PARA_2, (Vbat_adc_val.0) ,            ,         a)
+	GOTO           	#L21666
+#line 319	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Vbat_adc_val,20);	//
+;  319:(    PARA_2, (Vbat_adc_val.0) ,            ,         a)
 
 ; ITemplate_ASGN1_4
-	MOVI           	_User_Get_measure_Val_Vbat_adc_val_70
+	MOVI           	_User_Get_measure_Val_Vbat_adc_val_72
 	MOVA           	(__fDATA+0X0) & 0X7F		; Bank 1
-	MOVI           	HIGH(_User_Get_measure_Val_Vbat_adc_val_70)
+	MOVI           	HIGH(_User_Get_measure_Val_Vbat_adc_val_72)
 	MOVA           	(__fDATA+0X0+0x1) & 0X7F		; Bank 1
-;  317:(    PARA_1,         20 ,            ,       len)
+;  319:(    PARA_1,         20 ,            ,       len)
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x14
 	MOVA           	(__fDATA+0X2) & 0X7F		; Bank 1
-;  317:(      CALL,     (_f.0) ,            ,          )
+;  319:(      CALL,     (_f.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	__f
 	CALL           	__f		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 318	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Temp_adc_val,20);
-;  318:(    PARA_2, (Temp_adc_val.0) ,            ,         a)
+#line 320	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			_f(Temp_adc_val,20);	//
+;  320:(    PARA_2, (Temp_adc_val.0) ,            ,         a)
 
 ; ITemplate_ASGN1_4
-	MOVI           	_User_Get_measure_Val_Temp_adc_val_70
+	MOVI           	_User_Get_measure_Val_Temp_adc_val_72
 	MOVAR          	__fDATA+0X0		; Bank 1
-	MOVI           	HIGH(_User_Get_measure_Val_Temp_adc_val_70)
+	MOVI           	HIGH(_User_Get_measure_Val_Temp_adc_val_72)
 	MOVAR          	__fDATA+0X0+0x1		; Bank 1
-;  318:(    PARA_1,         20 ,            ,       len)
+;  320:(    PARA_1,         20 ,            ,       len)
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x14
 	MOVAR          	__fDATA+0X2		; Bank 1
-;  318:(      CALL,     (_f.0) ,            ,          )
+;  320:(      CALL,     (_f.0) ,            ,          )
 
 ; ITemplate_CALL
 	SEGMENTSEL     	__f
 	CALL           	__f		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; 		//电量值
-#line 320	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
-;  320:(    CVUI_F, *(Vbat_adc_val.20) ,            ,   #T21459)
+#line 322	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(USB_Check() && global_count>10000 ){
+;  322:(     CALLR, (USB_Check.0) ,            ,   #T21458)
+
+; ITemplate_CALL
+	SEGMENTSEL     	_USB_Check
+	CALL           	_USB_Check		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	MOVAR          	_User_Get_measure_Val_#T21458_73		; Bank 1
+;  322:(      JZ_1,    #T21458 ,            ,   #L21454)
+
+; ITemplate_JZ1_4
+	SECTION        	0x1
+	MOV            	(_User_Get_measure_Val_#T21458_73) & 0X7F,	0x0		; Bank 1
+	JBC            	PSW,	0x2
+	GOTO           	#L21454
+;  322:(    JLE_4U, global_count ,      10000 ,   #L21454)
+
+; ITemplate_JLE1_4U
+	SECTION        	0x2
+	MOV            	(_global_count+0x3) & 0X7F,	0x0		; Bank 2
+	SUBI           	0x0
+	JBS            	PSW,	0x2
+	GOTO           	#L21682
+	MOV            	(_global_count+0x2) & 0X7F,	0x0		; Bank 2
+	SUBI           	0x0
+	JBS            	PSW,	0x2
+	GOTO           	#L21682
+	MOV            	(_global_count+0x1) & 0X7F,	0x0		; Bank 2
+	SUBI           	0x27
+	JBS            	PSW,	0x2
+	GOTO           	#L21682
+	MOV            	(_global_count) & 0X7F,	0x0		; Bank 2
+	SUBI           	0x10
+#L21682
+	JBC            	PSW,	0x0
+	GOTO           	#L21454
+; 					static unsigned int count;
+#line 324	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 					count++;
+;  324:(     ADD_2,      count ,          1 ,     count)
+
+; ITemplate_INC_2_TMP
+	SECTION        	0x1
+	INC            	(_User_Get_measure_Val_count_74) & 0X7F		; Bank 1
+	JBS            	PSW,	0x2
+	GOTO           	#L21683
+	INC            	(_User_Get_measure_Val_count_74+0x1) & 0X7F		; Bank 1
+#L21683
+#line 325	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 					if(count>54){   //108s ++
+;  325:(    JLE_2U,      count ,         54 ,   #L21483)
+
+; ITemplate_JLE1_4U
+	MOV            	(_User_Get_measure_Val_count_74+0x1) & 0X7F,	0x0		; Bank 1
+	SUBI           	0x0
+	JBS            	PSW,	0x2
+	GOTO           	#L21684
+	MOV            	(_User_Get_measure_Val_count_74) & 0X7F,	0x0		; Bank 1
+	SUBI           	0x36
+#L21684
+	JBC            	PSW,	0x0
+	GOTO           	#L21483
+#line 326	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 						count=0;
+;  326:(    ASGN_2,          0 ,            ,     count)
+
+; ITemplate_CLR1_4_TMP
+	CLR            	(_User_Get_measure_Val_count_74) & 0X7F		; Bank 1
+	CLR            	(_User_Get_measure_Val_count_74+0x1) & 0X7F		; Bank 1
+#line 327	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 						Vbat_val++;
+;  327:(     ADD_1,   Vbat_val ,          1 ,  Vbat_val)
+
+; ITemplate_INC_1_TMP
+	INC            	(_Vbat_val) & 0X7F		; Bank 1
+#line 328	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 					}
+;  328:(     LABEL,    #L21483 ,            ,          )
+
+; ITemplate_LABEL
+#L21483
+#line 329	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 				if(Vbat_val>99) Vbat_val=99;
+;  329:(    JLE_1U,   Vbat_val ,         99 ,   #L21451)
+
+; ITemplate_JLE1_4U
+	MOV            	(_Vbat_val) & 0X7F,	0x0		; Bank 1
+	SUBI           	0x63
+	JBC            	PSW,	0x0
+	GOTO           	#L21451
+;  329:(    ASGN_1,         99 ,            ,  Vbat_val)
+
+; ITemplate_ASGN1_4_R
+	MOVI           	0x63
+	MOVA           	(_Vbat_val) & 0X7F		; Bank 1
+#line 330	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 				if(Vbat_val<0) Vbat_val=0;		
+;  330:(       JMP,            ,            ,   #L21451)
+
+; ITemplate_JMP
+	GOTO           	#L21451
+; 		}
+#line 332	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else{
+;  332:(     LABEL,    #L21454 ,            ,          )
+
+; ITemplate_LABEL
+#L21454
+#line 333	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			if(State_flag!=2){
+;  333:(     JEQ_1,          2 , State_flag ,   #L21451)
+
+; ITemplate_JEQ1_4
+	SECTION        	0x1
+	MOV            	(_State_flag) & 0X7F,	0x0		; Bank 1
+	XORI           	0x2
+	JBC            	PSW,	0x2
+	GOTO           	#L21451
+#line 334	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 				vcc_val=4*2.048*Vbat_adc_val[10]/4096;
+;  334:(    CVUI_F, *(Vbat_adc_val.20) ,            ,   #T21579)
 
 ; ITemplate_LibFunc1
-	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x14		; Bank 3
-	MOVA           	(?_TMP) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_Vbat_adc_val_70+0x15		; Bank 3
-	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
+	SECTION        	0x3
+	MOV            	(_User_Get_measure_Val_Vbat_adc_val_72+0x14) & 0X7F,	0x0		; Bank 3
+	MOVAR          	?_TMP		; Bank 0
+	MOV            	(_User_Get_measure_Val_Vbat_adc_val_72+0x15) & 0X7F,	0x0		; Bank 3
+	MOVAR          	?_TMP+0x1		; Bank 0
 	SEGMENTSEL     	W2FL
+	SECTION        	0x0
 	CALL           	W2FL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21459_71		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21579_77		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21459_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21579_77+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21459_71+0x2		; Bank 1
-;  320:(     MUL_F,    #T21459 ,   8.192000 ,   #T21460)
+	MOVAR          	_User_Get_measure_Val_#T21579_77+0x2		; Bank 1
+;  334:(     MUL_F,    #T21579 ,   8.192000 ,   #T21580)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x41
@@ -2061,25 +2189,25 @@ _User_Get_measure_Val
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
 	MOVI           	0x12
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21459_71+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21579_77+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21459_71+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21579_77+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21459_71		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21579_77		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	FLMUL
 	CALL           	FLMUL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_CVF_D_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21460_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21580_77+0x1		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21460_71+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21580_77+0x2		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21460_71+0x3		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21580_77+0x3		; Bank 1
 	SECTION        	0x1
-	CLR            	(_User_Get_measure_Val_#T21460_71) & 0X7F		; Bank 1
-;  320:(     DIV_D,    #T21460 , 4096.000000 ,   vcc_val)
+	CLR            	(_User_Get_measure_Val_#T21580_77) & 0X7F		; Bank 1
+;  334:(     DIV_D,    #T21580 , 4096.000000 ,   vcc_val)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x45
@@ -2090,13 +2218,13 @@ _User_Get_measure_Val
 	MOVAR          	?_TMP+0x5		; Bank 0
 	MOVI           	0x0
 	MOVAR          	?_TMP+0x4		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21460_71+0x3) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21580_77+0x3) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x3		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21460_71+0x2) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21580_77+0x2) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x2		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21460_71+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21580_77+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x1		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21460_71) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21580_77) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP		; Bank 0
 	SEGMENTSEL     	DLDIV
 	SECTION        	0x0
@@ -2109,28 +2237,28 @@ _User_Get_measure_Val
 	MOVAR          	_vcc_val+0x1		; Bank 2
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_vcc_val+0x2		; Bank 2
-#line 321	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(vcc_val>4.2) vcc_val=4.2;
-;  321:(     CVF_D,    vcc_val ,            ,   #T21473)
+#line 335	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 				if(vcc_val>4.2) vcc_val=4.2;
+;  335:(     CVF_D,    vcc_val ,            ,   #T21593)
 
 ; ITemplate_CVF_D
 	MOVRA          	_vcc_val		; Bank 2
-	MOVAR          	_User_Get_measure_Val_#T21473_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21593_77+0x1		; Bank 1
 	MOVRA          	_vcc_val+0x1		; Bank 2
-	MOVAR          	_User_Get_measure_Val_#T21473_71+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21593_77+0x2		; Bank 1
 	MOVRA          	_vcc_val+0x2		; Bank 2
-	MOVAR          	_User_Get_measure_Val_#T21473_71+0x3		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21593_77+0x3		; Bank 1
 	SECTION        	0x1
-	CLR            	(_User_Get_measure_Val_#T21473_71) & 0X7F		; Bank 1
-;  321:(     JLE_D,    #T21473 ,   4.200000 ,   #L21467)
+	CLR            	(_User_Get_measure_Val_#T21593_77) & 0X7F		; Bank 1
+;  335:(     JLE_D,    #T21593 ,   4.200000 ,   #L21587)
 
 ; ITemplate_JLE_D
-	MOV            	(_User_Get_measure_Val_#T21473_71) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21593_77) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x4		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21473_71+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21593_77+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x5		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21473_71+0x2) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21593_77+0x2) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x6		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21473_71+0x3) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21593_77+0x3) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x7		; Bank 0
 	MOVI           	0x66
 	MOVAR          	?_TMP		; Bank 0
@@ -2145,8 +2273,8 @@ _User_Get_measure_Val
 	CALL           	DLCMP		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	JBC            	PSW,	0x0
-	GOTO           	#L21467
-;  321:(    ASGN_3,   4.200000 ,            ,   vcc_val)
+	GOTO           	#L21587
+;  335:(    ASGN_3,   4.200000 ,            ,   vcc_val)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x40
@@ -2156,41 +2284,93 @@ _User_Get_measure_Val
 	MOVA           	(_vcc_val+0x1) & 0X7F		; Bank 2
 	MOVI           	0x66
 	MOVA           	(_vcc_val) & 0X7F		; Bank 2
-;  321:(     LABEL,    #L21467 ,            ,          )
+;  335:(     LABEL,    #L21587 ,            ,          )
 
 ; ITemplate_LABEL
-#L21467
-#line 322	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		Vbat_val=(vcc_val-3.6)*100/(4.2-3.6);
-;  322:(     CVF_D,    vcc_val ,            ,   #T21495)
+#L21587
+#line 336	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 				if(vcc_val<3.5) vcc_val=3.5;
+;  336:(     CVF_D,    vcc_val ,            ,   #T21609)
 
 ; ITemplate_CVF_D
 	SECTION        	0x2
 	MOV            	(_vcc_val) & 0X7F,	0x0		; Bank 2
-	MOVAR          	_User_Get_measure_Val_#T21495_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21609_77+0x1		; Bank 1
 	MOV            	(_vcc_val+0x1) & 0X7F,	0x0		; Bank 2
-	MOVAR          	_User_Get_measure_Val_#T21495_71+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21609_77+0x2		; Bank 1
 	MOV            	(_vcc_val+0x2) & 0X7F,	0x0		; Bank 2
-	MOVAR          	_User_Get_measure_Val_#T21495_71+0x3		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21609_77+0x3		; Bank 1
 	SECTION        	0x1
-	CLR            	(_User_Get_measure_Val_#T21495_71) & 0X7F		; Bank 1
-;  322:(     SUB_D,    #T21495 ,   3.600000 ,   #T21496)
+	CLR            	(_User_Get_measure_Val_#T21609_77) & 0X7F		; Bank 1
+;  336:(     JGE_D,    #T21609 ,   3.500000 ,   #L21603)
+
+; ITemplate_JGE_D
+	MOVI           	0x0
+	MOVAR          	?_TMP+0x4		; Bank 0
+	MOVI           	0x0
+	MOVAR          	?_TMP+0x5		; Bank 0
+	MOVI           	0x60
+	MOVAR          	?_TMP+0x6		; Bank 0
+	MOVI           	0x40
+	MOVAR          	?_TMP+0x7		; Bank 0
+	MOV            	(_User_Get_measure_Val_#T21609_77) & 0X7F,	0x0		; Bank 1
+	MOVAR          	?_TMP		; Bank 0
+	MOV            	(_User_Get_measure_Val_#T21609_77+0x1) & 0X7F,	0x0		; Bank 1
+	MOVAR          	?_TMP+0x1		; Bank 0
+	MOV            	(_User_Get_measure_Val_#T21609_77+0x2) & 0X7F,	0x0		; Bank 1
+	MOVAR          	?_TMP+0x2		; Bank 0
+	MOV            	(_User_Get_measure_Val_#T21609_77+0x3) & 0X7F,	0x0		; Bank 1
+	MOVAR          	?_TMP+0x3		; Bank 0
+	SEGMENTSEL     	DLCMP
+	SECTION        	0x0
+	CALL           	DLCMP		; Bank 0		; ShBank 0
+	SEGMENTSEL     	$
+	JBC            	PSW,	0x0
+	GOTO           	#L21603
+;  336:(    ASGN_3,   3.500000 ,            ,   vcc_val)
+
+; ITemplate_ASGN1_4_R
+	MOVI           	0x40
+	SECTION        	0x2
+	MOVA           	(_vcc_val+0x2) & 0X7F		; Bank 2
+	MOVI           	0x60
+	MOVA           	(_vcc_val+0x1) & 0X7F		; Bank 2
+	MOVI           	0x0
+	MOVA           	(_vcc_val) & 0X7F		; Bank 2
+;  336:(     LABEL,    #L21603 ,            ,          )
+
+; ITemplate_LABEL
+#L21603
+#line 337	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 				Vbat_val=(vcc_val-3.5)*100/(4.2-3.5);
+;  337:(     CVF_D,    vcc_val ,            ,   #T21631)
+
+; ITemplate_CVF_D
+	SECTION        	0x2
+	MOV            	(_vcc_val) & 0X7F,	0x0		; Bank 2
+	MOVAR          	_User_Get_measure_Val_#T21631_77+0x1		; Bank 1
+	MOV            	(_vcc_val+0x1) & 0X7F,	0x0		; Bank 2
+	MOVAR          	_User_Get_measure_Val_#T21631_77+0x2		; Bank 1
+	MOV            	(_vcc_val+0x2) & 0X7F,	0x0		; Bank 2
+	MOVAR          	_User_Get_measure_Val_#T21631_77+0x3		; Bank 1
+	SECTION        	0x1
+	CLR            	(_User_Get_measure_Val_#T21631_77) & 0X7F		; Bank 1
+;  337:(     SUB_D,    #T21631 ,   3.500000 ,   #T21632)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x40
 	MOVAR          	?_TMP+0x7		; Bank 0
-	MOVI           	0x66
+	MOVI           	0x60
 	MOVAR          	?_TMP+0x6		; Bank 0
-	MOVI           	0x66
+	MOVI           	0x0
 	MOVAR          	?_TMP+0x5		; Bank 0
-	MOVI           	0x66
+	MOVI           	0x0
 	MOVAR          	?_TMP+0x4		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21495_71+0x3) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21631_77+0x3) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x3		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21495_71+0x2) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21631_77+0x2) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x2		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21495_71+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21631_77+0x1) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP+0x1		; Bank 0
-	MOV            	(_User_Get_measure_Val_#T21495_71) & 0X7F,	0x0		; Bank 1
+	MOV            	(_User_Get_measure_Val_#T21631_77) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP		; Bank 0
 	SEGMENTSEL     	DLSUB
 	SECTION        	0x0
@@ -2198,14 +2378,14 @@ _User_Get_measure_Val
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21496_71		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21632_77		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21496_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21632_77+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21496_71+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21632_77+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21496_71+0x3		; Bank 1
-;  322:(     MUL_D,    #T21496 , 100.000000 ,   #T21499)
+	MOVAR          	_User_Get_measure_Val_#T21632_77+0x3		; Bank 1
+;  337:(     MUL_D,    #T21632 , 100.000000 ,   #T21635)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x42
@@ -2216,165 +2396,144 @@ _User_Get_measure_Val
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
 	MOVI           	0x0
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21496_71+0x3		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21632_77+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21496_71+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21632_77+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21496_71+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21632_77+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21496_71		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21632_77		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLMUL
 	CALL           	DLMUL		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21499_71		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21635_77		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21499_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21635_77+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21499_71+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21635_77+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21499_71+0x3		; Bank 1
-;  322:(     DIV_D,    #T21499 ,   0.600000 ,   #T21506)
+	MOVAR          	_User_Get_measure_Val_#T21635_77+0x3		; Bank 1
+;  337:(     DIV_D,    #T21635 ,   0.700000 ,   #T21642)
 
 ; ITemplate_LibFunc3
 	MOVI           	0x3f
 	MOVA           	(?_TMP+0x7) & 0X7F		; Bank 0
-	MOVI           	0x19
+	MOVI           	0x33
 	MOVA           	(?_TMP+0x6) & 0X7F		; Bank 0
-	MOVI           	0x99
+	MOVI           	0x33
 	MOVA           	(?_TMP+0x5) & 0X7F		; Bank 0
-	MOVI           	0x98
+	MOVI           	0x30
 	MOVA           	(?_TMP+0x4) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21499_71+0x3		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21635_77+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21499_71+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21635_77+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21499_71+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21635_77+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21499_71		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21635_77		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
 	SEGMENTSEL     	DLDIV
 	CALL           	DLDIV		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 ; ITemplate_ASGN_RET
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21506_71		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21642_77		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21506_71+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21642_77+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21506_71+0x2		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21642_77+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21506_71+0x3		; Bank 1
-;  322:(    CVD_UC,    #T21506 ,            ,  Vbat_val)
+	MOVAR          	_User_Get_measure_Val_#T21642_77+0x3		; Bank 1
+;  337:(    CVD_UC,    #T21642 ,            ,  Vbat_val)
 
 ; ITemplate_LibFunc1
-	MOVRA          	_User_Get_measure_Val_#T21506_71		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21642_77		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21506_71+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21642_77+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21506_71+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21642_77+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21506_71+0x3		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21642_77+0x3		; Bank 1
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
 	SEGMENTSEL     	DL2LG
 	CALL           	DL2LG		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_Vbat_val		; Bank 1
-#line 324	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Vbat_val>99) Vbat_val=99;
-;  324:(    JLE_1U,   Vbat_val ,         99 ,   #L21510)
-
-; ITemplate_JLE1_4U
-	MOVRA          	_Vbat_val		; Bank 1
-	SUBI           	0x63
-	JBC            	PSW,	0x0
-	GOTO           	#L21510
-;  324:(    ASGN_1,         99 ,            ,  Vbat_val)
-
-; ITemplate_ASGN1_4_R
-	MOVI           	0x63
-	SECTION        	0x1
-	MOVA           	(_Vbat_val) & 0X7F		; Bank 1
-;  324:(     LABEL,    #L21510 ,            ,          )
+; 				//if(Vbat_val>99) Vbat_val=99;
+; 				//if(Vbat_val<0) Vbat_val=0;
+; 			}
+; 			else{
+; 			}
+#line 343	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		}
+;  343:(     LABEL,    #L21451 ,            ,          )
 
 ; ITemplate_LABEL
-#L21510
-; 		if(Vbat_val<0) Vbat_val=0;
+#L21451
+; 		#ifdef UART_TEST
+; 			//GIE=0;
+; 			//UART_send(str,'A',Vbat_val);
+; 			//UART_send(str,'B',vcc_val*1000);
+; 			
+; 			//GIE=1;
+; 			//float a;
+; 			//a=Get_Tempture(Temp_adc_val[10]);
+; 			//GIE=0;
+; 			//UART_send(str,1,Temp_adc_val[10]);
+; 			//UART_send(str,1,RT*10);
+; 			//UART_send(str,0,a*100);
+; 			//GIE=1;
+; 		#endif
 ; 		//温度
-#line 328	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		if(Temp_adc_val[10]<4000){
-;  328:(    JGE_2U, *(Temp_adc_val.20) ,       4000 ,   #L21542)
-
-; ITemplate_JGE1_4U
-	MOVI           	0xf
-	SECTION        	0x2
-	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x15) & 0X7F,	0x0		; Bank 2
-	JBS            	PSW,	0x2
-	GOTO           	#L21603
-	MOVI           	0xa0
-	SUB            	(_User_Get_measure_Val_Temp_adc_val_70+0x14) & 0X7F,	0x0		; Bank 2
-#L21603
-	JBC            	PSW,	0x0
-	GOTO           	#L21542
-#line 329	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=Get_Tempture(Temp_adc_val[10]);
-;  329:(    PARA_2, *(Temp_adc_val.20) ,            ,       adc)
+; 		//if(Temp_adc_val[10]<4000){
+#line 365	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=Get_Tempture(Temp_adc_val[10]);
+;  365:(    PARA_2, *(Temp_adc_val.20) ,            ,       adc)
 
 ; ITemplate_ASGN1_4
-	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x14) & 0X7F,	0x0		; Bank 2
+	SECTION        	0x2
+	MOV            	(_User_Get_measure_Val_Temp_adc_val_72+0x14) & 0X7F,	0x0		; Bank 2
 	MOVAR          	_Get_TemptureDATA+0X0		; Bank 1
-	MOV            	(_User_Get_measure_Val_Temp_adc_val_70+0x15) & 0X7F,	0x0		; Bank 2
+	MOV            	(_User_Get_measure_Val_Temp_adc_val_72+0x15) & 0X7F,	0x0		; Bank 2
 	MOVAR          	_Get_TemptureDATA+0X0+0x1		; Bank 1
-;  329:(     CALLR, (Get_Tempture.0) ,            ,   #T21559)
+;  365:(     CALLR, (Get_Tempture.0) ,            ,   #T21644)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_Tempture
 	CALL           	_Get_Tempture		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_User_Get_measure_Val_#T21559_72		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21644_73		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21559_72+0x1		; Bank 1
+	MOVAR          	_User_Get_measure_Val_#T21644_73+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_User_Get_measure_Val_#T21559_72+0x2		; Bank 1
-;  329:(    CVF_UC,    #T21559 ,            ,temperature)
+	MOVAR          	_User_Get_measure_Val_#T21644_73+0x2		; Bank 1
+;  365:(    CVF_UC,    #T21644 ,            ,temperature)
 
 ; ITemplate_LibFunc1
-	MOVRA          	_User_Get_measure_Val_#T21559_72		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21644_73		; Bank 1
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21559_72+0x1		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21644_73+0x1		; Bank 1
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
-	MOVRA          	_User_Get_measure_Val_#T21559_72+0x2		; Bank 1
+	MOVRA          	_User_Get_measure_Val_#T21644_73+0x2		; Bank 1
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
 	SEGMENTSEL     	FL2LG
 	CALL           	FL2LG		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_temperature		; Bank 1
-#line 330	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
-;  330:(       JMP,            ,            ,   #L21587)
-
-; ITemplate_JMP
-	GOTO           	#L21587
-#line 331	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 		else{
-;  331:(     LABEL,    #L21542 ,            ,          )
-
-; ITemplate_LABEL
-#L21542
-#line 332	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; 			temperature=0xff;
-;  332:(    ASGN_1,        255 ,            ,temperature)
-
-; ITemplate_ASGN1_4_R
-	MOVI           	0xff
-	SECTION        	0x1
-	MOVA           	(_temperature) & 0X7F		; Bank 1
-; 		}
+; 		//}	//temperature=adc_value/1000*10+(adc_value/100)%10;
+; 		//else{
+; 		//	temperature=0xff;
+; 		//}
 ; 	}
-#line 335	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
-;  335:(     LABEL,    #L21587 ,            ,          )
+#line 371	C:\Users\king\Desktop\Mixing_cup\搅拌杯程序\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\user_function.c ; }
+;  371:(     LABEL,    #L21666 ,            ,          )
 
 ; ITemplate_LABEL
-#L21587
-;  335:(       RET,            ,            ,          )
+#L21666
+;  371:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
@@ -2395,78 +2554,89 @@ _GIE_0	RSEG           	0X1		; Bank 0
 SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC88	PSECT	FLAG=0X1088,ADDR=0X7FCD0
 _ADIF_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC89	PSECT	FLAG=0X1088,ADDR=0X7FD72
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC89	PSECT	FLAG=0X1088,ADDR=0X7FD6D
+_PAT5_0	RSEG           	0X1		; Bank 0
+
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC90	PSECT	FLAG=0X1088,ADDR=0X7FD72
 _PBT2_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC90	PSECT	FLAG=0X1088,ADDR=0X7FD74
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC91	PSECT	FLAG=0X1088,ADDR=0X7FD74
 _PBT4_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC91	PSECT	FLAG=0X1088,ADDR=0X7FDD5
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC92	PSECT	FLAG=0X1088,ADDR=0X7FD79
+_PCT1_0	RSEG           	0X1		; Bank 0
+
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC93	PSECT	FLAG=0X1088,ADDR=0X7FDD5
 _ADC_LP_EN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC92	PSECT	FLAG=0X1088,ADDR=0X7FDDF
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC94	PSECT	FLAG=0X1088,ADDR=0X7FDDF
 _UART1SEL_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC93	PSECT	FLAG=0X1088,ADDR=0X305D0
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC95	PSECT	FLAG=0X1088,ADDR=0X305D0
 _ADEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC94	PSECT	FLAG=0X1088,ADDR=0X305D1
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC96	PSECT	FLAG=0X1088,ADDR=0X305D1
 _ADTRG_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC95	PSECT	FLAG=0X1088,ADDR=0X305D2
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC97	PSECT	FLAG=0X1088,ADDR=0X305D2
 _SMPS_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC96	PSECT	FLAG=0X1088,ADDR=0X305D8
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC98	PSECT	FLAG=0X1088,ADDR=0X305D8
 _VREFEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC97	PSECT	FLAG=0X1088,ADDR=0X305D9
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC99	PSECT	FLAG=0X1088,ADDR=0X305D9
 _VREF_CHOPEN_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC98	PSECT	FLAG=0X1088,ADDR=0X306B9
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC100	PSECT	FLAG=0X1088,ADDR=0X306B9
 _TRMT1_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC99	PSECT	FLAG=0X1088,ADDR=0X306BD
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC101	PSECT	FLAG=0X1088,ADDR=0X306BD
 _BRGH1_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC100	PSECT	FLAG=0X1088,ADDR=0X306BE
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC102	PSECT	FLAG=0X1088,ADDR=0X306BE
 _TX1LEN_0	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c102	IDATA          		0X84		; Bank 0
+SECTION8C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC103	PSECT	FLAG=0X1088,ADDR=0X306BF
+_TX1EN_0	RSEG           	0X1		; Bank 0
+
+SECTION1IC__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c105	IDATA          		0X84		; Bank 0
 _offset_value	DB             	0X0,0XE4,0X0,0XE4		; Bank 0
 
-SECTION1IC__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c104	IDATA          		0XA2		; Bank 0
+SECTION1IC__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c107	IDATA          		0XA2		; Bank 0
 _str	DB             	0XCD,0XE4,0XA8,0XE4,0XB5,0XE4,0XC0,0XE4,0X20,0XE4,0XB5,0XE4,0XC4,0XE4,0XD7,0XE4,0XAA,0XE4,0XBB,0XE4
 	DB		0XBB,0XE4,0XD6,0XE4,0XB5,0XE4,0XCE,0XE4,0XAA,0XE4,0X3A,0XE4,0X20,0XE4,0X20,0XE4,0X20,0XE4,0X20,0XE4
 	DB		0XD,0XE4,0XA,0XE4,0X0,0XE4		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC105	PSECT	FLAG=0x88
-_GetOffset2048_#T20657_48	RSEG           	0X1		; Bank 0
+SECTION0C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC108	PSECT	FLAG=0x88
+_GetOffset2048_#T20657_50	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC106	PSECT	FLAG=0x88
-_GetOffsetVDD_#T20740_51	RSEG           	0X1		; Bank 0
+SECTION0C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC109	PSECT	FLAG=0x88
+_GetOffsetVDD_#T20740_53	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c108	IDATA          		0X81		; Bank 0
-_User_Get_measure_Val_i_70	DB             	0X0,0XE4		; Bank 0
+SECTION1IC__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c111	IDATA          		0X81		; Bank 0
+_User_Get_measure_Val_i_72	DB             	0X0,0XE4		; Bank 0
 
 SECTION1C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0XFD		; Bank 0
-_adc_value	RSEG           	0X2		; Bank 0
+_User_Get_measure_Val_count_74	RSEG           	0X2		; Bank 0
 
 SECTION2C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X113		; Bank 0
+	ORG            	0X115		; Bank 0
 _vcc_val	RSEG           	0X3		; Bank 0
-	ORG            	0X10D		; Bank 0
+	ORG            	0X10F		; Bank 0
 _RV	RSEG           	0X3		; Bank 0
-	ORG            	0X10A		; Bank 0
+	ORG            	0X10C		; Bank 0
 _RT	RSEG           	0X3		; Bank 0
-	ORG            	0X110		; Bank 0
+	ORG            	0X112		; Bank 0
 _Tmp	RSEG           	0X3		; Bank 0
-	ORG            	0X156		; Bank 0
-_User_Get_measure_Val_Temp_adc_val_70	RSEG           	0X28		; Bank 0
+	ORG            	0X100		; Bank 0
+_adc_value	RSEG           	0X2		; Bank 0
+	ORG            	0X158		; Bank 0
+_User_Get_measure_Val_Temp_adc_val_72	RSEG           	0X28		; Bank 0
 
 SECTION3C__Users_king_Desktop_Mixing_cup_搅拌杯程序_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_user_function_c_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0X180		; Bank 0
-_User_Get_measure_Val_Vbat_adc_val_70	RSEG           	0X28		; Bank 0
+_User_Get_measure_Val_Vbat_adc_val_72	RSEG           	0X28		; Bank 0
 
 SECTION8C__Program_Files__x86__HRCC_Tools_HRCC_v1_2_0_122_tools_INCLUDE_ES7P0693_h_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0XFF90		; Bank 0

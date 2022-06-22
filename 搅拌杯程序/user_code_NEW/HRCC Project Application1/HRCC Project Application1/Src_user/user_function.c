@@ -1,6 +1,10 @@
 #include "../main.h"
 #include "../inc_user/user_function.h"
 #include <math.h>
+//#include <stdlib.h>
+
+
+
 /*********************************************************
 *Copyright (C), 2020, Shanghai Eastsoft Microelectronics Co., Ltd
 *文件名:  adc_offset.c
@@ -20,8 +24,8 @@
 **********************************************************/
 
 //#define VDDVREF        //宏定义选择VDD作为参考电压，注释本句则选择内部2.048V作为参考电压正端
-typedef unsigned char uchar;
-typedef unsigned int uint;
+//typedef unsigned char uchar;
+//typedef unsigned int uint;
 
 uint adc_value;
 uint offset_value = 0;  //保存ADC校准值
@@ -30,7 +34,7 @@ uchar str[] = "通道 的转换值为:    \r\n\0";
 
 #define B 3950.0//温度系数
 #define TN 298.15//额定温度(绝对温度加常温:273.15+25)
-#define RN 100// 额定阻值(绝对温度时的电阻值10k)
+#define RN 100// 额定阻值(绝对温度时的电阻值100k)
 #define RES 200// 分压电阻200K
 #define BaseVol  2.048 //ADC基准电压
 
@@ -42,6 +46,7 @@ float Get_Tempture(unsigned int adc)
        // RT=RV*100/(BaseVol-RV);				//求出当前温度阻值 (BaseVoltage-RV)/R16=RV/RT;
 		RT=RES/((vcc_val/RV)-1);
 	    Tmp=1/(1/TN+(log(RT/RN)/B))-273.15;//%RT = RN exp*B(1/T-1/TN)%
+
         return Tmp;
 }
 //————————————————
@@ -150,14 +155,14 @@ uint GetOffsetVDD(void)
 
 /****************初始化UART*******************/
 void Uart_Init(void){
-    //PCT1 = 0;       //TX输出
-    //PAT5 = 1;       //RX输入
+    PCT1 = 0;       //TX输出
+    PAT5 = 1;       //RX输入
    // PBT5 = 0;       //TX输出
    // PBT6 = 1;       //RX输入
     TX1LEN = 0;     //8位数据发送格式 UART1SEL
     BRGH1 = 0;      //波特率低速模式：波特率=Fosc/(64*(BRR<7:0>+1))
     BR1R = 25;      //波特率=16MHz/(64*26)≈9600bps
-    
+    TX1EN = 1;       //打开发送
 	UART1SEL=1;
 }
 
@@ -165,8 +170,7 @@ void ADC_dis_init(){
   
     ANSH1 = 0;          //选择AIN9为模拟口
     ADCCL = 0xF8;      //ADCCL<7:4>选择通道
- //   ADCCL &= 0x9F;      //选择通道9
-
+	//ADCCL &= 0x9F;      //选择通道9
 	//ADCCM = 0x6B;       //参考源内部固定选择2.048V,负参考固定选择VSS，转换位数固定选择12位，AD调整offset固定选择档位1
     ADCCH = 0xC3 ;       //低位对齐;时钟周期FOSC/16
 	ADEN = 0;           //使能ADC模块
@@ -295,9 +299,7 @@ static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
 		    adc_value -= offset_value;
 		else
 		    adc_value = 0;
-		*Vbat_val=adc_value;
-
-
+			*Vbat_val=adc_value;
 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
 		ADCCL &= 0x9F;		//选择通道9
 		adc_value = ADC_convert();
@@ -314,22 +316,56 @@ void User_Get_measure_Val(){
 		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
 		i++;
 		if(i==19){
-			_f(Vbat_adc_val,20);  //
-			_f(Temp_adc_val,20);
+			_f(Vbat_adc_val,20);	//
+			_f(Temp_adc_val,20);	//
 		//电量值
-		vcc_val=4*2.048*Vbat_adc_val[10]/4096;
-		if(vcc_val>4.2) vcc_val=4.2;
-		Vbat_val=(vcc_val-3.6)*100/(4.2-3.6);
+		if(USB_Check() && global_count>10000 ){
+					static unsigned int count;
+					count++;
+					if(count>54){   //108s ++
+						count=0;
+						Vbat_val++;
+					}
+				if(Vbat_val>99) Vbat_val=99;
+				if(Vbat_val<0) Vbat_val=0;		
+		}
+		else{
+			if(State_flag!=2){
+				vcc_val=4*2.048*Vbat_adc_val[10]/4096;
+				if(vcc_val>4.2) vcc_val=4.2;
+				if(vcc_val<3.5) vcc_val=3.5;
+				Vbat_val=(vcc_val-3.5)*100/(4.2-3.5);
+				//if(Vbat_val>99) Vbat_val=99;
+				//if(Vbat_val<0) Vbat_val=0;
+			}
+			else{
+			}
+		}
+		#ifdef UART_TEST
+			//GIE=0;
+			//UART_send(str,'A',Vbat_val);
+			//UART_send(str,'B',vcc_val*1000);
+			
+			//GIE=1;
+			//float a;
 
-		if(Vbat_val>99) Vbat_val=99;
-		if(Vbat_val<0) Vbat_val=0;
+			//a=Get_Tempture(Temp_adc_val[10]);
+			//GIE=0;
+			//UART_send(str,1,Temp_adc_val[10]);
+			//UART_send(str,1,RT*10);
+			//UART_send(str,0,a*100);
+			//GIE=1;
+		#endif
+
+
 
 		//温度
-		if(Temp_adc_val[10]<4000){
+
+		//if(Temp_adc_val[10]<4000){
 			temperature=Get_Tempture(Temp_adc_val[10]);
-		}	//temperature=adc_value/1000*10+(adc_value/100)%10;
-		else{
-			temperature=0xff;
-		}
+		//}	//temperature=adc_value/1000*10+(adc_value/100)%10;
+		//else{
+		//	temperature=0xff;
+		//}
 	}
 }
