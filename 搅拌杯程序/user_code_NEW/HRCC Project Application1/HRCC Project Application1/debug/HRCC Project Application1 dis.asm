@@ -6067,7 +6067,7 @@ HADR_0X7F1:
 ;#define B 3950.0//温度系数
 ;#define TN 298.15//额定温度(绝对温度加常温:273.15+25)
 ;#define RN 100// 额定阻值(绝对温度时的电阻值100k)
-;#define RES 200// 分压电阻200K
+;#define RES 330// 分压电阻200K
 ;#define BaseVol  2.048 //ADC基准电压
 ;
 ;float vcc_val;
@@ -6197,7 +6197,7 @@ HADR_0X7F1:
 :0X1075  e61f                   MOVA            HRAM_0X1F
 :0X1076  e543                   MOVI            0X43
 :0X1077  e61e                   MOVA            HRAM_0X1E
-:0X1078  e548                   MOVI            0X48
+:0X1078  e5a5                   MOVI            0XA5
 :0X1079  e61d                   MOVA            HRAM_0X1D
 :0X107a  e500                   MOVI            0X0
 :0X107b  e61c                   MOVA            HRAM_0X1C

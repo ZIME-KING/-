@@ -35,7 +35,7 @@ uchar str[] = "通道 的转换值为:    \r\n\0";
 #define B 3950.0//温度系数
 #define TN 298.15//额定温度(绝对温度加常温:273.15+25)
 #define RN 100// 额定阻值(绝对温度时的电阻值100k)
-#define RES 200// 分压电阻200K
+#define RES 330// 分压电阻200K
 #define BaseVol  2.048 //ADC基准电压
 
 float vcc_val;

@@ -268,7 +268,7 @@ _Get_Tempture
 ; #define B 3950.0//温度系数
 ; #define TN 298.15//额定温度(绝对温度加常温:273.15+25)
 ; #define RN 100// 额定阻值(绝对温度时的电阻值100k)
-; #define RES 200// 分压电阻200K
+; #define RES 330// 分压电阻200K
 ; #define BaseVol  2.048 //ADC基准电压
 ; float vcc_val;
 ; float RV,RT,Tmp;
@@ -408,7 +408,7 @@ _Get_Tempture
 	MOVAR          	_Get_Tempture_#T20319_43+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
 	MOVAR          	_Get_Tempture_#T20319_43+0x2		; Bank 1
-;   47:(     DIV_F, 200.000000 ,    #T20319 ,        RT)
+;   47:(     DIV_F, 330.000000 ,    #T20319 ,        RT)
 
 ; ITemplate_LibFunc3
 	MOVRA          	_Get_Tempture_#T20319_43+0x2		; Bank 1
@@ -419,7 +419,7 @@ _Get_Tempture
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
 	MOVI           	0x43
 	MOVA           	(?_TMP+0x2) & 0X7F		; Bank 0
-	MOVI           	0x48
+	MOVI           	0xa5
 	MOVA           	(?_TMP+0x1) & 0X7F		; Bank 0
 	MOVI           	0x0
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
