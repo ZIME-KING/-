@@ -10,6 +10,7 @@
 	EXTERN         	_ADC_dis_init
 	EXTERN         	_UART_send
 	EXTERN         	_UART_sendDATA
+	EXTERN         	_User_Get_measure_Val_10ms
 	EXTERN         	_Send_test
 	EXTERN         	_User_Get_measure_Val
 	EXTERN         	_vcc_val
@@ -18,6 +19,7 @@
 	EXTERN         	_Tmp
 	EXTERN         	_Task_1
 	EXTERN         	_Task_5
+	EXTERN         	_Task_10
 	EXTERN         	_Task_50
 	EXTERN         	_Task_100
 	EXTERN         	_Task_200
@@ -118,12 +120,12 @@
 	PUBLIC         	_LED_BUF
 	PUBLIC         	_SCAN_LED_BUF_R
 	PUBLIC         	_SCAN_LED_BUF_L
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst0#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst0#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM1
 	RETIA          	0X2
 	RETIA          	0X7
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst1#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst1#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM2
 	RETIA          	0XB
@@ -131,7 +133,7 @@ _D1_NUM2
 	RETIA          	0X10
 	RETIA          	0X9
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst2#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst2#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM3
 	RETIA          	0XB
@@ -139,14 +141,14 @@ _D1_NUM3
 	RETIA          	0X10
 	RETIA          	0X7
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst3#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst3#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM4
 	RETIA          	0X4
 	RETIA          	0X2
 	RETIA          	0X10
 	RETIA          	0X7
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst4#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst4#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM5
 	RETIA          	0XB
@@ -154,7 +156,7 @@ _D1_NUM5
 	RETIA          	0X10
 	RETIA          	0X7
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst5#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst5#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM6
 	RETIA          	0XB
@@ -163,13 +165,13 @@ _D1_NUM6
 	RETIA          	0X9
 	RETIA          	0X7
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst6#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst6#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM7
 	RETIA          	0XB
 	RETIA          	0X2
 	RETIA          	0X7
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst7#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst7#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM8
 	RETIA          	0XB
@@ -179,7 +181,7 @@ _D1_NUM8
 	RETIA          	0X9
 	RETIA          	0X7
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst8#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst8#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM9
 	RETIA          	0XB
@@ -188,7 +190,7 @@ _D1_NUM9
 	RETIA          	0X10
 	RETIA          	0X7
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst9#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst9#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM0
 	RETIA          	0XB
@@ -197,19 +199,19 @@ _D1_NUM0
 	RETIA          	0X9
 	RETIA          	0X7
 	RETIA          	0X11
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst10#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst10#	CSEG           
 	ADD            	PCRL,	1
 _D1_NUM_F
 	RETIA          	0XB
 	RETIA          	0X4
 	RETIA          	0X10
 	RETIA          	0X9
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst11#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst11#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM1
 	RETIA          	0X3
 	RETIA          	0X8
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst12#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst12#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM2
 	RETIA          	0X1
@@ -217,7 +219,7 @@ _D2_NUM2
 	RETIA          	0X6
 	RETIA          	0XA
 	RETIA          	0X12
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst13#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst13#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM3
 	RETIA          	0X1
@@ -225,14 +227,14 @@ _D2_NUM3
 	RETIA          	0X6
 	RETIA          	0X8
 	RETIA          	0X12
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst14#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst14#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM4
 	RETIA          	0X5
 	RETIA          	0X6
 	RETIA          	0X3
 	RETIA          	0X8
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst15#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst15#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM5
 	RETIA          	0X1
@@ -240,7 +242,7 @@ _D2_NUM5
 	RETIA          	0X6
 	RETIA          	0X8
 	RETIA          	0X12
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst16#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst16#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM6
 	RETIA          	0X1
@@ -249,13 +251,13 @@ _D2_NUM6
 	RETIA          	0XA
 	RETIA          	0X12
 	RETIA          	0X8
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst17#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst17#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM7
 	RETIA          	0X1
 	RETIA          	0X3
 	RETIA          	0X8
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst18#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst18#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM8
 	RETIA          	0X1
@@ -265,7 +267,7 @@ _D2_NUM8
 	RETIA          	0XA
 	RETIA          	0X8
 	RETIA          	0X12
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst19#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst19#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM9
 	RETIA          	0X1
@@ -274,7 +276,7 @@ _D2_NUM9
 	RETIA          	0X6
 	RETIA          	0X8
 	RETIA          	0X12
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst20#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst20#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM0
 	RETIA          	0X1
@@ -283,14 +285,14 @@ _D2_NUM0
 	RETIA          	0X8
 	RETIA          	0XA
 	RETIA          	0X12
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst21#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst21#	CSEG           
 	ADD            	PCRL,	1
 _D2_NUM_F
 	RETIA          	0X1
 	RETIA          	0X5
 	RETIA          	0X6
 	RETIA          	0XA
-C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst22#	CSEG           
+D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_cconst22#	CSEG           
 	ADD            	PCRL,	1
 _LED_BUF
 	RETIA          	0X1E
@@ -329,158 +331,158 @@ _LED_BUF
 	RETIA          	0X0
 	RETIA          	0X47
 	RETIA          	0X0
-_LED_Clear_i_46	EQU            	_LED_ClearDATA + 0X0		; Bank 0
-_LED_Clear_#T20640_46	EQU            	_LED_ClearDATA + 0X2		; Bank 0
-_LED_Clear_#T20658_47	EQU            	_LED_ClearDATA + 0X2		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T20795_50	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T20853_51	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T20911_52	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T20969_53	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21027_54	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21085_55	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21143_56	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21201_57	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21259_58	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21317_59	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21375_60	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21433_61	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21491_62	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21549_63	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21607_64	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21665_65	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21723_66	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_Updata_SCAN_LED_BUF_L_#T21781_67	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
-_D1_NUM_i_69	EQU            	_D1_NUMDATA + 0X1		; Bank 0
-_D1_NUM_#T21798_69	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T21837_69	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T21844_69	EQU            	_D1_NUMDATA + 0X3		; Bank 0
-_D1_NUM_#T21845_69	EQU            	_D1_NUMDATA + 0X5		; Bank 0
-_D1_NUM_#T21870_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T21909_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T21916_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T21917_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T21938_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T21977_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T21984_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T21985_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22006_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22045_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22052_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22053_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22074_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22113_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22120_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22121_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22142_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22181_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22188_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22189_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22210_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22249_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22256_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22257_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22278_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22317_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22324_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22325_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22346_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22385_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22392_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22393_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22414_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22453_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22460_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22461_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22482_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22521_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22528_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22529_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D1_NUM_#T22550_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22589_70	EQU            	_D1_NUMDATA + 0X0		; Bank 0
-_D1_NUM_#T22596_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
-_D1_NUM_#T22597_70	EQU            	_D1_NUMDATA + 0X4		; Bank 0
-_D2_NUM_i_72	EQU            	_D2_NUMDATA + 0X1		; Bank 0
-_D2_NUM_#T22616_72	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T22655_72	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T22662_72	EQU            	_D2_NUMDATA + 0X3		; Bank 0
-_D2_NUM_#T22663_72	EQU            	_D2_NUMDATA + 0X5		; Bank 0
-_D2_NUM_#T22688_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22727_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22734_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T22735_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T22756_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22795_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22802_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T22803_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T22824_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22863_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22870_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T22871_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T22892_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22931_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22938_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T22939_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T22960_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T22999_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23006_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23007_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T23028_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23067_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23074_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23075_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T23096_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23135_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23142_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23143_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T23164_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23203_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23210_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23211_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T23232_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23271_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23278_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23279_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T23300_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23339_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23346_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23347_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_D2_NUM_#T23368_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23407_73	EQU            	_D2_NUMDATA + 0X0		; Bank 0
-_D2_NUM_#T23414_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
-_D2_NUM_#T23415_73	EQU            	_D2_NUMDATA + 0X4		; Bank 0
-_SCAN_NEW_#T23526_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23529_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23553_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23556_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23580_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23583_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23607_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23610_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23632_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23683_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23686_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23710_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23713_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23737_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23740_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23764_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23767_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23789_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23840_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23843_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23867_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23870_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23894_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23897_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23921_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23924_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T23946_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T23997_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T24000_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T24024_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T24027_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
-_SCAN_NEW_#T24051_76	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
-_SCAN_NEW_#T24054_76	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_LED_Clear_i_47	EQU            	_LED_ClearDATA + 0X0		; Bank 0
+_LED_Clear_#T20640_47	EQU            	_LED_ClearDATA + 0X2		; Bank 0
+_LED_Clear_#T20658_48	EQU            	_LED_ClearDATA + 0X2		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T20795_51	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T20853_52	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T20911_53	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T20969_54	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21027_55	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21085_56	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21143_57	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21201_58	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21259_59	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21317_60	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21375_61	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21433_62	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21491_63	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21549_64	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21607_65	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21665_66	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21723_67	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_Updata_SCAN_LED_BUF_L_#T21781_68	EQU            	_Updata_SCAN_LED_BUF_LDATA + 0X0		; Bank 0
+_D1_NUM_i_70	EQU            	_D1_NUMDATA + 0X1		; Bank 0
+_D1_NUM_#T21798_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T21837_70	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T21844_70	EQU            	_D1_NUMDATA + 0X3		; Bank 0
+_D1_NUM_#T21845_70	EQU            	_D1_NUMDATA + 0X5		; Bank 0
+_D1_NUM_#T21870_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T21909_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T21916_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T21917_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T21938_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T21977_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T21984_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T21985_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22006_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22045_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22052_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22053_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22074_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22113_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22120_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22121_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22142_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22181_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22188_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22189_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22210_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22249_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22256_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22257_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22278_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22317_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22324_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22325_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22346_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22385_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22392_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22393_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22414_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22453_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22460_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22461_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22482_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22521_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22528_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22529_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D1_NUM_#T22550_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22589_71	EQU            	_D1_NUMDATA + 0X0		; Bank 0
+_D1_NUM_#T22596_71	EQU            	_D1_NUMDATA + 0X2		; Bank 0
+_D1_NUM_#T22597_71	EQU            	_D1_NUMDATA + 0X4		; Bank 0
+_D2_NUM_i_73	EQU            	_D2_NUMDATA + 0X1		; Bank 0
+_D2_NUM_#T22616_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T22655_73	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T22662_73	EQU            	_D2_NUMDATA + 0X3		; Bank 0
+_D2_NUM_#T22663_73	EQU            	_D2_NUMDATA + 0X5		; Bank 0
+_D2_NUM_#T22688_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22727_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22734_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T22735_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T22756_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22795_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22802_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T22803_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T22824_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22863_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22870_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T22871_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T22892_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22931_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22938_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T22939_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T22960_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T22999_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23006_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23007_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T23028_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23067_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23074_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23075_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T23096_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23135_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23142_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23143_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T23164_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23203_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23210_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23211_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T23232_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23271_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23278_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23279_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T23300_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23339_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23346_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23347_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_D2_NUM_#T23368_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23407_74	EQU            	_D2_NUMDATA + 0X0		; Bank 0
+_D2_NUM_#T23414_74	EQU            	_D2_NUMDATA + 0X2		; Bank 0
+_D2_NUM_#T23415_74	EQU            	_D2_NUMDATA + 0X4		; Bank 0
+_SCAN_NEW_#T23526_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23529_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23553_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23556_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23580_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23583_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23607_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23610_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23632_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23683_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23686_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23710_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23713_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23737_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23740_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23764_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23767_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23789_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23840_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23843_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23867_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23870_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23894_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23897_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23921_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23924_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T23946_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T23997_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T24000_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T24024_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T24027_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
+_SCAN_NEW_#T24051_77	EQU            	_SCAN_NEWDATA + 0X0		; Bank 0
+_SCAN_NEW_#T24054_77	EQU            	_SCAN_NEWDATA + 0X2		; Bank 0
 #TMP	EQU            	?_TMP+ 0X2		; Bank 0
 ?_TMP_RET	EQU            	?_TMP		; Bank 0
 _MULA_0#sh	EQU            	(MULA - 0X6080) % 0X40 + 0xC0		; Bank 0
@@ -503,7 +505,7 @@ _FRAL_0#sh	EQU            	(FRAL - 0X6080) % 0X40 + 0xC0		; Bank 0
 	_DESC          	Set_LED,0X0,0X0
 
 SECTION1Set_LED	UNINTIAL       	0		; Bank 0
-	ORG            	0XC6		; Bank 0
+	ORG            	0XCE		; Bank 0
 _Set_LEDDATA	RSEG           	0X2		; Bank 0
 Set_LED#	CSEG           
 _Set_LED
@@ -561,7 +563,7 @@ _Set_LED
 ; const unsigned int LED_BUF[]={0x1E,0x2E,0x4E,0x8E,0x10E,0x1D,0x2D,0x4D,0x8D,0x10D,0x1B,0x2B,0x4B,0x8B,0x10B,0x17,0x27,0x47/*0x87,0x107*/};
 ; unsigned char SCAN_LED_BUF_R[6]={0x0f,0x0f,0x0f,0x0f,0x0f,0x0f};
 ; void Set_LED(unsigned char IO,unsigned char state){
-#line 69	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	switch(IO){
+#line 69	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	switch(IO){
 	CLR            	BKSR
 ;   69:(  SWITCH_B,         IO ,            ,          )
 
@@ -601,292 +603,292 @@ _Set_LED
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 70	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 0:
+#line 70	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 0:
 ;   70:(     LABEL,    #L20542 ,            ,          )
 
 ; ITemplate_LABEL
 #L20542
-#line 71	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(state);
+#line 71	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(state);
 ;   71:(    CVUC_B,      state ,            ,   #T20551)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20551_44)/8) & 0X7F,	(_Set_LED_#T20551_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20551_45)/8) & 0X7F,	(_Set_LED_#T20551_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24085
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20551_44)/8) & 0X7F,	(_Set_LED_#T20551_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20551_45)/8) & 0X7F,	(_Set_LED_#T20551_45)%8		; Bank 0
 #L24085
 ;   71:(    ASGN_0,    #T20551 ,            ,       PC1)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20551_44)/8) & 0X7F,	(_Set_LED_#T20551_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20551_45)/8) & 0X7F,	(_Set_LED_#T20551_45)%8		; Bank 0
 	GOTO           	#L24086
 	BCC            	(_PC1_0)/8,	(_PC1_0)%8
 	GOTO           	#L24087
 #L24086
 	BSS            	(_PC1_0)/8,	(_PC1_0)%8
 #L24087
-#line 72	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 72	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   72:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 73	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 1:
+#line 73	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 1:
 ;   73:(     LABEL,    #L20552 ,            ,          )
 
 ; ITemplate_LABEL
 #L20552
-#line 74	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_1(state);
+#line 74	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_1(state);
 ;   74:(    CVUC_B,      state ,            ,   #T20561)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20561_44)/8) & 0X7F,	(_Set_LED_#T20561_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20561_45)/8) & 0X7F,	(_Set_LED_#T20561_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24088
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20561_44)/8) & 0X7F,	(_Set_LED_#T20561_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20561_45)/8) & 0X7F,	(_Set_LED_#T20561_45)%8		; Bank 0
 #L24088
 ;   74:(    ASGN_0,    #T20561 ,            ,       PA5)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20561_44)/8) & 0X7F,	(_Set_LED_#T20561_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20561_45)/8) & 0X7F,	(_Set_LED_#T20561_45)%8		; Bank 0
 	GOTO           	#L24089
 	BCC            	(_PA5_0)/8,	(_PA5_0)%8
 	GOTO           	#L24090
 #L24089
 	BSS            	(_PA5_0)/8,	(_PA5_0)%8
 #L24090
-#line 75	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 75	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   75:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 76	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 2:
+#line 76	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 2:
 ;   76:(     LABEL,    #L20562 ,            ,          )
 
 ; ITemplate_LABEL
 #L20562
-#line 77	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(state);
+#line 77	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(state);
 ;   77:(    CVUC_B,      state ,            ,   #T20571)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20571_44)/8) & 0X7F,	(_Set_LED_#T20571_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20571_45)/8) & 0X7F,	(_Set_LED_#T20571_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24091
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20571_44)/8) & 0X7F,	(_Set_LED_#T20571_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20571_45)/8) & 0X7F,	(_Set_LED_#T20571_45)%8		; Bank 0
 #L24091
 ;   77:(    ASGN_0,    #T20571 ,            ,       PA4)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20571_44)/8) & 0X7F,	(_Set_LED_#T20571_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20571_45)/8) & 0X7F,	(_Set_LED_#T20571_45)%8		; Bank 0
 	GOTO           	#L24092
 	BCC            	(_PA4_0)/8,	(_PA4_0)%8
 	GOTO           	#L24093
 #L24092
 	BSS            	(_PA4_0)/8,	(_PA4_0)%8
 #L24093
-#line 78	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 78	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   78:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 79	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 3:
+#line 79	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 3:
 ;   79:(     LABEL,    #L20572 ,            ,          )
 
 ; ITemplate_LABEL
 #L20572
-#line 80	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_3(state);
+#line 80	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_3(state);
 ;   80:(    CVUC_B,      state ,            ,   #T20581)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20581_44)/8) & 0X7F,	(_Set_LED_#T20581_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20581_45)/8) & 0X7F,	(_Set_LED_#T20581_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24094
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20581_44)/8) & 0X7F,	(_Set_LED_#T20581_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20581_45)/8) & 0X7F,	(_Set_LED_#T20581_45)%8		; Bank 0
 #L24094
 ;   80:(    ASGN_0,    #T20581 ,            ,       PA3)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20581_44)/8) & 0X7F,	(_Set_LED_#T20581_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20581_45)/8) & 0X7F,	(_Set_LED_#T20581_45)%8		; Bank 0
 	GOTO           	#L24095
 	BCC            	(_PA3_0)/8,	(_PA3_0)%8
 	GOTO           	#L24096
 #L24095
 	BSS            	(_PA3_0)/8,	(_PA3_0)%8
 #L24096
-#line 81	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 81	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   81:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 82	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 4:
+#line 82	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 4:
 ;   82:(     LABEL,    #L20582 ,            ,          )
 
 ; ITemplate_LABEL
 #L20582
-#line 83	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(state);
+#line 83	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(state);
 ;   83:(    CVUC_B,      state ,            ,   #T20591)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20591_44)/8) & 0X7F,	(_Set_LED_#T20591_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20591_45)/8) & 0X7F,	(_Set_LED_#T20591_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24097
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20591_44)/8) & 0X7F,	(_Set_LED_#T20591_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20591_45)/8) & 0X7F,	(_Set_LED_#T20591_45)%8		; Bank 0
 #L24097
 ;   83:(    ASGN_0,    #T20591 ,            ,       PA1)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20591_44)/8) & 0X7F,	(_Set_LED_#T20591_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20591_45)/8) & 0X7F,	(_Set_LED_#T20591_45)%8		; Bank 0
 	GOTO           	#L24098
 	BCC            	(_PA1_0)/8,	(_PA1_0)%8
 	GOTO           	#L24099
 #L24098
 	BSS            	(_PA1_0)/8,	(_PA1_0)%8
 #L24099
-#line 84	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 84	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   84:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 85	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 5:
+#line 85	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 5:
 ;   85:(     LABEL,    #L20592 ,            ,          )
 
 ; ITemplate_LABEL
 #L20592
-#line 86	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(state);
+#line 86	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(state);
 ;   86:(    CVUC_B,      state ,            ,   #T20601)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20601_44)/8) & 0X7F,	(_Set_LED_#T20601_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20601_45)/8) & 0X7F,	(_Set_LED_#T20601_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24100
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20601_44)/8) & 0X7F,	(_Set_LED_#T20601_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20601_45)/8) & 0X7F,	(_Set_LED_#T20601_45)%8		; Bank 0
 #L24100
 ;   86:(    ASGN_0,    #T20601 ,            ,       PC0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20601_44)/8) & 0X7F,	(_Set_LED_#T20601_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20601_45)/8) & 0X7F,	(_Set_LED_#T20601_45)%8		; Bank 0
 	GOTO           	#L24101
 	BCC            	(_PC0_0)/8,	(_PC0_0)%8
 	GOTO           	#L24102
 #L24101
 	BSS            	(_PC0_0)/8,	(_PC0_0)%8
 #L24102
-#line 87	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 87	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   87:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 88	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 6:
+#line 88	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 6:
 ;   88:(     LABEL,    #L20602 ,            ,          )
 
 ; ITemplate_LABEL
 #L20602
-#line 89	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(state);
+#line 89	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(state);
 ;   89:(    CVUC_B,      state ,            ,   #T20611)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20611_44)/8) & 0X7F,	(_Set_LED_#T20611_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20611_45)/8) & 0X7F,	(_Set_LED_#T20611_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24103
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20611_44)/8) & 0X7F,	(_Set_LED_#T20611_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20611_45)/8) & 0X7F,	(_Set_LED_#T20611_45)%8		; Bank 0
 #L24103
 ;   89:(    ASGN_0,    #T20611 ,            ,       PA6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20611_44)/8) & 0X7F,	(_Set_LED_#T20611_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20611_45)/8) & 0X7F,	(_Set_LED_#T20611_45)%8		; Bank 0
 	GOTO           	#L24104
 	BCC            	(_PA6_0)/8,	(_PA6_0)%8
 	GOTO           	#L24105
 #L24104
 	BSS            	(_PA6_0)/8,	(_PA6_0)%8
 #L24105
-#line 90	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 90	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   90:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 91	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 7:
+#line 91	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 7:
 ;   91:(     LABEL,    #L20612 ,            ,          )
 
 ; ITemplate_LABEL
 #L20612
-#line 92	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(state);
+#line 92	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(state);
 ;   92:(    CVUC_B,      state ,            ,   #T20621)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20621_44)/8) & 0X7F,	(_Set_LED_#T20621_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20621_45)/8) & 0X7F,	(_Set_LED_#T20621_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24106
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20621_44)/8) & 0X7F,	(_Set_LED_#T20621_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20621_45)/8) & 0X7F,	(_Set_LED_#T20621_45)%8		; Bank 0
 #L24106
 ;   92:(    ASGN_0,    #T20621 ,            ,       PB0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20621_44)/8) & 0X7F,	(_Set_LED_#T20621_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20621_45)/8) & 0X7F,	(_Set_LED_#T20621_45)%8		; Bank 0
 	GOTO           	#L24107
 	BCC            	(_PB0_0)/8,	(_PB0_0)%8
 	GOTO           	#L24108
 #L24107
 	BSS            	(_PB0_0)/8,	(_PB0_0)%8
 #L24108
-#line 93	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 93	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;   93:(       JMP,            ,            ,   #L20632)
 
 ; ITemplate_JMP
 	GOTO           	#L20632
-#line 94	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 8:
+#line 94	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 8:
 ;   94:(     LABEL,    #L20622 ,            ,          )
 
 ; ITemplate_LABEL
 #L20622
-#line 95	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(state);
+#line 95	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(state);
 ;   95:(    CVUC_B,      state ,            ,   #T20631)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_Set_LED_#T20631_44)/8) & 0X7F,	(_Set_LED_#T20631_44)%8		; Bank 0
+	BCC            	((_Set_LED_#T20631_45)/8) & 0X7F,	(_Set_LED_#T20631_45)%8		; Bank 0
 	SECTION        	0x1
 	JBS            	(_Set_LEDDATA+0X1) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24109
 	SECTION        	0x0
-	BSS            	((_Set_LED_#T20631_44)/8) & 0X7F,	(_Set_LED_#T20631_44)%8		; Bank 0
+	BSS            	((_Set_LED_#T20631_45)/8) & 0X7F,	(_Set_LED_#T20631_45)%8		; Bank 0
 #L24109
 ;   95:(    ASGN_0,    #T20631 ,            ,       PB6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_Set_LED_#T20631_44)/8) & 0X7F,	(_Set_LED_#T20631_44)%8		; Bank 0
+	JBC            	((_Set_LED_#T20631_45)/8) & 0X7F,	(_Set_LED_#T20631_45)%8		; Bank 0
 	GOTO           	#L24110
 	BCC            	(_PB6_0)/8,	(_PB6_0)%8
 	GOTO           	#L24111
@@ -895,7 +897,7 @@ _Set_LED
 #L24111
 ; 		break;
 ; 	}
-#line 98	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
+#line 98	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
 ;   98:(     LABEL,    #L20632 ,            ,          )
 
 ; ITemplate_LABEL
@@ -908,22 +910,22 @@ _Set_LED
 	_DESC          	LED_Clear,0X0,0X0,Set_LED
 
 SECTION1LED_Clear	UNINTIAL       	0		; Bank 0
-	ORG            	0XC2		; Bank 0
+	ORG            	0XCA		; Bank 0
 _LED_ClearDATA	RSEG           	0X4		; Bank 0
 LED_Clear#	CSEG           
 _LED_Clear
 ; void LED_Clear(){
-#line 100	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	int i=9;
+#line 100	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	int i=9;
 	CLR            	BKSR
 ;  100:(    ASGN_2,          9 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x0
 	SECTION        	0x1
-	MOVA           	(_LED_Clear_i_46+0x1) & 0X7F		; Bank 1
+	MOVA           	(_LED_Clear_i_47+0x1) & 0X7F		; Bank 1
 	MOVI           	0x9
-	MOVA           	(_LED_Clear_i_46) & 0X7F		; Bank 1
-#line 101	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	while(i--){
+	MOVA           	(_LED_Clear_i_47) & 0X7F		; Bank 1
+#line 101	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	while(i--){
 ;  101:(     LABEL,    #L20635 ,            ,          )
 
 ; ITemplate_LABEL
@@ -932,36 +934,36 @@ _LED_Clear
 
 ; ITemplate_ASGN1_4_R
 	SECTION        	0x1
-	MOV            	(_LED_Clear_i_46+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_LED_Clear_#T20640_46+0x1) & 0X7F		; Bank 1
-	MOV            	(_LED_Clear_i_46) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_LED_Clear_#T20640_46) & 0X7F		; Bank 1
+	MOV            	(_LED_Clear_i_47+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_LED_Clear_#T20640_47+0x1) & 0X7F		; Bank 1
+	MOV            	(_LED_Clear_i_47) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_LED_Clear_#T20640_47) & 0X7F		; Bank 1
 ;  101:(     SUB_2,          i ,          1 ,         i)
 
 ; ITemplate_DEC_2_TMP
-	MOV            	(_LED_Clear_i_46) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Clear_i_47) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
 	GOTO           	#L24112
-	DEC            	(_LED_Clear_i_46+0x1) & 0X7F		; Bank 1
+	DEC            	(_LED_Clear_i_47+0x1) & 0X7F		; Bank 1
 #L24112
-	DEC            	(_LED_Clear_i_46) & 0X7F		; Bank 1
+	DEC            	(_LED_Clear_i_47) & 0X7F		; Bank 1
 ;  101:(      JZ_2,    #T20640 ,            ,   #L20661)
 
 ; ITemplate_JZ1_4
-	MOV            	(_LED_Clear_#T20640_46) & 0X7F,	0x0		; Bank 1
-	IOR            	(_LED_Clear_#T20640_46+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Clear_#T20640_47) & 0X7F,	0x0		; Bank 1
+	IOR            	(_LED_Clear_#T20640_47+0x1) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L20661
-#line 102	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		Set_LED(i,0);	
+#line 102	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		Set_LED(i,0);	
 ;  102:(   CVSI_UC,          i ,            ,   #T20658)
 
 ; ITemplate_CVSMT
-	MOV            	(_LED_Clear_i_46) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_LED_Clear_#T20658_47) & 0X7F		; Bank 1
+	MOV            	(_LED_Clear_i_47) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_LED_Clear_#T20658_48) & 0X7F		; Bank 1
 ;  102:(    PARA_1,    #T20658 ,            ,        IO)
 
 ; ITemplate_ASGN1_4
-	MOV            	(_LED_Clear_#T20658_47) & 0X7F,	0x0		; Bank 1
+	MOV            	(_LED_Clear_#T20658_48) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_Set_LEDDATA+0X0) & 0X7F		; Bank 1
 ;  102:(    PARA_1,          0 ,            ,     state)
 
@@ -974,12 +976,12 @@ _LED_Clear
 	SEGMENTSEL     	_Set_LED
 	CALL           	_Set_LED		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-#line 103	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	}
+#line 103	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	}
 ;  103:(       JMP,            ,            ,   #L20635)
 
 ; ITemplate_JMP
 	GOTO           	#L20635
-#line 104	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
+#line 104	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
 ;  104:(     LABEL,    #L20661 ,            ,          )
 
 ; ITemplate_LABEL
@@ -992,7 +994,7 @@ _LED_Clear
 	_DESC          	Updata_SCAN_LED_BUF_L,0X0,0X0
 
 SECTION1Updata_SCAN_LED_BUF_L	UNINTIAL       	0		; Bank 0
-	ORG            	0XC2		; Bank 0
+	ORG            	0XCA		; Bank 0
 _Updata_SCAN_LED_BUF_LDATA	RSEG           	0X1		; Bank 0
 Updata_SCAN_LED_BUF_L#	CSEG           
 _Updata_SCAN_LED_BUF_L
@@ -1061,7 +1063,7 @@ _Updata_SCAN_LED_BUF_L
 ; unsigned char SCAN_LED_BUF_L[4]={0x00,0x00,0x00,0x00};
 ; void Updata_SCAN_LED_BUF_L(){
 ; unsigned char x=1;
-#line 179	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[0]=0x00;
+#line 179	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[0]=0x00;
 	CLR            	BKSR
 ;  179:(    ASGN_1,          0 ,            ,*(SCAN_LED_BUF_L.0))
 
@@ -1069,25 +1071,25 @@ _Updata_SCAN_LED_BUF_L
 	MOVI           	0x0
 	SECTION        	0x1
 	MOVA           	(_SCAN_LED_BUF_L) & 0X7F		; Bank 1
-#line 180	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[1]=0x00;
+#line 180	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[1]=0x00;
 ;  180:(    ASGN_1,          0 ,            ,*(SCAN_LED_BUF_L.1))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x0
 	MOVA           	(_SCAN_LED_BUF_L+0x1) & 0X7F		; Bank 1
-#line 181	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[2]=0x00;
+#line 181	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[2]=0x00;
 ;  181:(    ASGN_1,          0 ,            ,*(SCAN_LED_BUF_L.2))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x0
 	MOVA           	(_SCAN_LED_BUF_L+0x2) & 0X7F		; Bank 1
-#line 182	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[3]=0x00;
+#line 182	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   SCAN_LED_BUF_L[3]=0x00;
 ;  182:(    ASGN_1,          0 ,            ,*(SCAN_LED_BUF_L.3))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x0
 	MOVA           	(_SCAN_LED_BUF_L+0x3) & 0X7F		; Bank 1
-#line 185	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;  if(display_buf[1-x]==1){
+#line 185	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;  if(display_buf[1-x]==1){
 ;  185:(    JNEQ_1,          1 , *(display_buf.0) ,   #L20740)
 
 ; ITemplate_JNEQ1_4
@@ -1095,24 +1097,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L20740
-#line 186	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x10;
+#line 186	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x10;
 ;  186:(     BOR_1,         16 , *(SCAN_LED_BUF_L.0) ,   #T20795)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
 	IORI           	0x10
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20795_50) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20795_51) & 0X7F		; Bank 1
 ;  186:(    ASGN_1,    #T20795 ,            ,*(SCAN_LED_BUF_L.0))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T20795_50) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T20795_51) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L) & 0X7F		; Bank 1
-#line 187	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 187	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  187:(     LABEL,    #L20740 ,            ,          )
 
 ; ITemplate_LABEL
 #L20740
-#line 188	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   if(display_buf[2-x]==1){
+#line 188	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   if(display_buf[2-x]==1){
 ;  188:(    JNEQ_1,          1 , *(display_buf.1) ,   #L20798)
 
 ; ITemplate_JNEQ1_4
@@ -1120,24 +1122,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L20798
-#line 189	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x08;
+#line 189	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x08;
 ;  189:(     BOR_1,          8 , *(SCAN_LED_BUF_L.0) ,   #T20853)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
 	IORI           	0x8
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20853_51) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20853_52) & 0X7F		; Bank 1
 ;  189:(    ASGN_1,    #T20853 ,            ,*(SCAN_LED_BUF_L.0))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T20853_51) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T20853_52) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L) & 0X7F		; Bank 1
-#line 190	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 190	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  190:(     LABEL,    #L20798 ,            ,          )
 
 ; ITemplate_LABEL
 #L20798
-#line 191	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   if(display_buf[3-x]==1){
+#line 191	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   if(display_buf[3-x]==1){
 ;  191:(    JNEQ_1,          1 , *(display_buf.2) ,   #L20856)
 
 ; ITemplate_JNEQ1_4
@@ -1145,24 +1147,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L20856
-#line 192	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x04;   
+#line 192	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x04;   
 ;  192:(     BOR_1,          4 , *(SCAN_LED_BUF_L.0) ,   #T20911)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
 	IORI           	0x4
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20911_52) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20911_53) & 0X7F		; Bank 1
 ;  192:(    ASGN_1,    #T20911 ,            ,*(SCAN_LED_BUF_L.0))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T20911_52) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T20911_53) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L) & 0X7F		; Bank 1
-#line 193	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 193	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  193:(     LABEL,    #L20856 ,            ,          )
 
 ; ITemplate_LABEL
 #L20856
-#line 194	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   if(display_buf[4-x]==1){
+#line 194	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   if(display_buf[4-x]==1){
 ;  194:(    JNEQ_1,          1 , *(display_buf.3) ,   #L20914)
 
 ; ITemplate_JNEQ1_4
@@ -1170,24 +1172,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L20914
-#line 195	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;  		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x02;   
+#line 195	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;  		 SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x02;   
 ;  195:(     BOR_1,          2 , *(SCAN_LED_BUF_L.0) ,   #T20969)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
 	IORI           	0x2
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20969_53) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T20969_54) & 0X7F		; Bank 1
 ;  195:(    ASGN_1,    #T20969 ,            ,*(SCAN_LED_BUF_L.0))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T20969_53) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T20969_54) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L) & 0X7F		; Bank 1
-#line 196	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 196	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  196:(     LABEL,    #L20914 ,            ,          )
 
 ; ITemplate_LABEL
 #L20914
-#line 197	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[5-x]==1){
+#line 197	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[5-x]==1){
 ;  197:(    JNEQ_1,          1 , *(display_buf.4) ,   #L20972)
 
 ; ITemplate_JNEQ1_4
@@ -1195,24 +1197,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L20972
-#line 198	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x01; 
+#line 198	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[0]=SCAN_LED_BUF_L[0] | 0x01; 
 ;  198:(     BOR_1,          1 , *(SCAN_LED_BUF_L.0) ,   #T21027)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
 	IORI           	0x1
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21027_54) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21027_55) & 0X7F		; Bank 1
 ;  198:(    ASGN_1,    #T21027 ,            ,*(SCAN_LED_BUF_L.0))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21027_54) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21027_55) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L) & 0X7F		; Bank 1
-#line 199	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 199	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  199:(     LABEL,    #L20972 ,            ,          )
 
 ; ITemplate_LABEL
 #L20972
-#line 200	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[6-x]==1){
+#line 200	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[6-x]==1){
 ;  200:(    JNEQ_1,          1 , *(display_buf.5) ,   #L21030)
 
 ; ITemplate_JNEQ1_4
@@ -1220,24 +1222,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21030
-#line 201	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x10;    
+#line 201	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x10;    
 ;  201:(     BOR_1,         16 , *(SCAN_LED_BUF_L.1) ,   #T21085)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
 	IORI           	0x10
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21085_55) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21085_56) & 0X7F		; Bank 1
 ;  201:(    ASGN_1,    #T21085 ,            ,*(SCAN_LED_BUF_L.1))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21085_55) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21085_56) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x1) & 0X7F		; Bank 1
-#line 202	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 202	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  202:(     LABEL,    #L21030 ,            ,          )
 
 ; ITemplate_LABEL
 #L21030
-#line 203	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[7-x]==1){
+#line 203	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[7-x]==1){
 ;  203:(    JNEQ_1,          1 , *(display_buf.6) ,   #L21088)
 
 ; ITemplate_JNEQ1_4
@@ -1245,24 +1247,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21088
-#line 204	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x08;    
+#line 204	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x08;    
 ;  204:(     BOR_1,          8 , *(SCAN_LED_BUF_L.1) ,   #T21143)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
 	IORI           	0x8
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21143_56) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21143_57) & 0X7F		; Bank 1
 ;  204:(    ASGN_1,    #T21143 ,            ,*(SCAN_LED_BUF_L.1))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21143_56) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21143_57) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x1) & 0X7F		; Bank 1
-#line 205	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 205	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  205:(     LABEL,    #L21088 ,            ,          )
 
 ; ITemplate_LABEL
 #L21088
-#line 206	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[8-x]==1){
+#line 206	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[8-x]==1){
 ;  206:(    JNEQ_1,          1 , *(display_buf.7) ,   #L21146)
 
 ; ITemplate_JNEQ1_4
@@ -1270,24 +1272,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21146
-#line 207	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x04;    
+#line 207	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x04;    
 ;  207:(     BOR_1,          4 , *(SCAN_LED_BUF_L.1) ,   #T21201)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
 	IORI           	0x4
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21201_57) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21201_58) & 0X7F		; Bank 1
 ;  207:(    ASGN_1,    #T21201 ,            ,*(SCAN_LED_BUF_L.1))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21201_57) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21201_58) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x1) & 0X7F		; Bank 1
-#line 208	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 208	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  208:(     LABEL,    #L21146 ,            ,          )
 
 ; ITemplate_LABEL
 #L21146
-#line 210	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   	if(display_buf[9-x]==1){
+#line 210	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   	if(display_buf[9-x]==1){
 ;  210:(    JNEQ_1,          1 , *(display_buf.8) ,   #L21204)
 
 ; ITemplate_JNEQ1_4
@@ -1295,24 +1297,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21204
-#line 211	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x02;    
+#line 211	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x02;    
 ;  211:(     BOR_1,          2 , *(SCAN_LED_BUF_L.1) ,   #T21259)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
 	IORI           	0x2
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21259_58) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21259_59) & 0X7F		; Bank 1
 ;  211:(    ASGN_1,    #T21259 ,            ,*(SCAN_LED_BUF_L.1))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21259_58) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21259_59) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x1) & 0X7F		; Bank 1
-#line 212	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 212	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  212:(     LABEL,    #L21204 ,            ,          )
 
 ; ITemplate_LABEL
 #L21204
-#line 213	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[10-x]==1){
+#line 213	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[10-x]==1){
 ;  213:(    JNEQ_1,          1 , *(display_buf.9) ,   #L21262)
 
 ; ITemplate_JNEQ1_4
@@ -1320,24 +1322,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21262
-#line 214	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x01;   
+#line 214	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[1]=SCAN_LED_BUF_L[1] | 0x01;   
 ;  214:(     BOR_1,          1 , *(SCAN_LED_BUF_L.1) ,   #T21317)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
 	IORI           	0x1
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21317_59) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21317_60) & 0X7F		; Bank 1
 ;  214:(    ASGN_1,    #T21317 ,            ,*(SCAN_LED_BUF_L.1))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21317_59) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21317_60) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x1) & 0X7F		; Bank 1
-#line 215	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 215	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  215:(     LABEL,    #L21262 ,            ,          )
 
 ; ITemplate_LABEL
 #L21262
-#line 216	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[11-x]==1){
+#line 216	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[11-x]==1){
 ;  216:(    JNEQ_1,          1 , *(display_buf.10) ,   #L21320)
 
 ; ITemplate_JNEQ1_4
@@ -1345,24 +1347,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21320
-#line 217	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x10;   
+#line 217	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x10;   
 ;  217:(     BOR_1,         16 , *(SCAN_LED_BUF_L.2) ,   #T21375)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
 	IORI           	0x10
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21375_60) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21375_61) & 0X7F		; Bank 1
 ;  217:(    ASGN_1,    #T21375 ,            ,*(SCAN_LED_BUF_L.2))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21375_60) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21375_61) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x2) & 0X7F		; Bank 1
-#line 218	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 218	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  218:(     LABEL,    #L21320 ,            ,          )
 
 ; ITemplate_LABEL
 #L21320
-#line 219	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[12-x]==1){
+#line 219	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[12-x]==1){
 ;  219:(    JNEQ_1,          1 , *(display_buf.11) ,   #L21378)
 
 ; ITemplate_JNEQ1_4
@@ -1370,24 +1372,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21378
-#line 220	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x08;    
+#line 220	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x08;    
 ;  220:(     BOR_1,          8 , *(SCAN_LED_BUF_L.2) ,   #T21433)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
 	IORI           	0x8
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21433_61) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21433_62) & 0X7F		; Bank 1
 ;  220:(    ASGN_1,    #T21433 ,            ,*(SCAN_LED_BUF_L.2))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21433_61) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21433_62) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x2) & 0X7F		; Bank 1
-#line 221	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 221	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  221:(     LABEL,    #L21378 ,            ,          )
 
 ; ITemplate_LABEL
 #L21378
-#line 223	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;     if(display_buf[13-x]==1){
+#line 223	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;     if(display_buf[13-x]==1){
 ;  223:(    JNEQ_1,          1 , *(display_buf.12) ,   #L21436)
 
 ; ITemplate_JNEQ1_4
@@ -1395,24 +1397,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21436
-#line 224	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x04;    
+#line 224	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x04;    
 ;  224:(     BOR_1,          4 , *(SCAN_LED_BUF_L.2) ,   #T21491)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
 	IORI           	0x4
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21491_62) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21491_63) & 0X7F		; Bank 1
 ;  224:(    ASGN_1,    #T21491 ,            ,*(SCAN_LED_BUF_L.2))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21491_62) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21491_63) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x2) & 0X7F		; Bank 1
-#line 225	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 225	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  225:(     LABEL,    #L21436 ,            ,          )
 
 ; ITemplate_LABEL
 #L21436
-#line 226	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[14-x]==1){
+#line 226	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[14-x]==1){
 ;  226:(    JNEQ_1,          1 , *(display_buf.13) ,   #L21494)
 
 ; ITemplate_JNEQ1_4
@@ -1420,24 +1422,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21494
-#line 227	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x02;    
+#line 227	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x02;    
 ;  227:(     BOR_1,          2 , *(SCAN_LED_BUF_L.2) ,   #T21549)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
 	IORI           	0x2
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21549_63) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21549_64) & 0X7F		; Bank 1
 ;  227:(    ASGN_1,    #T21549 ,            ,*(SCAN_LED_BUF_L.2))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21549_63) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21549_64) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x2) & 0X7F		; Bank 1
-#line 228	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 228	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  228:(     LABEL,    #L21494 ,            ,          )
 
 ; ITemplate_LABEL
 #L21494
-#line 229	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[15-x]==1){
+#line 229	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[15-x]==1){
 ;  229:(    JNEQ_1,          1 , *(display_buf.14) ,   #L21552)
 
 ; ITemplate_JNEQ1_4
@@ -1445,24 +1447,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21552
-#line 230	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x01;    
+#line 230	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[2]=SCAN_LED_BUF_L[2] | 0x01;    
 ;  230:(     BOR_1,          1 , *(SCAN_LED_BUF_L.2) ,   #T21607)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
 	IORI           	0x1
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21607_64) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21607_65) & 0X7F		; Bank 1
 ;  230:(    ASGN_1,    #T21607 ,            ,*(SCAN_LED_BUF_L.2))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21607_64) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21607_65) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x2) & 0X7F		; Bank 1
-#line 231	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 231	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  231:(     LABEL,    #L21552 ,            ,          )
 
 ; ITemplate_LABEL
 #L21552
-#line 233	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;     if(display_buf[16-x]==1){
+#line 233	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;     if(display_buf[16-x]==1){
 ;  233:(    JNEQ_1,          1 , *(display_buf.15) ,   #L21610)
 
 ; ITemplate_JNEQ1_4
@@ -1470,24 +1472,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21610
-#line 234	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[3]=SCAN_LED_BUF_L[3] | 0x10;   
+#line 234	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[3]=SCAN_LED_BUF_L[3] | 0x10;   
 ;  234:(     BOR_1,         16 , *(SCAN_LED_BUF_L.3) ,   #T21665)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x3) & 0X7F,	0x0		; Bank 1
 	IORI           	0x10
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21665_65) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21665_66) & 0X7F		; Bank 1
 ;  234:(    ASGN_1,    #T21665 ,            ,*(SCAN_LED_BUF_L.3))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21665_65) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21665_66) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x3) & 0X7F		; Bank 1
-#line 235	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 235	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  235:(     LABEL,    #L21610 ,            ,          )
 
 ; ITemplate_LABEL
 #L21610
-#line 236	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[17-x]==1){
+#line 236	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[17-x]==1){
 ;  236:(    JNEQ_1,          1 , *(display_buf.16) ,   #L21668)
 
 ; ITemplate_JNEQ1_4
@@ -1495,24 +1497,24 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21668
-#line 237	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[3]=SCAN_LED_BUF_L[3] | 0x08;   
+#line 237	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[3]=SCAN_LED_BUF_L[3] | 0x08;   
 ;  237:(     BOR_1,          8 , *(SCAN_LED_BUF_L.3) ,   #T21723)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x3) & 0X7F,	0x0		; Bank 1
 	IORI           	0x8
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21723_66) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21723_67) & 0X7F		; Bank 1
 ;  237:(    ASGN_1,    #T21723 ,            ,*(SCAN_LED_BUF_L.3))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21723_66) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21723_67) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x3) & 0X7F		; Bank 1
-#line 238	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
+#line 238	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;   }
 ;  238:(     LABEL,    #L21668 ,            ,          )
 
 ; ITemplate_LABEL
 #L21668
-#line 239	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[18-x]==1){
+#line 239	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	if(display_buf[18-x]==1){
 ;  239:(    JNEQ_1,          1 , *(display_buf.17) ,   #L21782)
 
 ; ITemplate_JNEQ1_4
@@ -1520,21 +1522,21 @@ _Updata_SCAN_LED_BUF_L
 	XORI           	0x1
 	JBS            	PSW,	0x2
 	GOTO           	#L21782
-#line 240	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[3]=SCAN_LED_BUF_L[3] | 0x04;   
+#line 240	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		SCAN_LED_BUF_L[3]=SCAN_LED_BUF_L[3] | 0x04;   
 ;  240:(     BOR_1,          4 , *(SCAN_LED_BUF_L.3) ,   #T21781)
 
 ; ITemplate_BOR1_4
 	MOV            	(_SCAN_LED_BUF_L+0x3) & 0X7F,	0x0		; Bank 1
 	IORI           	0x4
-	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21781_67) & 0X7F		; Bank 1
+	MOVA           	(_Updata_SCAN_LED_BUF_L_#T21781_68) & 0X7F		; Bank 1
 ;  240:(    ASGN_1,    #T21781 ,            ,*(SCAN_LED_BUF_L.3))
 
 ; ITemplate_ASGN1_4
-	MOV            	(_Updata_SCAN_LED_BUF_L_#T21781_67) & 0X7F,	0x0		; Bank 1
+	MOV            	(_Updata_SCAN_LED_BUF_L_#T21781_68) & 0X7F,	0x0		; Bank 1
 	MOVA           	(_SCAN_LED_BUF_L+0x3) & 0X7F		; Bank 1
 ;   }
 ;   
-#line 243	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
+#line 243	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
 ;  243:(     LABEL,    #L21782 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1547,21 +1549,21 @@ _Updata_SCAN_LED_BUF_L
 	_DESC          	D1_NUM,0X0,0X0
 
 SECTION1D1_NUM	UNINTIAL       	0		; Bank 0
-	ORG            	0XBE		; Bank 0
+	ORG            	0XC6		; Bank 0
 _D1_NUMDATA	RSEG           	0X7		; Bank 0
 D1_NUM#	CSEG           
 _D1_NUM
 ; void D1_NUM(unsigned char num){
 ; 	char i;
-#line 247	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM8)/sizeof(D1_NUM8[0]); 
+#line 247	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM8)/sizeof(D1_NUM8[0]); 
 	CLR            	BKSR
 ;  247:(    ASGN_1,          7 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x7
 	SECTION        	0x1
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 248	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 248	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  248:(     LABEL,    #L21793 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1569,57 +1571,57 @@ _D1_NUM
 ;  248:(    ASGN_1,          i ,            ,   #T21798)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T21798_69) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21798_70) & 0X7F		; Bank 1
 ;  248:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  248:(      JZ_1,    #T21798 ,            ,   #L21795)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T21798_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21798_70) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L21795
-#line 249	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM8[i]-1]=0;
+#line 249	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM8[i]-1]=0;
 ;  249:(    TBL_1$, (D1_NUM8.0) ,          i ,   #T21837)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM8)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM8
 	SECTION        	0x0
 	CALL           	_D1_NUM8-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T21837_69		; Bank 1
+	MOVAR          	_D1_NUM_#T21837_70		; Bank 1
 ;  249:(     SUB_1,    #T21837 ,          1 ,   #T21844)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T21837_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T21844_69) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T21837_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21844_70) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T21844_69+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T21844_70+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T21844_69+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T21844_70+0x1) & 0X7F,	0x1		; Bank 1
 ;  249:(     ADD_2,    #T21844 , (display_buf.0) ,   #T21845)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T21844_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21844_70) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T21845_69) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T21844_69+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21845_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T21844_70+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T21845_69+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T21845_70+0x1) & 0X7F		; Bank 1
 ;  249:(    ASGN_1,          0 ,            ,  *#T21845)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T21845_69+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21845_70+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T21845_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21845_70) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x0
 ; ITemplate_SetINDF
@@ -1633,7 +1635,7 @@ _D1_NUM
 
 ; ITemplate_LABEL
 #L21795
-#line 251	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	switch(num){
+#line 251	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	switch(num){
 ;  251:(  SWITCH_B,        num ,            ,          )
 
 ; ITemplate_SW
@@ -1677,18 +1679,18 @@ _D1_NUM
 
 ; ITemplate_JMP
 	GOTO           	#L22600
-#line 252	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0:
+#line 252	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0:
 ;  252:(     LABEL,    #L21852 ,            ,          )
 
 ; ITemplate_LABEL
 #L21852
-#line 253	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM0)/sizeof(D1_NUM0[0]); 
+#line 253	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM0)/sizeof(D1_NUM0[0]); 
 ;  253:(    ASGN_1,          6 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 254	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 254	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  254:(     LABEL,    #L21865 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1696,57 +1698,57 @@ _D1_NUM
 ;  254:(    ASGN_1,          i ,            ,   #T21870)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T21870_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21870_71) & 0X7F		; Bank 1
 ;  254:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  254:(      JZ_1,    #T21870 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T21870_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21870_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 255	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM0[i]-1]=1;
+#line 255	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM0[i]-1]=1;
 ;  255:(    TBL_1$, (D1_NUM0.0) ,          i ,   #T21909)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM0)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM0
 	SECTION        	0x0
 	CALL           	_D1_NUM0-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T21909_70		; Bank 1
+	MOVAR          	_D1_NUM_#T21909_71		; Bank 1
 ;  255:(     SUB_1,    #T21909 ,          1 ,   #T21916)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T21909_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T21916_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T21909_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21916_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T21916_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T21916_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T21916_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T21916_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  255:(     ADD_2,    #T21916 , (display_buf.0) ,   #T21917)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T21916_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21916_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T21917_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T21916_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21917_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T21916_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T21917_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T21917_71+0x1) & 0X7F		; Bank 1
 ;  255:(    ASGN_1,          1 ,            ,  *#T21917)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T21917_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21917_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T21917_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21917_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -1758,18 +1760,18 @@ _D1_NUM
 	GOTO           	#L21865
 ; 	break;
 ; 	
-#line 258	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 1:
+#line 258	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 1:
 ;  258:(     LABEL,    #L21920 ,            ,          )
 
 ; ITemplate_LABEL
 #L21920
-#line 259	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM1)/sizeof(D1_NUM0[1]); 
+#line 259	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM1)/sizeof(D1_NUM0[1]); 
 ;  259:(    ASGN_1,          2 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x2
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 260	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 260	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  260:(     LABEL,    #L21933 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1777,57 +1779,57 @@ _D1_NUM
 ;  260:(    ASGN_1,          i ,            ,   #T21938)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T21938_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21938_71) & 0X7F		; Bank 1
 ;  260:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  260:(      JZ_1,    #T21938 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T21938_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21938_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 261	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM1[i]-1]=1;
+#line 261	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM1[i]-1]=1;
 ;  261:(    TBL_1$, (D1_NUM1.0) ,          i ,   #T21977)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM1)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM1
 	SECTION        	0x0
 	CALL           	_D1_NUM1-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T21977_70		; Bank 1
+	MOVAR          	_D1_NUM_#T21977_71		; Bank 1
 ;  261:(     SUB_1,    #T21977 ,          1 ,   #T21984)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T21977_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T21984_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T21977_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21984_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T21984_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T21984_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T21984_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T21984_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  261:(     ADD_2,    #T21984 , (display_buf.0) ,   #T21985)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T21984_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21984_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T21985_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T21984_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T21985_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T21984_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T21985_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T21985_71+0x1) & 0X7F		; Bank 1
 ;  261:(    ASGN_1,          1 ,            ,  *#T21985)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T21985_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21985_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T21985_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T21985_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -1838,18 +1840,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L21933
 ; 	break;
-#line 264	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 2:
+#line 264	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 2:
 ;  264:(     LABEL,    #L21988 ,            ,          )
 
 ; ITemplate_LABEL
 #L21988
-#line 265	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM2)/sizeof(D1_NUM0[2]); 
+#line 265	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM2)/sizeof(D1_NUM0[2]); 
 ;  265:(    ASGN_1,          5 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x5
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 266	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 266	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  266:(     LABEL,    #L22001 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1857,57 +1859,57 @@ _D1_NUM
 ;  266:(    ASGN_1,          i ,            ,   #T22006)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22006_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22006_71) & 0X7F		; Bank 1
 ;  266:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  266:(      JZ_1,    #T22006 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22006_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22006_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 267	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM2[i]-1]=1;
+#line 267	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM2[i]-1]=1;
 ;  267:(    TBL_1$, (D1_NUM2.0) ,          i ,   #T22045)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM2)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM2
 	SECTION        	0x0
 	CALL           	_D1_NUM2-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22045_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22045_71		; Bank 1
 ;  267:(     SUB_1,    #T22045 ,          1 ,   #T22052)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22045_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22052_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22045_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22052_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22052_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22052_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22052_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22052_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  267:(     ADD_2,    #T22052 , (display_buf.0) ,   #T22053)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22052_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22052_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22053_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22052_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22053_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22052_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22053_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22053_71+0x1) & 0X7F		; Bank 1
 ;  267:(    ASGN_1,          1 ,            ,  *#T22053)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22053_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22053_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22053_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22053_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -1918,18 +1920,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22001
 ; 	break;
-#line 270	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 3:
+#line 270	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 3:
 ;  270:(     LABEL,    #L22056 ,            ,          )
 
 ; ITemplate_LABEL
 #L22056
-#line 271	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM3)/sizeof(D1_NUM3[0]); 
+#line 271	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM3)/sizeof(D1_NUM3[0]); 
 ;  271:(    ASGN_1,          5 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x5
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 272	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 272	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  272:(     LABEL,    #L22069 ,            ,          )
 
 ; ITemplate_LABEL
@@ -1937,57 +1939,57 @@ _D1_NUM
 ;  272:(    ASGN_1,          i ,            ,   #T22074)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22074_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22074_71) & 0X7F		; Bank 1
 ;  272:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  272:(      JZ_1,    #T22074 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22074_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22074_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 273	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM3[i]-1]=1;
+#line 273	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM3[i]-1]=1;
 ;  273:(    TBL_1$, (D1_NUM3.0) ,          i ,   #T22113)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM3)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM3
 	SECTION        	0x0
 	CALL           	_D1_NUM3-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22113_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22113_71		; Bank 1
 ;  273:(     SUB_1,    #T22113 ,          1 ,   #T22120)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22113_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22120_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22113_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22120_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22120_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22120_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22120_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22120_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  273:(     ADD_2,    #T22120 , (display_buf.0) ,   #T22121)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22120_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22120_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22121_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22120_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22121_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22120_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22121_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22121_71+0x1) & 0X7F		; Bank 1
 ;  273:(    ASGN_1,          1 ,            ,  *#T22121)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22121_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22121_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22121_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22121_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -1998,18 +2000,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22069
 ; 	break;
-#line 276	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 4:
+#line 276	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 4:
 ;  276:(     LABEL,    #L22124 ,            ,          )
 
 ; ITemplate_LABEL
 #L22124
-#line 277	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM4)/sizeof(D1_NUM4[0]); 
+#line 277	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM4)/sizeof(D1_NUM4[0]); 
 ;  277:(    ASGN_1,          4 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x4
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 278	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 278	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  278:(     LABEL,    #L22137 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2017,57 +2019,57 @@ _D1_NUM
 ;  278:(    ASGN_1,          i ,            ,   #T22142)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22142_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22142_71) & 0X7F		; Bank 1
 ;  278:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  278:(      JZ_1,    #T22142 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22142_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22142_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 279	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM4[i]-1]=1;
+#line 279	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM4[i]-1]=1;
 ;  279:(    TBL_1$, (D1_NUM4.0) ,          i ,   #T22181)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM4)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM4
 	SECTION        	0x0
 	CALL           	_D1_NUM4-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22181_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22181_71		; Bank 1
 ;  279:(     SUB_1,    #T22181 ,          1 ,   #T22188)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22181_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22188_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22181_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22188_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22188_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22188_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22188_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22188_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  279:(     ADD_2,    #T22188 , (display_buf.0) ,   #T22189)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22188_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22188_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22189_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22188_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22189_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22188_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22189_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22189_71+0x1) & 0X7F		; Bank 1
 ;  279:(    ASGN_1,          1 ,            ,  *#T22189)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22189_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22189_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22189_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22189_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2078,18 +2080,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22137
 ; 	break;
-#line 282	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 5:
+#line 282	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 5:
 ;  282:(     LABEL,    #L22192 ,            ,          )
 
 ; ITemplate_LABEL
 #L22192
-#line 283	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM5)/sizeof(D1_NUM5[0]); 
+#line 283	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM5)/sizeof(D1_NUM5[0]); 
 ;  283:(    ASGN_1,          5 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x5
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 284	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 284	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  284:(     LABEL,    #L22205 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2097,57 +2099,57 @@ _D1_NUM
 ;  284:(    ASGN_1,          i ,            ,   #T22210)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22210_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22210_71) & 0X7F		; Bank 1
 ;  284:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  284:(      JZ_1,    #T22210 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22210_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22210_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 285	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM5[i]-1]=1;
+#line 285	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM5[i]-1]=1;
 ;  285:(    TBL_1$, (D1_NUM5.0) ,          i ,   #T22249)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM5)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM5
 	SECTION        	0x0
 	CALL           	_D1_NUM5-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22249_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22249_71		; Bank 1
 ;  285:(     SUB_1,    #T22249 ,          1 ,   #T22256)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22249_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22256_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22249_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22256_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22256_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22256_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22256_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22256_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  285:(     ADD_2,    #T22256 , (display_buf.0) ,   #T22257)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22256_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22256_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22257_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22256_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22257_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22256_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22257_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22257_71+0x1) & 0X7F		; Bank 1
 ;  285:(    ASGN_1,          1 ,            ,  *#T22257)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22257_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22257_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22257_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22257_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2158,18 +2160,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22205
 ; 	break;
-#line 288	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 6:
+#line 288	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 6:
 ;  288:(     LABEL,    #L22260 ,            ,          )
 
 ; ITemplate_LABEL
 #L22260
-#line 289	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM6)/sizeof(D1_NUM6[0]); 
+#line 289	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM6)/sizeof(D1_NUM6[0]); 
 ;  289:(    ASGN_1,          6 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 290	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 290	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  290:(     LABEL,    #L22273 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2177,57 +2179,57 @@ _D1_NUM
 ;  290:(    ASGN_1,          i ,            ,   #T22278)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22278_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22278_71) & 0X7F		; Bank 1
 ;  290:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  290:(      JZ_1,    #T22278 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22278_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22278_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 291	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM6[i]-1]=1;
+#line 291	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM6[i]-1]=1;
 ;  291:(    TBL_1$, (D1_NUM6.0) ,          i ,   #T22317)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM6)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM6
 	SECTION        	0x0
 	CALL           	_D1_NUM6-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22317_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22317_71		; Bank 1
 ;  291:(     SUB_1,    #T22317 ,          1 ,   #T22324)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22317_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22324_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22317_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22324_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22324_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22324_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22324_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22324_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  291:(     ADD_2,    #T22324 , (display_buf.0) ,   #T22325)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22324_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22324_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22325_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22324_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22325_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22324_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22325_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22325_71+0x1) & 0X7F		; Bank 1
 ;  291:(    ASGN_1,          1 ,            ,  *#T22325)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22325_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22325_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22325_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22325_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2238,18 +2240,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22273
 ; 	break;
-#line 294	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 7:
+#line 294	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 7:
 ;  294:(     LABEL,    #L22328 ,            ,          )
 
 ; ITemplate_LABEL
 #L22328
-#line 295	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM7)/sizeof(D1_NUM7[0]); 
+#line 295	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM7)/sizeof(D1_NUM7[0]); 
 ;  295:(    ASGN_1,          3 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x3
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 296	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 296	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  296:(     LABEL,    #L22341 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2257,57 +2259,57 @@ _D1_NUM
 ;  296:(    ASGN_1,          i ,            ,   #T22346)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22346_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22346_71) & 0X7F		; Bank 1
 ;  296:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  296:(      JZ_1,    #T22346 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22346_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22346_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 297	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM7[i]-1]=1;
+#line 297	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM7[i]-1]=1;
 ;  297:(    TBL_1$, (D1_NUM7.0) ,          i ,   #T22385)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM7)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM7
 	SECTION        	0x0
 	CALL           	_D1_NUM7-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22385_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22385_71		; Bank 1
 ;  297:(     SUB_1,    #T22385 ,          1 ,   #T22392)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22385_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22392_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22385_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22392_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22392_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22392_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22392_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22392_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  297:(     ADD_2,    #T22392 , (display_buf.0) ,   #T22393)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22392_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22392_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22393_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22392_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22393_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22392_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22393_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22393_71+0x1) & 0X7F		; Bank 1
 ;  297:(    ASGN_1,          1 ,            ,  *#T22393)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22393_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22393_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22393_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22393_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2318,18 +2320,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22341
 ; 	break;
-#line 300	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 8:
+#line 300	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 8:
 ;  300:(     LABEL,    #L22396 ,            ,          )
 
 ; ITemplate_LABEL
 #L22396
-#line 301	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM8)/sizeof(D1_NUM8[0]); 
+#line 301	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM8)/sizeof(D1_NUM8[0]); 
 ;  301:(    ASGN_1,          7 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x7
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 302	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 302	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  302:(     LABEL,    #L22409 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2337,57 +2339,57 @@ _D1_NUM
 ;  302:(    ASGN_1,          i ,            ,   #T22414)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22414_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22414_71) & 0X7F		; Bank 1
 ;  302:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  302:(      JZ_1,    #T22414 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22414_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22414_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 303	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM8[i]-1]=1;
+#line 303	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM8[i]-1]=1;
 ;  303:(    TBL_1$, (D1_NUM8.0) ,          i ,   #T22453)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM8)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM8
 	SECTION        	0x0
 	CALL           	_D1_NUM8-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22453_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22453_71		; Bank 1
 ;  303:(     SUB_1,    #T22453 ,          1 ,   #T22460)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22453_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22460_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22453_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22460_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22460_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22460_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22460_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22460_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  303:(     ADD_2,    #T22460 , (display_buf.0) ,   #T22461)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22460_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22460_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22461_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22460_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22461_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22460_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22461_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22461_71+0x1) & 0X7F		; Bank 1
 ;  303:(    ASGN_1,          1 ,            ,  *#T22461)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22461_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22461_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22461_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22461_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2398,18 +2400,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22409
 ; 	break;
-#line 306	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 9:
+#line 306	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 9:
 ;  306:(     LABEL,    #L22464 ,            ,          )
 
 ; ITemplate_LABEL
 #L22464
-#line 307	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM9)/sizeof(D1_NUM9[0]); 
+#line 307	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM9)/sizeof(D1_NUM9[0]); 
 ;  307:(    ASGN_1,          6 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 308	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 308	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  308:(     LABEL,    #L22477 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2417,57 +2419,57 @@ _D1_NUM
 ;  308:(    ASGN_1,          i ,            ,   #T22482)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22482_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22482_71) & 0X7F		; Bank 1
 ;  308:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  308:(      JZ_1,    #T22482 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22482_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22482_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 309	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM9[i]-1]=1;
+#line 309	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM9[i]-1]=1;
 ;  309:(    TBL_1$, (D1_NUM9.0) ,          i ,   #T22521)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM9)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM9
 	SECTION        	0x0
 	CALL           	_D1_NUM9-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22521_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22521_71		; Bank 1
 ;  309:(     SUB_1,    #T22521 ,          1 ,   #T22528)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22521_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22528_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22521_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22528_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22528_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22528_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22528_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22528_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  309:(     ADD_2,    #T22528 , (display_buf.0) ,   #T22529)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22528_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22528_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22529_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22528_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22529_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22528_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22529_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22529_71+0x1) & 0X7F		; Bank 1
 ;  309:(    ASGN_1,          1 ,            ,  *#T22529)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22529_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22529_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22529_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22529_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2478,18 +2480,18 @@ _D1_NUM
 ; ITemplate_JMP
 	GOTO           	#L22477
 ; 	break;
-#line 311	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0xff:
+#line 311	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0xff:
 ;  311:(     LABEL,    #L22532 ,            ,          )
 
 ; ITemplate_LABEL
 #L22532
-#line 312	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM_F)/sizeof(D1_NUM_F[0]); 
+#line 312	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D1_NUM_F)/sizeof(D1_NUM_F[0]); 
 ;  312:(    ASGN_1,          4 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x4
-	MOVA           	(_D1_NUM_i_69) & 0X7F		; Bank 1
-#line 313	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D1_NUM_i_70) & 0X7F		; Bank 1
+#line 313	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  313:(     LABEL,    #L22545 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2497,57 +2499,57 @@ _D1_NUM
 ;  313:(    ASGN_1,          i ,            ,   #T22550)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22550_70) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22550_71) & 0X7F		; Bank 1
 ;  313:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D1_NUM_i_69) & 0X7F		; Bank 1
+	DEC            	(_D1_NUM_i_70) & 0X7F		; Bank 1
 ;  313:(      JZ_1,    #T22550 ,            ,   #L22600)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D1_NUM_#T22550_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22550_71) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22600
-#line 314	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM_F[i]-1]=1;
+#line 314	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D1_NUM_F[i]-1]=1;
 ;  314:(    TBL_1$, (D1_NUM_F.0) ,          i ,   #T22589)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D1_NUM_F)>>8
 	MOVA           	PCRH
-	MOV            	(_D1_NUM_i_69) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_i_70) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D1_NUM_F
 	SECTION        	0x0
 	CALL           	_D1_NUM_F-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D1_NUM_#T22589_70		; Bank 1
+	MOVAR          	_D1_NUM_#T22589_71		; Bank 1
 ;  314:(     SUB_1,    #T22589 ,          1 ,   #T22596)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D1_NUM_#T22589_70) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D1_NUM_#T22596_70) & 0X7F		; Bank 1
+	SUB            	(_D1_NUM_#T22589_71) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22596_71) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D1_NUM_#T22596_70+0x1) & 0X7F		; Bank 1
+	CLR            	(_D1_NUM_#T22596_71+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D1_NUM_#T22596_70+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D1_NUM_#T22596_71+0x1) & 0X7F,	0x1		; Bank 1
 ;  314:(     ADD_2,    #T22596 , (display_buf.0) ,   #T22597)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D1_NUM_#T22596_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22596_71) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D1_NUM_#T22597_70) & 0X7F		; Bank 1
-	MOV            	(_D1_NUM_#T22596_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D1_NUM_#T22597_71) & 0X7F		; Bank 1
+	MOV            	(_D1_NUM_#T22596_71+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D1_NUM_#T22597_70+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D1_NUM_#T22597_71+0x1) & 0X7F		; Bank 1
 ;  314:(    ASGN_1,          1 ,            ,  *#T22597)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D1_NUM_#T22597_70+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22597_71+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D1_NUM_#T22597_70) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D1_NUM_#T22597_71) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2559,7 +2561,7 @@ _D1_NUM
 	GOTO           	#L22545
 ; 	break;
 ; 	}
-#line 319	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
+#line 319	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
 ;  319:(     LABEL,    #L22600 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2572,21 +2574,21 @@ _D1_NUM
 	_DESC          	D2_NUM,0X0,0X0
 
 SECTION1D2_NUM	UNINTIAL       	0		; Bank 0
-	ORG            	0XBE		; Bank 0
+	ORG            	0XC6		; Bank 0
 _D2_NUMDATA	RSEG           	0X7		; Bank 0
 D2_NUM#	CSEG           
 _D2_NUM
 ; void D2_NUM(unsigned char num){
 ; 	char i;
-#line 322	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM8)/sizeof(D2_NUM8[0]); 
+#line 322	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM8)/sizeof(D2_NUM8[0]); 
 	CLR            	BKSR
 ;  322:(    ASGN_1,          7 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x7
 	SECTION        	0x1
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 323	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 323	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  323:(     LABEL,    #L22611 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2594,57 +2596,57 @@ _D2_NUM
 ;  323:(    ASGN_1,          i ,            ,   #T22616)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22616_72) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22616_73) & 0X7F		; Bank 1
 ;  323:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  323:(      JZ_1,    #T22616 ,            ,   #L22613)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T22616_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22616_73) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L22613
-#line 324	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM8[i]-1]=0;
+#line 324	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM8[i]-1]=0;
 ;  324:(    TBL_1$, (D2_NUM8.0) ,          i ,   #T22655)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM8)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM8
 	SECTION        	0x0
 	CALL           	_D2_NUM8-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T22655_72		; Bank 1
+	MOVAR          	_D2_NUM_#T22655_73		; Bank 1
 ;  324:(     SUB_1,    #T22655 ,          1 ,   #T22662)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T22655_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22662_72) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T22655_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22662_73) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T22662_72+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T22662_73+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T22662_72+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T22662_73+0x1) & 0X7F,	0x1		; Bank 1
 ;  324:(     ADD_2,    #T22662 , (display_buf.0) ,   #T22663)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T22662_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22662_73) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T22663_72) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T22662_72+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22663_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T22662_73+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T22663_72+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T22663_73+0x1) & 0X7F		; Bank 1
 ;  324:(    ASGN_1,          0 ,            ,  *#T22663)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T22663_72+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22663_73+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T22663_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22663_73) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x0
 ; ITemplate_SetINDF
@@ -2658,7 +2660,7 @@ _D2_NUM
 
 ; ITemplate_LABEL
 #L22613
-#line 326	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	switch(num){
+#line 326	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	switch(num){
 ;  326:(  SWITCH_B,        num ,            ,          )
 
 ; ITemplate_SW
@@ -2702,18 +2704,18 @@ _D2_NUM
 
 ; ITemplate_JMP
 	GOTO           	#L23418
-#line 327	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0:
+#line 327	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0:
 ;  327:(     LABEL,    #L22670 ,            ,          )
 
 ; ITemplate_LABEL
 #L22670
-#line 328	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM0)/sizeof(D2_NUM0[0]); 
+#line 328	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM0)/sizeof(D2_NUM0[0]); 
 ;  328:(    ASGN_1,          6 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 329	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 329	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  329:(     LABEL,    #L22683 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2721,57 +2723,57 @@ _D2_NUM
 ;  329:(    ASGN_1,          i ,            ,   #T22688)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22688_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22688_74) & 0X7F		; Bank 1
 ;  329:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  329:(      JZ_1,    #T22688 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T22688_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22688_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 330	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM0[i]-1]=1;
+#line 330	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM0[i]-1]=1;
 ;  330:(    TBL_1$, (D2_NUM0.0) ,          i ,   #T22727)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM0)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM0
 	SECTION        	0x0
 	CALL           	_D2_NUM0-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T22727_73		; Bank 1
+	MOVAR          	_D2_NUM_#T22727_74		; Bank 1
 ;  330:(     SUB_1,    #T22727 ,          1 ,   #T22734)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T22727_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22734_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T22727_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22734_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T22734_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T22734_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T22734_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T22734_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  330:(     ADD_2,    #T22734 , (display_buf.0) ,   #T22735)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T22734_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22734_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T22735_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T22734_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22735_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T22734_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T22735_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T22735_74+0x1) & 0X7F		; Bank 1
 ;  330:(    ASGN_1,          1 ,            ,  *#T22735)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T22735_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22735_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T22735_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22735_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2783,18 +2785,18 @@ _D2_NUM
 	GOTO           	#L22683
 ; 	break;
 ; 	
-#line 333	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 1:
+#line 333	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 1:
 ;  333:(     LABEL,    #L22738 ,            ,          )
 
 ; ITemplate_LABEL
 #L22738
-#line 334	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM1)/sizeof(D2_NUM0[1]); 
+#line 334	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM1)/sizeof(D2_NUM0[1]); 
 ;  334:(    ASGN_1,          2 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x2
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 335	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 335	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  335:(     LABEL,    #L22751 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2802,57 +2804,57 @@ _D2_NUM
 ;  335:(    ASGN_1,          i ,            ,   #T22756)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22756_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22756_74) & 0X7F		; Bank 1
 ;  335:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  335:(      JZ_1,    #T22756 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T22756_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22756_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 336	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM1[i]-1]=1;
+#line 336	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM1[i]-1]=1;
 ;  336:(    TBL_1$, (D2_NUM1.0) ,          i ,   #T22795)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM1)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM1
 	SECTION        	0x0
 	CALL           	_D2_NUM1-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T22795_73		; Bank 1
+	MOVAR          	_D2_NUM_#T22795_74		; Bank 1
 ;  336:(     SUB_1,    #T22795 ,          1 ,   #T22802)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T22795_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22802_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T22795_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22802_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T22802_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T22802_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T22802_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T22802_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  336:(     ADD_2,    #T22802 , (display_buf.0) ,   #T22803)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T22802_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22802_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T22803_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T22802_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22803_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T22802_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T22803_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T22803_74+0x1) & 0X7F		; Bank 1
 ;  336:(    ASGN_1,          1 ,            ,  *#T22803)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T22803_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22803_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T22803_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22803_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2863,18 +2865,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L22751
 ; 	break;
-#line 339	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 2:
+#line 339	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 2:
 ;  339:(     LABEL,    #L22806 ,            ,          )
 
 ; ITemplate_LABEL
 #L22806
-#line 340	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM2)/sizeof(D2_NUM0[2]); 
+#line 340	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM2)/sizeof(D2_NUM0[2]); 
 ;  340:(    ASGN_1,          5 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x5
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 341	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 341	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  341:(     LABEL,    #L22819 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2882,57 +2884,57 @@ _D2_NUM
 ;  341:(    ASGN_1,          i ,            ,   #T22824)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22824_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22824_74) & 0X7F		; Bank 1
 ;  341:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  341:(      JZ_1,    #T22824 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T22824_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22824_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 342	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM2[i]-1]=1;
+#line 342	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM2[i]-1]=1;
 ;  342:(    TBL_1$, (D2_NUM2.0) ,          i ,   #T22863)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM2)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM2
 	SECTION        	0x0
 	CALL           	_D2_NUM2-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T22863_73		; Bank 1
+	MOVAR          	_D2_NUM_#T22863_74		; Bank 1
 ;  342:(     SUB_1,    #T22863 ,          1 ,   #T22870)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T22863_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22870_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T22863_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22870_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T22870_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T22870_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T22870_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T22870_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  342:(     ADD_2,    #T22870 , (display_buf.0) ,   #T22871)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T22870_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22870_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T22871_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T22870_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22871_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T22870_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T22871_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T22871_74+0x1) & 0X7F		; Bank 1
 ;  342:(    ASGN_1,          1 ,            ,  *#T22871)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T22871_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22871_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T22871_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22871_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -2943,18 +2945,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L22819
 ; 	break;
-#line 345	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 3:
+#line 345	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 3:
 ;  345:(     LABEL,    #L22874 ,            ,          )
 
 ; ITemplate_LABEL
 #L22874
-#line 346	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM3)/sizeof(D2_NUM3[0]); 
+#line 346	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM3)/sizeof(D2_NUM3[0]); 
 ;  346:(    ASGN_1,          5 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x5
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 347	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 347	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  347:(     LABEL,    #L22887 ,            ,          )
 
 ; ITemplate_LABEL
@@ -2962,57 +2964,57 @@ _D2_NUM
 ;  347:(    ASGN_1,          i ,            ,   #T22892)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22892_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22892_74) & 0X7F		; Bank 1
 ;  347:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  347:(      JZ_1,    #T22892 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T22892_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22892_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 348	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM3[i]-1]=1;
+#line 348	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM3[i]-1]=1;
 ;  348:(    TBL_1$, (D2_NUM3.0) ,          i ,   #T22931)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM3)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM3
 	SECTION        	0x0
 	CALL           	_D2_NUM3-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T22931_73		; Bank 1
+	MOVAR          	_D2_NUM_#T22931_74		; Bank 1
 ;  348:(     SUB_1,    #T22931 ,          1 ,   #T22938)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T22931_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22938_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T22931_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22938_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T22938_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T22938_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T22938_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T22938_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  348:(     ADD_2,    #T22938 , (display_buf.0) ,   #T22939)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T22938_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22938_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T22939_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T22938_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22939_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T22938_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T22939_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T22939_74+0x1) & 0X7F		; Bank 1
 ;  348:(    ASGN_1,          1 ,            ,  *#T22939)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T22939_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22939_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T22939_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22939_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3023,18 +3025,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L22887
 ; 	break;
-#line 351	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 4:
+#line 351	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 4:
 ;  351:(     LABEL,    #L22942 ,            ,          )
 
 ; ITemplate_LABEL
 #L22942
-#line 352	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM4)/sizeof(D2_NUM4[0]); 
+#line 352	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM4)/sizeof(D2_NUM4[0]); 
 ;  352:(    ASGN_1,          4 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x4
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 353	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 353	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  353:(     LABEL,    #L22955 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3042,57 +3044,57 @@ _D2_NUM
 ;  353:(    ASGN_1,          i ,            ,   #T22960)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T22960_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T22960_74) & 0X7F		; Bank 1
 ;  353:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  353:(      JZ_1,    #T22960 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T22960_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T22960_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 354	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM4[i]-1]=1;
+#line 354	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM4[i]-1]=1;
 ;  354:(    TBL_1$, (D2_NUM4.0) ,          i ,   #T22999)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM4)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM4
 	SECTION        	0x0
 	CALL           	_D2_NUM4-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T22999_73		; Bank 1
+	MOVAR          	_D2_NUM_#T22999_74		; Bank 1
 ;  354:(     SUB_1,    #T22999 ,          1 ,   #T23006)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T22999_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23006_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T22999_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23006_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23006_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23006_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23006_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23006_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  354:(     ADD_2,    #T23006 , (display_buf.0) ,   #T23007)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23006_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23006_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23007_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23006_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23007_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23006_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23007_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23007_74+0x1) & 0X7F		; Bank 1
 ;  354:(    ASGN_1,          1 ,            ,  *#T23007)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23007_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23007_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23007_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23007_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3103,18 +3105,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L22955
 ; 	break;
-#line 357	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 5:
+#line 357	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 5:
 ;  357:(     LABEL,    #L23010 ,            ,          )
 
 ; ITemplate_LABEL
 #L23010
-#line 358	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM5)/sizeof(D2_NUM5[0]); 
+#line 358	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM5)/sizeof(D2_NUM5[0]); 
 ;  358:(    ASGN_1,          5 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x5
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 359	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 359	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  359:(     LABEL,    #L23023 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3122,57 +3124,57 @@ _D2_NUM
 ;  359:(    ASGN_1,          i ,            ,   #T23028)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23028_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23028_74) & 0X7F		; Bank 1
 ;  359:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  359:(      JZ_1,    #T23028 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T23028_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23028_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 360	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM5[i]-1]=1;
+#line 360	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM5[i]-1]=1;
 ;  360:(    TBL_1$, (D2_NUM5.0) ,          i ,   #T23067)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM5)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM5
 	SECTION        	0x0
 	CALL           	_D2_NUM5-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T23067_73		; Bank 1
+	MOVAR          	_D2_NUM_#T23067_74		; Bank 1
 ;  360:(     SUB_1,    #T23067 ,          1 ,   #T23074)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T23067_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23074_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T23067_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23074_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23074_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23074_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23074_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23074_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  360:(     ADD_2,    #T23074 , (display_buf.0) ,   #T23075)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23074_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23074_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23075_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23074_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23075_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23074_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23075_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23075_74+0x1) & 0X7F		; Bank 1
 ;  360:(    ASGN_1,          1 ,            ,  *#T23075)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23075_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23075_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23075_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23075_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3183,18 +3185,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L23023
 ; 	break;
-#line 363	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 6:
+#line 363	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 6:
 ;  363:(     LABEL,    #L23078 ,            ,          )
 
 ; ITemplate_LABEL
 #L23078
-#line 364	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM6)/sizeof(D2_NUM6[0]); 
+#line 364	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM6)/sizeof(D2_NUM6[0]); 
 ;  364:(    ASGN_1,          6 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 365	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 365	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  365:(     LABEL,    #L23091 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3202,57 +3204,57 @@ _D2_NUM
 ;  365:(    ASGN_1,          i ,            ,   #T23096)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23096_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23096_74) & 0X7F		; Bank 1
 ;  365:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  365:(      JZ_1,    #T23096 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T23096_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23096_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 366	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM6[i]-1]=1;
+#line 366	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM6[i]-1]=1;
 ;  366:(    TBL_1$, (D2_NUM6.0) ,          i ,   #T23135)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM6)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM6
 	SECTION        	0x0
 	CALL           	_D2_NUM6-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T23135_73		; Bank 1
+	MOVAR          	_D2_NUM_#T23135_74		; Bank 1
 ;  366:(     SUB_1,    #T23135 ,          1 ,   #T23142)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T23135_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23142_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T23135_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23142_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23142_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23142_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23142_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23142_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  366:(     ADD_2,    #T23142 , (display_buf.0) ,   #T23143)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23142_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23142_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23143_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23142_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23143_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23142_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23143_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23143_74+0x1) & 0X7F		; Bank 1
 ;  366:(    ASGN_1,          1 ,            ,  *#T23143)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23143_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23143_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23143_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23143_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3263,18 +3265,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L23091
 ; 	break;
-#line 369	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 7:
+#line 369	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 7:
 ;  369:(     LABEL,    #L23146 ,            ,          )
 
 ; ITemplate_LABEL
 #L23146
-#line 370	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM7)/sizeof(D2_NUM7[0]); 
+#line 370	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM7)/sizeof(D2_NUM7[0]); 
 ;  370:(    ASGN_1,          3 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x3
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 371	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 371	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  371:(     LABEL,    #L23159 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3282,57 +3284,57 @@ _D2_NUM
 ;  371:(    ASGN_1,          i ,            ,   #T23164)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23164_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23164_74) & 0X7F		; Bank 1
 ;  371:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  371:(      JZ_1,    #T23164 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T23164_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23164_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 372	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM7[i]-1]=1;
+#line 372	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM7[i]-1]=1;
 ;  372:(    TBL_1$, (D2_NUM7.0) ,          i ,   #T23203)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM7)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM7
 	SECTION        	0x0
 	CALL           	_D2_NUM7-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T23203_73		; Bank 1
+	MOVAR          	_D2_NUM_#T23203_74		; Bank 1
 ;  372:(     SUB_1,    #T23203 ,          1 ,   #T23210)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T23203_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23210_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T23203_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23210_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23210_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23210_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23210_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23210_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  372:(     ADD_2,    #T23210 , (display_buf.0) ,   #T23211)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23210_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23210_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23211_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23210_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23211_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23210_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23211_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23211_74+0x1) & 0X7F		; Bank 1
 ;  372:(    ASGN_1,          1 ,            ,  *#T23211)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23211_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23211_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23211_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23211_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3343,18 +3345,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L23159
 ; 	break;
-#line 375	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 8:
+#line 375	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 8:
 ;  375:(     LABEL,    #L23214 ,            ,          )
 
 ; ITemplate_LABEL
 #L23214
-#line 376	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM8)/sizeof(D2_NUM8[0]); 
+#line 376	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM8)/sizeof(D2_NUM8[0]); 
 ;  376:(    ASGN_1,          7 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x7
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 377	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 377	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  377:(     LABEL,    #L23227 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3362,57 +3364,57 @@ _D2_NUM
 ;  377:(    ASGN_1,          i ,            ,   #T23232)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23232_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23232_74) & 0X7F		; Bank 1
 ;  377:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  377:(      JZ_1,    #T23232 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T23232_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23232_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 378	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM8[i]-1]=1;
+#line 378	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM8[i]-1]=1;
 ;  378:(    TBL_1$, (D2_NUM8.0) ,          i ,   #T23271)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM8)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM8
 	SECTION        	0x0
 	CALL           	_D2_NUM8-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T23271_73		; Bank 1
+	MOVAR          	_D2_NUM_#T23271_74		; Bank 1
 ;  378:(     SUB_1,    #T23271 ,          1 ,   #T23278)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T23271_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23278_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T23271_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23278_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23278_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23278_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23278_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23278_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  378:(     ADD_2,    #T23278 , (display_buf.0) ,   #T23279)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23278_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23278_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23279_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23278_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23279_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23278_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23279_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23279_74+0x1) & 0X7F		; Bank 1
 ;  378:(    ASGN_1,          1 ,            ,  *#T23279)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23279_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23279_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23279_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23279_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3423,18 +3425,18 @@ _D2_NUM
 ; ITemplate_JMP
 	GOTO           	#L23227
 ; 	break;
-#line 381	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 9:
+#line 381	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 9:
 ;  381:(     LABEL,    #L23282 ,            ,          )
 
 ; ITemplate_LABEL
 #L23282
-#line 382	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM9)/sizeof(D2_NUM9[0]); 
+#line 382	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM9)/sizeof(D2_NUM9[0]); 
 ;  382:(    ASGN_1,          6 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x6
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 383	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 383	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  383:(     LABEL,    #L23295 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3442,57 +3444,57 @@ _D2_NUM
 ;  383:(    ASGN_1,          i ,            ,   #T23300)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23300_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23300_74) & 0X7F		; Bank 1
 ;  383:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  383:(      JZ_1,    #T23300 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T23300_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23300_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 384	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM9[i]-1]=1;
+#line 384	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM9[i]-1]=1;
 ;  384:(    TBL_1$, (D2_NUM9.0) ,          i ,   #T23339)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM9)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM9
 	SECTION        	0x0
 	CALL           	_D2_NUM9-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T23339_73		; Bank 1
+	MOVAR          	_D2_NUM_#T23339_74		; Bank 1
 ;  384:(     SUB_1,    #T23339 ,          1 ,   #T23346)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T23339_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23346_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T23339_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23346_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23346_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23346_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23346_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23346_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  384:(     ADD_2,    #T23346 , (display_buf.0) ,   #T23347)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23346_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23346_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23347_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23346_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23347_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23346_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23347_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23347_74+0x1) & 0X7F		; Bank 1
 ;  384:(    ASGN_1,          1 ,            ,  *#T23347)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23347_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23347_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23347_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23347_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3504,18 +3506,18 @@ _D2_NUM
 	GOTO           	#L23295
 ; 	break;
 ; 	
-#line 387	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0xff:
+#line 387	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 	case 0xff:
 ;  387:(     LABEL,    #L23350 ,            ,          )
 
 ; ITemplate_LABEL
 #L23350
-#line 388	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM_F)/sizeof(D2_NUM_F[0]); 
+#line 388	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		i=sizeof(D2_NUM_F)/sizeof(D2_NUM_F[0]); 
 ;  388:(    ASGN_1,          4 ,            ,         i)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x4
-	MOVA           	(_D2_NUM_i_72) & 0X7F		; Bank 1
-#line 389	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
+	MOVA           	(_D2_NUM_i_73) & 0X7F		; Bank 1
+#line 389	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		while(i--)
 ;  389:(     LABEL,    #L23363 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3523,57 +3525,57 @@ _D2_NUM
 ;  389:(    ASGN_1,          i ,            ,   #T23368)
 
 ; ITemplate_ASGN1_4_R
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23368_73) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23368_74) & 0X7F		; Bank 1
 ;  389:(     SUB_1,          i ,          1 ,         i)
 
 ; ITemplate_DEC_1_TMP
-	DEC            	(_D2_NUM_i_72) & 0X7F		; Bank 1
+	DEC            	(_D2_NUM_i_73) & 0X7F		; Bank 1
 ;  389:(      JZ_1,    #T23368 ,            ,   #L23418)
 
 ; ITemplate_JZ1_4
-	MOV            	(_D2_NUM_#T23368_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23368_74) & 0X7F,	0x0		; Bank 1
 	JBC            	PSW,	0x2
 	GOTO           	#L23418
-#line 390	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM_F[i]-1]=1;
+#line 390	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		display_buf[D2_NUM_F[i]-1]=1;
 ;  390:(    TBL_1$, (D2_NUM_F.0) ,          i ,   #T23407)
 
 ; ITemplate_TBL_1_TMP
 	MOVI           	(_D2_NUM_F)>>8
 	MOVA           	PCRH
-	MOV            	(_D2_NUM_i_72) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_i_73) & 0X7F,	0x0		; Bank 1
 	SEGMENTSEL     	_D2_NUM_F
 	SECTION        	0x0
 	CALL           	_D2_NUM_F-0x1		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_D2_NUM_#T23407_73		; Bank 1
+	MOVAR          	_D2_NUM_#T23407_74		; Bank 1
 ;  390:(     SUB_1,    #T23407 ,          1 ,   #T23414)
 
 ; ITemplate_SUB1_4
 	MOVI           	0x1
 	SECTION        	0x1
-	SUB            	(_D2_NUM_#T23407_73) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_D2_NUM_#T23414_73) & 0X7F		; Bank 1
+	SUB            	(_D2_NUM_#T23407_74) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23414_74) & 0X7F		; Bank 1
 ; ITemplate_Sub_Ext_U
-	CLR            	(_D2_NUM_#T23414_73+0x1) & 0X7F		; Bank 1
+	CLR            	(_D2_NUM_#T23414_74+0x1) & 0X7F		; Bank 1
 	JBS            	PSW,	0x0
-	DEC            	(_D2_NUM_#T23414_73+0x1) & 0X7F,	0x1		; Bank 1
+	DEC            	(_D2_NUM_#T23414_74+0x1) & 0X7F,	0x1		; Bank 1
 ;  390:(     ADD_2,    #T23414 , (display_buf.0) ,   #T23415)
 
 ; ITemplate_ADD1_4
-	MOV            	(_D2_NUM_#T23414_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23414_74) & 0X7F,	0x0		; Bank 1
 	ADDI           	_display_buf
-	MOVA           	(_D2_NUM_#T23415_73) & 0X7F		; Bank 1
-	MOV            	(_D2_NUM_#T23414_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_D2_NUM_#T23415_74) & 0X7F		; Bank 1
+	MOV            	(_D2_NUM_#T23414_74+0x1) & 0X7F,	0x0		; Bank 1
 	ADDCI          	HIGH(_display_buf)
-	MOVA           	(_D2_NUM_#T23415_73+0x1) & 0X7F		; Bank 1
+	MOVA           	(_D2_NUM_#T23415_74+0x1) & 0X7F		; Bank 1
 ;  390:(    ASGN_1,          1 ,            ,  *#T23415)
 
 ; ITemplate_ASGN1_4
 ; ITemplate_SetFSR
-	MOV            	(_D2_NUM_#T23415_73+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23415_74+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_D2_NUM_#T23415_73) & 0X7F,	0x0		; Bank 1
+	MOV            	(_D2_NUM_#T23415_74) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOVI           	0x1
 ; ITemplate_SetINDF
@@ -3585,7 +3587,7 @@ _D2_NUM
 	GOTO           	#L23363
 ; 	break;
 ; 	}
-#line 393	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
+#line 393	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
 ;  393:(     LABEL,    #L23418 ,            ,          )
 
 ; ITemplate_LABEL
@@ -3598,64 +3600,64 @@ _D2_NUM
 	_DESC          	SCAN_NEW,0X2,0X0
 
 SECTION1SCAN_NEW	UNINTIAL       	0		; Bank 0
-	ORG            	0XF2		; Bank 0
+	ORG            	0XFA		; Bank 0
 _SCAN_NEWDATA	RSEG           	0X4		; Bank 0
 SCAN_NEW#	CSEG           
 _SCAN_NEW
 ; void SCAN_NEW(){
 ; static char cnt;
-#line 396	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(0);
+#line 396	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(0);
 	CLR            	BKSR
 ;  396:(    ASGN_0,          0 ,            ,       PA1)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA1_0)/8,	(_PA1_0)%8
-#line 397	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(0);
+#line 397	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(0);
 ;  397:(    ASGN_0,          0 ,            ,       PC0)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PC0_0)/8,	(_PC0_0)%8
-#line 398	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(0);
+#line 398	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(0);
 ;  398:(    ASGN_0,          0 ,            ,       PA6)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA6_0)/8,	(_PA6_0)%8
-#line 399	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(0);
+#line 399	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(0);
 ;  399:(    ASGN_0,          0 ,            ,       PB0)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PB0_0)/8,	(_PB0_0)%8
-#line 400	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(0);
+#line 400	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(0);
 ;  400:(    ASGN_0,          0 ,            ,       PB6)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PB6_0)/8,	(_PB6_0)%8
-#line 402	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(0);
+#line 402	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(0);
 ;  402:(    ASGN_0,          0 ,            ,       PC1)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PC1_0)/8,	(_PC1_0)%8
-#line 403	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_1(0);
+#line 403	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_1(0);
 ;  403:(    ASGN_0,          0 ,            ,       PA5)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA5_0)/8,	(_PA5_0)%8
-#line 404	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(0);
+#line 404	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(0);
 ;  404:(    ASGN_0,          0 ,            ,       PA4)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA4_0)/8,	(_PA4_0)%8
-#line 405	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_3(0);
+#line 405	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_3(0);
 ;  405:(    ASGN_0,          0 ,            ,       PA3)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA3_0)/8,	(_PA3_0)%8
-#line 406	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		switch (cnt){
+#line 406	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		switch (cnt){
 ;  406:(  SWITCH_B,        cnt ,            ,          )
 
 ; ITemplate_SW
 	SECTION        	0x1
-	MOV            	((_SCAN_NEW_cnt_75) & 0x7F),	0x0		; Bank 1
+	MOV            	((_SCAN_NEW_cnt_76) & 0x7F),	0x0		; Bank 1
 	XORI           	0x0
 	JBC            	PSW,	0x2
 	GOTO           	#L23477
@@ -3674,32 +3676,32 @@ _SCAN_NEW
 
 ; ITemplate_JMP
 	GOTO           	#L23474
-#line 407	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 0:
+#line 407	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 0:
 ;  407:(     LABEL,    #L23477 ,            ,          )
 
 ; ITemplate_LABEL
 #L23477
-#line 408	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(0);
+#line 408	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(0);
 ;  408:(    ASGN_0,          0 ,            ,       PC1)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PC1_0)/8,	(_PC1_0)%8
-#line 409	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(1);
+#line 409	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(1);
 ;  409:(    ASGN_0,          1 ,            ,       PA5)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA5_0)/8,	(_PA5_0)%8
-#line 410	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(1);
+#line 410	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(1);
 ;  410:(    ASGN_0,          1 ,            ,       PA4)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA4_0)/8,	(_PA4_0)%8
-#line 411	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(1);
+#line 411	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(1);
 ;  411:(    ASGN_0,          1 ,            ,       PA3)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA3_0)/8,	(_PA3_0)%8
-#line 413	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[0]>>4 & 0x01);
+#line 413	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[0]>>4 & 0x01);
 ;  413:(    RSH_1U, *(SCAN_LED_BUF_L.0) ,          4 ,   #T23526)
 
 ; ITemplate_RSH1_4U
@@ -3719,42 +3721,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24117
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23526_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23526_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23526_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23526_77+0x1) & 0X7F		; Bank 1
 ;  413:(    BAND_2,          1 ,    #T23526 ,   #T23529)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23526_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23526_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23529_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23526_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23529_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23526_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23529_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23529_77+0x1) & 0X7F		; Bank 1
 ;  413:(    CVSI_B,    #T23529 ,            ,   #T23530)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23530_76)/8) & 0X7F,	(_SCAN_NEW_#T23530_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23530_77)/8) & 0X7F,	(_SCAN_NEW_#T23530_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23529_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23529_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24118
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23530_76)/8) & 0X7F,	(_SCAN_NEW_#T23530_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23530_77)/8) & 0X7F,	(_SCAN_NEW_#T23530_77)%8		; Bank 0
 #L24118
 ;  413:(    ASGN_0,    #T23530 ,            ,       PA1)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23530_76)/8) & 0X7F,	(_SCAN_NEW_#T23530_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23530_77)/8) & 0X7F,	(_SCAN_NEW_#T23530_77)%8		; Bank 0
 	GOTO           	#L24119
 	BCC            	(_PA1_0)/8,	(_PA1_0)%8
 	GOTO           	#L24120
 #L24119
 	BSS            	(_PA1_0)/8,	(_PA1_0)%8
 #L24120
-#line 414	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[0]>>3 & 0x01);
+#line 414	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[0]>>3 & 0x01);
 ;  414:(    RSH_1U, *(SCAN_LED_BUF_L.0) ,          3 ,   #T23553)
 
 ; ITemplate_RSH1_4U
@@ -3773,42 +3775,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24122
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23553_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23553_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23553_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23553_77+0x1) & 0X7F		; Bank 1
 ;  414:(    BAND_2,          1 ,    #T23553 ,   #T23556)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23553_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23553_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23556_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23553_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23556_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23553_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23556_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23556_77+0x1) & 0X7F		; Bank 1
 ;  414:(    CVSI_B,    #T23556 ,            ,   #T23557)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23557_76)/8) & 0X7F,	(_SCAN_NEW_#T23557_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23557_77)/8) & 0X7F,	(_SCAN_NEW_#T23557_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23556_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23556_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24123
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23557_76)/8) & 0X7F,	(_SCAN_NEW_#T23557_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23557_77)/8) & 0X7F,	(_SCAN_NEW_#T23557_77)%8		; Bank 0
 #L24123
 ;  414:(    ASGN_0,    #T23557 ,            ,       PC0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23557_76)/8) & 0X7F,	(_SCAN_NEW_#T23557_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23557_77)/8) & 0X7F,	(_SCAN_NEW_#T23557_77)%8		; Bank 0
 	GOTO           	#L24124
 	BCC            	(_PC0_0)/8,	(_PC0_0)%8
 	GOTO           	#L24125
 #L24124
 	BSS            	(_PC0_0)/8,	(_PC0_0)%8
 #L24125
-#line 415	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[0]>>2 & 0x01);
+#line 415	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[0]>>2 & 0x01);
 ;  415:(    RSH_1U, *(SCAN_LED_BUF_L.0) ,          2 ,   #T23580)
 
 ; ITemplate_RSH1_4U
@@ -3827,143 +3829,143 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24127
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23580_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23580_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23580_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23580_77+0x1) & 0X7F		; Bank 1
 ;  415:(    BAND_2,          1 ,    #T23580 ,   #T23583)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23580_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23580_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23583_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23580_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23583_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23580_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23583_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23583_77+0x1) & 0X7F		; Bank 1
 ;  415:(    CVSI_B,    #T23583 ,            ,   #T23584)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23584_76)/8) & 0X7F,	(_SCAN_NEW_#T23584_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23584_77)/8) & 0X7F,	(_SCAN_NEW_#T23584_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23583_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23583_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24128
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23584_76)/8) & 0X7F,	(_SCAN_NEW_#T23584_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23584_77)/8) & 0X7F,	(_SCAN_NEW_#T23584_77)%8		; Bank 0
 #L24128
 ;  415:(    ASGN_0,    #T23584 ,            ,       PA6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23584_76)/8) & 0X7F,	(_SCAN_NEW_#T23584_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23584_77)/8) & 0X7F,	(_SCAN_NEW_#T23584_77)%8		; Bank 0
 	GOTO           	#L24129
 	BCC            	(_PA6_0)/8,	(_PA6_0)%8
 	GOTO           	#L24130
 #L24129
 	BSS            	(_PA6_0)/8,	(_PA6_0)%8
 #L24130
-#line 416	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(SCAN_LED_BUF_L[0]>>1 & 0x01);
+#line 416	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(SCAN_LED_BUF_L[0]>>1 & 0x01);
 ;  416:(    RSH_1U, *(SCAN_LED_BUF_L.0) ,          1 ,   #T23607)
 
 ; ITemplate_RSH1_4U_1
 	BCC            	PSW,	0x0
 	SECTION        	0x1
 	RR             	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_SCAN_NEW_#T23607_76) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23607_77) & 0X7F		; Bank 1
 ; ITemplate_Common_Ext_U
-	CLR            	(_SCAN_NEW_#T23607_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23607_77+0x1) & 0X7F		; Bank 1
 ;  416:(    BAND_2,          1 ,    #T23607 ,   #T23610)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23607_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23607_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23610_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23607_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23610_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23607_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23610_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23610_77+0x1) & 0X7F		; Bank 1
 ;  416:(    CVSI_B,    #T23610 ,            ,   #T23611)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23611_76)/8) & 0X7F,	(_SCAN_NEW_#T23611_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23611_77)/8) & 0X7F,	(_SCAN_NEW_#T23611_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23610_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23610_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24131
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23611_76)/8) & 0X7F,	(_SCAN_NEW_#T23611_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23611_77)/8) & 0X7F,	(_SCAN_NEW_#T23611_77)%8		; Bank 0
 #L24131
 ;  416:(    ASGN_0,    #T23611 ,            ,       PB0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23611_76)/8) & 0X7F,	(_SCAN_NEW_#T23611_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23611_77)/8) & 0X7F,	(_SCAN_NEW_#T23611_77)%8		; Bank 0
 	GOTO           	#L24132
 	BCC            	(_PB0_0)/8,	(_PB0_0)%8
 	GOTO           	#L24133
 #L24132
 	BSS            	(_PB0_0)/8,	(_PB0_0)%8
 #L24133
-#line 417	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(SCAN_LED_BUF_L[0]& 0x01);
+#line 417	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(SCAN_LED_BUF_L[0]& 0x01);
 ;  417:(    BAND_1,          1 , *(SCAN_LED_BUF_L.0) ,   #T23632)
 
 ; ITemplate_BAND1_4
 	SECTION        	0x1
 	MOV            	(_SCAN_LED_BUF_L) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23632_76) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23632_77) & 0X7F		; Bank 1
 ;  417:(    CVUC_B,    #T23632 ,            ,   #T23633)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23633_76)/8) & 0X7F,	(_SCAN_NEW_#T23633_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23633_77)/8) & 0X7F,	(_SCAN_NEW_#T23633_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23632_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23632_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24134
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23633_76)/8) & 0X7F,	(_SCAN_NEW_#T23633_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23633_77)/8) & 0X7F,	(_SCAN_NEW_#T23633_77)%8		; Bank 0
 #L24134
 ;  417:(    ASGN_0,    #T23633 ,            ,       PB6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23633_76)/8) & 0X7F,	(_SCAN_NEW_#T23633_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23633_77)/8) & 0X7F,	(_SCAN_NEW_#T23633_77)%8		; Bank 0
 	GOTO           	#L24135
 	BCC            	(_PB6_0)/8,	(_PB6_0)%8
 	GOTO           	#L24136
 #L24135
 	BSS            	(_PB6_0)/8,	(_PB6_0)%8
 #L24136
-#line 418	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 418	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;  418:(       JMP,            ,            ,   #L23474)
 
 ; ITemplate_JMP
 	GOTO           	#L23474
-#line 420	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 1:
+#line 420	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 1:
 ;  420:(     LABEL,    #L23634 ,            ,          )
 
 ; ITemplate_LABEL
 #L23634
-#line 421	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(1);
+#line 421	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(1);
 ;  421:(    ASGN_0,          1 ,            ,       PC1)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PC1_0)/8,	(_PC1_0)%8
-#line 422	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(0);
+#line 422	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(0);
 ;  422:(    ASGN_0,          0 ,            ,       PA5)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA5_0)/8,	(_PA5_0)%8
-#line 423	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(1);
+#line 423	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(1);
 ;  423:(    ASGN_0,          1 ,            ,       PA4)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA4_0)/8,	(_PA4_0)%8
-#line 424	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(1);
+#line 424	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(1);
 ;  424:(    ASGN_0,          1 ,            ,       PA3)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA3_0)/8,	(_PA3_0)%8
-#line 426	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[1]>>4 & 0x01);
+#line 426	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[1]>>4 & 0x01);
 ;  426:(    RSH_1U, *(SCAN_LED_BUF_L.1) ,          4 ,   #T23683)
 
 ; ITemplate_RSH1_4U
@@ -3983,42 +3985,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24138
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23683_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23683_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23683_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23683_77+0x1) & 0X7F		; Bank 1
 ;  426:(    BAND_2,          1 ,    #T23683 ,   #T23686)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23683_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23683_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23686_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23683_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23686_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23683_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23686_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23686_77+0x1) & 0X7F		; Bank 1
 ;  426:(    CVSI_B,    #T23686 ,            ,   #T23687)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23687_76)/8) & 0X7F,	(_SCAN_NEW_#T23687_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23687_77)/8) & 0X7F,	(_SCAN_NEW_#T23687_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23686_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23686_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24139
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23687_76)/8) & 0X7F,	(_SCAN_NEW_#T23687_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23687_77)/8) & 0X7F,	(_SCAN_NEW_#T23687_77)%8		; Bank 0
 #L24139
 ;  426:(    ASGN_0,    #T23687 ,            ,       PA1)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23687_76)/8) & 0X7F,	(_SCAN_NEW_#T23687_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23687_77)/8) & 0X7F,	(_SCAN_NEW_#T23687_77)%8		; Bank 0
 	GOTO           	#L24140
 	BCC            	(_PA1_0)/8,	(_PA1_0)%8
 	GOTO           	#L24141
 #L24140
 	BSS            	(_PA1_0)/8,	(_PA1_0)%8
 #L24141
-#line 427	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[1]>>3 & 0x01);
+#line 427	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[1]>>3 & 0x01);
 ;  427:(    RSH_1U, *(SCAN_LED_BUF_L.1) ,          3 ,   #T23710)
 
 ; ITemplate_RSH1_4U
@@ -4037,42 +4039,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24143
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23710_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23710_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23710_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23710_77+0x1) & 0X7F		; Bank 1
 ;  427:(    BAND_2,          1 ,    #T23710 ,   #T23713)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23710_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23710_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23713_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23710_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23713_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23710_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23713_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23713_77+0x1) & 0X7F		; Bank 1
 ;  427:(    CVSI_B,    #T23713 ,            ,   #T23714)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23714_76)/8) & 0X7F,	(_SCAN_NEW_#T23714_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23714_77)/8) & 0X7F,	(_SCAN_NEW_#T23714_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23713_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23713_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24144
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23714_76)/8) & 0X7F,	(_SCAN_NEW_#T23714_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23714_77)/8) & 0X7F,	(_SCAN_NEW_#T23714_77)%8		; Bank 0
 #L24144
 ;  427:(    ASGN_0,    #T23714 ,            ,       PC0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23714_76)/8) & 0X7F,	(_SCAN_NEW_#T23714_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23714_77)/8) & 0X7F,	(_SCAN_NEW_#T23714_77)%8		; Bank 0
 	GOTO           	#L24145
 	BCC            	(_PC0_0)/8,	(_PC0_0)%8
 	GOTO           	#L24146
 #L24145
 	BSS            	(_PC0_0)/8,	(_PC0_0)%8
 #L24146
-#line 428	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[1]>>2 & 0x01);
+#line 428	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[1]>>2 & 0x01);
 ;  428:(    RSH_1U, *(SCAN_LED_BUF_L.1) ,          2 ,   #T23737)
 
 ; ITemplate_RSH1_4U
@@ -4091,143 +4093,143 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24148
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23737_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23737_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23737_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23737_77+0x1) & 0X7F		; Bank 1
 ;  428:(    BAND_2,          1 ,    #T23737 ,   #T23740)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23737_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23737_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23740_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23737_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23740_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23737_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23740_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23740_77+0x1) & 0X7F		; Bank 1
 ;  428:(    CVSI_B,    #T23740 ,            ,   #T23741)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23741_76)/8) & 0X7F,	(_SCAN_NEW_#T23741_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23741_77)/8) & 0X7F,	(_SCAN_NEW_#T23741_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23740_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23740_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24149
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23741_76)/8) & 0X7F,	(_SCAN_NEW_#T23741_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23741_77)/8) & 0X7F,	(_SCAN_NEW_#T23741_77)%8		; Bank 0
 #L24149
 ;  428:(    ASGN_0,    #T23741 ,            ,       PA6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23741_76)/8) & 0X7F,	(_SCAN_NEW_#T23741_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23741_77)/8) & 0X7F,	(_SCAN_NEW_#T23741_77)%8		; Bank 0
 	GOTO           	#L24150
 	BCC            	(_PA6_0)/8,	(_PA6_0)%8
 	GOTO           	#L24151
 #L24150
 	BSS            	(_PA6_0)/8,	(_PA6_0)%8
 #L24151
-#line 429	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(SCAN_LED_BUF_L[1]>>1 & 0x01);
+#line 429	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(SCAN_LED_BUF_L[1]>>1 & 0x01);
 ;  429:(    RSH_1U, *(SCAN_LED_BUF_L.1) ,          1 ,   #T23764)
 
 ; ITemplate_RSH1_4U_1
 	BCC            	PSW,	0x0
 	SECTION        	0x1
 	RR             	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_SCAN_NEW_#T23764_76) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23764_77) & 0X7F		; Bank 1
 ; ITemplate_Common_Ext_U
-	CLR            	(_SCAN_NEW_#T23764_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23764_77+0x1) & 0X7F		; Bank 1
 ;  429:(    BAND_2,          1 ,    #T23764 ,   #T23767)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23764_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23764_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23767_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23764_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23767_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23764_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23767_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23767_77+0x1) & 0X7F		; Bank 1
 ;  429:(    CVSI_B,    #T23767 ,            ,   #T23768)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23768_76)/8) & 0X7F,	(_SCAN_NEW_#T23768_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23768_77)/8) & 0X7F,	(_SCAN_NEW_#T23768_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23767_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23767_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24152
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23768_76)/8) & 0X7F,	(_SCAN_NEW_#T23768_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23768_77)/8) & 0X7F,	(_SCAN_NEW_#T23768_77)%8		; Bank 0
 #L24152
 ;  429:(    ASGN_0,    #T23768 ,            ,       PB0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23768_76)/8) & 0X7F,	(_SCAN_NEW_#T23768_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23768_77)/8) & 0X7F,	(_SCAN_NEW_#T23768_77)%8		; Bank 0
 	GOTO           	#L24153
 	BCC            	(_PB0_0)/8,	(_PB0_0)%8
 	GOTO           	#L24154
 #L24153
 	BSS            	(_PB0_0)/8,	(_PB0_0)%8
 #L24154
-#line 430	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(SCAN_LED_BUF_L[1]& 0x01);
+#line 430	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(SCAN_LED_BUF_L[1]& 0x01);
 ;  430:(    BAND_1,          1 , *(SCAN_LED_BUF_L.1) ,   #T23789)
 
 ; ITemplate_BAND1_4
 	SECTION        	0x1
 	MOV            	(_SCAN_LED_BUF_L+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23789_76) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23789_77) & 0X7F		; Bank 1
 ;  430:(    CVUC_B,    #T23789 ,            ,   #T23790)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23790_76)/8) & 0X7F,	(_SCAN_NEW_#T23790_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23790_77)/8) & 0X7F,	(_SCAN_NEW_#T23790_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23789_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23789_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24155
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23790_76)/8) & 0X7F,	(_SCAN_NEW_#T23790_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23790_77)/8) & 0X7F,	(_SCAN_NEW_#T23790_77)%8		; Bank 0
 #L24155
 ;  430:(    ASGN_0,    #T23790 ,            ,       PB6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23790_76)/8) & 0X7F,	(_SCAN_NEW_#T23790_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23790_77)/8) & 0X7F,	(_SCAN_NEW_#T23790_77)%8		; Bank 0
 	GOTO           	#L24156
 	BCC            	(_PB6_0)/8,	(_PB6_0)%8
 	GOTO           	#L24157
 #L24156
 	BSS            	(_PB6_0)/8,	(_PB6_0)%8
 #L24157
-#line 431	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 431	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;  431:(       JMP,            ,            ,   #L23474)
 
 ; ITemplate_JMP
 	GOTO           	#L23474
-#line 433	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 2:
+#line 433	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 2:
 ;  433:(     LABEL,    #L23791 ,            ,          )
 
 ; ITemplate_LABEL
 #L23791
-#line 434	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(1);
+#line 434	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(1);
 ;  434:(    ASGN_0,          1 ,            ,       PC1)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PC1_0)/8,	(_PC1_0)%8
-#line 435	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(1);
+#line 435	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(1);
 ;  435:(    ASGN_0,          1 ,            ,       PA5)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA5_0)/8,	(_PA5_0)%8
-#line 436	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(0);
+#line 436	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(0);
 ;  436:(    ASGN_0,          0 ,            ,       PA4)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA4_0)/8,	(_PA4_0)%8
-#line 437	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(1);
+#line 437	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(1);
 ;  437:(    ASGN_0,          1 ,            ,       PA3)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA3_0)/8,	(_PA3_0)%8
-#line 439	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[2]>>4 & 0x01);
+#line 439	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[2]>>4 & 0x01);
 ;  439:(    RSH_1U, *(SCAN_LED_BUF_L.2) ,          4 ,   #T23840)
 
 ; ITemplate_RSH1_4U
@@ -4247,42 +4249,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24159
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23840_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23840_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23840_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23840_77+0x1) & 0X7F		; Bank 1
 ;  439:(    BAND_2,          1 ,    #T23840 ,   #T23843)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23840_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23840_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23843_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23840_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23843_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23840_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23843_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23843_77+0x1) & 0X7F		; Bank 1
 ;  439:(    CVSI_B,    #T23843 ,            ,   #T23844)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23844_76)/8) & 0X7F,	(_SCAN_NEW_#T23844_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23844_77)/8) & 0X7F,	(_SCAN_NEW_#T23844_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23843_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23843_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24160
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23844_76)/8) & 0X7F,	(_SCAN_NEW_#T23844_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23844_77)/8) & 0X7F,	(_SCAN_NEW_#T23844_77)%8		; Bank 0
 #L24160
 ;  439:(    ASGN_0,    #T23844 ,            ,       PA1)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23844_76)/8) & 0X7F,	(_SCAN_NEW_#T23844_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23844_77)/8) & 0X7F,	(_SCAN_NEW_#T23844_77)%8		; Bank 0
 	GOTO           	#L24161
 	BCC            	(_PA1_0)/8,	(_PA1_0)%8
 	GOTO           	#L24162
 #L24161
 	BSS            	(_PA1_0)/8,	(_PA1_0)%8
 #L24162
-#line 440	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[2]>>3 & 0x01);
+#line 440	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[2]>>3 & 0x01);
 ;  440:(    RSH_1U, *(SCAN_LED_BUF_L.2) ,          3 ,   #T23867)
 
 ; ITemplate_RSH1_4U
@@ -4301,42 +4303,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24164
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23867_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23867_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23867_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23867_77+0x1) & 0X7F		; Bank 1
 ;  440:(    BAND_2,          1 ,    #T23867 ,   #T23870)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23867_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23867_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23870_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23867_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23870_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23867_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23870_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23870_77+0x1) & 0X7F		; Bank 1
 ;  440:(    CVSI_B,    #T23870 ,            ,   #T23871)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23871_76)/8) & 0X7F,	(_SCAN_NEW_#T23871_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23871_77)/8) & 0X7F,	(_SCAN_NEW_#T23871_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23870_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23870_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24165
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23871_76)/8) & 0X7F,	(_SCAN_NEW_#T23871_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23871_77)/8) & 0X7F,	(_SCAN_NEW_#T23871_77)%8		; Bank 0
 #L24165
 ;  440:(    ASGN_0,    #T23871 ,            ,       PC0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23871_76)/8) & 0X7F,	(_SCAN_NEW_#T23871_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23871_77)/8) & 0X7F,	(_SCAN_NEW_#T23871_77)%8		; Bank 0
 	GOTO           	#L24166
 	BCC            	(_PC0_0)/8,	(_PC0_0)%8
 	GOTO           	#L24167
 #L24166
 	BSS            	(_PC0_0)/8,	(_PC0_0)%8
 #L24167
-#line 441	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[2]>>2 & 0x01);
+#line 441	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[2]>>2 & 0x01);
 ;  441:(    RSH_1U, *(SCAN_LED_BUF_L.2) ,          2 ,   #T23894)
 
 ; ITemplate_RSH1_4U
@@ -4355,143 +4357,143 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24169
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23894_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23894_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23894_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23894_77+0x1) & 0X7F		; Bank 1
 ;  441:(    BAND_2,          1 ,    #T23894 ,   #T23897)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23894_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23894_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23897_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23894_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23897_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23894_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23897_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23897_77+0x1) & 0X7F		; Bank 1
 ;  441:(    CVSI_B,    #T23897 ,            ,   #T23898)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23898_76)/8) & 0X7F,	(_SCAN_NEW_#T23898_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23898_77)/8) & 0X7F,	(_SCAN_NEW_#T23898_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23897_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23897_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24170
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23898_76)/8) & 0X7F,	(_SCAN_NEW_#T23898_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23898_77)/8) & 0X7F,	(_SCAN_NEW_#T23898_77)%8		; Bank 0
 #L24170
 ;  441:(    ASGN_0,    #T23898 ,            ,       PA6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23898_76)/8) & 0X7F,	(_SCAN_NEW_#T23898_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23898_77)/8) & 0X7F,	(_SCAN_NEW_#T23898_77)%8		; Bank 0
 	GOTO           	#L24171
 	BCC            	(_PA6_0)/8,	(_PA6_0)%8
 	GOTO           	#L24172
 #L24171
 	BSS            	(_PA6_0)/8,	(_PA6_0)%8
 #L24172
-#line 442	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(SCAN_LED_BUF_L[2]>>1 & 0x01);
+#line 442	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_7(SCAN_LED_BUF_L[2]>>1 & 0x01);
 ;  442:(    RSH_1U, *(SCAN_LED_BUF_L.2) ,          1 ,   #T23921)
 
 ; ITemplate_RSH1_4U_1
 	BCC            	PSW,	0x0
 	SECTION        	0x1
 	RR             	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_SCAN_NEW_#T23921_76) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23921_77) & 0X7F		; Bank 1
 ; ITemplate_Common_Ext_U
-	CLR            	(_SCAN_NEW_#T23921_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23921_77+0x1) & 0X7F		; Bank 1
 ;  442:(    BAND_2,          1 ,    #T23921 ,   #T23924)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23921_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23921_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23924_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23921_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23924_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23921_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T23924_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23924_77+0x1) & 0X7F		; Bank 1
 ;  442:(    CVSI_B,    #T23924 ,            ,   #T23925)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23925_76)/8) & 0X7F,	(_SCAN_NEW_#T23925_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23925_77)/8) & 0X7F,	(_SCAN_NEW_#T23925_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23924_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23924_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24173
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23925_76)/8) & 0X7F,	(_SCAN_NEW_#T23925_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23925_77)/8) & 0X7F,	(_SCAN_NEW_#T23925_77)%8		; Bank 0
 #L24173
 ;  442:(    ASGN_0,    #T23925 ,            ,       PB0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23925_76)/8) & 0X7F,	(_SCAN_NEW_#T23925_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23925_77)/8) & 0X7F,	(_SCAN_NEW_#T23925_77)%8		; Bank 0
 	GOTO           	#L24174
 	BCC            	(_PB0_0)/8,	(_PB0_0)%8
 	GOTO           	#L24175
 #L24174
 	BSS            	(_PB0_0)/8,	(_PB0_0)%8
 #L24175
-#line 443	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(SCAN_LED_BUF_L[2]& 0x01);
+#line 443	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_8(SCAN_LED_BUF_L[2]& 0x01);
 ;  443:(    BAND_1,          1 , *(SCAN_LED_BUF_L.2) ,   #T23946)
 
 ; ITemplate_BAND1_4
 	SECTION        	0x1
 	MOV            	(_SCAN_LED_BUF_L+0x2) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T23946_76) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T23946_77) & 0X7F		; Bank 1
 ;  443:(    CVUC_B,    #T23946 ,            ,   #T23947)
 
 ; ITemplate_CVUC_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T23947_76)/8) & 0X7F,	(_SCAN_NEW_#T23947_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T23947_77)/8) & 0X7F,	(_SCAN_NEW_#T23947_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T23946_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T23946_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24176
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T23947_76)/8) & 0X7F,	(_SCAN_NEW_#T23947_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T23947_77)/8) & 0X7F,	(_SCAN_NEW_#T23947_77)%8		; Bank 0
 #L24176
 ;  443:(    ASGN_0,    #T23947 ,            ,       PB6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T23947_76)/8) & 0X7F,	(_SCAN_NEW_#T23947_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T23947_77)/8) & 0X7F,	(_SCAN_NEW_#T23947_77)%8		; Bank 0
 	GOTO           	#L24177
 	BCC            	(_PB6_0)/8,	(_PB6_0)%8
 	GOTO           	#L24178
 #L24177
 	BSS            	(_PB6_0)/8,	(_PB6_0)%8
 #L24178
-#line 444	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
+#line 444	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		break;
 ;  444:(       JMP,            ,            ,   #L23474)
 
 ; ITemplate_JMP
 	GOTO           	#L23474
-#line 446	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 3:
+#line 446	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		case 3:
 ;  446:(     LABEL,    #L23948 ,            ,          )
 
 ; ITemplate_LABEL
 #L23948
-#line 447	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(1);
+#line 447	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_0(1);
 ;  447:(    ASGN_0,          1 ,            ,       PC1)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PC1_0)/8,	(_PC1_0)%8
-#line 448	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(1);
+#line 448	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_1(1);
 ;  448:(    ASGN_0,          1 ,            ,       PA5)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA5_0)/8,	(_PA5_0)%8
-#line 449	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(1);
+#line 449	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_2(1);
 ;  449:(    ASGN_0,          1 ,            ,       PA4)
 
 ; ITemplate_SET_0_TMP
 	BSS            	(_PA4_0)/8,	(_PA4_0)%8
-#line 450	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(0);
+#line 450	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ;         	LED_IO_3(0);
 ;  450:(    ASGN_0,          0 ,            ,       PA3)
 
 ; ITemplate_CLR_0_TMP
 	BCC            	(_PA3_0)/8,	(_PA3_0)%8
-#line 452	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[3]>>4 & 0x01);
+#line 452	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_4(SCAN_LED_BUF_L[3]>>4 & 0x01);
 ;  452:(    RSH_1U, *(SCAN_LED_BUF_L.3) ,          4 ,   #T23997)
 
 ; ITemplate_RSH1_4U
@@ -4511,42 +4513,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24180
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T23997_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T23997_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T23997_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T23997_77+0x1) & 0X7F		; Bank 1
 ;  452:(    BAND_2,          1 ,    #T23997 ,   #T24000)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T23997_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T23997_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T24000_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T23997_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T24000_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T23997_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T24000_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T24000_77+0x1) & 0X7F		; Bank 1
 ;  452:(    CVSI_B,    #T24000 ,            ,   #T24001)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T24001_76)/8) & 0X7F,	(_SCAN_NEW_#T24001_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T24001_77)/8) & 0X7F,	(_SCAN_NEW_#T24001_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T24000_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T24000_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24181
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T24001_76)/8) & 0X7F,	(_SCAN_NEW_#T24001_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T24001_77)/8) & 0X7F,	(_SCAN_NEW_#T24001_77)%8		; Bank 0
 #L24181
 ;  452:(    ASGN_0,    #T24001 ,            ,       PA1)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T24001_76)/8) & 0X7F,	(_SCAN_NEW_#T24001_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T24001_77)/8) & 0X7F,	(_SCAN_NEW_#T24001_77)%8		; Bank 0
 	GOTO           	#L24182
 	BCC            	(_PA1_0)/8,	(_PA1_0)%8
 	GOTO           	#L24183
 #L24182
 	BSS            	(_PA1_0)/8,	(_PA1_0)%8
 #L24183
-#line 453	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[3]>>3 & 0x01);
+#line 453	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_5(SCAN_LED_BUF_L[3]>>3 & 0x01);
 ;  453:(    RSH_1U, *(SCAN_LED_BUF_L.3) ,          3 ,   #T24024)
 
 ; ITemplate_RSH1_4U
@@ -4565,42 +4567,42 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24185
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T24024_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T24024_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T24024_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T24024_77+0x1) & 0X7F		; Bank 1
 ;  453:(    BAND_2,          1 ,    #T24024 ,   #T24027)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T24024_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T24024_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T24027_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T24024_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T24027_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T24024_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T24027_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T24027_77+0x1) & 0X7F		; Bank 1
 ;  453:(    CVSI_B,    #T24027 ,            ,   #T24028)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T24028_76)/8) & 0X7F,	(_SCAN_NEW_#T24028_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T24028_77)/8) & 0X7F,	(_SCAN_NEW_#T24028_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T24027_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T24027_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24186
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T24028_76)/8) & 0X7F,	(_SCAN_NEW_#T24028_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T24028_77)/8) & 0X7F,	(_SCAN_NEW_#T24028_77)%8		; Bank 0
 #L24186
 ;  453:(    ASGN_0,    #T24028 ,            ,       PC0)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T24028_76)/8) & 0X7F,	(_SCAN_NEW_#T24028_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T24028_77)/8) & 0X7F,	(_SCAN_NEW_#T24028_77)%8		; Bank 0
 	GOTO           	#L24187
 	BCC            	(_PC0_0)/8,	(_PC0_0)%8
 	GOTO           	#L24188
 #L24187
 	BSS            	(_PC0_0)/8,	(_PC0_0)%8
 #L24188
-#line 454	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[3]>>2 & 0x01);
+#line 454	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 			LED_IO_6(SCAN_LED_BUF_L[3]>>2 & 0x01);
 ;  454:(    RSH_1U, *(SCAN_LED_BUF_L.3) ,          2 ,   #T24051)
 
 ; ITemplate_RSH1_4U
@@ -4619,35 +4621,35 @@ _SCAN_NEW
 	JBS            	PSW,	0x2
 	GOTO           	#L24190
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_SCAN_NEW_#T24051_76		; Bank 1
+	MOVAR          	_SCAN_NEW_#T24051_77		; Bank 1
 ; ITemplate_Common_Ext_U
 	SECTION        	0x1
-	CLR            	(_SCAN_NEW_#T24051_76+0x1) & 0X7F		; Bank 1
+	CLR            	(_SCAN_NEW_#T24051_77+0x1) & 0X7F		; Bank 1
 ;  454:(    BAND_2,          1 ,    #T24051 ,   #T24054)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_#T24051_76) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_#T24051_77) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x1
-	MOVA           	(_SCAN_NEW_#T24054_76) & 0X7F		; Bank 1
-	MOV            	(_SCAN_NEW_#T24051_76+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_SCAN_NEW_#T24054_77) & 0X7F		; Bank 1
+	MOV            	(_SCAN_NEW_#T24051_77+0x1) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x0
-	MOVA           	(_SCAN_NEW_#T24054_76+0x1) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_#T24054_77+0x1) & 0X7F		; Bank 1
 ;  454:(    CVSI_B,    #T24054 ,            ,   #T24055)
 
 ; ITemplate_CVUI_B
 	SECTION        	0x0
-	BCC            	((_SCAN_NEW_#T24055_76)/8) & 0X7F,	(_SCAN_NEW_#T24055_76)%8		; Bank 0
+	BCC            	((_SCAN_NEW_#T24055_77)/8) & 0X7F,	(_SCAN_NEW_#T24055_77)%8		; Bank 0
 	SECTION        	0x1
-	JBS            	(_SCAN_NEW_#T24054_76) & 0X7F,	0x0		; Bank 1
+	JBS            	(_SCAN_NEW_#T24054_77) & 0X7F,	0x0		; Bank 1
 	GOTO           	#L24191
 	SECTION        	0x0
-	BSS            	((_SCAN_NEW_#T24055_76)/8) & 0X7F,	(_SCAN_NEW_#T24055_76)%8		; Bank 0
+	BSS            	((_SCAN_NEW_#T24055_77)/8) & 0X7F,	(_SCAN_NEW_#T24055_77)%8		; Bank 0
 #L24191
 ;  454:(    ASGN_0,    #T24055 ,            ,       PA6)
 
 ; ITemplate_ASGN_0_P
 	SECTION        	0x0
-	JBC            	((_SCAN_NEW_#T24055_76)/8) & 0X7F,	(_SCAN_NEW_#T24055_76)%8		; Bank 0
+	JBC            	((_SCAN_NEW_#T24055_77)/8) & 0X7F,	(_SCAN_NEW_#T24055_77)%8		; Bank 0
 	GOTO           	#L24192
 	BCC            	(_PA6_0)/8,	(_PA6_0)%8
 	GOTO           	#L24193
@@ -4657,147 +4659,147 @@ _SCAN_NEW
 ; 			//LED_IO_7(SCAN_LED_BUF_L[2]& 0x01<<1);
 ; 			//LED_IO_8(SCAN_LED_BUF_L[2]& 0x01);
 ; 		break;
-#line 459	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		}
+#line 459	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		}
 ;  459:(     LABEL,    #L23474 ,            ,          )
 
 ; ITemplate_LABEL
 #L23474
-#line 461	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		cnt++;
+#line 461	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		cnt++;
 ;  461:(     ADD_1,        cnt ,          1 ,       cnt)
 
 ; ITemplate_INC_1_TMP
 	SECTION        	0x1
-	INC            	(_SCAN_NEW_cnt_75) & 0X7F		; Bank 1
-#line 462	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		cnt=cnt%4;
+	INC            	(_SCAN_NEW_cnt_76) & 0X7F		; Bank 1
+#line 462	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; 		cnt=cnt%4;
 ;  462:(    BAND_1,          3 ,        cnt ,       cnt)
 
 ; ITemplate_BAND1_4
-	MOV            	(_SCAN_NEW_cnt_75) & 0X7F,	0x0		; Bank 1
+	MOV            	(_SCAN_NEW_cnt_76) & 0X7F,	0x0		; Bank 1
 	ANDI           	0x3
-	MOVA           	(_SCAN_NEW_cnt_75) & 0X7F		; Bank 1
+	MOVA           	(_SCAN_NEW_cnt_76) & 0X7F		; Bank 1
 ; 	//}
-#line 464	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
+#line 464	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\scan_LED.c ; }
 ;  464:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC44	PSECT	FLAG=0X1088,ADDR=0X7FD41
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC50	PSECT	FLAG=0X1088,ADDR=0X7FD41
 _PA1_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC45	PSECT	FLAG=0X1088,ADDR=0X7FD43
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC51	PSECT	FLAG=0X1088,ADDR=0X7FD43
 _PA3_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC46	PSECT	FLAG=0X1088,ADDR=0X7FD44
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC52	PSECT	FLAG=0X1088,ADDR=0X7FD44
 _PA4_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC47	PSECT	FLAG=0X1088,ADDR=0X7FD45
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC53	PSECT	FLAG=0X1088,ADDR=0X7FD45
 _PA5_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC48	PSECT	FLAG=0X1088,ADDR=0X7FD46
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC54	PSECT	FLAG=0X1088,ADDR=0X7FD46
 _PA6_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC49	PSECT	FLAG=0X1088,ADDR=0X7FD48
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC55	PSECT	FLAG=0X1088,ADDR=0X7FD48
 _PB0_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC50	PSECT	FLAG=0X1088,ADDR=0X7FD4E
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC56	PSECT	FLAG=0X1088,ADDR=0X7FD4E
 _PB6_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC51	PSECT	FLAG=0X1088,ADDR=0X7FD50
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC57	PSECT	FLAG=0X1088,ADDR=0X7FD50
 _PC0_0	RSEG           	0X1		; Bank 0
 
-SECTION8C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC52	PSECT	FLAG=0X1088,ADDR=0X7FD51
+SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC58	PSECT	FLAG=0X1088,ADDR=0X7FD51
 _PC1_0	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c54	IDATA          		0X8A		; Bank 0
+SECTION1ID__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c60	IDATA          		0X92		; Bank 0
 _SCAN_LED_BUF_R	DB             	0XF,0XE4,0XF,0XE4,0XF,0XE4,0XF,0XE4,0XF,0XE4,0XF,0XE4		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC55	PSECT	FLAG=0x88
-_Set_LED_#T20551_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC61	PSECT	FLAG=0x88
+_Set_LED_#T20551_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC56	PSECT	FLAG=0x88
-_Set_LED_#T20561_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC62	PSECT	FLAG=0x88
+_Set_LED_#T20561_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC57	PSECT	FLAG=0x88
-_Set_LED_#T20571_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC63	PSECT	FLAG=0x88
+_Set_LED_#T20571_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC58	PSECT	FLAG=0x88
-_Set_LED_#T20581_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC64	PSECT	FLAG=0x88
+_Set_LED_#T20581_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC59	PSECT	FLAG=0x88
-_Set_LED_#T20591_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC65	PSECT	FLAG=0x88
+_Set_LED_#T20591_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC60	PSECT	FLAG=0x88
-_Set_LED_#T20601_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC66	PSECT	FLAG=0x88
+_Set_LED_#T20601_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC61	PSECT	FLAG=0x88
-_Set_LED_#T20611_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC67	PSECT	FLAG=0x88
+_Set_LED_#T20611_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC62	PSECT	FLAG=0x88
-_Set_LED_#T20621_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC68	PSECT	FLAG=0x88
+_Set_LED_#T20621_45	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC63	PSECT	FLAG=0x88
-_Set_LED_#T20631_44	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC69	PSECT	FLAG=0x88
+_Set_LED_#T20631_45	RSEG           	0X1		; Bank 0
 
-SECTION1IC__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c65	IDATA          		0X86		; Bank 0
+SECTION1ID__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c71	IDATA          		0X8A		; Bank 0
 _SCAN_LED_BUF_L	DB             	0X0,0XE4,0X0,0XE4,0X0,0XE4,0X0,0XE4		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC66	PSECT	FLAG=0x88
-_SCAN_NEW_#T23530_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC72	PSECT	FLAG=0x88
+_SCAN_NEW_#T23530_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC67	PSECT	FLAG=0x88
-_SCAN_NEW_#T23557_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC73	PSECT	FLAG=0x88
+_SCAN_NEW_#T23557_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC68	PSECT	FLAG=0x88
-_SCAN_NEW_#T23584_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC74	PSECT	FLAG=0x88
+_SCAN_NEW_#T23584_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC69	PSECT	FLAG=0x88
-_SCAN_NEW_#T23611_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC75	PSECT	FLAG=0x88
+_SCAN_NEW_#T23611_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC70	PSECT	FLAG=0x88
-_SCAN_NEW_#T23633_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC76	PSECT	FLAG=0x88
+_SCAN_NEW_#T23633_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC71	PSECT	FLAG=0x88
-_SCAN_NEW_#T23687_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC77	PSECT	FLAG=0x88
+_SCAN_NEW_#T23687_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC72	PSECT	FLAG=0x88
-_SCAN_NEW_#T23714_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC78	PSECT	FLAG=0x88
+_SCAN_NEW_#T23714_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC73	PSECT	FLAG=0x88
-_SCAN_NEW_#T23741_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC79	PSECT	FLAG=0x88
+_SCAN_NEW_#T23741_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC74	PSECT	FLAG=0x88
-_SCAN_NEW_#T23768_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC80	PSECT	FLAG=0x88
+_SCAN_NEW_#T23768_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC75	PSECT	FLAG=0x88
-_SCAN_NEW_#T23790_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC81	PSECT	FLAG=0x88
+_SCAN_NEW_#T23790_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC76	PSECT	FLAG=0x88
-_SCAN_NEW_#T23844_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC82	PSECT	FLAG=0x88
+_SCAN_NEW_#T23844_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC77	PSECT	FLAG=0x88
-_SCAN_NEW_#T23871_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC83	PSECT	FLAG=0x88
+_SCAN_NEW_#T23871_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC78	PSECT	FLAG=0x88
-_SCAN_NEW_#T23898_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC84	PSECT	FLAG=0x88
+_SCAN_NEW_#T23898_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC79	PSECT	FLAG=0x88
-_SCAN_NEW_#T23925_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC85	PSECT	FLAG=0x88
+_SCAN_NEW_#T23925_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC80	PSECT	FLAG=0x88
-_SCAN_NEW_#T23947_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC86	PSECT	FLAG=0x88
+_SCAN_NEW_#T23947_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC81	PSECT	FLAG=0x88
-_SCAN_NEW_#T24001_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC87	PSECT	FLAG=0x88
+_SCAN_NEW_#T24001_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC82	PSECT	FLAG=0x88
-_SCAN_NEW_#T24028_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC88	PSECT	FLAG=0x88
+_SCAN_NEW_#T24028_77	RSEG           	0X1		; Bank 0
 
-SECTION0C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC83	PSECT	FLAG=0x88
-_SCAN_NEW_#T24055_76	RSEG           	0X1		; Bank 0
+SECTION0D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC89	PSECT	FLAG=0x88
+_SCAN_NEW_#T24055_77	RSEG           	0X1		; Bank 0
 
-SECTION1C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0XF6		; Bank 0
-_SCAN_NEW_cnt_75	RSEG           	0X1		; Bank 0
+SECTION1D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC	UNINTIAL       	0		; Bank 0
+	ORG            	0XFE		; Bank 0
+_SCAN_NEW_cnt_76	RSEG           	0X1		; Bank 0
 	END

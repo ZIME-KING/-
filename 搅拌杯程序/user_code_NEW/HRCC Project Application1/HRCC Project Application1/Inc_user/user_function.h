@@ -10,7 +10,7 @@ void ADC_dis_init();
 
 void UART_send(uchar *str,uchar ch,uint value);
 
-
+void User_Get_measure_Val_10ms();
 //void Get_ADC_Val(*unsigned int Vbat_val,*unsigned int Temp_val);
 void Send_test();
 void User_Get_measure_Val();

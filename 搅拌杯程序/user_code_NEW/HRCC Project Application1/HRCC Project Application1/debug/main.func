@@ -31,9 +31,6 @@ LED_Task
 Set_PWM_CH0_Duty
 0
 4
-Set_PWM_CH1_Duty
-0
-4
 Sleep_Tsak
 0
 0

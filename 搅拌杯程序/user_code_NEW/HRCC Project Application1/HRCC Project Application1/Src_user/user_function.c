@@ -35,7 +35,7 @@ uchar str[] = "通道 的转换值为:    \r\n\0";
 #define B 3950.0//温度系数
 #define TN 298.15//额定温度(绝对温度加常温:273.15+25)
 #define RN 100// 额定阻值(绝对温度时的电阻值100k)
-#define RES 330// 分压电阻200K
+#define RES 330// 分压电阻200K/330k
 #define BaseVol  2.048 //ADC基准电压
 
 float vcc_val;
@@ -289,17 +289,21 @@ void _f(int a[],char len)
         //printf("%d\x20", a[x]);
 }
 
-static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
-		unsigned int i;
+static void Get_ADC_Val_Vbat(unsigned int *Vbat_val){
+
 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
-		ADCCL &= 0x4F;      //选择通道4
+		ADCCL &= 0x4F;      //选择通道
 
 		adc_value = ADC_convert();
 		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
 		    adc_value -= offset_value;
 		else
 		    adc_value = 0;
-			*Vbat_val=adc_value;
+		*Vbat_val=adc_value;
+}
+
+static void Get_ADC_Val_Temp(unsigned int *Temp_val){
+
 		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
 		ADCCL &= 0x9F;		//选择通道9
 		adc_value = ADC_convert();
@@ -309,63 +313,115 @@ static void Get_ADC_Val(unsigned int *Vbat_val,unsigned int *Temp_val){
 		    adc_value = 0;
 		*Temp_val=adc_value;
 }
+
+
+static unsigned int Vbat_adc_val[10],Temp_adc_val[20];
+
 void User_Get_measure_Val(){
-		static unsigned int Vbat_adc_val[20],Temp_adc_val[20];
 		static char i=0;
+		static char ii=0;
 		i=i%20; 
-		Get_ADC_Val(&Vbat_adc_val[i],&Temp_adc_val[i]);
+		ii=ii%10; 
+			    
+		Get_ADC_Val_Temp(&Temp_adc_val[i]);
 		i++;
 		if(i==19){
-			_f(Vbat_adc_val,20);	//
 			_f(Temp_adc_val,20);	//
-		//电量值
-		if(USB_Check() && global_count>10000 ){
-					static unsigned int count;
-					count++;
-					if(count>54){   //108s ++
-						count=0;
-						Vbat_val++;
-					}
-				if(Vbat_val>99) Vbat_val=99;
-				if(Vbat_val<0) Vbat_val=0;		
+			temperature=Get_Tempture(Temp_adc_val[10]);
 		}
-		else{
-			if(State_flag!=2){
-				vcc_val=4*2.048*Vbat_adc_val[10]/4096;
-				if(vcc_val>4.2) vcc_val=4.2;
-				if(vcc_val<3.5) vcc_val=3.5;
-				Vbat_val=(vcc_val-3.5)*100/(4.2-3.5);
-				//if(Vbat_val>99) Vbat_val=99;
-				//if(Vbat_val<0) Vbat_val=0;
-			}
-			else{
-			}
+		//开机测量
+		if (global_count<10000){
+			Get_ADC_Val_Vbat(&Vbat_adc_val[ii]);
+			ii++;
+				if(ii==9){
+					_f(Vbat_adc_val,10);	//
+					vcc_val=4*2.048*Vbat_adc_val[5]/4096;
+					if(vcc_val>4.15) vcc_val=4.15;
+					if(vcc_val<3.5) vcc_val=3.5;
+					Vbat_val=(vcc_val-3.5)*100/(4.15-3.5);
+
+					//GIE=0;
+					//UART_send(str,8,Vbat_val);
+					//UART_send(str,9,vcc_val*1000);
+					//GIE=1;
+				}
 		}
 		#ifdef UART_TEST
-			//GIE=0;
-			//UART_send(str,'A',Vbat_val);
-			//UART_send(str,'B',vcc_val*1000);
+			GIE=0;
+			UART_send(str,('A'-'0'),Vbat_val);
+			UART_send(str,('B'-'0'),vcc_val*1000);
 			
-			//GIE=1;
-			//float a;
+			GIE=1;
+			float a;
 
-			//a=Get_Tempture(Temp_adc_val[10]);
-			//GIE=0;
-			//UART_send(str,1,Temp_adc_val[10]);
-			//UART_send(str,1,RT*10);
-			//UART_send(str,0,a*100);
-			//GIE=1;
+			a=Get_Tempture(Temp_adc_val[10]);
+			GIE=0;
+			UART_send(str,1,Temp_adc_val[5]);
+			UART_send(str,1,RT*10);
+			UART_send(str,0,a*100);
+			GIE=1;
 		#endif
 
-
-
 		//温度
-
 		//if(Temp_adc_val[10]<4000){
-			temperature=Get_Tempture(Temp_adc_val[10]);
+		//	temperature=Get_Tempture(Temp_adc_val[10]);
 		//}	//temperature=adc_value/1000*10+(adc_value/100)%10;
 		//else{
 		//	temperature=0xff;
 		//}
-	}
 }
+
+void User_Get_measure_Val_10ms(){		
+				//正常
+		if(global_count>10000 ){
+					static unsigned int count;
+					count++;
+					if(count>=100){
+						count=0;
+					}
+					if(count==0){
+						PA7=0;
+					}
+					if(count<10){
+						Get_ADC_Val_Vbat(&Vbat_adc_val[count]);
+					}
+					else if(count==10){
+						PA7=1;
+						_f(Vbat_adc_val,10);
+						if(State_flag!=2){
+							vcc_val=4*2.048*Vbat_adc_val[5]/4096;
+							if(vcc_val>4.15) vcc_val=4.15;
+							if(vcc_val<3.5) vcc_val=3.5;
+							Vbat_val=(vcc_val-3.5)*100/(4.15-3.5);
+				
+							//GIE=0;
+							//UART_send(str,1,Vbat_val);
+							//UART_send(str,2,vcc_val*1000);
+							//GIE=1;
+						}
+					}
+		}
+}
+		
+		//if(USB_Check() && global_count>10000 ){
+					//static unsigned int count;
+					//count++;
+					//if(count>54){   //108s ++
+						//count=0;
+						//Vbat_val++;
+					//}
+				//if(Vbat_val>99) Vbat_val=99;
+				//if(Vbat_val<0) Vbat_val=0;		
+		//}
+		//else{
+			//if(State_flag!=2){
+				//vcc_val=4*2.048*Vbat_adc_val[10]/4096;
+				//if(vcc_val>4.2) vcc_val=4.2;
+				//if(vcc_val<3.5) vcc_val=3.5;
+				//Vbat_val=(vcc_val-3.5)*100/(4.2-3.5);
+				////if(Vbat_val>99) Vbat_val=99;
+				////if(Vbat_val<0) Vbat_val=0;
+			//}
+			//else{
+			//}
+		//}

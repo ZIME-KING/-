@@ -2,12 +2,14 @@
 #include <hic.h>
 #include "main.h"
 
-unsigned long global_count;//全局时间计数1ms ++
+unsigned long global_count=0;//全局时间计数1ms ++
 unsigned char State_flag=1;//运行状态
-unsigned int  sleep_count;//休眠时间计数
-unsigned char buzzer_flag;//蜂鸣器启动标记
+unsigned int  sleep_count=0;//休眠时间计数
+unsigned char buzzer_flag=0;//蜂鸣器启动标记
 char temperature;//温度值 0~99
 unsigned char Vbat_val;   //电量%  0~99
+
+#define NEW_CODE
 
 unsigned char display_buf[18]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//显示缓存 display_buf[1-1]=1； 1号LED亮
 unsigned long Get_Sys_time(){
@@ -124,19 +126,21 @@ void Timer_T21_Init(){
 	unsigned int ch1_duty=500;
 	T21CL = 0xC0;        //多精度pwm模式
     T21CM = 0x3F;        //T21_CH0输出低有效、T21_CH1输出低有效，预分频1:16
-    T21OC = 0x45;        //T21_CH0，T21_CH1,开启在PA0，PA7上，PWM时钟源选择INTHRC
+   // T21OC = 0x45;        //T21_CH0，T21_CH1,开启在PA0，PA7上，PWM时钟源选择INTHRC
+    T21OC = 0x41;        //T21_CH0,开启在PA0，PWM时钟源选择INTHRC
    
+
     T21PH = 4000 >> 8;        //pwm周期
     T21PL = 4000 & 0xFF;
 
 	ch0_duty=4000;
-	ch1_duty=4000;
+//	ch1_duty=4000;
 
     T21R0H = ch0_duty >>8 ;       //pwm0占空比
     T21R0L = ch0_duty & 0xFF;
 
-    T21R1H = ch1_duty >>8;		//pwm1占空比
-    T21R1L = ch1_duty & 0xFF;
+//    T21R1H = ch1_duty >>8;		//pwm1占空比
+//   T21R1L = ch1_duty & 0xFF;
     
 	T21TR = 1;           //启动pwm输出
     T21PIE = 1;          //打开T21周期2中断    
@@ -370,12 +374,12 @@ void state_3(){
 //电机关 开灯
 void state_1(){
 	Set_PWM_CH0_Duty(4000);
-	Set_PWM_CH1_Duty(4000);
+	//Set_PWM_CH1_Duty(4000);
 }
 
 //电机开
 void state_2(){
-	Set_PWM_CH1_Duty(0);
+	//Set_PWM_CH1_Duty(0);
 	Set_PWM_CH0_Duty(400);
 }
 void State_Ruun(){
@@ -400,6 +404,8 @@ void user_delay(){
 unsigned int i=4000;
 while(i--);
 }
+
+
 void main(void) 
 {
 	//RAMclear();
@@ -413,7 +419,7 @@ void main(void)
 	Buzzer_Init();
 	LED_Clear();
 	PB3=1;
-
+//Uart_Init();
 #ifdef UART_TEST
 	Uart_Init();
 #endif
@@ -421,6 +427,7 @@ void main(void)
 	int iii=110;
 	while(iii--){
 		user_delay();
+		//user_delay();
 		User_Get_measure_Val();
 	}
 	if(Vbat_val==0 && USB_Check()==0){
@@ -435,6 +442,11 @@ void main(void)
 
 	while (1)
     {
+		if(CompareTime(&Task_10)){
+			GetTime(&Task_10);
+			//User_Get_measure_Val_10ms();	
+		}
+
 	  if(CompareTime(&Task_50)){
 			GetTime(&Task_50);
 			Buzzer_Task();
@@ -463,6 +475,9 @@ void main(void)
 	  }
 	  if(CompareTime(&Task_100)){
 		  GetTime(&Task_100);
+
+		  User_Get_measure_Val_10ms();
+
 		  User_Get_measure_Val();		//ADC测量
 		  State_Ruun();					//状态运行
 
@@ -470,10 +485,10 @@ void main(void)
 		    unsigned char str[]="状态 的转换值为:    \r\n\0";
 		    unsigned char str1[]="声音 的转换值为:    \r\n\0";
 
-			GIE=0;
-			UART_send(str,1,State_flag);
-			UART_send(str1,1,buzzer_flag);
-			GIE=1;
+			//GIE=0;
+			//UART_send(str,1,State_flag);
+			//UART_send(str1,1,buzzer_flag);
+			//GIE=1;
 		#endif
 
 		  if(USB_Check()==1){
@@ -483,6 +498,9 @@ void main(void)
 	  }
 	  if(CompareTime(&Task_1000)){
 		  GetTime(&Task_1000);
+		  // unsigned char str[]="状态 的转换值为:    \r\n\0";
+		  //UART_send(str,1,State_flag);
+
 			Sleep_Tsak();
 			if(Get_State()!=3){
 				LED_Task();

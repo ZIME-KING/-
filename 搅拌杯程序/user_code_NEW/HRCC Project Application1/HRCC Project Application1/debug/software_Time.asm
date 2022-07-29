@@ -10,6 +10,7 @@
 	EXTERN         	_ADC_dis_init
 	EXTERN         	_UART_send
 	EXTERN         	_UART_sendDATA
+	EXTERN         	_User_Get_measure_Val_10ms
 	EXTERN         	_Send_test
 	EXTERN         	_User_Get_measure_Val
 	EXTERN         	_vcc_val
@@ -18,6 +19,7 @@
 	EXTERN         	_Tmp
 	PUBLIC         	_Task_1
 	PUBLIC         	_Task_5
+	PUBLIC         	_Task_10
 	PUBLIC         	_Task_50
 	PUBLIC         	_Task_100
 	PUBLIC         	_Task_200
@@ -93,12 +95,12 @@
 	EXTERN         	_Vbat_val
 	EXTERN         	_global_count
 	EXTERN         	_USB_Check
-_GetTime_#T20372_45	EQU            	_GetTimeDATA + 0X2		; Bank 0
-_CompareTime_#T20378_47	EQU            	_CompareTimeDATA + 0X2		; Bank 0
-_CompareTime_#T20399_47	EQU            	_CompareTimeDATA + 0X6		; Bank 0
-_CompareTime_#T20409_47	EQU            	_CompareTimeDATA + 0X8		; Bank 0
-_CompareTime_#T20410_47	EQU            	_CompareTimeDATA + 0XA		; Bank 0
-_CompareTime_#T20412_47	EQU            	_CompareTimeDATA + 0X0		; Bank 0
+_GetTime_#T20384_46	EQU            	_GetTimeDATA + 0X2		; Bank 0
+_CompareTime_#T20390_48	EQU            	_CompareTimeDATA + 0X2		; Bank 0
+_CompareTime_#T20411_48	EQU            	_CompareTimeDATA + 0X6		; Bank 0
+_CompareTime_#T20421_48	EQU            	_CompareTimeDATA + 0X8		; Bank 0
+_CompareTime_#T20422_48	EQU            	_CompareTimeDATA + 0XA		; Bank 0
+_CompareTime_#T20424_48	EQU            	_CompareTimeDATA + 0X0		; Bank 0
 #TMP	EQU            	?_TMP+ 0X4		; Bank 0
 ?_TMP_RET	EQU            	?_TMP		; Bank 0
 _MULA_0#sh	EQU            	(MULA - 0X6080) % 0X40 + 0xC0		; Bank 0
@@ -131,6 +133,7 @@ _SetTime
 ; #include "../inc_user/software_Time.h"
 ;  TIME_TYPE_ST Task_1;
 ;  TIME_TYPE_ST Task_5;
+;  TIME_TYPE_ST Task_10;
 ;  TIME_TYPE_ST Task_50;
 ;  TIME_TYPE_ST Task_100;
 ;  TIME_TYPE_ST Task_200;
@@ -141,9 +144,9 @@ _SetTime
 ;  //static attribute((constructor)) void SetTime();
 ; //è®¾å®šé—´éš”æ—¶é—´
 ; void SetTime(){
-#line 26	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_1.TimeInter     = 1;//è®¾å®šé—´éš”æ—¶é—´
+#line 27	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_1.TimeInter     = 1;//è®¾å®šé—´éš”æ—¶é—´
 	CLR            	BKSR
-;   26:(    ASGN_4,          1 ,            ,*(Task_1.4))
+;   27:(    ASGN_4,          1 ,            ,*(Task_1.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x1
@@ -155,8 +158,8 @@ _SetTime
 	MOVA           	(_Task_1+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_1+0x7) & 0X7F		; Bank 2
-#line 27	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_5.TimeInter      = 5;
-;   27:(    ASGN_4,          5 ,            ,*(Task_5.4))
+#line 28	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_5.TimeInter     = 5;
+;   28:(    ASGN_4,          5 ,            ,*(Task_5.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x5
@@ -167,8 +170,20 @@ _SetTime
 	MOVA           	(_Task_5+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_5+0x7) & 0X7F		; Bank 2
-#line 28	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_50.TimeInter    = 50;
-;   28:(    ASGN_4,         50 ,            ,*(Task_50.4))
+#line 29	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_10.TimeInter    = 10;
+;   29:(    ASGN_4,         10 ,            ,*(Task_10.4))
+
+; ITemplate_ASGN1_4
+	MOVI           	0xa
+	MOVA           	(_Task_10+0x4) & 0X7F		; Bank 2
+	MOVI           	0x0
+	MOVA           	(_Task_10+0x5) & 0X7F		; Bank 2
+	MOVI           	0x0
+	MOVA           	(_Task_10+0x6) & 0X7F		; Bank 2
+	MOVI           	0x0
+	MOVA           	(_Task_10+0x7) & 0X7F		; Bank 2
+#line 30	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_50.TimeInter    = 50;
+;   30:(    ASGN_4,         50 ,            ,*(Task_50.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x32
@@ -179,8 +194,8 @@ _SetTime
 	MOVA           	(_Task_50+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_50+0x7) & 0X7F		; Bank 2
-#line 29	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_100.TimeInter   = 100;
-;   29:(    ASGN_4,        100 ,            ,*(Task_100.4))
+#line 31	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_100.TimeInter   = 100;
+;   31:(    ASGN_4,        100 ,            ,*(Task_100.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0x64
@@ -191,8 +206,8 @@ _SetTime
 	MOVA           	(_Task_100+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_100+0x7) & 0X7F		; Bank 2
-#line 30	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_200.TimeInter   = 200;
-;   30:(    ASGN_4,        200 ,            ,*(Task_200.4))
+#line 32	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_200.TimeInter   = 200;
+;   32:(    ASGN_4,        200 ,            ,*(Task_200.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0xc8
@@ -203,8 +218,8 @@ _SetTime
 	MOVA           	(_Task_200+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_200+0x7) & 0X7F		; Bank 2
-#line 31	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_500.TimeInter   = 500;
-;   31:(    ASGN_4,        500 ,            ,*(Task_500.4))
+#line 33	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_500.TimeInter   = 500;
+;   33:(    ASGN_4,        500 ,            ,*(Task_500.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0xf4
@@ -215,8 +230,8 @@ _SetTime
 	MOVA           	(_Task_500+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_500+0x7) & 0X7F		; Bank 2
-#line 32	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_1000.TimeInter  = 1000;
-;   32:(    ASGN_4,       1000 ,            ,*(Task_1000.4))
+#line 34	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; 	Task_1000.TimeInter  = 1000;
+;   34:(    ASGN_4,       1000 ,            ,*(Task_1000.4))
 
 ; ITemplate_ASGN1_4
 	MOVI           	0xe8
@@ -227,8 +242,8 @@ _SetTime
 	MOVA           	(_Task_1000+0x6) & 0X7F		; Bank 2
 	MOVI           	0x0
 	MOVA           	(_Task_1000+0x7) & 0X7F		; Bank 2
-#line 33	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; }
-;   33:(       RET,            ,            ,          )
+#line 35	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; }
+;   35:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	SECTION        	0x0
@@ -236,23 +251,23 @@ _SetTime
 	_DESC          	GetTime,0X4,0X0,Get_Sys_time
 
 SECTION1GetTime	UNINTIAL       	0		; Bank 0
-	ORG            	0XBD		; Bank 0
+	ORG            	0XC5		; Bank 0
 _GetTimeDATA	RSEG           	0X4		; Bank 0
 GetTime#	CSEG           
 _GetTime
 ; void GetTime(TIME_TYPE_ST *TimeType)
 ; {
-#line 36	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ;     TimeType->TimeStart = Get_Sys_time();//èŽ·å–èµ·å§‹æ—¶é—´
+#line 38	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ;     TimeType->TimeStart = Get_Sys_time();//èŽ·å–èµ·å§‹æ—¶é—´
 	CLR            	BKSR
-;   36:(    ASGN_1,   TimeType ,            ,   #T20372)
+;   38:(    ASGN_1,   TimeType ,            ,   #T20384)
 
 ; ITemplate_ASGN1_4_R
 	SECTION        	0x1
 	MOV            	(_GetTimeDATA+0X0+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetTime_#T20372_45+0x1) & 0X7F		; Bank 1
+	MOVA           	(_GetTime_#T20384_46+0x1) & 0X7F		; Bank 1
 	MOV            	(_GetTimeDATA+0X0) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_GetTime_#T20372_45) & 0X7F		; Bank 1
-;   36:(     CALLR, (Get_Sys_time.0) ,            ,  *#T20372)
+	MOVA           	(_GetTime_#T20384_46) & 0X7F		; Bank 1
+;   38:(     CALLR, (Get_Sys_time.0) ,            ,  *#T20384)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_Sys_time
@@ -266,9 +281,9 @@ _GetTime
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVA           	(?_TMP+0x3) & 0X7F		; Bank 0
 ; ITemplate_SetRamRef
-	MOVRA          	_GetTime_#T20372_45+0x1		; Bank 1
+	MOVRA          	_GetTime_#T20384_46+0x1		; Bank 1
 	MOVA           	IAAH
-	MOVRA          	_GetTime_#T20372_45		; Bank 1
+	MOVRA          	_GetTime_#T20384_46		; Bank 1
 	MOVA           	IAAL
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	MOVA           	IAD
@@ -281,58 +296,58 @@ _GetTime
 	ISTEP          	0x1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
 	MOVA           	IAD
-#line 37	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; }
-;   37:(       RET,            ,            ,          )
+#line 39	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ; }
+;   39:(       RET,            ,            ,          )
 
 ; ITemplate_RET
 	RET            			; Bank 0		; ShBank 0
 	_DESC          	CompareTime,0X4,0X0,Get_Sys_time
 
 SECTION1CompareTime	UNINTIAL       	0		; Bank 0
-	ORG            	0XBD		; Bank 0
+	ORG            	0XC5		; Bank 0
 _CompareTimeDATA	RSEG           	0XE		; Bank 0
 CompareTime#	CSEG           
 _CompareTime
 ;  
 ; uint8_t CompareTime(TIME_TYPE_ST *TimeType)//æ¯éš”1æ¯«ç§’ï¼Œè®¡æ•°å™¨å°±ä¼šå¢žåŠ 1
 ; {
-#line 41	C:\Users\king\Desktop\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ;     return ((Get_Sys_time()-TimeType->TimeStart) >= TimeType->TimeInter);
+#line 43	D:\Developmentfolder\Mixing_cup\½Á°è±­³ÌÐò\user_code_NEW\HRCC Project Application1\HRCC Project Application1\Src_user\software_Time.c ;     return ((Get_Sys_time()-TimeType->TimeStart) >= TimeType->TimeInter);
 	CLR            	BKSR
-;   41:(     CALLR, (Get_Sys_time.0) ,            ,   #T20378)
+;   43:(     CALLR, (Get_Sys_time.0) ,            ,   #T20390)
 
 ; ITemplate_CALL
 	SEGMENTSEL     	_Get_Sys_time
 	CALL           	_Get_Sys_time		; Bank 0		; ShBank 0
 	SEGMENTSEL     	$
-	MOVAR          	_CompareTime_#T20378_47		; Bank 1
+	MOVAR          	_CompareTime_#T20390_48		; Bank 1
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_CompareTime_#T20378_47+0x1		; Bank 1
+	MOVAR          	_CompareTime_#T20390_48+0x1		; Bank 1
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_CompareTime_#T20378_47+0x2		; Bank 1
+	MOVAR          	_CompareTime_#T20390_48+0x2		; Bank 1
 	MOV            	(?_TMP+0x3) & 0X7F,	0x0		; Bank 0
-	MOVAR          	_CompareTime_#T20378_47+0x3		; Bank 1
-;   41:(    ASGN_1,   TimeType ,            ,   #T20399)
+	MOVAR          	_CompareTime_#T20390_48+0x3		; Bank 1
+;   43:(    ASGN_1,   TimeType ,            ,   #T20411)
 
 ; ITemplate_ASGN1_4_R
 	MOVRA          	_CompareTimeDATA+0X0+0x1		; Bank 1
-	MOVAR          	_CompareTime_#T20399_47+0x1		; Bank 1
+	MOVAR          	_CompareTime_#T20411_48+0x1		; Bank 1
 	MOVRA          	_CompareTimeDATA+0X0		; Bank 1
-	MOVAR          	_CompareTime_#T20399_47		; Bank 1
-;   41:(     ADD_2,   TimeType ,          4 ,   #T20409)
+	MOVAR          	_CompareTime_#T20411_48		; Bank 1
+;   43:(     ADD_2,   TimeType ,          4 ,   #T20421)
 
 ; ITemplate_ADD1_4
 	MOVRA          	_CompareTimeDATA+0X0		; Bank 1
 	ADDI           	0x4
-	MOVAR          	_CompareTime_#T20409_47		; Bank 1
+	MOVAR          	_CompareTime_#T20421_48		; Bank 1
 	MOVRA          	_CompareTimeDATA+0X0+0x1		; Bank 1
 	ADDCI          	0x0
-	MOVAR          	_CompareTime_#T20409_47+0x1		; Bank 1
-;   41:(     SUB_4,    #T20378 ,   *#T20399 ,   #T20410)
+	MOVAR          	_CompareTime_#T20421_48+0x1		; Bank 1
+;   43:(     SUB_4,    #T20390 ,   *#T20411 ,   #T20422)
 
 ; ITemplate_GetRamRef
-	MOVRA          	_CompareTime_#T20399_47+0x1		; Bank 1
+	MOVRA          	_CompareTime_#T20411_48+0x1		; Bank 1
 	MOVA           	IAAH
-	MOVRA          	_CompareTime_#T20399_47		; Bank 1
+	MOVRA          	_CompareTime_#T20411_48		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVA           	(?_TMP) & 0X7F		; Bank 0
@@ -348,23 +363,23 @@ _CompareTime
 ; ITemplate_SUB1_4
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20378_47) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_47) & 0X7F		; Bank 1
+	SUB            	(_CompareTime_#T20390_48) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20422_48) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x1		; Bank 0
-	SUBC           	(_CompareTime_#T20378_47+0x1) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_47+0x1) & 0X7F		; Bank 1
+	SUBC           	(_CompareTime_#T20390_48+0x1) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20422_48+0x1) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x2		; Bank 0
-	SUBC           	(_CompareTime_#T20378_47+0x2) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_47+0x2) & 0X7F		; Bank 1
+	SUBC           	(_CompareTime_#T20390_48+0x2) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20422_48+0x2) & 0X7F		; Bank 1
 	MOVRA          	?_TMP+0x3		; Bank 0
-	SUBC           	(_CompareTime_#T20378_47+0x3) & 0X7F,	0x0		; Bank 1
-	MOVA           	(_CompareTime_#T20410_47+0x3) & 0X7F		; Bank 1
-;   41:(    JLT_4U,    #T20410 ,   *#T20409 ,   #L20384)
+	SUBC           	(_CompareTime_#T20390_48+0x3) & 0X7F,	0x0		; Bank 1
+	MOVA           	(_CompareTime_#T20422_48+0x3) & 0X7F		; Bank 1
+;   43:(    JLT_4U,    #T20422 ,   *#T20421 ,   #L20396)
 
 ; ITemplate_GetRamRef
-	MOV            	(_CompareTime_#T20409_47+0x1) & 0X7F,	0x0		; Bank 1
+	MOV            	(_CompareTime_#T20421_48+0x1) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAH
-	MOV            	(_CompareTime_#T20409_47) & 0X7F,	0x0		; Bank 1
+	MOV            	(_CompareTime_#T20421_48) & 0X7F,	0x0		; Bank 1
 	MOVA           	IAAL
 	MOV            	IAD,	0x0
 	MOVAR          	?_TMP		; Bank 0
@@ -379,70 +394,72 @@ _CompareTime
 	MOVAR          	?_TMP+0x3		; Bank 0
 ; ITemplate_JLT1_4U
 	MOVRA          	?_TMP+0x3		; Bank 0
-	SUB            	(_CompareTime_#T20410_47+0x3) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20422_48+0x3) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L20415
+	GOTO           	#L20427
 	SECTION        	0x0
 	MOV            	(?_TMP+0x2) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20410_47+0x2) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20422_48+0x2) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L20415
+	GOTO           	#L20427
 	SECTION        	0x0
 	MOV            	(?_TMP+0x1) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20410_47+0x1) & 0X7F,	0x0		; Bank 1
+	SUB            	(_CompareTime_#T20422_48+0x1) & 0X7F,	0x0		; Bank 1
 	JBS            	PSW,	0x2
-	GOTO           	#L20415
+	GOTO           	#L20427
 	SECTION        	0x0
 	MOV            	(?_TMP) & 0X7F,	0x0		; Bank 0
 	SECTION        	0x1
-	SUB            	(_CompareTime_#T20410_47) & 0X7F,	0x0		; Bank 1
-#L20415
+	SUB            	(_CompareTime_#T20422_48) & 0X7F,	0x0		; Bank 1
+#L20427
 	JBS            	PSW,	0x0
-	GOTO           	#L20384
-;   41:(    ASGN_1,          1 ,            ,   #T20412)
+	GOTO           	#L20396
+;   43:(    ASGN_1,          1 ,            ,   #T20424)
 
 ; ITemplate_ASGN1_4_R
 	MOVI           	0x1
-	MOVA           	(_CompareTime_#T20412_47) & 0X7F		; Bank 1
-;   41:(       JMP,            ,            ,   #L20413)
+	MOVA           	(_CompareTime_#T20424_48) & 0X7F		; Bank 1
+;   43:(       JMP,            ,            ,   #L20425)
 
 ; ITemplate_JMP
-	GOTO           	#L20413
-;   41:(     LABEL,    #L20384 ,            ,          )
+	GOTO           	#L20425
+;   43:(     LABEL,    #L20396 ,            ,          )
 
 ; ITemplate_LABEL
-#L20384
-;   41:(    ASGN_1,          0 ,            ,   #T20412)
+#L20396
+;   43:(    ASGN_1,          0 ,            ,   #T20424)
 
 ; ITemplate_CLR1_4_TMP
-	CLR            	(_CompareTime_#T20412_47) & 0X7F		; Bank 1
-;   41:(     LABEL,    #L20413 ,            ,          )
+	CLR            	(_CompareTime_#T20424_48) & 0X7F		; Bank 1
+;   43:(     LABEL,    #L20425 ,            ,          )
 
 ; ITemplate_LABEL
-#L20413
-;   41:(     RET_1,    #T20412 ,            ,      #RET)
+#L20425
+;   43:(     RET_1,    #T20424 ,            ,      #RET)
 
 ; ITemplate_RET2_N
-	MOV            	(_CompareTime_#T20412_47) & 0X7F,	0x0		; Bank 1
+	MOV            	(_CompareTime_#T20424_48) & 0X7F,	0x0		; Bank 1
 	MOVAR          	?_TMP_RET		; Bank 0
 	SECTION        	0x0
 	RET            			; Bank 0		; ShBank 0
 
-SECTION2C__Users_king_Desktop_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_software_Time_c_STATIC	UNINTIAL       	0		; Bank 0
+SECTION2D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_software_Time_c_STATIC	UNINTIAL       	0		; Bank 0
 	ORG            	0X120		; Bank 0
 _Task_1	RSEG           	0X8		; Bank 0
-	ORG            	0X140		; Bank 0
-_Task_5	RSEG           	0X8		; Bank 0
 	ORG            	0X148		; Bank 0
-_Task_50	RSEG           	0X8		; Bank 0
+_Task_5	RSEG           	0X8		; Bank 0
 	ORG            	0X128		; Bank 0
-_Task_100	RSEG           	0X8		; Bank 0
-	ORG            	0X138		; Bank 0
-_Task_200	RSEG           	0X8		; Bank 0
+_Task_10	RSEG           	0X8		; Bank 0
 	ORG            	0X150		; Bank 0
-_Task_500	RSEG           	0X8		; Bank 0
+_Task_50	RSEG           	0X8		; Bank 0
 	ORG            	0X130		; Bank 0
+_Task_100	RSEG           	0X8		; Bank 0
+	ORG            	0X140		; Bank 0
+_Task_200	RSEG           	0X8		; Bank 0
+	ORG            	0X158		; Bank 0
+_Task_500	RSEG           	0X8		; Bank 0
+	ORG            	0X138		; Bank 0
 _Task_1000	RSEG           	0X8		; Bank 0
 	END

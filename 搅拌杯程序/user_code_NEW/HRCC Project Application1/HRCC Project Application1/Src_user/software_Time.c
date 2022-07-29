@@ -9,6 +9,7 @@
 
  TIME_TYPE_ST Task_1;
  TIME_TYPE_ST Task_5;
+ TIME_TYPE_ST Task_10;
  TIME_TYPE_ST Task_50;
  TIME_TYPE_ST Task_100;
  TIME_TYPE_ST Task_200;
@@ -24,7 +25,8 @@
 //设定间隔时间
 void SetTime(){
 	Task_1.TimeInter     = 1;//设定间隔时间
-	Task_5.TimeInter      = 5;
+	Task_5.TimeInter     = 5;
+	Task_10.TimeInter    = 10;
 	Task_50.TimeInter    = 50;
 	Task_100.TimeInter   = 100;
 	Task_200.TimeInter   = 200;

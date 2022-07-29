@@ -256,7 +256,7 @@ _FRAL_0#sh	EQU            	(FRAL - 0X6080) % 0X40 + 0xC0		; Bank 0
 	_DESC          	eval_poly,0X13,0X0
 
 SECTION1eval_poly	UNINTIAL       	0		; Bank 0
-	ORG            	0XDD		; Bank 0
+	ORG            	0XE5		; Bank 0
 _eval_polyDATA	RSEG           	0X14		; Bank 0
 eval_poly#	CSEG           
 _eval_poly
@@ -503,7 +503,7 @@ _eval_poly
 	_DESC          	frexp,0X5,0X0
 
 SECTION1frexp	UNINTIAL       	0		; Bank 0
-	ORG            	0XDD		; Bank 0
+	ORG            	0XE5		; Bank 0
 _frexpDATA	RSEG           	0XA		; Bank 0
 frexp#	CSEG           
 _frexp
@@ -640,7 +640,7 @@ _frexp
 	_DESC          	log,0XF,0X0,frexp,eval_poly
 
 SECTION1log	UNINTIAL       	0		; Bank 0
-	ORG            	0XCF		; Bank 0
+	ORG            	0XD7		; Bank 0
 _logDATA	RSEG           	0XE		; Bank 0
 log#	CSEG           
 _log
