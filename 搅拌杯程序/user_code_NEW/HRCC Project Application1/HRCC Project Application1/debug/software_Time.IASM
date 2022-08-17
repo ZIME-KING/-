@@ -251,7 +251,7 @@ _SetTime
 	_DESC          	GetTime,0X4,0X0,Get_Sys_time
 
 SECTION1GetTime	UNINTIAL       	0		; Bank 0
-	ORG            	0XC5		; Bank 0
+	ORG            	0XC6		; Bank 0
 _GetTimeDATA	RSEG           	0X4		; Bank 0
 GetTime#	CSEG           
 _GetTime
@@ -304,7 +304,7 @@ _GetTime
 	_DESC          	CompareTime,0X4,0X0,Get_Sys_time
 
 SECTION1CompareTime	UNINTIAL       	0		; Bank 0
-	ORG            	0XC5		; Bank 0
+	ORG            	0XC6		; Bank 0
 _CompareTimeDATA	RSEG           	0XE		; Bank 0
 CompareTime#	CSEG           
 _CompareTime
@@ -446,21 +446,21 @@ _CompareTime
 	RET            			; Bank 0		; ShBank 0
 
 SECTION2D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_software_Time_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X120		; Bank 0
+	ORG            	0X124		; Bank 0
 _Task_1	RSEG           	0X8		; Bank 0
-	ORG            	0X148		; Bank 0
+	ORG            	0X14C		; Bank 0
 _Task_5	RSEG           	0X8		; Bank 0
-	ORG            	0X128		; Bank 0
+	ORG            	0X12C		; Bank 0
 _Task_10	RSEG           	0X8		; Bank 0
-	ORG            	0X150		; Bank 0
+	ORG            	0X154		; Bank 0
 _Task_50	RSEG           	0X8		; Bank 0
-	ORG            	0X130		; Bank 0
+	ORG            	0X134		; Bank 0
 _Task_100	RSEG           	0X8		; Bank 0
-	ORG            	0X140		; Bank 0
+	ORG            	0X144		; Bank 0
 _Task_200	RSEG           	0X8		; Bank 0
-	ORG            	0X158		; Bank 0
+	ORG            	0X15C		; Bank 0
 _Task_500	RSEG           	0X8		; Bank 0
-	ORG            	0X138		; Bank 0
+	ORG            	0X13C		; Bank 0
 _Task_1000	RSEG           	0X8		; Bank 0
 	END
 

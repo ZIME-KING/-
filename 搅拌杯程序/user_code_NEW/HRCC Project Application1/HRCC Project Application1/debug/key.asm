@@ -121,7 +121,7 @@ _FRAL_0#sh	EQU            	(FRAL - 0X6080) % 0X40 + 0xC0		; Bank 0
 	_DESC          	scan_touch_key,0X10,0X0
 
 SECTION1scan_touch_key	UNINTIAL       	0		; Bank 0
-	ORG            	0XFA		; Bank 0
+	ORG            	0XFB		; Bank 0
 _scan_touch_keyDATA	RSEG           	0X4		; Bank 0
 scan_touch_key#	CSEG           
 _scan_touch_key
@@ -657,23 +657,23 @@ _scan_touch_key
 SECTION8D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c_STATIC45	PSECT	FLAG=0X1088,ADDR=0X7FD42
 _PA2_0	RSEG           	0X1		; Bank 0
 
-SECTION1ID__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c47	IDATA          		0X84		; Bank 0
+SECTION1ID__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c47	IDATA          		0X85		; Bank 0
 _touch_key_busy	DB             	0X0,0XE4		; Bank 0
 
-SECTION1ID__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c49	IDATA          		0X85		; Bank 0
+SECTION1ID__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c49	IDATA          		0X86		; Bank 0
 _touch_key_staus	DB             	0X0,0XE4		; Bank 0
 
 SECTION2D__Developmentfolder_Mixing_cup_½Á°è±­³ÌÐò_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_key_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0X10E		; Bank 0
+	ORG            	0X10F		; Bank 0
 _scan_touch_key_release_count_double_44	RSEG           	0X2		; Bank 0
-	ORG            	0X10C		; Bank 0
+	ORG            	0X10D		; Bank 0
 _scan_touch_key_release_count_44	RSEG           	0X2		; Bank 0
-	ORG            	0X108		; Bank 0
+	ORG            	0X109		; Bank 0
 _scan_touch_key_perss_count_44	RSEG           	0X2		; Bank 0
-	ORG            	0X10A		; Bank 0
+	ORG            	0X10B		; Bank 0
 _scan_touch_key_perss_count_long_44	RSEG           	0X2		; Bank 0
-	ORG            	0X101		; Bank 0
-_scan_touch_key_edge_flag_44	RSEG           	0X1		; Bank 0
 	ORG            	0X102		; Bank 0
+_scan_touch_key_edge_flag_44	RSEG           	0X1		; Bank 0
+	ORG            	0X103		; Bank 0
 _scan_touch_key_edge_status_44	RSEG           	0X1		; Bank 0
 	END

@@ -419,7 +419,7 @@ void main(void)
 	Buzzer_Init();
 	LED_Clear();
 	PB3=1;
-//Uart_Init();
+//    Uart_Init();
 #ifdef UART_TEST
 	Uart_Init();
 #endif
@@ -479,6 +479,9 @@ void main(void)
 		  User_Get_measure_Val_10ms();
 
 		  User_Get_measure_Val();		//ADC²âÁ¿
+
+
+
 		  State_Ruun();					//×´Ì¬ÔËÐÐ
 
 		  #ifdef UART_TEST

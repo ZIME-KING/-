@@ -505,7 +505,7 @@ _FRAL_0#sh	EQU            	(FRAL - 0X6080) % 0X40 + 0xC0		; Bank 0
 	_DESC          	Set_LED,0X0,0X0
 
 SECTION1Set_LED	UNINTIAL       	0		; Bank 0
-	ORG            	0XCE		; Bank 0
+	ORG            	0XCF		; Bank 0
 _Set_LEDDATA	RSEG           	0X2		; Bank 0
 Set_LED#	CSEG           
 _Set_LED
@@ -910,7 +910,7 @@ _Set_LED
 	_DESC          	LED_Clear,0X0,0X0,Set_LED
 
 SECTION1LED_Clear	UNINTIAL       	0		; Bank 0
-	ORG            	0XCA		; Bank 0
+	ORG            	0XCB		; Bank 0
 _LED_ClearDATA	RSEG           	0X4		; Bank 0
 LED_Clear#	CSEG           
 _LED_Clear
@@ -994,7 +994,7 @@ _LED_Clear
 	_DESC          	Updata_SCAN_LED_BUF_L,0X0,0X0
 
 SECTION1Updata_SCAN_LED_BUF_L	UNINTIAL       	0		; Bank 0
-	ORG            	0XCA		; Bank 0
+	ORG            	0XCB		; Bank 0
 _Updata_SCAN_LED_BUF_LDATA	RSEG           	0X1		; Bank 0
 Updata_SCAN_LED_BUF_L#	CSEG           
 _Updata_SCAN_LED_BUF_L
@@ -1549,7 +1549,7 @@ _Updata_SCAN_LED_BUF_L
 	_DESC          	D1_NUM,0X0,0X0
 
 SECTION1D1_NUM	UNINTIAL       	0		; Bank 0
-	ORG            	0XC6		; Bank 0
+	ORG            	0XC7		; Bank 0
 _D1_NUMDATA	RSEG           	0X7		; Bank 0
 D1_NUM#	CSEG           
 _D1_NUM
@@ -2574,7 +2574,7 @@ _D1_NUM
 	_DESC          	D2_NUM,0X0,0X0
 
 SECTION1D2_NUM	UNINTIAL       	0		; Bank 0
-	ORG            	0XC6		; Bank 0
+	ORG            	0XC7		; Bank 0
 _D2_NUMDATA	RSEG           	0X7		; Bank 0
 D2_NUM#	CSEG           
 _D2_NUM
@@ -3600,7 +3600,7 @@ _D2_NUM
 	_DESC          	SCAN_NEW,0X2,0X0
 
 SECTION1SCAN_NEW	UNINTIAL       	0		; Bank 0
-	ORG            	0XFA		; Bank 0
+	ORG            	0XFB		; Bank 0
 _SCAN_NEWDATA	RSEG           	0X4		; Bank 0
 SCAN_NEW#	CSEG           
 _SCAN_NEW
@@ -4712,7 +4712,7 @@ _PC0_0	RSEG           	0X1		; Bank 0
 SECTION8D__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC58	PSECT	FLAG=0X1088,ADDR=0X7FD51
 _PC1_0	RSEG           	0X1		; Bank 0
 
-SECTION1ID__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c60	IDATA          		0X92		; Bank 0
+SECTION1ID__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c60	IDATA          		0X93		; Bank 0
 _SCAN_LED_BUF_R	DB             	0XF,0XE4,0XF,0XE4,0XF,0XE4,0XF,0XE4,0XF,0XE4,0XF,0XE4		; Bank 0
 
 SECTION0D__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC61	PSECT	FLAG=0x88
@@ -4742,7 +4742,7 @@ _Set_LED_#T20621_45	RSEG           	0X1		; Bank 0
 SECTION0D__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC69	PSECT	FLAG=0x88
 _Set_LED_#T20631_45	RSEG           	0X1		; Bank 0
 
-SECTION1ID__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c71	IDATA          		0X8A		; Bank 0
+SECTION1ID__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c71	IDATA          		0X8B		; Bank 0
 _SCAN_LED_BUF_L	DB             	0X0,0XE4,0X0,0XE4,0X0,0XE4,0X0,0XE4		; Bank 0
 
 SECTION0D__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC72	PSECT	FLAG=0x88
@@ -4800,7 +4800,7 @@ SECTION0D__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Ap
 _SCAN_NEW_#T24055_77	RSEG           	0X1		; Bank 0
 
 SECTION1D__Developmentfolder_Mixing_cup_Ω¡∞Ë±≠≥Ã–Ú_user_code_NEW_HRCC_Project_Application1_HRCC_Project_Application1_Src_user_scan_LED_c_STATIC	UNINTIAL       	0		; Bank 0
-	ORG            	0XFE		; Bank 0
+	ORG            	0XFF		; Bank 0
 _SCAN_NEW_cnt_76	RSEG           	0X1		; Bank 0
 	END
 

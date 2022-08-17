@@ -39,12 +39,13 @@ uchar str[] = "通道 的转换值为:    \r\n\0";
 #define BaseVol  2.048 //ADC基准电压
 
 float vcc_val;
+float temp_vcc_val;
 float RV,RT,Tmp;
 float Get_Tempture(unsigned int adc)
 {        //float RV,RT,Tmp;
         RV=BaseVol*(float)adc/4096.0;		//ADC为12位ADC,求出NTC电压:RV=ADCValu/4096*BaseVoltag
        // RT=RV*100/(BaseVol-RV);				//求出当前温度阻值 (BaseVoltage-RV)/R16=RV/RT;
-		RT=RES/((vcc_val/RV)-1);
+		RT=RES/((temp_vcc_val/RV)-1);
 	    Tmp=1/(1/TN+(log(RT/RN)/B))-273.15;//%RT = RN exp*B(1/T-1/TN)%
 
         return Tmp;
@@ -315,8 +316,8 @@ static void Get_ADC_Val_Temp(unsigned int *Temp_val){
 }
 
 
-static unsigned int Vbat_adc_val[10],Temp_adc_val[20];
-
+static unsigned int Vbat_adc_val[10],Temp_adc_val[20],Temp_vcc_val[20];
+unsigned char change_flag=0;
 void User_Get_measure_Val(){
 		static char i=0;
 		static char ii=0;
@@ -324,18 +325,40 @@ void User_Get_measure_Val(){
 		ii=ii%10; 
 			    
 		Get_ADC_Val_Temp(&Temp_adc_val[i]);
-		i++;
+		Get_ADC_Val_Vbat(&Temp_vcc_val[i]);
+
+		if(change_flag==0){
+		  i++;
+		}
+		
 		if(i==19){
 			_f(Temp_adc_val,20);	//
+			_f(Temp_vcc_val,20);
+			temp_vcc_val=4*2.048*Temp_vcc_val[10]/4096;
+			if(PB5){
+				temp_vcc_val=4.6;
+					//temp_vcc_val=temp_vcc_val*1.06;
+				////Temp_adc_val[10]=Temp_adc_val[10]*0.9;
+			}
+
 			temperature=Get_Tempture(Temp_adc_val[10]);
+
+			//GIE=0;
+			//UART_send(str,6,Temp_adc_val[10]);
+			//UART_send(str,7,temperature);
+			//UART_send(str,8,vcc_val*1000);
+			//UART_send(str,9,temp_vcc_val*1000);
+			//GIE=1;
 		}
 		//开机测量
 		if (global_count<10000){
+			PA7=1;
 			Get_ADC_Val_Vbat(&Vbat_adc_val[ii]);
 			ii++;
 				if(ii==9){
 					_f(Vbat_adc_val,10);	//
 					vcc_val=4*2.048*Vbat_adc_val[5]/4096;
+					temp_vcc_val=vcc_val;
 					if(vcc_val>4.15) vcc_val=4.15;
 					if(vcc_val<3.5) vcc_val=3.5;
 					Vbat_val=(vcc_val-3.5)*100/(4.15-3.5);
@@ -371,11 +394,12 @@ void User_Get_measure_Val(){
 		//}
 }
 
-void User_Get_measure_Val_10ms(){		
-				//正常
+void User_Get_measure_Val_10ms(){
+		//正常
 		if(global_count>10000 ){
 					static unsigned int count;
 					count++;
+					change_flag=0;
 					if(count>=100){
 						count=0;
 					}
@@ -383,15 +407,20 @@ void User_Get_measure_Val_10ms(){
 						PA7=0;
 					}
 					if(count<10){
+						change_flag=1;
 						Get_ADC_Val_Vbat(&Vbat_adc_val[count]);
+						Get_ADC_Val_Temp(&Temp_adc_val[count]);
 					}
 					else if(count==10){
 						PA7=1;
 						_f(Vbat_adc_val,10);
+						//_f(Temp_adc_val,10);
+						vcc_val=4*2.048*Vbat_adc_val[5]/4096;
+						//temp_vcc_val=vcc_val;
+						//temperature=Get_Tempture(Temp_adc_val[5]);						
+						if(vcc_val>4.15) vcc_val=4.15;
+						if(vcc_val<3.5) vcc_val=3.5;
 						if(State_flag!=2){
-							vcc_val=4*2.048*Vbat_adc_val[5]/4096;
-							if(vcc_val>4.15) vcc_val=4.15;
-							if(vcc_val<3.5) vcc_val=3.5;
 							Vbat_val=(vcc_val-3.5)*100/(4.15-3.5);
 				
 							//GIE=0;
