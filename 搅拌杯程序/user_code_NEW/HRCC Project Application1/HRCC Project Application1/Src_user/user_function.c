@@ -315,6 +315,20 @@ static void Get_ADC_Val_Temp(unsigned int *Temp_val){
 		*Temp_val=adc_value;
 }
 
+static void Get_ADC_Val_VDD(unsigned int *VDD_val){
+
+		ADCCL |= 0xF0;      //ADCCL<7:4>选择通道
+		ADCCL &= 0x8F;		//选择通道8 1/4 VDD
+		adc_value = ADC_convert();
+		if(adc_value > offset_value)   //AD转换值大于offset值则减去offset，否则ADC结果归0
+		    adc_value -= offset_value;
+		else
+		    adc_value = 0;
+		*Temp_val=adc_value;
+}
+
+
+
 
 static unsigned int Vbat_adc_val[10],Temp_adc_val[20],Temp_vcc_val[20];
 unsigned char change_flag=0;
@@ -333,13 +347,13 @@ void User_Get_measure_Val(){
 		
 		if(i==19){
 			_f(Temp_adc_val,20);	//
-			_f(Temp_vcc_val,20);
+			_f(Temp_vcc_val,20);	
 			temp_vcc_val=4*2.048*Temp_vcc_val[10]/4096;
-			if(PB5){
+			//if(PB5){
 				temp_vcc_val=4.6;
 					//temp_vcc_val=temp_vcc_val*1.06;
 				////Temp_adc_val[10]=Temp_adc_val[10]*0.9;
-			}
+			//}
 
 			temperature=Get_Tempture(Temp_adc_val[10]);
 
